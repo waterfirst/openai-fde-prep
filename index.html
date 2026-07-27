@@ -303,6 +303,7 @@
       <a href="#coding">직접 코딩</a>
       <a href="#english">영어 면접</a>
       <a href="#numbers">숫자 어필</a>
+      <a href="#jd-keywords">JD 키워드</a>
       <a href="#star">STAR 무기</a>
       <a href="#star-bank">STAR 경험은행</a>
       <a href="#scenario">시나리오 답변</a>
@@ -459,6 +460,52 @@ FDE angle:
 This background helps me understand messy real-world systems, communicate with domain experts, and turn unclear problems into working AI-enabled workflows.</pre>
     </section>
 
+    <section id="jd-keywords" class="card">
+      <h2>JD 키워드 중심 두괄식 답변법</h2>
+      <p>
+        OpenAI FDE 면접 답변은 먼저 결론을 말하고, 바로 JD 키워드에 연결한다.
+        긴 설명보다 <strong>결론 → JD 키워드 → 내 사례 → 숫자/결과</strong> 순서로 간다.
+      </p>
+      <div class="grid2">
+        <div>
+          <h3>JD 키워드 → 내 언어</h3>
+          <ul>
+            <li><strong>Own technical delivery</strong> — 모호한 문제를 끝까지 작동하는 시스템으로 만든다.</li>
+            <li><strong>Discovery</strong> — 고객/현장 문제를 먼저 듣고 구조화한다.</li>
+            <li><strong>Technical scoping</strong> — 작게 시작할 범위와 실패 조건을 정한다.</li>
+            <li><strong>System design</strong> — 데이터, 도구, 사람, 평가 기준을 연결한다.</li>
+            <li><strong>Production rollout</strong> — 파일럿을 실제 운영 흐름으로 확장한다.</li>
+            <li><strong>Workflow impact</strong> — 시간, 품질, 채택률, 재현성으로 효과를 측정한다.</li>
+            <li><strong>Eval-driven feedback</strong> — 결과를 보고 모델/규칙/제품을 고친다.</li>
+            <li><strong>Customer teams</strong> — 도메인 전문가와 같은 언어로 협업한다.</li>
+            <li><strong>Contribute directly in code</strong> — 필요하면 직접 코딩하고 테스트한다.</li>
+            <li><strong>Scope-speed-quality tradeoff</strong> — 시간이 부족하면 범위를 줄이고 품질은 지킨다.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>4문장 답변 공식</h3>
+          <pre>1. Conclusion first.
+2. Use one JD keyword.
+3. Give one concrete experience.
+4. Finish with result, metric, or learning.</pre>
+          <h3>면접장 첫 문장 예시</h3>
+          <pre>Why FDE?
+I want to own technical delivery from discovery to production rollout.
+My strength is turning ambiguous field problems into working systems.
+In manufacturing, I learned to connect data, domain experts, experiments, and measurable impact.
+That is exactly the kind of work I want to do as an FDE.
+
+Strength?
+My strength is discovery and technical scoping.
+I listen to the field first, define the smallest useful pilot, test it with real data, and expand only after validation.
+
+Weakness defense?
+I am not a traditional software-only engineer.
+But I bring 26 years of real-world system experience, and I am deliberately strengthening direct coding, testing, and system design every day.</pre>
+        </div>
+      </div>
+    </section>
+
     <section id="star">
       <div class="card">
         <h2>STAR 무기 1호 — OLED Lifetime Web App</h2>
@@ -579,7 +626,7 @@ R: The profile now supports the interview narrative.</pre>
       <div class="grid2">
         <div>
           <h3>Q. A customer gives you an ambiguous problem. What do you do?</h3>
-          <pre>I do not start by coding immediately.
+          <pre>I start with discovery and technical scoping, not immediate coding.
 First, I clarify the workflow and talk to domain experts.
 Then I identify the data sources, assumptions, and failure modes.
 After that, I build a small pilot, validate it with real data, and expand step by step.
@@ -587,14 +634,15 @@ That is how I worked on the OLED lifetime web app.</pre>
         </div>
         <div>
           <h3>Q. Tell me about your working style.</h3>
-          <pre>I am data-driven, but I also respect field experience.
+          <pre>My working style is structured, data-driven, and field-oriented.
+I am data-driven, but I also respect field experience.
 In manufacturing, many important answers are hidden in the gap between data, equipment, materials, and people.
 So I listen first, structure the problem, test hypotheses, and document the result.
 My style is calm, persistent, and practical.</pre>
         </div>
         <div>
           <h3>Q. What if the AI system gives a wrong answer?</h3>
-          <pre>I treat it as a system failure, not just a model failure.
+          <pre>I treat it as an eval and system-design problem, not just a model problem.
 I check the input data, prompt, tool calls, logs, fallback logic, and evaluation criteria.
 For example, in my KIS paper-trading system, the strategy looked inactive.
 But the real issue was API rate limiting and conservative fallback logic.
@@ -602,7 +650,7 @@ I fixed it with retry, fallback sizing, and tests.</pre>
         </div>
         <div>
           <h3>Q. How do you work with people from different domains?</h3>
-          <pre>I translate between technical language and business or field language.
+          <pre>I embed closely with domain teams and translate between technical and field language.
 In my manufacturing career, I often worked across quality, process, material, equipment, and management teams.
 I try to separate facts from assumptions and create a shared decision framework.
 That is also important for FDE work.</pre>
@@ -799,6 +847,10 @@ Then I add tests so the same failure does not repeat.</pre>
       "I am a manufacturing problem solver with 26 years of experience in display technology.",
       "I worked across LCD, OLED, Micro LED, materials, process, equipment, quality, and reliability.",
       "I have 67 registered patents, which shows that I turn solutions into reusable technical assets.",
+      "I own end-to-end delivery from ambiguous problem discovery to a working system.",
+      "In FDE terms, I focus on discovery, technical scoping, system design, production rollout, and measurable workflow impact.",
+      "I reduce scope, not quality, when time is limited.",
+      "I use eval-driven feedback to improve the workflow, not just the model.",
       "One project that reflects how I work is an OLED lifetime analysis web app I recently started building.",
       "The problem was initially ambiguous because the calculation logic was not already packaged into software.",
       "It depended on domain expertise from engineers who understood the measurement process.",
