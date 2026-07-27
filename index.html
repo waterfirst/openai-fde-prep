@@ -206,6 +206,61 @@
       text-align: center;
       padding: 36px 20px 60px;
     }
+    .voice-panel {
+      background: rgba(103,232,249,.08);
+      border: 1px solid rgba(103,232,249,.22);
+      border-radius: 20px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .voice-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: rgba(103,232,249,.18); }
+    button.primary {
+      color: #06111f;
+      background: var(--accent);
+      border-color: transparent;
+    }
+    select, input[type="range"] {
+      width: 100%;
+      margin: 8px 0 4px;
+    }
+    .shadow-text {
+      background: #070b16;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      color: #e8eefc;
+    }
+    .shadow-line {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 12px;
+      margin: 4px 0;
+    }
+    .shadow-line.active {
+      background: rgba(103,232,249,.18);
+      color: #ffffff;
+      outline: 1px solid rgba(103,232,249,.35);
+    }
+    .small-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+    }
     @media (max-width: 860px) {
       .hero, .grid, .grid2 { grid-template-columns: 1fr; }
       .week { grid-template-columns: 1fr; }
@@ -331,6 +386,28 @@ Say aloud:
     <section id="english">
       <div class="card">
         <h2>영어 면접 핵심 답변</h2>
+        <div class="voice-panel">
+          <h3>이어폰 쉐도윙 모드</h3>
+          <p>
+            아래 버튼을 누르면 영어 답변이 음성으로 나온다.
+            출퇴근길에는 <strong>느리게</strong> 또는 <strong>문장 반복</strong>으로 듣고 따라 말해라.
+          </p>
+          <label for="voiceSelect">Voice</label>
+          <select id="voiceSelect" aria-label="English voice selector"></select>
+          <label for="rateRange">Speed: <span id="rateLabel">0.85</span>x</label>
+          <input id="rateRange" type="range" min="0.55" max="1.15" step="0.05" value="0.85" />
+          <div class="voice-controls">
+            <button class="primary" onclick="speakFullAnswer()">▶ 전체 답변 듣기</button>
+            <button onclick="speakSlow()">🐢 느리게</button>
+            <button onclick="speakCurrentLine()">🔁 현재 문장 반복</button>
+            <button onclick="nextLine()">➡ 다음 문장</button>
+            <button onclick="stopSpeech()">■ 정지</button>
+          </div>
+          <p class="small-note">
+            휴대폰 브라우저에서 처음 한 번은 버튼을 직접 눌러야 음성이 나온다. iPhone/Android 모두 브라우저 기본 영어 음성을 사용한다.
+          </p>
+          <div id="shadowText" class="shadow-text" aria-live="polite"></div>
+        </div>
         <div class="grid">
           <div>
             <h3>Tell me about yourself</h3>
@@ -415,5 +492,139 @@ Recently, I have been applying that same method to AI-powered workflows and depl
   <div class="footer">
     Built for Nakcho Choi · OpenAI FDE Preparation · Updated 2026-07-28
   </div>
+  <script>
+    const shadowLines = [
+      "One project that reflects how I work is an OLED lifetime analysis web app I recently started building.",
+      "The problem was initially ambiguous because the calculation logic was not already packaged into software.",
+      "It depended on domain expertise from engineers who understood the measurement process.",
+      "So the first thing I did was talk to the experts and extract the actual logic step by step.",
+      "The workflow used initial optical characteristics and color coordinates measured by a Minolta CA-310.",
+      "It also used time-series intensity data measured by photodiodes.",
+      "My job was to turn that expert-driven process into a repeatable system.",
+      "To do that efficiently, I created a plan first and used a pilot-based approach.",
+      "Instead of building everything at once, I implemented one piece at a time, tested it, validated the output, and then expanded it.",
+      "That helped reduce token usage, reduce rework, and keep the system grounded in real results.",
+      "Technically, I connected to the server, pulled the measurement data, and correlated WHITE, RED, GREEN, and BLUE color data with intensity trends.",
+      "Then I applied the SE-based estimation logic and designed the system to generate a final report automatically.",
+      "I also documented the full workflow in SKILL.md and README.md so it could be reused and shared through GitHub.",
+      "What I am proud of is that I did not just build a tool.",
+      "I translated tacit expert knowledge into an operational workflow that other people can repeat, extend, and deploy."
+    ];
+
+    let voices = [];
+    let currentLine = 0;
+    let speakingAll = false;
+
+    const shadowText = document.getElementById("shadowText");
+    const voiceSelect = document.getElementById("voiceSelect");
+    const rateRange = document.getElementById("rateRange");
+    const rateLabel = document.getElementById("rateLabel");
+
+    function renderLines() {
+      shadowText.innerHTML = shadowLines.map((line, idx) =>
+        `<span class="shadow-line ${idx === currentLine ? "active" : ""}" onclick="setLine(${idx}); speakCurrentLine();">${idx + 1}. ${line}</span>`
+      ).join("");
+    }
+
+    function loadVoices() {
+      voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+      const englishVoices = voices.filter(v => (v.lang || "").toLowerCase().startsWith("en"));
+      const list = englishVoices.length ? englishVoices : voices;
+      voiceSelect.innerHTML = list.map((v, idx) =>
+        `<option value="${voices.indexOf(v)}">${v.name} · ${v.lang}</option>`
+      ).join("");
+      const preferred = voices.findIndex(v =>
+        /en-us/i.test(v.lang) && /female|samantha|google|natural|premium/i.test(v.name)
+      );
+      if (preferred >= 0) voiceSelect.value = String(preferred);
+    }
+
+    function selectedVoice() {
+      const idx = Number(voiceSelect.value);
+      return Number.isFinite(idx) ? voices[idx] : null;
+    }
+
+    function makeUtterance(text, rateOverride) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "en-US";
+      utterance.rate = rateOverride || Number(rateRange.value || 0.85);
+      utterance.pitch = 1.0;
+      const voice = selectedVoice();
+      if (voice) utterance.voice = voice;
+      return utterance;
+    }
+
+    function speakText(text, rateOverride, onend) {
+      if (!("speechSynthesis" in window)) {
+        alert("이 브라우저는 음성합성을 지원하지 않습니다.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = makeUtterance(text, rateOverride);
+      utterance.onend = onend || null;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function setLine(idx) {
+      currentLine = Math.max(0, Math.min(idx, shadowLines.length - 1));
+      renderLines();
+    }
+
+    function speakCurrentLine() {
+      speakingAll = false;
+      renderLines();
+      speakText(shadowLines[currentLine]);
+    }
+
+    function nextLine() {
+      setLine(currentLine + 1);
+      speakCurrentLine();
+    }
+
+    function speakFullAnswer() {
+      speakingAll = true;
+      setLine(0);
+      speakLineSequence();
+    }
+
+    function speakLineSequence() {
+      if (!speakingAll) return;
+      renderLines();
+      speakText(shadowLines[currentLine], Number(rateRange.value || 0.85), () => {
+        if (!speakingAll) return;
+        if (currentLine < shadowLines.length - 1) {
+          currentLine += 1;
+          setTimeout(speakLineSequence, 450);
+        } else {
+          speakingAll = false;
+          renderLines();
+        }
+      });
+    }
+
+    function speakSlow() {
+      speakingAll = true;
+      setLine(0);
+      rateRange.value = "0.65";
+      rateLabel.textContent = "0.65";
+      speakLineSequence();
+    }
+
+    function stopSpeech() {
+      speakingAll = false;
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      renderLines();
+    }
+
+    rateRange.addEventListener("input", () => {
+      rateLabel.textContent = rateRange.value;
+    });
+
+    renderLines();
+    if ("speechSynthesis" in window) {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  </script>
 </body>
 </html>
