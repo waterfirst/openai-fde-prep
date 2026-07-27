@@ -1043,6 +1043,14 @@ Then I add tests so the same failure does not repeat.</pre>
       return /[A-Za-z]{3,}/.test(text || "");
     }
 
+    function isMostlyEnglish(text) {
+      const sample = (text || "").replace(/\s+/g, "");
+      if (!sample) return false;
+      const englishCount = (sample.match(/[A-Za-z]/g) || []).length;
+      const koreanCount = (sample.match(/[가-힣]/g) || []).length;
+      return englishCount >= 12 && englishCount > koreanCount * 2;
+    }
+
     function cleanSpeechText(text) {
       return (text || "")
         .replace(/\s+/g, " ")
@@ -1092,11 +1100,11 @@ Then I add tests so the same failure does not repeat.</pre>
     }
 
     function addInlineSpeechControls() {
-      const candidates = Array.from(document.querySelectorAll("main pre, main p, main li, .quote"));
+      const candidates = Array.from(document.querySelectorAll("main pre, main p"));
       candidates.forEach((el) => {
         if (el.closest(".voice-panel") || el.dataset.speechReady === "1") return;
         const text = cleanSpeechText(el.textContent);
-        if (!hasEnglishSentence(text) || text.length < 18) return;
+        if (!hasEnglishSentence(text) || !isMostlyEnglish(text) || text.length < 18) return;
         el.dataset.speechReady = "1";
         const controls = document.createElement("div");
         controls.className = "inline-speech";
