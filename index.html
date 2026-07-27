@@ -234,6 +234,22 @@
       background: var(--accent);
       border-color: transparent;
     }
+    .inline-speech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 16px;
+    }
+    .inline-speech button {
+      border-color: rgba(103,232,249,.28);
+      background: rgba(103,232,249,.08);
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+    .speaking-target {
+      outline: 1px solid rgba(103,232,249,.45);
+      box-shadow: 0 0 0 4px rgba(103,232,249,.08);
+    }
     select, input[type="range"] {
       width: 100%;
       margin: 8px 0 4px;
@@ -1016,13 +1032,89 @@ Then I add tests so the same failure does not repeat.</pre>
       speakingAll = false;
       if ("speechSynthesis" in window) window.speechSynthesis.cancel();
       renderLines();
+      document.querySelectorAll(".speaking-target").forEach(el => el.classList.remove("speaking-target"));
     }
 
     rateRange.addEventListener("input", () => {
       rateLabel.textContent = rateRange.value;
     });
 
+    function hasEnglishSentence(text) {
+      return /[A-Za-z]{3,}/.test(text || "");
+    }
+
+    function cleanSpeechText(text) {
+      return (text || "")
+        .replace(/\s+/g, " ")
+        .replace(/^\s*(S|T|A|R|Q)\s*:\s*/gm, "")
+        .trim();
+    }
+
+    function splitEnglishSentences(text) {
+      const cleaned = cleanSpeechText(text);
+      const rough = cleaned
+        .split(/(?<=[.!?])\s+|(?:\n+)/)
+        .map(s => s.trim())
+        .filter(s => hasEnglishSentence(s) && s.length > 8);
+      return rough.length ? rough : [cleaned].filter(Boolean);
+    }
+
+    function markSpeaking(target) {
+      document.querySelectorAll(".speaking-target").forEach(el => el.classList.remove("speaking-target"));
+      if (target) target.classList.add("speaking-target");
+    }
+
+    function speakBlock(target, rate) {
+      const text = cleanSpeechText(target.textContent);
+      if (!text) return;
+      speakingAll = false;
+      markSpeaking(target);
+      speakText(text, rate || Number(rateRange.value || 0.85), () => markSpeaking(null));
+    }
+
+    function shadowBlock(target, rate) {
+      const sentences = splitEnglishSentences(target.textContent);
+      if (!sentences.length) return;
+      let idx = 0;
+      speakingAll = false;
+      markSpeaking(target);
+      const next = () => {
+        if (idx >= sentences.length) {
+          markSpeaking(null);
+          return;
+        }
+        speakText(sentences[idx], rate || 0.75, () => {
+          idx += 1;
+          setTimeout(next, 650);
+        });
+      };
+      next();
+    }
+
+    function addInlineSpeechControls() {
+      const candidates = Array.from(document.querySelectorAll("main pre, main p, main li, .quote"));
+      candidates.forEach((el) => {
+        if (el.closest(".voice-panel") || el.dataset.speechReady === "1") return;
+        const text = cleanSpeechText(el.textContent);
+        if (!hasEnglishSentence(text) || text.length < 18) return;
+        el.dataset.speechReady = "1";
+        const controls = document.createElement("div");
+        controls.className = "inline-speech";
+        controls.innerHTML = `
+          <button type="button">🔊 듣기</button>
+          <button type="button">🐢 느리게</button>
+          <button type="button">🎧 쉐도윙</button>
+        `;
+        const [listenBtn, slowBtn, shadowBtn] = controls.querySelectorAll("button");
+        listenBtn.addEventListener("click", () => speakBlock(el, Number(rateRange.value || 0.85)));
+        slowBtn.addEventListener("click", () => speakBlock(el, 0.65));
+        shadowBtn.addEventListener("click", () => shadowBlock(el, 0.72));
+        el.insertAdjacentElement("afterend", controls);
+      });
+    }
+
     renderLines();
+    addInlineSpeechControls();
     if ("speechSynthesis" in window) {
       loadVoices();
       window.speechSynthesis.onvoiceschanged = loadVoices;
