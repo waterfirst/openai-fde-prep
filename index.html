@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nakcho Choi · OpenAI FDE Prep</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #11182d;
+      --panel2: #17213b;
+      --text: #eef3ff;
+      --muted: #aeb8d4;
+      --accent: #67e8f9;
+      --green: #7dd3a7;
+      --yellow: #facc15;
+      --red: #fb7185;
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(103,232,249,.16), transparent 30rem),
+        radial-gradient(circle at 80% 10%, rgba(125,211,167,.12), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 56px 20px 34px;
+      max-width: 1180px;
+      margin: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.05;
+      margin: 14px 0 16px;
+      letter-spacing: -.04em;
+    }
+    h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      margin: 0 0 16px;
+      letter-spacing: -.03em;
+    }
+    h3 { margin: 0 0 10px; }
+    p { margin: 0 0 12px; }
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+    }
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding: 12px 0 12px 16px;
+      color: #dff8ff;
+      font-size: 18px;
+      margin-top: 22px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .metric {
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+    .metric span { color: var(--muted); font-size: 13px; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11,16,32,.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 20px;
+    }
+    nav a {
+      white-space: nowrap;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(255,255,255,.05);
+      font-size: 14px;
+    }
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px;
+    }
+    section { margin: 28px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      margin: 2px;
+    }
+    .todo {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .todo li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .todo li:last-child { border-bottom: none; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      color: #06111f;
+      background: var(--accent);
+      margin-right: 8px;
+    }
+    .green { background: var(--green); }
+    .yellow { background: var(--yellow); }
+    .red { background: var(--red); color: white; }
+    pre {
+      white-space: pre-wrap;
+      word-break: keep-all;
+      background: #070b16;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      color: #e8eefc;
+      overflow-x: auto;
+    }
+    .week {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .week:last-child { border-bottom: 0; }
+    .week .num {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 36px 20px 60px;
+    }
+    @media (max-width: 860px) {
+      .hero, .grid, .grid2 { grid-template-columns: 1fr; }
+      .week { grid-template-columns: 1fr; }
+      header { padding-top: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div class="card">
+        <div class="eyebrow">OpenAI FDE Seoul · Daily Training</div>
+        <h1>낙초의 FDE 입사 준비실</h1>
+        <p class="lead">
+          친구가 옆에서 매일 잔소리해주는 버전. 목표는 하나다.
+          <strong>26년 제조업 문제해결력</strong>을 OpenAI FDE 언어로 번역하고,
+          <strong>Codex 없이 직접 코딩</strong>하며, <strong>영어로 또렷하게 설명</strong>하는 힘을 만든다.
+        </p>
+        <div class="quote">
+          “I turn ambiguous real-world problems into validated, repeatable systems.”
+        </div>
+      </div>
+      <div class="card">
+        <h3>오늘의 원칙</h3>
+        <p>아부 말고 현실: FDE의 shape은 이미 맞다. 남은 벽은 직접 코딩과 영어 think-aloud다.</p>
+        <div class="metrics">
+          <div class="metric"><strong>90분</strong><span>퇴근 후 매일</span></div>
+          <div class="metric"><strong>4주</strong><span>기본 완성</span></div>
+          <div class="metric"><strong>40+</strong><span>Python 문제</span></div>
+          <div class="metric"><strong>10</strong><span>STAR 사례</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="inner">
+      <a href="#today">오늘 할 일</a>
+      <a href="#curriculum">4주 커리큘럼</a>
+      <a href="#coding">직접 코딩</a>
+      <a href="#english">영어 면접</a>
+      <a href="#star">STAR 무기</a>
+      <a href="#system">FDE 설계</a>
+      <a href="#scoreboard">체크리스트</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="today" class="card">
+      <h2>오늘 퇴근 후 90분</h2>
+      <ul class="todo">
+        <li><span class="pill">30분</span><strong>Python Live Coding</strong> — HashMap / Two Sum 유형을 Codex 없이 직접 푼다.</li>
+        <li><span class="pill green">25분</span><strong>FDE System Design</strong> — OLED lifetime web app을 고객 문제 → 데이터 → 시스템 → 평가로 6문장 정리한다.</li>
+        <li><span class="pill yellow">20분</span><strong>STAR</strong> — OLED 수명 웹앱 프로젝트를 S/T/A/R로 압축한다.</li>
+        <li><span class="pill red">15분</span><strong>English Speaking</strong> — “Tell me about a project that reflects how you work.” 90초 녹음.</li>
+      </ul>
+    </section>
+
+    <section id="curriculum" class="card">
+      <h2>4주 커리큘럼</h2>
+      <div class="week">
+        <div class="num">Week 1</div>
+        <div>
+          <h3>기본기 복구</h3>
+          <p>Array, HashMap, String, Two pointers. 자기소개 / Why OpenAI / Why FDE / OLED STAR 완성.</p>
+        </div>
+      </div>
+      <div class="week">
+        <div class="num">Week 2</div>
+        <div>
+          <h3>직접 코딩 강화</h3>
+          <p>Stack, Queue, Binary Search, Interval, Sorting, BFS. pytest와 edge case를 습관화.</p>
+        </div>
+      </div>
+      <div class="week">
+        <div class="num">Week 3</div>
+        <div>
+          <h3>FDE형 시스템 설계</h3>
+          <p>API integration, retry/backoff, logging, cache, rate limit, tool calling, eval-driven development.</p>
+        </div>
+      </div>
+      <div class="week">
+        <div class="num">Week 4</div>
+        <div>
+          <h3>모의면접 주간</h3>
+          <p>45분 coding mock + 25분 system design + 20분 behavioral. 실전처럼 영어로 말한다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="coding">
+      <div class="grid2">
+        <div class="card">
+          <h2>직접 코딩 훈련법</h2>
+          <p>Codex는 무기지만, 면접장에서는 네 손이 증명서다.</p>
+          <ul>
+            <li>문제 읽고 제약조건을 먼저 묻는다.</li>
+            <li>brute force를 말하고 개선한다.</li>
+            <li>코드는 짧고 함수형으로 쓴다.</li>
+            <li>edge case 3개를 직접 말한다.</li>
+            <li>마지막에 complexity를 말한다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>오늘의 기본 문제</h2>
+          <pre>Problem: Two Sum
+
+Input: nums, target
+Output: indices of two numbers that add up to target
+
+Approach:
+1. Keep a hash map: value -> index
+2. For each number, compute complement
+3. If complement exists, return indices
+4. Otherwise store current value
+
+Say aloud:
+“This is O(n) time and O(n) space.”</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="english">
+      <div class="card">
+        <h2>영어 면접 핵심 답변</h2>
+        <div class="grid">
+          <div>
+            <h3>Tell me about yourself</h3>
+            <p>I am a manufacturing problem solver with 26 years of experience in display technology, now applying that method to AI-powered deployment systems.</p>
+          </div>
+          <div>
+            <h3>Why OpenAI?</h3>
+            <p>I want to help bring powerful AI into real workflows safely and usefully, especially in complex industrial and operational domains.</p>
+          </div>
+          <div>
+            <h3>Why FDE?</h3>
+            <p>FDE is exactly where I am strongest: understanding messy customer problems, structuring them, building working systems, and driving adoption.</p>
+          </div>
+        </div>
+        <pre>90-second anchor:
+I am not a traditional software engineer by background.
+I am a manufacturing problem solver who has spent 26 years turning complex real-world problems into validated, repeatable systems.
+Recently, I have been applying that same method to AI-powered workflows and deployment systems.</pre>
+      </div>
+    </section>
+
+    <section id="star">
+      <div class="card">
+        <h2>STAR 무기 1호 — OLED Lifetime Web App</h2>
+        <p><span class="tag">Ambiguity</span><span class="tag">Domain expert collaboration</span><span class="tag">Pilot-first</span><span class="tag">Real data</span><span class="tag">Documentation</span></p>
+        <div class="grid2">
+          <div>
+            <h3>S — Situation</h3>
+            <p>OLED 수명 계산 로직이 명확한 소프트웨어로 정리돼 있지 않고, 계측 전문가의 암묵지가 필요했다.</p>
+            <h3>T — Task</h3>
+            <p>CA-310 초기 광특성/색좌표와 photodiode 시간별 intensity 데이터를 연결해 재현 가능한 웹앱과 리포트를 만든다.</p>
+          </div>
+          <div>
+            <h3>A — Action</h3>
+            <p>전문가 로직을 뽑고 Plan을 세운 뒤, 토큰 절약을 위해 파일럿 → 검증 → 확장 방식으로 구현했다.</p>
+            <h3>R — Result</h3>
+            <p>단순 계산기가 아니라 SKILL.md, README.md, GitHub에 남길 수 있는 반복 가능한 운영 워크플로로 만들었다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="system">
+      <div class="grid2">
+        <div class="card">
+          <h2>FDE 시스템 설계 템플릿</h2>
+          <ol>
+            <li>Customer problem</li>
+            <li>User workflow</li>
+            <li>Data sources</li>
+            <li>System components</li>
+            <li>Failure modes</li>
+            <li>Evaluation metrics</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h2>네 프로젝트를 FDE 언어로</h2>
+          <ul>
+            <li>OLED 수명 웹앱 → domain workflow automation</li>
+            <li>회생법원 MCP → public-data monitoring tool</li>
+            <li>KIS 모의투자 → eval-driven autonomous workflow</li>
+            <li>Telegram+Codex → human-in-the-loop orchestration</li>
+            <li>AI 세미나 → internal enablement and adoption</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="scoreboard" class="card">
+      <h2>친구의 잔소리 체크리스트</h2>
+      <ul class="todo">
+        <li>☑ 오늘 Python 문제를 Codex 없이 풀었나?</li>
+        <li>☑ 영어로 문제 접근을 말했나?</li>
+        <li>☑ edge case 3개를 말했나?</li>
+        <li>☑ STAR 하나를 90초로 줄였나?</li>
+        <li>☑ “AI가 해줬다”가 아니라 “내가 문제를 정의하고 검증했다”로 말했나?</li>
+        <li>☑ 현 직장 기밀을 빼고도 충분히 강하게 설명했나?</li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="footer">
+    Built for Nakcho Choi · OpenAI FDE Preparation · Updated 2026-07-28
+  </div>
+</body>
+</html>
