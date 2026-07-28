@@ -1225,7 +1225,7 @@ Then I add tests so the same failure does not repeat.</pre>
     }
 
     function addInlineSpeechControls() {
-      const candidates = Array.from(document.querySelectorAll("main pre, main p"));
+      const candidates = Array.from(document.querySelectorAll("main pre, main p, main li"));
       candidates.forEach((el) => {
         if (el.closest(".voice-panel") || el.dataset.speechReady === "1") return;
         const text = cleanSpeechText(el.textContent);
