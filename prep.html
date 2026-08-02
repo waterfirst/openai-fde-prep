@@ -1,0 +1,1441 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>English Shadowing & Interview Prep (personal)</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #11182d;
+      --panel2: #17213b;
+      --text: #eef3ff;
+      --muted: #aeb8d4;
+      --accent: #67e8f9;
+      --green: #7dd3a7;
+      --yellow: #facc15;
+      --red: #fb7185;
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(103,232,249,.16), transparent 30rem),
+        radial-gradient(circle at 80% 10%, rgba(125,211,167,.12), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 56px 20px 34px;
+      max-width: 1180px;
+      margin: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.05;
+      margin: 14px 0 16px;
+      letter-spacing: -.04em;
+    }
+    h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      margin: 0 0 16px;
+      letter-spacing: -.03em;
+    }
+    h3 { margin: 0 0 10px; }
+    p { margin: 0 0 12px; }
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 760px;
+    }
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding: 12px 0 12px 16px;
+      color: #dff8ff;
+      font-size: 18px;
+      margin-top: 22px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .metric {
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+    .metric span { color: var(--muted); font-size: 13px; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(11,16,32,.78);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 20px;
+    }
+    nav a {
+      white-space: nowrap;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(255,255,255,.05);
+      font-size: 14px;
+    }
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 20px;
+    }
+    section { margin: 28px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      margin: 2px;
+    }
+    .todo {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .todo li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .todo li:last-child { border-bottom: none; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      color: #06111f;
+      background: var(--accent);
+      margin-right: 8px;
+    }
+    .green { background: var(--green); }
+    .yellow { background: var(--yellow); }
+    .red { background: var(--red); color: white; }
+    pre {
+      white-space: pre-wrap;
+      word-break: keep-all;
+      background: #070b16;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      color: #e8eefc;
+      overflow-x: auto;
+    }
+    .week {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .week:last-child { border-bottom: 0; }
+    .week .num {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 36px 20px 60px;
+    }
+    .voice-panel {
+      background: rgba(103,232,249,.08);
+      border: 1px solid rgba(103,232,249,.22);
+      border-radius: 20px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .voice-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: rgba(103,232,249,.18); }
+    button.primary {
+      color: #06111f;
+      background: var(--accent);
+      border-color: transparent;
+    }
+    .inline-speech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 16px;
+    }
+    .inline-speech button {
+      border-color: rgba(103,232,249,.28);
+      background: rgba(103,232,249,.08);
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+    .speaking-target {
+      outline: 1px solid rgba(103,232,249,.45);
+      box-shadow: 0 0 0 4px rgba(103,232,249,.08);
+    }
+    select, input[type="range"] {
+      width: 100%;
+      margin: 8px 0 4px;
+    }
+    .shadow-text {
+      background: #070b16;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      color: #e8eefc;
+    }
+    .shadow-line {
+      display: block;
+      padding: 8px 10px;
+      border-radius: 12px;
+      margin: 4px 0;
+    }
+    .shadow-line.active {
+      background: rgba(103,232,249,.18);
+      color: #ffffff;
+      outline: 1px solid rgba(103,232,249,.35);
+    }
+    .small-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+    @media (max-width: 860px) {
+      .hero, .grid, .grid2 { grid-template-columns: 1fr; }
+      .week { grid-template-columns: 1fr; }
+      header { padding-top: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <div class="card">
+        <div class="eyebrow">OpenAI FDE Seoul · Daily Training</div>
+        <h1>FDE 입사 준비실</h1>
+        <p class="lead">
+          친구가 옆에서 매일 잔소리해주는 버전. 목표는 하나다.
+          <strong>26년 제조업 문제해결력</strong>을 OpenAI FDE 언어로 번역하고,
+          <strong>R 기반 데이터 분석·시각화 강점</strong>을 살리고,
+          <strong>Python 직접 코딩</strong>과 <strong>영어 설명</strong>을 보강한다.
+        </p>
+        <div class="quote">
+          “I turn ambiguous real-world problems into validated, repeatable systems.”
+        </div>
+      </div>
+      <div class="card">
+        <h3>오늘의 원칙</h3>
+        <p>아부 말고 현실: FDE의 shape은 이미 맞다. 남은 벽은 직접 코딩과 영어 think-aloud다.</p>
+        <div class="metrics">
+          <div class="metric"><strong>90분</strong><span>퇴근 후 매일</span></div>
+          <div class="metric"><strong>4주</strong><span>기본 완성</span></div>
+          <div class="metric"><strong>40+</strong><span>Python 보강 문제</span></div>
+          <div class="metric"><strong>10</strong><span>STAR 사례</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="inner">
+      <a href="#today">오늘 할 일</a>
+      <a href="#interview-guide">🎯 면접 로드맵</a>
+      <a href="#curriculum">4주 커리큘럼</a>
+      <a href="#coding">직접 코딩</a>
+      <a href="#english">영어 면접</a>
+      <a href="#interview-bank">면접 답변은행</a>
+      <a href="#numbers">숫자 어필</a>
+      <a href="#jd-keywords">JD 키워드</a>
+      <a href="#star">STAR 무기</a>
+      <a href="#star-bank">STAR 경험은행</a>
+      <a href="#scenario">시나리오 답변</a>
+      <a href="#scenario-bank">상황대처</a>
+      <a href="#short-english">짧은 영어</a>
+      <a href="#system">FDE 설계</a>
+      <a href="#questions">내가 물어볼 질문</a>
+      <a href="#model-answers">모범답안</a>
+      <a href="#scoreboard">체크리스트</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="today" class="card">
+      <h2>오늘 퇴근 후 90분</h2>
+      <ul class="todo">
+        <li><span class="pill">30분</span><strong>Python Live Coding</strong> — HashMap / Two Sum 유형을 Codex 없이 직접 푼다.</li>
+        <li><span class="pill green">25분</span><strong>FDE System Design</strong> — OLED lifetime web app을 고객 문제 → 데이터 → 시스템 → 평가로 6문장 정리한다.</li>
+        <li><span class="pill yellow">20분</span><strong>STAR</strong> — OLED 수명 웹앱 프로젝트를 S/T/A/R로 압축한다.</li>
+        <li><span class="pill red">15분</span><strong>English Speaking</strong> — “Tell me about a project that reflects how you work.” 90초 녹음.</li>
+      </ul>
+    </section>
+
+    <section id="interview-guide">
+      <div class="card">
+        <div class="eyebrow">OpenAI 공식 인터뷰 가이드 기반 · Forward Deployed Engineer 트랙</div>
+        <h2>🎯 면접 로드맵 — 7단계 단계별 대응</h2>
+        <p class="lead">
+          OpenAI FDE 채용은 <strong>7-touch(레크루터 → 기술스크린 → 코딩 2회 → LLM 시스템설계 → 행동/고객공감 → 최종 가치대화)</strong>를
+          보통 <strong>3–4주</strong>에 압축한다. 각 라운드는 30~60분. 팀마다 순서·형식은 조금씩 다르다.
+        </p>
+        <h3>매 라운드 관통 원칙 (4개)</h3>
+        <ul>
+          <li><strong>Think-aloud in English</strong> — 침묵 금지. 사고 과정을 소리내어. 정답보다 "어떻게 생각하나"를 본다.</li>
+          <li><strong>Customer-first framing</strong> — 모든 답을 <em>"고객 문제 → shipped system"</em>으로 연결.</li>
+          <li><strong>Ship &amp; defend</strong> — 돌아가는 결과물을 내놓고, 모든 결정을 근거로 방어.</li>
+          <li><strong>Clarify first</strong> — 코딩/설계 전 요구사항·제약을 먼저 질문한다.</li>
+        </ul>
+        <p style="color:var(--muted);font-size:13px;">출처: <a href="https://openai.com/interview-guide/" target="_blank" rel="noopener">openai.com/interview-guide</a> · Exponent/IGotAnOffer FDE 가이드(2026).</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill">Step 1 · 30–45분</span> Recruiter Screen</h3>
+        <p><strong>본다:</strong> 배경·동기·미션 정렬. "Why OpenAI / Why FDE".</p>
+        <p><strong>대응:</strong> 2분 FDE 자기소개 — <em>"제조 26년간 애매한 현장 문제를 재현 가능한 시스템으로 바꿔왔다."</em> 임팩트는 숫자로. 왜 지금 FDE인지 한 문장.</p>
+        <p><strong>내 무기:</strong> <a href="#numbers">숫자 어필</a> · <a href="#short-english">짧은 영어</a></p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill">Step 2 · ~60분 (CoderPad)</span> Technical Phone Screen</h3>
+        <p><strong>본다:</strong> 실전형 자료구조·알고리즘 (LeetCode보다 실무적).</p>
+        <p><strong>대응:</strong> 문제 재진술 → 접근 말로 설명 → 코딩 중 계속 나레이션 → 엣지케이스. 영어 think-aloud로.</p>
+        <p><strong>내 무기:</strong> <a href="#coding">직접 코딩</a> (HashMap/Two-pointer/파일파싱 실전형)</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill green">Step 3 · 60분 ×2</span> Coding Rounds (product-focused)</h3>
+        <p><strong>본다:</strong> 코딩을 <em>고객 납품물</em>로 다루는가. 돌아가는 코드 + 실행 앱 + 명확한 워크스루.</p>
+        <p><strong>대응:</strong> 완벽한 알고리즘보다 <strong>동작하는 결과</strong>. 모든 고객대면 결정(왜 이 자료구조/이 UX)을 즉석 딥다이브에서 방어.</p>
+        <p><strong>내 무기:</strong> OLED 수명 웹앱 · Telegram+Codex 오케스트레이션 (실제로 배포한 것들)</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill yellow">Step 4 · 45~60분</span> LLM System Design (FDE 최난관)</h3>
+        <p><strong>본다:</strong> 프로덕션 LLM 아키텍처 · 평가 게이트 설계 · 고객 워크플로우로의 통합.</p>
+        <p><strong>대응 치트시트:</strong></p>
+        <ul>
+          <li><strong>RAG 결정:</strong> embedding 선택 · chunking 전략 · retrieval(하이브리드) · reranking.</li>
+          <li><strong>Fine-tune vs RAG vs Prompt:</strong> 언제 무엇을. (지식 최신성=RAG, 포맷/톤=fine-tune, 소량=prompt)</li>
+          <li><strong>Guardrails:</strong> PII 마스킹 · 근거 없는 답 차단 · human-in-the-loop.</li>
+          <li><strong>Eval gate:</strong> 배포 전 통과 기준을 숫자로 (정확도·환각률·기대값).</li>
+        </ul>
+        <p><strong>내 무기:</strong> <a href="#system">FDE 설계 템플릿</a> · KIS 모의투자 <em>eval-gate 기반 자율 워크플로우</em> · 변호사 <em>로컬 마스킹 → Codex → 법제처 MCP</em> 파이프라인</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill red">Step 5 · 30~45분</span> Behavioral · Customer-Empathy</h3>
+        <p><strong>본다:</strong> 코드만큼 <em>고객 공감</em>을 본다. "고객 니즈를 shipped system으로 바꾼 경험".</p>
+        <p><strong>대응:</strong> STAR로. 애매한 요구를 재정의하고, 신뢰를 만들고, 떠난 뒤에도 남을 자산을 놓은 이야기.</p>
+        <p><strong>내 무기:</strong> <a href="#star-bank">STAR 경험은행</a> · <a href="cases/2026-08-02_lawyer-bankruptcy-fde.md">변호사 파산업무 FDE 사례</a> (개인정보 격리 + 고객 자립 신호)</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill">Step 6 · 45~60분</span> Project Deep Dive</h3>
+        <p><strong>본다:</strong> 복잡한 시스템 하나를 골라 아키텍처를 발표하고, <em>빠른 꼬리질문</em> 아래 모든 결정을 방어.</p>
+        <p><strong>대응:</strong> 1개 프로젝트 선정 → 문제/제약 → 설계 → 트레이드오프 → 결과/측정. "내가 소유한 것"을 명확히.</p>
+        <p><strong>내 무기:</strong> 변호사 FDE 사례(2시간 온사이트) 또는 KIS 500일 게이트 시스템 — 둘 다 <em>재정의·설계·측정</em>이 다 있음.</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill green">Step 7 · 30분</span> Final Values Conversation</h3>
+        <p><strong>본다:</strong> 미션 정렬 (AGI가 인류에 이롭게) · 안전 우선 · 협업 태도.</p>
+        <p><strong>대응:</strong> 아부 말고 진정성. 안전·개인정보를 실제로 지킨 사례로 증명 (변호사 사건 <em>지시-데이터 분리</em>). 마지막에 <a href="#questions">내가 물어볼 질문</a> 2~3개.</p>
+      </div>
+
+      <div class="card">
+        <h3>⏱️ 면접 48시간 전 체크</h3>
+        <ul>
+          <li>1개 프로젝트 딥다이브 스크립트 (Step 6용) 소리내어 3회</li>
+          <li>STAR 5개 영어로 90초씩 녹음 재청취 (<a href="#star-bank">경험은행</a>)</li>
+          <li>LLM 설계 치트시트 (RAG/guardrail/eval) 백지 재현</li>
+          <li>CoderPad 실전형 2문제 think-aloud (<a href="#coding">코딩</a>)</li>
+          <li>"Why OpenAI / Why FDE" 2문장 + 물어볼 질문 3개</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="curriculum" class="card">
+      <h2>4주 커리큘럼</h2>
+      <div class="week">
+        <div class="num">Week 1</div>
+        <div>
+          <h3>기본기 복구</h3>
+          <p>Array, HashMap, String, Two pointers. 자기소개 / Why OpenAI / Why FDE / OLED STAR 완성.</p>
+        </div>
+      </div>
+      <div class="week">
+        <div class="num">Week 2</div>
+        <div>
+          <h3>직접 코딩 강화</h3>
+          <p>Stack, Queue, Binary Search, Interval, Sorting, BFS. pytest와 edge case를 습관화.</p>
+        </div>
+      </div>
+      <div class="week">
+        <div class="num">Week 3</div>
+        <div>
+          <h3>FDE형 시스템 설계</h3>
+          <p>API integration, retry/backoff, logging, cache, rate limit, tool calling, eval-driven development.</p>
+        </div>
+      </div>
+      <div class="week">
+        <div class="num">Week 4</div>
+        <div>
+          <h3>모의면접 주간</h3>
+          <p>45분 coding mock + 25분 system design + 20분 behavioral. 실전처럼 영어로 말한다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="coding">
+      <div class="grid2">
+        <div class="card">
+          <h2>직접 코딩 훈련법</h2>
+          <p>Codex는 무기지만, 면접장에서는 네 손이 증명서다.</p>
+          <ul>
+            <li>문제 읽고 제약조건을 먼저 묻는다.</li>
+            <li>brute force를 말하고 개선한다.</li>
+            <li>코드는 짧고 함수형으로 쓴다.</li>
+            <li>edge case 3개를 직접 말한다.</li>
+            <li>마지막에 complexity를 말한다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>오늘의 기본 문제</h2>
+          <pre>Problem: Two Sum
+
+Input: nums, target
+Output: indices of two numbers that add up to target
+
+Approach:
+1. Keep a hash map: value -> index
+2. For each number, compute complement
+3. If complement exists, return indices
+4. Otherwise store current value
+
+Say aloud:
+“This is O(n) time and O(n) space.”</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="english">
+      <div class="card">
+        <h2>영어 면접 핵심 답변</h2>
+        <div class="voice-panel">
+          <h3>이어폰 쉐도윙 모드</h3>
+          <p>
+            아래 버튼을 누르면 영어 답변이 음성으로 나온다.
+            출퇴근길에는 <strong>느리게</strong> 또는 <strong>문장 반복</strong>으로 듣고 따라 말해라.
+          </p>
+          <label for="voiceSelect">Voice</label>
+          <select id="voiceSelect" aria-label="English voice selector"></select>
+          <label for="rateRange">Speed: <span id="rateLabel">0.85</span>x</label>
+          <input id="rateRange" type="range" min="0.55" max="1.15" step="0.05" value="0.85" />
+          <div class="voice-controls">
+            <button class="primary" onclick="speakFullAnswer()">▶ 전체 답변 듣기</button>
+            <button onclick="speakSlow()">🐢 느리게</button>
+            <button onclick="speakCurrentLine()">🔁 현재 문장 반복</button>
+            <button onclick="nextLine()">➡ 다음 문장</button>
+            <button onclick="stopSpeech()">■ 정지</button>
+          </div>
+          <p class="small-note">
+            휴대폰 브라우저에서 처음 한 번은 버튼을 직접 눌러야 음성이 나온다. iPhone/Android 모두 브라우저 기본 영어 음성을 사용한다.
+          </p>
+          <div id="shadowText" class="shadow-text" aria-live="polite"></div>
+        </div>
+        <div class="grid">
+          <div>
+            <h3>Tell me about yourself</h3>
+            <p>I am a manufacturing problem solver with 26 years of experience in display technology, now applying that method to AI-powered deployment systems.</p>
+          </div>
+          <div>
+            <h3>Why OpenAI?</h3>
+            <p>I want to help bring powerful AI into real workflows safely and usefully, especially in complex industrial and operational domains.</p>
+          </div>
+          <div>
+            <h3>Why FDE?</h3>
+            <p>FDE is exactly where I am strongest: understanding messy customer problems, structuring them, building working systems, and driving adoption.</p>
+          </div>
+        </div>
+        <pre>90-second anchor:
+I am not a traditional software engineer by background.
+I am a manufacturing problem solver who has spent 26 years turning complex real-world problems into validated, repeatable systems.
+Recently, I have been applying that same method to AI-powered workflows and deployment systems.</pre>
+      </div>
+    </section>
+
+    <section id="interview-bank" class="card">
+      <h2>영어면접 답변은행 — OpenAI FDE 맞춤</h2>
+      <p>
+        아래 영어 문단은 모두 <strong>듣기 · 느리게 · 쉐도윙</strong> 버튼이 자동으로 붙는다.
+        외우는 목표는 긴 문장이 아니라 <strong>짧은 결론 → 내 사례 → FDE 연결</strong>이다.
+      </p>
+      <div class="grid2">
+        <div>
+          <h3>1. Tell me about yourself</h3>
+          <pre>I am a display manufacturing and quality engineer with 26 years of experience across LCD, OLED, and Micro LED.
+I have worked on materials, process, equipment, reliability, investment, quality, patents, and data analysis.
+Recently, I have been using AI tools like Codex and ChatGPT to turn domain problems into working web apps, automation workflows, and decision-support systems.
+I believe this mix of deep domain experience and AI-enabled execution fits the Forward Deployed Engineer role very well.</pre>
+        </div>
+        <div>
+          <h3>2. Why OpenAI?</h3>
+          <pre>I am excited about OpenAI because I believe AI should help people solve real problems, not just generate text.
+In my career, I have seen many problems in manufacturing, quality, legal work, education, and finance that are still handled manually.
+With OpenAI models and Codex-like tools, I can help customers convert these problems into production systems.
+That is meaningful to me.</pre>
+        </div>
+        <div>
+          <h3>3. Why FDE?</h3>
+          <pre>FDE is attractive to me because it sits between customer problems and production systems.
+That is very similar to how I have worked in manufacturing quality.
+I listen to domain experts, define the problem, build a small pilot, verify it with data, improve it, and then document and deploy it.
+That workflow is natural to me.</pre>
+        </div>
+        <div>
+          <h3>4. Greatest strength</h3>
+          <pre>My key strength is structured problem solving.
+I do not jump to a solution first.
+I define the phenomenon, create hypotheses, collect data, test them, and then convert the result into a repeatable system.
+This helped me produce patents, papers, and practical quality improvements in display manufacturing.</pre>
+        </div>
+        <div>
+          <h3>5. Weakness</h3>
+          <pre>Sometimes I go too deep into technical details.
+In manufacturing, details matter, so this habit helped me for many years.
+But in customer-facing AI deployment, I know I must communicate simply and prioritize speed.
+So I now practice summarizing complex work into clear goals, trade-offs, and next actions.</pre>
+        </div>
+        <div>
+          <h3>6. Pressure handling</h3>
+          <pre>I handle pressure by making the situation measurable.
+When things are unclear, I first separate facts, assumptions, and unknowns.
+Then I define the next smallest test that can reduce uncertainty.
+This helps me stay calm and keep the team moving.</pre>
+        </div>
+        <div>
+          <h3>7. OLED lifetime web app</h3>
+          <pre>In a recent OLED lifetime project, the initial request was ambiguous.
+First, I asked domain experts how lifetime is calculated in practice.
+Then I made a plan: measure initial optical and color properties with CA-310, collect time-series intensity using photodiodes, correlate White, Red, Green, and Blue color coordinates, and estimate degradation using an SE-based formula.
+I used Codex to build pilots step by step, verified each part, and expanded it into a web app that generates a final report.
+I also documented the whole workflow in README and SKILL.md so the process could be reused.
+This is exactly how I like to work: domain logic first, small pilot, data verification, then production workflow.</pre>
+        </div>
+        <div>
+          <h3>8. AI seminar / adoption</h3>
+          <pre>In my quality team, I prepared AI seminars to help engineers use AI in real work.
+The goal was not to show fancy tools.
+The goal was to change the workflow.
+I explained token-saving, Codex orchestration, loop engineering, and safe use of company AI systems.
+I also emphasized that AI can create productivity gaps.
+People who can ask good questions, verify results, and automate workflows will become much more productive.
+This experience helped me understand that adoption is not just technical.
+It is also communication, trust, and behavior change.</pre>
+        </div>
+        <div>
+          <h3>9. KOSPI paper trading side project</h3>
+          <pre>As a side project, I built a KOSPI prediction and paper-trading system.
+The goal is not financial advice.
+It is a controlled experiment to test whether prediction signals can become profitable trading decisions.
+The system records predictions, trades, reasons, dashboards, errors, and postmortems.
+It taught me that model accuracy is not enough.
+Real systems need evaluation, risk controls, logging, and feedback loops.</pre>
+        </div>
+        <div>
+          <h3>10. Lawyer workflow automation</h3>
+          <pre>I am also designing an AI-assisted workflow for a bankruptcy lawyer.
+The goal is to review around 12 cases per month more efficiently.
+The system would collect documents, classify missing information, summarize risks, prepare draft memos, and keep human approval at key legal decision points.
+This is a good example of forward-deployed AI: understand the domain, build workflow tools, and keep the expert in control.</pre>
+        </div>
+        <div>
+          <h3>11. Am I a strong programmer?</h3>
+          <pre>I am not a traditional full-time software engineer.
+My background is hardware, manufacturing, quality, and data analysis.
+But I have built many practical tools using R, tidyverse, Shiny, Streamlit, Python, FastAPI, and AI coding tools.
+My advantage is that I know how to define the real problem, validate outputs, and use AI tools to move fast.
+I am actively improving my direct coding skills, especially Python and system design.</pre>
+        </div>
+        <div>
+          <h3>12. 60-second pitch</h3>
+          <pre>I am a manufacturing quality engineer with 26 years of experience in display technology, including LCD, OLED, and Micro LED.
+My strength is solving ambiguous problems with data, experiments, and structured reasoning.
+Recently, I have been using AI tools like Codex and ChatGPT to build practical systems: quality analysis tools, automation workflows, dashboards, and AI seminars for engineers.
+I am not a traditional software engineer, but I can bridge domain experts, AI models, and working software.
+That is why I believe I can contribute as a Forward Deployed Engineer.</pre>
+        </div>
+        <div>
+          <h3>13. Cross-functional AI work</h3>
+          <pre>Recently, I have found myself helping people outside my formal job function.
+For example, I helped think through legal workflow automation, education communication systems, investment dashboards, travel web apps, and internal AI training materials.
+This matches what OpenAI research suggests: AI allows people to work across traditional job boundaries.
+I enjoy that kind of work because I can combine my structured problem-solving habit with other people's domain expertise.
+For an FDE, I think this is important because customers rarely bring problems that fit neatly inside one job title.</pre>
+        </div>
+        <div>
+          <h3>14. What changed after using AI?</h3>
+          <pre>Before AI, I mainly solved problems inside my own manufacturing and quality domain.
+After using AI tools, I started helping with problems in other domains as well.
+The common pattern is the same: listen carefully, define the workflow, identify the data, build a small prototype, and validate the result.
+AI expands the range of problems I can attempt, but it does not remove the need for judgment.
+That is why I think my manufacturing background is still valuable in an AI deployment role.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="numbers" class="card">
+      <h2>숫자로 어필하는 내 경력</h2>
+      <p>
+        면접에서 숫자는 신뢰를 만든다. 길게 설명하지 말고,
+        <strong>숫자 → 의미 → FDE 연결</strong> 순서로 말한다.
+      </p>
+      <div class="grid">
+        <div class="metric"><strong>26년</strong><span>디스플레이 제조업 문제해결 경험</span></div>
+        <div class="metric"><strong>4세대</strong><span>LCD · OLED · Micro LED · 차량/신기술 흐름 경험</span></div>
+        <div class="metric"><strong>67건</strong><span>등록특허 기반 기술 자산화 경험</span></div>
+        <div class="metric"><strong>20+</strong><span>분석/계측 장비와 품질 데이터 경험</span></div>
+        <div class="metric"><strong>10+</strong><span>AI/자동화/웹앱/오케스트레이션 사이드 프로젝트</span></div>
+        <div class="metric"><strong>3개월</strong><span>KIS 모의투자 모델 검증 오디션 운영</span></div>
+      </div>
+      <pre>Short English:
+I have 26 years of experience in display manufacturing.
+I worked across LCD, OLED, Micro LED, materials, process, equipment, quality, and reliability.
+I also have 67 registered patents, which shows that I do not just solve problems once.
+I turn solutions into reusable technical assets.
+
+FDE angle:
+This background helps me understand messy real-world systems, communicate with domain experts, and turn unclear problems into working AI-enabled workflows.</pre>
+    </section>
+
+    <section id="jd-keywords" class="card">
+      <h2>JD 키워드 중심 두괄식 답변법</h2>
+      <p>
+        OpenAI FDE 면접 답변은 먼저 결론을 말하고, 바로 JD 키워드에 연결한다.
+        긴 설명보다 <strong>결론 → JD 키워드 → 내 사례 → 숫자/결과</strong> 순서로 간다.
+      </p>
+      <div class="grid2">
+        <div>
+          <h3>JD 키워드 → 내 언어</h3>
+          <ul>
+            <li><strong>Own technical delivery</strong> — 모호한 문제를 끝까지 작동하는 시스템으로 만든다.</li>
+            <li><strong>Discovery</strong> — 고객/현장 문제를 먼저 듣고 구조화한다.</li>
+            <li><strong>Technical scoping</strong> — 작게 시작할 범위와 실패 조건을 정한다.</li>
+            <li><strong>System design</strong> — 데이터, 도구, 사람, 평가 기준을 연결한다.</li>
+            <li><strong>Production rollout</strong> — 파일럿을 실제 운영 흐름으로 확장한다.</li>
+            <li><strong>Workflow impact</strong> — 시간, 품질, 채택률, 재현성으로 효과를 측정한다.</li>
+            <li><strong>Eval-driven feedback</strong> — 결과를 보고 모델/규칙/제품을 고친다.</li>
+            <li><strong>Customer teams</strong> — 도메인 전문가와 같은 언어로 협업한다.</li>
+            <li><strong>Contribute directly in code</strong> — 필요하면 직접 코딩하고 테스트한다.</li>
+            <li><strong>Scope-speed-quality tradeoff</strong> — 시간이 부족하면 범위를 줄이고 품질은 지킨다.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>나의 포지셔닝</h3>
+          <pre>I am not a software-only engineer.
+I am an AI-native hardware and manufacturing engineer.
+My value is that I understand real physical systems, messy factory data, domain experts, and customer workflows.
+My strongest coding-related skill is data analysis and visualization with R.
+I have used R-style thinking to explore data, visualize trends, test hypotheses, and communicate evidence clearly.
+My common workflow is: validate the logic with tidyverse in R, build a quick Shiny or Streamlit prototype with AI, and then productize it with React, Flask, Vue, or FastAPI when deployment is needed.
+I use AI tools like Codex to turn that domain knowledge into working software faster.
+For FDE, this is useful because many customers do not only need code.
+They need someone who can discover the real problem, scope the system, build with AI tools, validate the output, and drive adoption.</pre>
+          <h3>내 개발 파이프라인</h3>
+          <pre>1. Data validation: R + tidyverse
+2. Visualization: ggplot-style exploratory analysis
+3. Fast prototype: AI-assisted Shiny or Streamlit app
+4. Productization: React, Flask, Vue, or FastAPI
+5. Deployment: GitHub Pages, server, cron, API, dashboard
+
+FDE angle:
+I do not start from the framework.
+I start from the customer workflow and data.
+Then I choose the smallest tool stack that can prove value and scale.</pre>
+          <h3>4문장 답변 공식</h3>
+          <pre>1. Conclusion first.
+2. Use one JD keyword.
+3. Give one concrete experience.
+4. Finish with result, metric, or learning.</pre>
+          <h3>면접장 첫 문장 예시</h3>
+          <pre>Why FDE?
+I want to own technical delivery from discovery to production rollout.
+My strength is turning ambiguous field problems into working systems.
+In manufacturing, I learned to connect data, domain experts, experiments, and measurable impact.
+That is exactly the kind of work I want to do as an FDE.
+
+Strength?
+My strength is discovery and technical scoping.
+I listen to the field first, define the smallest useful pilot, test it with real data, and expand only after validation.
+
+Weakness defense?
+I am not a traditional software-only engineer.
+But that is also my differentiation.
+I am an AI-native hardware engineer who can connect physical systems, field data, domain experts, and software deployment.
+I am stronger in R-based data analysis and visualization than in pure Python algorithm coding.
+So I position Python as an implementation skill I am strengthening, while R and data visualization are already practical strengths.
+I am deliberately strengthening direct coding, testing, and system design every day.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="star">
+      <div class="card">
+        <h2>STAR 무기 1호 — OLED Lifetime Web App</h2>
+        <p><span class="tag">Ambiguity</span><span class="tag">Domain expert collaboration</span><span class="tag">Pilot-first</span><span class="tag">Real data</span><span class="tag">Documentation</span></p>
+        <div class="grid2">
+          <div>
+            <h3>S — Situation</h3>
+            <p>OLED 수명 계산 로직이 명확한 소프트웨어로 정리돼 있지 않고, 계측 전문가의 암묵지가 필요했다.</p>
+            <h3>T — Task</h3>
+            <p>CA-310 초기 광특성/색좌표와 photodiode 시간별 intensity 데이터를 연결해 재현 가능한 웹앱과 리포트를 만든다.</p>
+          </div>
+          <div>
+            <h3>A — Action</h3>
+            <p>전문가 로직을 뽑고 Plan을 세운 뒤, 토큰 절약을 위해 파일럿 → 검증 → 확장 방식으로 구현했다.</p>
+            <h3>R — Result</h3>
+            <p>단순 계산기가 아니라 SKILL.md, README.md, GitHub에 남길 수 있는 반복 가능한 운영 워크플로로 만들었다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="star-bank" class="card">
+      <h2>STAR 경험은행 — 면접장에서 꺼내 쓸 카드</h2>
+      <p>
+        모든 답변은 길게 외우지 않는다. <strong>상황 1문장 → 내가 한 일 2문장 → 결과/배움 1문장</strong>으로 간다.
+      </p>
+      <div class="grid2">
+        <div>
+          <h3>1. OLED 수명 웹앱</h3>
+          <pre>S: OLED lifetime calculation depended on expert tacit knowledge.
+T: I needed to turn it into a repeatable web workflow.
+A: I extracted the logic from experts, connected CA-310 and photodiode data, built a pilot, and expanded step by step.
+R: The result was a reusable workflow with README and SKILL.md.</pre>
+        </div>
+        <div>
+          <h3>2. 품질 root-cause 분석</h3>
+          <pre>S: A display quality issue could not be explained by one parameter.
+T: I had to identify the root cause across material, process, and equipment.
+A: I separated facts from assumptions, designed experiments, and compared data across conditions.
+R: We found the mechanism and converted the lesson into prevention logic.</pre>
+        </div>
+        <div>
+          <h3>3. 특허 67건 — 해결을 자산화</h3>
+          <pre>S: Many technical fixes disappear if they are not captured.
+T: I wanted solutions to become reusable technical assets.
+A: I documented mechanisms, claims, experiments, and implementation paths.
+R: I accumulated 67 registered patents, showing a habit of turning solutions into assets.</pre>
+        </div>
+        <div>
+          <h3>4. AI 세미나 / 내부 전파</h3>
+          <pre>S: Many engineers were unsure how to use AI in real work.
+T: I wanted to make AI practical, not just theoretical.
+A: I built seminar materials with real internal-style examples, workflows, and limitations.
+R: I helped people see AI as a daily work tool, not a toy.</pre>
+        </div>
+        <div>
+          <h3>5. Telegram + Codex 오케스트레이션</h3>
+          <pre>S: I needed a way to operate AI work from anywhere.
+T: The system had to receive instructions, execute tasks, and report back.
+A: I connected Telegram, server scripts, Codex, GitHub, cron, and handoff documents.
+R: I created a human-in-the-loop AI operations workflow.</pre>
+        </div>
+        <div>
+          <h3>6. KIS 모의투자 디버깅</h3>
+          <pre>S: The paper-trading system stayed at only one share.
+T: I had to find why live-paper sizing was not working.
+A: I checked logs and found API rate limits and overly conservative fallback logic.
+R: I added retry, fallback sizing, and tests, unblocking real-size simulation.</pre>
+        </div>
+        <div>
+          <h3>7. 회생법원 MCP</h3>
+          <pre>S: Useful auction items were scattered across court websites.
+T: I wanted a monitoring tool for laptops, Apple devices, equipment, and assets.
+A: I generalized the Seoul-only watcher into a nationwide MCP with court rules and cron alerts.
+R: The workflow became reusable and deployable through GitHub.</pre>
+        </div>
+        <div>
+          <h3>8. 변호사 업무 자동화</h3>
+          <pre>S: Personal rehabilitation and bankruptcy work has repeated document-heavy steps.
+T: I needed to define an agent workflow that could reduce manual burden.
+A: I mapped the process, separated legal judgment from automation, and designed document/checklist flows.
+R: The project became a candidate FDE-style legal operations automation case.</pre>
+        </div>
+        <div>
+          <h3>9. 영어학원 커뮤니케이션 시스템</h3>
+          <pre>S: Teachers, students, and parents need simple communication loops.
+T: The goal was to reduce friction and improve visibility.
+A: I framed users, messages, status updates, and feedback loops as a lightweight system.
+R: It became a practical example of customer workflow digitization.</pre>
+        </div>
+        <div>
+          <h3>10. 푸드트럭 위치알리미</h3>
+          <pre>S: Food truck customers often do not know the current location.
+T: I wanted to use photo metadata to update location naturally.
+A: I designed a web app that extracts location context from photos and turns it into a customer-facing update.
+R: This shows my habit of finding AI opportunities in everyday workflows.</pre>
+        </div>
+        <div>
+          <h3>11. 가속평가 / 습도 모델링</h3>
+          <pre>S: Reliability tests require correct acceleration models.
+T: Temperature, voltage, force, and humidity needed different mathematical treatment.
+A: I structured Arrhenius, power-law, and humidity acceleration logic with display examples.
+R: I converted quality knowledge into explainable training material.</pre>
+        </div>
+        <div>
+          <h3>12. GitHub 프로필 정리</h3>
+          <pre>S: After applying to OpenAI, my public GitHub needed to represent me clearly.
+T: It had to show FDE-relevant work, not random projects.
+A: I reframed repositories around quality, AI deployment, orchestration, and practical systems.
+R: The profile now supports the interview narrative.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenario" class="card">
+      <h2>대표 경험 기반 시나리오 질문 답변</h2>
+      <p>내 성격이 드러나야 한다. 핵심 성격은 <strong>데이터 집착, 현장 존중, 작게 검증, 끝까지 문서화</strong>다.</p>
+      <div class="grid2">
+        <div>
+          <h3>Q. A customer gives you an ambiguous problem. What do you do?</h3>
+          <pre>I start with discovery and technical scoping, not immediate coding.
+First, I clarify the workflow and talk to domain experts.
+Then I identify the data sources, assumptions, and failure modes.
+After that, I build a small pilot, validate it with real data, and expand step by step.
+That is how I worked on the OLED lifetime web app.</pre>
+        </div>
+        <div>
+          <h3>Q. Tell me about your working style.</h3>
+          <pre>My working style is structured, data-driven, and field-oriented.
+I am data-driven, but I also respect field experience.
+In manufacturing, many important answers are hidden in the gap between data, equipment, materials, and people.
+So I listen first, structure the problem, test hypotheses, and document the result.
+My style is calm, persistent, and practical.</pre>
+        </div>
+        <div>
+          <h3>Q. What if the AI system gives a wrong answer?</h3>
+          <pre>I treat it as an eval and system-design problem, not just a model problem.
+I check the input data, prompt, tool calls, logs, fallback logic, and evaluation criteria.
+For example, in my KIS paper-trading system, the strategy looked inactive.
+But the real issue was API rate limiting and conservative fallback logic.
+I fixed it with retry, fallback sizing, and tests.</pre>
+        </div>
+        <div>
+          <h3>Q. How do you work with people from different domains?</h3>
+          <pre>I embed closely with domain teams and translate between technical and field language.
+In my manufacturing career, I often worked across quality, process, material, equipment, and management teams.
+I try to separate facts from assumptions and create a shared decision framework.
+That is also important for FDE work.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenario-bank" class="card">
+      <h2>상황대처 시나리오 — 짧게 답하는 훈련</h2>
+      <div class="grid2">
+        <div>
+          <h3>1. 고객 요구가 모호할 때</h3>
+          <pre>I would not jump into implementation.
+I would first clarify the workflow, success metric, data source, and user pain point.
+Then I would build a small pilot and validate it with real users.</pre>
+        </div>
+        <div>
+          <h3>2. 시간이 부족할 때</h3>
+          <pre>I reduce scope, not quality.
+I identify the smallest useful workflow, ship that first, and leave a clear path for expansion.
+This is how I usually work with pilot-based delivery.</pre>
+        </div>
+        <div>
+          <h3>3. 모델이 틀릴 때</h3>
+          <pre>I check whether the failure is from the model, data, prompt, tool call, or evaluation.
+Then I add logging and tests.
+I do not want the same failure to happen twice.</pre>
+        </div>
+        <div>
+          <h3>4. 고객이 AI를 믿지 않을 때</h3>
+          <pre>I would not ask them to trust the AI blindly.
+I would show small, measurable wins.
+Trust comes from repeatable results, clear limitations, and human control.</pre>
+        </div>
+        <div>
+          <h3>5. 이해관계자가 충돌할 때</h3>
+          <pre>I separate facts, assumptions, and preferences.
+Then I create a shared decision framework.
+In manufacturing, this was often the only way to move cross-functional teams.</pre>
+        </div>
+        <div>
+          <h3>6. 내 코드가 실패했을 때</h3>
+          <pre>I first reproduce the failure.
+Then I inspect logs, isolate the failing layer, write a test, and fix the smallest cause.
+After that, I document the lesson.</pre>
+        </div>
+        <div>
+          <h3>7. 내가 모르는 도메인을 맡았을 때</h3>
+          <pre>I find the domain expert first.
+I ask them to explain the real workflow and edge cases.
+Then I translate that into a system design and validate it with a pilot.</pre>
+        </div>
+        <div>
+          <h3>8. 속도와 안전이 충돌할 때</h3>
+          <pre>I ship fast only inside a safe boundary.
+For production, I use guardrails, logs, fallback, and clear human override.
+Speed without control is not good deployment.</pre>
+        </div>
+        <div>
+          <h3>9. 영어가 막힐 때</h3>
+          <pre>I would slow down and say it simply.
+My goal is not fancy English.
+My goal is clear thinking, clear ownership, and clear communication.</pre>
+        </div>
+        <div>
+          <h3>10. 왜 네가 FDE에 맞는가?</h3>
+          <pre>Because I have spent my career solving ambiguous real-world problems.
+I know how to work with domain experts, data, experiments, and constraints.
+Now I want to apply that ability to AI deployment.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="short-english" class="card">
+      <h2>짧게 말하는 영어 카드</h2>
+      <p>영어를 길게 잘하려고 하지 말자. 짧게, 정확하게, 자신 있게 말하면 된다.</p>
+      <div class="grid">
+        <div>
+          <h3>내 정체성</h3>
+          <pre>I am a manufacturing problem solver.
+I am an AI-native hardware engineer.
+I use data, experiments, R visualization, and AI tools to build practical systems.</pre>
+        </div>
+        <div>
+          <h3>내 강점</h3>
+          <pre>My strength is turning ambiguous problems into repeatable workflows.
+I am especially strong at R-based data analysis and visualization.
+I often validate logic with tidyverse first, then build Shiny, Streamlit, or production web apps with AI support.</pre>
+        </div>
+        <div>
+          <h3>코딩 약점 방어</h3>
+          <pre>I am not a traditional software engineer by background.
+But my differentiation is real-world hardware and manufacturing experience.
+I am stronger in R data analysis and visualization than in pure Python algorithm coding.
+I use AI tools well, and I am actively training my Python hands-on coding.
+I can explain the logic, test it, and improve it.</pre>
+        </div>
+        <div>
+          <h3>AI 사용 설명</h3>
+          <pre>I use AI tools to accelerate implementation.
+But I own the problem framing, validation, and final delivery.
+AI is my implementation accelerator, not my replacement for judgment.
+My pattern is R validation first, AI-assisted prototype second, and deployable web system third.</pre>
+        </div>
+        <div>
+          <h3>고객 대응</h3>
+          <pre>I would first clarify the real workflow.
+Then I would build a small pilot and measure adoption and impact.</pre>
+        </div>
+        <div>
+          <h3>실패 대응</h3>
+          <pre>When something fails, I look at logs, data, interfaces, and assumptions.
+Then I add tests so the same failure does not repeat.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="system">
+      <div class="grid2">
+        <div class="card">
+          <h2>FDE 시스템 설계 템플릿</h2>
+          <ol>
+            <li>Customer problem</li>
+            <li>User workflow</li>
+            <li>Data sources</li>
+            <li>System components</li>
+            <li>Failure modes</li>
+            <li>Evaluation metrics</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h2>네 프로젝트를 FDE 언어로</h2>
+          <ul>
+            <li>OLED 수명 웹앱 → domain workflow automation</li>
+            <li>회생법원 MCP → public-data monitoring tool</li>
+            <li>KIS 모의투자 → eval-driven autonomous workflow</li>
+            <li>Telegram+Codex → human-in-the-loop orchestration</li>
+            <li>AI 세미나 → internal enablement and adoption</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions" class="card">
+      <h2>면접에서 내가 물어볼 질문</h2>
+      <p>좋은 질문은 “이 사람이 이미 FDE처럼 생각한다”는 신호다.</p>
+      <div class="grid2">
+        <div>
+          <h3>팀/역할 이해 질문</h3>
+          <ul>
+            <li>What does success look like for an FDE in Seoul during the first six months?</li>
+            <li>What types of customers or industries will the Seoul FDE team focus on first?</li>
+            <li>How does the FDE team balance customer delivery with feedback to product and research teams?</li>
+          </ul>
+        </div>
+        <div>
+          <h3>실행/평가 질문</h3>
+          <ul>
+            <li>How do you evaluate whether an AI deployment is truly adopted by users?</li>
+            <li>What are the most common failure modes you see in enterprise AI deployments?</li>
+            <li>How much ownership does an FDE have from discovery to production rollout?</li>
+          </ul>
+        </div>
+        <div>
+          <h3>내 강점 연결 질문</h3>
+          <ul>
+            <li>Do you see opportunities for FDE work in manufacturing, quality, or industrial engineering domains?</li>
+            <li>How valuable is deep domain experience when deploying frontier models into complex customer workflows?</li>
+            <li>How can someone with a manufacturing problem-solving background ramp up fastest as an FDE?</li>
+          </ul>
+        </div>
+        <div>
+          <h3>문화/성장 질문</h3>
+          <ul>
+            <li>What behaviors distinguish the strongest FDEs at OpenAI?</li>
+            <li>How does the team give feedback after deployments?</li>
+            <li>What should I study before joining to become useful quickly?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="model-answers" class="card">
+      <h2>모범답안 — 면접관이 물으면 이렇게 답한다</h2>
+      <p>
+        긴 문장 외우지 말고 첫 문장만 강하게 말해라.
+        핵심은 <strong>두괄식 → 짧은 사례 → FDE 연결</strong>이다.
+      </p>
+      <div class="grid2">
+        <div>
+          <h3>Q. Why should we hire you as an FDE?</h3>
+          <pre>You should hire me because I can bridge real-world domain problems and AI-powered systems.
+I have 26 years of manufacturing and quality experience, so I understand messy workflows, measurement data, operational constraints, and domain experts.
+At the same time, I use AI tools to build prototypes, dashboards, automation workflows, and deployment-ready systems.
+My value is not only writing code.
+My value is discovering the real problem, scoping the right system, validating it, and driving adoption.</pre>
+        </div>
+        <div>
+          <h3>Q. What makes you different from a traditional software engineer?</h3>
+          <pre>A traditional software engineer may be stronger in pure coding.
+My differentiation is that I bring 26 years of hardware, manufacturing, reliability, and quality problem-solving experience.
+I know how to work with physical systems, noisy data, field constraints, and domain experts.
+With AI tools, I can turn that domain understanding into working software faster.
+For FDE work, I think this combination is valuable because customer problems are rarely just software problems.</pre>
+        </div>
+        <div>
+          <h3>Q. How do you use AI tools without losing ownership?</h3>
+          <pre>I use AI tools as an implementation accelerator, not as a replacement for judgment.
+I own the problem definition, assumptions, validation logic, and final decision.
+For example, when I use Codex, I first define the plan, constraints, and stop condition.
+Then I ask it to build a pilot, and I verify the result with tests, logs, and domain knowledge.
+This allows me to move faster while keeping responsibility.</pre>
+        </div>
+        <div>
+          <h3>Q. Tell me about working outside your job function.</h3>
+          <pre>Recently, I have been helping people with problems outside my formal job function.
+I helped design workflows for a lawyer's document review process, an education communication system, a food truck location web app, and investment dashboards.
+This is possible because AI lowers the barrier between job functions.
+But the core skill is still the same: understand the workflow, structure the problem, build a pilot, and validate the output.
+I enjoy this because it lets me apply my problem-solving method beyond manufacturing.</pre>
+        </div>
+        <div>
+          <h3>Q. How would you start with a new customer?</h3>
+          <pre>I would start with discovery, not coding.
+First, I would understand the customer's actual workflow, pain points, data sources, and decision points.
+Then I would define a small, measurable use case that can prove value quickly.
+After that, I would build a pilot, collect user feedback, and decide whether to expand, modify, or stop.
+This reduces risk and keeps the deployment grounded in real impact.</pre>
+        </div>
+        <div>
+          <h3>Q. How do you measure success?</h3>
+          <pre>I measure success by workflow impact, not by whether the demo looks impressive.
+Good metrics include time saved, error reduction, adoption rate, user satisfaction, and decision quality.
+For model-based systems, I also want evaluation data and feedback loops.
+If users do not adopt the system, or if the system does not change the workflow, then it is not successful yet.</pre>
+        </div>
+        <div>
+          <h3>Q. What is your biggest risk for this role?</h3>
+          <pre>My biggest risk is that I am not a traditional software engineer by background.
+I am stronger in R-based data analysis, visualization, manufacturing systems, and AI-assisted implementation.
+So I am deliberately training Python, system design, and live coding every day.
+But I also believe my domain depth and field problem-solving experience are difficult to replace.
+My goal is to combine both: stronger coding hands and deep real-world judgment.</pre>
+        </div>
+        <div>
+          <h3>Q. What is your personal mission?</h3>
+          <pre>My personal mission is to help people solve real problems with data and AI.
+I like problems that are messy, practical, and cross-functional.
+After 26 years in manufacturing, I want my experience to be useful beyond one company or one industry.
+If I can use AI tools like Codex and OpenAI models to help many customers build better workflows, that would be very meaningful to me.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="scoreboard" class="card">
+      <h2>친구의 잔소리 체크리스트</h2>
+      <ul class="todo">
+        <li>☑ 오늘 Python 문제를 Codex 없이 풀었나?</li>
+        <li>☑ 영어로 문제 접근을 말했나?</li>
+        <li>☑ edge case 3개를 말했나?</li>
+        <li>☑ STAR 하나를 90초로 줄였나?</li>
+        <li>☑ “AI가 해줬다”가 아니라 “내가 문제를 정의하고 검증했다”로 말했나?</li>
+        <li>☑ 현 직장 기밀을 빼고도 충분히 강하게 설명했나?</li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="footer">
+    Built by waterfirst · OpenAI FDE Preparation · Updated 2026-08-02
+  </div>
+  <script>
+    const shadowLines = [
+      "I am a manufacturing problem solver with 26 years of experience in display technology.",
+      "I am not a software-only engineer. I am an AI-native hardware and manufacturing engineer.",
+      "I worked across LCD, OLED, Micro LED, materials, process, equipment, quality, and reliability.",
+      "I have 67 registered patents, which shows that I turn solutions into reusable technical assets.",
+      "My strongest coding-related skill is R-based data analysis and visualization.",
+      "I use R-style data thinking to explore trends, test hypotheses, and communicate evidence clearly.",
+      "I often validate logic with tidyverse in R before building a full application.",
+      "Then I use AI tools to build Shiny or Streamlit prototypes quickly.",
+      "When the prototype proves value, I productize it with React, Flask, Vue, or FastAPI.",
+      "I am strengthening Python for production implementation, while R is already one of my practical strengths.",
+      "My differentiation is that I understand physical systems, messy factory data, domain experts, and customer workflows.",
+      "I use AI tools like Codex to turn domain knowledge into working software faster.",
+      "I own end-to-end delivery from ambiguous problem discovery to a working system.",
+      "In FDE terms, I focus on discovery, technical scoping, system design, production rollout, and measurable workflow impact.",
+      "I reduce scope, not quality, when time is limited.",
+      "I use eval-driven feedback to improve the workflow, not just the model.",
+      "One project that reflects how I work is an OLED lifetime analysis web app I recently started building.",
+      "The problem was initially ambiguous because the calculation logic was not already packaged into software.",
+      "It depended on domain expertise from engineers who understood the measurement process.",
+      "So the first thing I did was talk to the experts and extract the actual logic step by step.",
+      "The workflow used initial optical characteristics and color coordinates measured by a Minolta CA-310.",
+      "It also used time-series intensity data measured by photodiodes.",
+      "My job was to turn that expert-driven process into a repeatable system.",
+      "To do that efficiently, I created a plan first and used a pilot-based approach.",
+      "Instead of building everything at once, I implemented one piece at a time, tested it, validated the output, and then expanded it.",
+      "That helped reduce token usage, reduce rework, and keep the system grounded in real results.",
+      "Technically, I connected to the server, pulled the measurement data, and correlated WHITE, RED, GREEN, and BLUE color data with intensity trends.",
+      "Then I applied the SE-based estimation logic and designed the system to generate a final report automatically.",
+      "I also documented the full workflow in SKILL.md and README.md so it could be reused and shared through GitHub.",
+      "What I am proud of is that I did not just build a tool.",
+      "I translated tacit expert knowledge into an operational workflow that other people can repeat, extend, and deploy.",
+      "When something fails, I reproduce the failure, inspect the logs, isolate the failing layer, write a test, and fix the smallest cause.",
+      "My goal is not fancy English. My goal is clear thinking, clear ownership, and clear communication.",
+      "I use AI tools to accelerate implementation, but I own the problem framing, validation, and final delivery."
+      ,"I am excited about OpenAI because I believe AI should help people solve real problems, not just generate text."
+      ,"FDE is attractive to me because it sits between customer problems and production systems."
+      ,"I listen to domain experts, define the problem, build a small pilot, verify it with data, improve it, and then document and deploy it."
+      ,"My key strength is structured problem solving."
+      ,"I define the phenomenon, create hypotheses, collect data, test them, and then convert the result into a repeatable system."
+      ,"Sometimes I go too deep into technical details, so I now practice summarizing complex work into clear goals, trade-offs, and next actions."
+      ,"I handle pressure by making the situation measurable."
+      ,"When things are unclear, I separate facts, assumptions, and unknowns."
+      ,"In a recent OLED lifetime project, the initial request was ambiguous."
+      ,"I asked domain experts how lifetime is calculated in practice."
+      ,"I used Codex to build pilots step by step, verified each part, and expanded it into a web app that generates a final report."
+      ,"In my quality team, I prepared AI seminars to help engineers use AI in real work."
+      ,"The goal was not to show fancy tools. The goal was to change the workflow."
+      ,"AI can create productivity gaps because people who can ask good questions, verify results, and automate workflows become much more productive."
+      ,"As a side project, I built a KOSPI prediction and paper-trading system."
+      ,"It taught me that model accuracy is not enough. Real systems need evaluation, risk controls, logging, and feedback loops."
+      ,"I am designing an AI-assisted workflow for a bankruptcy lawyer."
+      ,"This is a good example of forward-deployed AI: understand the domain, build workflow tools, and keep the expert in control."
+      ,"I am not a traditional full-time software engineer, but I have built many practical tools using R, tidyverse, Shiny, Streamlit, Python, FastAPI, and AI coding tools."
+      ,"My advantage is that I know how to define the real problem, validate outputs, and use AI tools to move fast."
+      ,"Recently, I have found myself helping people outside my formal job function."
+      ,"This matches what OpenAI research suggests: AI allows people to work across traditional job boundaries."
+      ,"I enjoy that kind of work because I can combine my structured problem-solving habit with other people's domain expertise."
+      ,"Customers rarely bring problems that fit neatly inside one job title."
+      ,"You should hire me because I can bridge real-world domain problems and AI-powered systems."
+      ,"My value is discovering the real problem, scoping the right system, validating it, and driving adoption."
+      ,"I use AI tools as an implementation accelerator, not as a replacement for judgment."
+      ,"If users do not adopt the system, or if the system does not change the workflow, then it is not successful yet."
+      ,"After 26 years in manufacturing, I want my experience to be useful beyond one company or one industry."
+    ];
+
+    let voices = [];
+    let currentLine = 0;
+    let speakingAll = false;
+
+    const shadowText = document.getElementById("shadowText");
+    const voiceSelect = document.getElementById("voiceSelect");
+    const rateRange = document.getElementById("rateRange");
+    const rateLabel = document.getElementById("rateLabel");
+
+    function renderLines() {
+      shadowText.innerHTML = shadowLines.map((line, idx) =>
+        `<span class="shadow-line ${idx === currentLine ? "active" : ""}" onclick="setLine(${idx}); speakCurrentLine();">${idx + 1}. ${line}</span>`
+      ).join("");
+    }
+
+    function loadVoices() {
+      voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+      const englishVoices = voices.filter(v => (v.lang || "").toLowerCase().startsWith("en"));
+      const list = englishVoices.length ? englishVoices : voices;
+      voiceSelect.innerHTML = list.map((v, idx) =>
+        `<option value="${voices.indexOf(v)}">${v.name} · ${v.lang}</option>`
+      ).join("");
+      const preferred = voices.findIndex(v =>
+        /en-us/i.test(v.lang) && /female|samantha|google|natural|premium/i.test(v.name)
+      );
+      if (preferred >= 0) voiceSelect.value = String(preferred);
+    }
+
+    function selectedVoice() {
+      const idx = Number(voiceSelect.value);
+      return Number.isFinite(idx) ? voices[idx] : null;
+    }
+
+    function makeUtterance(text, rateOverride) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "en-US";
+      utterance.rate = rateOverride || Number(rateRange.value || 0.85);
+      utterance.pitch = 1.0;
+      const voice = selectedVoice();
+      if (voice) utterance.voice = voice;
+      return utterance;
+    }
+
+    function speakText(text, rateOverride, onend) {
+      if (!("speechSynthesis" in window)) {
+        alert("이 브라우저는 음성합성을 지원하지 않습니다.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = makeUtterance(text, rateOverride);
+      utterance.onend = onend || null;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function setLine(idx) {
+      currentLine = Math.max(0, Math.min(idx, shadowLines.length - 1));
+      renderLines();
+    }
+
+    function speakCurrentLine() {
+      speakingAll = false;
+      renderLines();
+      speakText(shadowLines[currentLine]);
+    }
+
+    function nextLine() {
+      setLine(currentLine + 1);
+      speakCurrentLine();
+    }
+
+    function speakFullAnswer() {
+      speakingAll = true;
+      setLine(0);
+      speakLineSequence();
+    }
+
+    function speakLineSequence() {
+      if (!speakingAll) return;
+      renderLines();
+      speakText(shadowLines[currentLine], Number(rateRange.value || 0.85), () => {
+        if (!speakingAll) return;
+        if (currentLine < shadowLines.length - 1) {
+          currentLine += 1;
+          setTimeout(speakLineSequence, 450);
+        } else {
+          speakingAll = false;
+          renderLines();
+        }
+      });
+    }
+
+    function speakSlow() {
+      speakingAll = true;
+      setLine(0);
+      rateRange.value = "0.65";
+      rateLabel.textContent = "0.65";
+      speakLineSequence();
+    }
+
+    function stopSpeech() {
+      speakingAll = false;
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      renderLines();
+      document.querySelectorAll(".speaking-target").forEach(el => el.classList.remove("speaking-target"));
+    }
+
+    rateRange.addEventListener("input", () => {
+      rateLabel.textContent = rateRange.value;
+    });
+
+    function hasEnglishSentence(text) {
+      return /[A-Za-z]{3,}/.test(text || "");
+    }
+
+    function isMostlyEnglish(text) {
+      const sample = (text || "").replace(/\s+/g, "");
+      if (!sample) return false;
+      const englishCount = (sample.match(/[A-Za-z]/g) || []).length;
+      const koreanCount = (sample.match(/[가-힣]/g) || []).length;
+      return englishCount >= 12 && englishCount > koreanCount * 2;
+    }
+
+    function cleanSpeechText(text) {
+      return (text || "")
+        .replace(/\s+/g, " ")
+        .replace(/^\s*(S|T|A|R|Q)\s*:\s*/gm, "")
+        .trim();
+    }
+
+    function splitEnglishSentences(text) {
+      const cleaned = cleanSpeechText(text);
+      const rough = cleaned
+        .split(/(?<=[.!?])\s+|(?:\n+)/)
+        .map(s => s.trim())
+        .filter(s => hasEnglishSentence(s) && s.length > 8);
+      return rough.length ? rough : [cleaned].filter(Boolean);
+    }
+
+    function markSpeaking(target) {
+      document.querySelectorAll(".speaking-target").forEach(el => el.classList.remove("speaking-target"));
+      if (target) target.classList.add("speaking-target");
+    }
+
+    function speakBlock(target, rate) {
+      const text = cleanSpeechText(target.textContent);
+      if (!text) return;
+      speakingAll = false;
+      markSpeaking(target);
+      speakText(text, rate || Number(rateRange.value || 0.85), () => markSpeaking(null));
+    }
+
+    function shadowBlock(target, rate) {
+      const sentences = splitEnglishSentences(target.textContent);
+      if (!sentences.length) return;
+      let idx = 0;
+      speakingAll = false;
+      markSpeaking(target);
+      const next = () => {
+        if (idx >= sentences.length) {
+          markSpeaking(null);
+          return;
+        }
+        speakText(sentences[idx], rate || 0.75, () => {
+          idx += 1;
+          setTimeout(next, 650);
+        });
+      };
+      next();
+    }
+
+    function addInlineSpeechControls() {
+      const candidates = Array.from(document.querySelectorAll("main pre, main p, main li"));
+      candidates.forEach((el) => {
+        if (el.closest(".voice-panel") || el.dataset.speechReady === "1") return;
+        const text = cleanSpeechText(el.textContent);
+        if (!hasEnglishSentence(text) || !isMostlyEnglish(text) || text.length < 18) return;
+        el.dataset.speechReady = "1";
+        const controls = document.createElement("div");
+        controls.className = "inline-speech";
+        controls.innerHTML = `
+          <button type="button">🔊 듣기</button>
+          <button type="button">🐢 느리게</button>
+          <button type="button">🎧 쉐도윙</button>
+        `;
+        const [listenBtn, slowBtn, shadowBtn] = controls.querySelectorAll("button");
+        listenBtn.addEventListener("click", () => speakBlock(el, Number(rateRange.value || 0.85)));
+        slowBtn.addEventListener("click", () => speakBlock(el, 0.65));
+        shadowBtn.addEventListener("click", () => shadowBlock(el, 0.72));
+        el.insertAdjacentElement("afterend", controls);
+      });
+    }
+
+    renderLines();
+    addInlineSpeechControls();
+    if ("speechSynthesis" in window) {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  </script>
+</body>
+</html>
