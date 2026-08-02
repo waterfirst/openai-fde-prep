@@ -316,6 +316,7 @@
   <nav>
     <div class="inner">
       <a href="#today">오늘 할 일</a>
+      <a href="#interview-guide">🎯 면접 로드맵</a>
       <a href="#curriculum">4주 커리큘럼</a>
       <a href="#coding">직접 코딩</a>
       <a href="#english">영어 면접</a>
@@ -343,6 +344,90 @@
         <li><span class="pill yellow">20분</span><strong>STAR</strong> — OLED 수명 웹앱 프로젝트를 S/T/A/R로 압축한다.</li>
         <li><span class="pill red">15분</span><strong>English Speaking</strong> — “Tell me about a project that reflects how you work.” 90초 녹음.</li>
       </ul>
+    </section>
+
+    <section id="interview-guide">
+      <div class="card">
+        <div class="eyebrow">OpenAI 공식 인터뷰 가이드 기반 · Forward Deployed Engineer 트랙</div>
+        <h2>🎯 면접 로드맵 — 7단계 단계별 대응</h2>
+        <p class="lead">
+          OpenAI FDE 채용은 <strong>7-touch(레크루터 → 기술스크린 → 코딩 2회 → LLM 시스템설계 → 행동/고객공감 → 최종 가치대화)</strong>를
+          보통 <strong>3–4주</strong>에 압축한다. 각 라운드는 30~60분. 팀마다 순서·형식은 조금씩 다르다.
+        </p>
+        <h3>매 라운드 관통 원칙 (4개)</h3>
+        <ul>
+          <li><strong>Think-aloud in English</strong> — 침묵 금지. 사고 과정을 소리내어. 정답보다 "어떻게 생각하나"를 본다.</li>
+          <li><strong>Customer-first framing</strong> — 모든 답을 <em>"고객 문제 → shipped system"</em>으로 연결.</li>
+          <li><strong>Ship &amp; defend</strong> — 돌아가는 결과물을 내놓고, 모든 결정을 근거로 방어.</li>
+          <li><strong>Clarify first</strong> — 코딩/설계 전 요구사항·제약을 먼저 질문한다.</li>
+        </ul>
+        <p style="color:var(--muted);font-size:13px;">출처: <a href="https://openai.com/interview-guide/" target="_blank" rel="noopener">openai.com/interview-guide</a> · Exponent/IGotAnOffer FDE 가이드(2026).</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill">Step 1 · 30–45분</span> Recruiter Screen</h3>
+        <p><strong>본다:</strong> 배경·동기·미션 정렬. "Why OpenAI / Why FDE".</p>
+        <p><strong>대응:</strong> 2분 FDE 자기소개 — <em>"제조 26년간 애매한 현장 문제를 재현 가능한 시스템으로 바꿔왔다."</em> 임팩트는 숫자로. 왜 지금 FDE인지 한 문장.</p>
+        <p><strong>내 무기:</strong> <a href="#numbers">숫자 어필</a> · <a href="#short-english">짧은 영어</a></p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill">Step 2 · ~60분 (CoderPad)</span> Technical Phone Screen</h3>
+        <p><strong>본다:</strong> 실전형 자료구조·알고리즘 (LeetCode보다 실무적).</p>
+        <p><strong>대응:</strong> 문제 재진술 → 접근 말로 설명 → 코딩 중 계속 나레이션 → 엣지케이스. 영어 think-aloud로.</p>
+        <p><strong>내 무기:</strong> <a href="#coding">직접 코딩</a> (HashMap/Two-pointer/파일파싱 실전형)</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill green">Step 3 · 60분 ×2</span> Coding Rounds (product-focused)</h3>
+        <p><strong>본다:</strong> 코딩을 <em>고객 납품물</em>로 다루는가. 돌아가는 코드 + 실행 앱 + 명확한 워크스루.</p>
+        <p><strong>대응:</strong> 완벽한 알고리즘보다 <strong>동작하는 결과</strong>. 모든 고객대면 결정(왜 이 자료구조/이 UX)을 즉석 딥다이브에서 방어.</p>
+        <p><strong>내 무기:</strong> OLED 수명 웹앱 · Telegram+Codex 오케스트레이션 (실제로 배포한 것들)</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill yellow">Step 4 · 45~60분</span> LLM System Design (FDE 최난관)</h3>
+        <p><strong>본다:</strong> 프로덕션 LLM 아키텍처 · 평가 게이트 설계 · 고객 워크플로우로의 통합.</p>
+        <p><strong>대응 치트시트:</strong></p>
+        <ul>
+          <li><strong>RAG 결정:</strong> embedding 선택 · chunking 전략 · retrieval(하이브리드) · reranking.</li>
+          <li><strong>Fine-tune vs RAG vs Prompt:</strong> 언제 무엇을. (지식 최신성=RAG, 포맷/톤=fine-tune, 소량=prompt)</li>
+          <li><strong>Guardrails:</strong> PII 마스킹 · 근거 없는 답 차단 · human-in-the-loop.</li>
+          <li><strong>Eval gate:</strong> 배포 전 통과 기준을 숫자로 (정확도·환각률·기대값).</li>
+        </ul>
+        <p><strong>내 무기:</strong> <a href="#system">FDE 설계 템플릿</a> · KIS 모의투자 <em>eval-gate 기반 자율 워크플로우</em> · 변호사 <em>로컬 마스킹 → Codex → 법제처 MCP</em> 파이프라인</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill red">Step 5 · 30~45분</span> Behavioral · Customer-Empathy</h3>
+        <p><strong>본다:</strong> 코드만큼 <em>고객 공감</em>을 본다. "고객 니즈를 shipped system으로 바꾼 경험".</p>
+        <p><strong>대응:</strong> STAR로. 애매한 요구를 재정의하고, 신뢰를 만들고, 떠난 뒤에도 남을 자산을 놓은 이야기.</p>
+        <p><strong>내 무기:</strong> <a href="#star-bank">STAR 경험은행</a> · <a href="cases/2026-08-02_lawyer-bankruptcy-fde.md">변호사 파산업무 FDE 사례</a> (개인정보 격리 + 고객 자립 신호)</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill">Step 6 · 45~60분</span> Project Deep Dive</h3>
+        <p><strong>본다:</strong> 복잡한 시스템 하나를 골라 아키텍처를 발표하고, <em>빠른 꼬리질문</em> 아래 모든 결정을 방어.</p>
+        <p><strong>대응:</strong> 1개 프로젝트 선정 → 문제/제약 → 설계 → 트레이드오프 → 결과/측정. "내가 소유한 것"을 명확히.</p>
+        <p><strong>내 무기:</strong> 변호사 FDE 사례(2시간 온사이트) 또는 KIS 500일 게이트 시스템 — 둘 다 <em>재정의·설계·측정</em>이 다 있음.</p>
+      </div>
+
+      <div class="card">
+        <h3><span class="pill green">Step 7 · 30분</span> Final Values Conversation</h3>
+        <p><strong>본다:</strong> 미션 정렬 (AGI가 인류에 이롭게) · 안전 우선 · 협업 태도.</p>
+        <p><strong>대응:</strong> 아부 말고 진정성. 안전·개인정보를 실제로 지킨 사례로 증명 (변호사 사건 <em>지시-데이터 분리</em>). 마지막에 <a href="#questions">내가 물어볼 질문</a> 2~3개.</p>
+      </div>
+
+      <div class="card">
+        <h3>⏱️ 면접 48시간 전 체크</h3>
+        <ul>
+          <li>1개 프로젝트 딥다이브 스크립트 (Step 6용) 소리내어 3회</li>
+          <li>STAR 5개 영어로 90초씩 녹음 재청취 (<a href="#star-bank">경험은행</a>)</li>
+          <li>LLM 설계 치트시트 (RAG/guardrail/eval) 백지 재현</li>
+          <li>CoderPad 실전형 2문제 think-aloud (<a href="#coding">코딩</a>)</li>
+          <li>"Why OpenAI / Why FDE" 2문장 + 물어볼 질문 3개</li>
+        </ul>
+      </div>
     </section>
 
     <section id="curriculum" class="card">
