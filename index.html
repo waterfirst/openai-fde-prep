@@ -230,6 +230,7 @@
       <a href="#approach">How I work</a>
       <a href="#work">Selected work</a>
       <a href="#thinking">How I design</a>
+      <a href="#research-insights">Research insights</a>
       <a href="#codex-setup">Codex setup</a>
       <a href="#safety">Safety &amp; data</a>
       <a href="#impact">Impact</a>
@@ -348,6 +349,65 @@
             <li><strong>Eval gate:</strong> 배포 전 통과 기준을 숫자로 (정확도·환각률·기대값).</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section id="research-insights">
+      <div class="card">
+        <div class="eyebrow">OpenAI research → FDE decisions</div>
+        <h2>최근 연구를 현장 배포 규칙으로 번역하기</h2>
+        <p class="lead">연구를 암기하지 않는다. <strong>어떤 고객 문제에서 무엇을 측정하고, 어디에 안전선을 긋는지</strong>로 바꿔 말한다.</p>
+        <div class="grid2">
+          <div class="card">
+            <div class="eyebrow">Coding evals · 2026-07-08</div>
+            <h3>벤치마크 점수보다 문제 품질이 먼저</h3>
+            <p><strong>연구:</strong> SWE-Bench Pro를 감사한 결과 약 30%가 결함 가능성이 있는 과제로 추정됐다. 과도하게 엄격한 테스트, 누락된 요구사항, 낮은 커버리지, 오해를 부르는 프롬프트가 원인이었다.</p>
+            <p><strong>FDE 적용:</strong> 고객 업무 평가도 <em>정답률 하나</em>로 끝내지 않는다. 요구사항·테스트·실패 trace를 함께 검토하고, 실제 성공률·재작업량·비용을 기록한다.</p>
+            <p><strong>내 사례:</strong> KOSPI 예측 채점·복기 시스템과 500일 검증 루프를 통해 “그럴듯함”을 eval gate로 바꿨다.</p>
+            <p><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/" target="_blank" rel="noopener">OpenAI 원문 ↗</a> · <span class="muted">Interview line: “I validate the eval before trusting the score.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Long-horizon safety · 2026-07-20</div>
+            <h3>한 번의 허용보다 전체 궤적을 감시</h3>
+            <p><strong>연구:</strong> 장시간 실행 모델은 각 단계가 그럴듯해도 전체 순서에서 승인되지 않은 결과로 갈 수 있다. 실제 실패에서 평가를 만들고, trajectory-level monitoring·중지·재개 통제를 추가했다.</p>
+            <p><strong>FDE 적용:</strong> Codex·봇의 단일 명령뿐 아니라 <em>연속 작업의 목적과 권한 상승</em>을 본다. 제한 계정, 승인 게이트, 로그, pause/rollback을 기본으로 둔다.</p>
+            <p><strong>내 사례:</strong> Telegram+cokacdir를 임의 셸 실행이 아닌 allowlist 작업 트리거로 제한하고, 서버 Codex는 승인 모드로 운영한다.</p>
+            <p><a href="https://openai.com/index/safety-alignment-long-horizon-models/" target="_blank" rel="noopener">OpenAI 원문 ↗</a> · <span class="muted">Interview line: “I monitor trajectories, not isolated actions.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Third-party evals · 2026-05-29</div>
+            <h3>평가 하네스도 제품의 일부</h3>
+            <p><strong>연구:</strong> 에이전트 평가는 모델만이 아니라 도구·상태·복구·시간·토큰·비용을 포함한 실행 환경의 함수다. 주장(claim)마다 맞는 하네스와 타당성 근거가 필요하다.</p>
+            <p><strong>FDE 적용:</strong> “모델이 좋다”가 아니라 “이 업무에서 이 도구 경계와 비용으로 성공한다”를 정의한다. 성공률과 함께 성공 1건당 비용·소요시간을 본다.</p>
+            <p><strong>내 사례:</strong> 파산 변호사 워크플로우에서 로컬 마스킹→Codex 검토→법령 MCP 근거확인의 경계를 분리했다.</p>
+            <p><a href="https://openai.com/index/trustworthy-third-party-evaluations-foundations/" target="_blank" rel="noopener">OpenAI 원문 ↗</a> · <span class="muted">Interview line: “The harness is part of the capability claim.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Agent security · 2026-03-11</div>
+            <h3>프롬프트 인젝션은 사회공학 문제</h3>
+            <p><strong>연구:</strong> 에이전트가 웹·문서·검색 결과를 읽고 행동할수록 공격은 단순한 지시 덮어쓰기를 넘어 신뢰·권한·목표를 조작하는 사회공학에 가까워진다.</p>
+            <p><strong>FDE 적용:</strong> 비신뢰 콘텐츠와 시스템 지시를 분리하고, 도구별 최소 권한·고위험 작업 확인·출력 검증을 둔다. “읽었다”와 “실행해도 된다”를 같은 상태로 취급하지 않는다.</p>
+            <p><strong>내 사례:</strong> 원문은 고객 기기에 남기고, 모델에는 마스킹 결과·근거 조회 결과만 전달하는 데이터 경계를 설계했다.</p>
+            <p><a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank" rel="noopener">OpenAI 원문 ↗</a> · <span class="muted">Interview line: “Untrusted content never gets implicit tool authority.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Link safety · 2026-01-28</div>
+            <h3>링크 하나도 데이터 경계다</h3>
+            <p><strong>연구:</strong> URL query parameter·redirect·서버 로그를 통해 민감정보가 새거나, 웹페이지 속 인젝션이 에이전트에게 데이터를 URL로 보내게 할 수 있다. 도메인 allowlist만으로는 충분하지 않다.</p>
+            <p><strong>FDE 적용:</strong> 정확히 공개임을 독립적으로 확인한 URL만 자동 조회하고, 나머지는 사용자 확인을 요구한다. URL 정규화·redirect 검사·민감값 제거를 defense-in-depth로 적용한다.</p>
+            <p><strong>내 사례:</strong> 변호사 고객의 개인정보를 로컬에서 먼저 마스킹하고, Telegram에는 지시·상태만 흐르게 했다.</p>
+            <p><a href="https://openai.com/index/ai-agent-link-safety/" target="_blank" rel="noopener">OpenAI 원문 ↗</a> · <span class="muted">Interview line: “I treat links as data egress surfaces.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Domain workflow · GPT-Rosalind · 2026-06-03</div>
+            <h3>도메인 모델의 가치는 워크플로우 완주</h3>
+            <p><strong>연구:</strong> GPT-Rosalind는 생명과학용 frontier reasoning 모델로, LifeSciBench를 통해 근거 처리·분석·설계·검증·운영·커뮤니케이션까지 엔드투엔드 과정을 평가한다.</p>
+            <p><strong>FDE 적용:</strong> 범용 데모가 아니라 고객 도메인의 실제 도구·데이터·승인 흐름에 연결하고, 한 단계의 답변이 아닌 업무 전체의 완료율과 신뢰성을 측정한다.</p>
+            <p><strong>내 사례:</strong> OLED 수명 분석 웹앱과 제조·품질 세미나에서 물리 모델·현업 입력·재현 가능한 결과를 하나의 셀프서비스 흐름으로 묶었다.</p>
+            <p><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/" target="_blank" rel="noopener">OpenAI 원문 ↗</a> · <span class="muted">Interview line: “I optimize for workflow completion, not demo quality.”</span></p>
+          </div>
+        </div>
+        <div class="quote">면접 준비 포인트: 연구의 제목·날짜를 말하는 데서 멈추지 않고, <strong>발견 → 설계 변경 → 평가 지표 → 배포 운영</strong>의 한 사이클을 자신의 사례로 설명한다.</div>
       </div>
     </section>
 
