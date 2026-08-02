@@ -186,6 +186,9 @@
     .setup-card ol { margin: 10px 0 0; padding-left: 22px; }
     .setup-card li { margin: 4px 0; }
     .setup-card code { color: var(--accent); font-size: .9em; }
+    .comparison-figure { margin: 22px 0 0; overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: #0b1020; }
+    .comparison-figure img { display: block; width: 100%; min-width: 860px; height: auto; }
+    .comparison-figure figcaption { padding: 10px 14px; color: var(--muted); font-size: 12px; }
     @media (max-width: 860px) {
       .hero, .grid, .grid2, .setup-grid { grid-template-columns: 1fr; }
       header { padding-top: 34px; }
@@ -414,6 +417,10 @@
             </ol>
           </div>
         </div>
+        <figure class="comparison-figure">
+          <img src="assets/codex-operation-comparison.svg" alt="Codex 실행 방식별 성능, 보안 특징, 편의성, 핵심 용도 비교표" loading="lazy" />
+          <figcaption>Codex 운영 방식 비교 — 모바일에서는 좌우로 스크롤할 수 있습니다.</figcaption>
+        </figure>
         <div class="quote">권장 조합: 민감·운영 작업은 서버 Codex CLI, 카페 원격관리는 Tailscale SSH, 모바일 트리거는 제한된 cokacdir, 비민감 병렬 개발은 Codex Cloud.</div>
       </div>
     </section>
