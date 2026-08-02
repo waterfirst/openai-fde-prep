@@ -174,8 +174,20 @@
       padding: 36px 20px 60px;
     }
     .muted { color: var(--muted); }
+    .setup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .setup-card { position: relative; overflow: hidden; }
+    .setup-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: var(--accent); }
+    .setup-card.green-line::before { background: var(--green); }
+    .setup-card.yellow-line::before { background: var(--yellow); }
+    .setup-card.purple-line::before { background: #c4b5fd; }
+    .setup-card h3 { margin-top: 6px; }
+    .setup-card .setup-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+    .setup-card .setup-meta span { border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; color: var(--muted); }
+    .setup-card ol { margin: 10px 0 0; padding-left: 22px; }
+    .setup-card li { margin: 4px 0; }
+    .setup-card code { color: var(--accent); font-size: .9em; }
     @media (max-width: 860px) {
-      .hero, .grid, .grid2 { grid-template-columns: 1fr; }
+      .hero, .grid, .grid2, .setup-grid { grid-template-columns: 1fr; }
       header { padding-top: 34px; }
     }
   </style>
@@ -215,6 +227,7 @@
       <a href="#approach">How I work</a>
       <a href="#work">Selected work</a>
       <a href="#thinking">How I design</a>
+      <a href="#codex-setup">Codex setup</a>
       <a href="#safety">Safety &amp; data</a>
       <a href="#impact">Impact</a>
       <a href="#background">Background</a>
@@ -332,6 +345,76 @@
             <li><strong>Eval gate:</strong> 배포 전 통과 기준을 숫자로 (정확도·환각률·기대값).</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section id="codex-setup">
+      <div class="card">
+        <h2>Codex operating setup — choose by case</h2>
+        <p class="lead">같은 Codex라도 <strong>실행 위치·권한·네트워크</strong>를 어떻게 나누느냐에 따라 성능과 안전성이 달라진다. 케이스에 맞는 셋업을 고른다.</p>
+        <div class="setup-grid">
+          <div class="card setup-card">
+            <div class="eyebrow">Direct execution · maximum control</div>
+            <h3>1 · Server notebook — Codex CLI 직접 실행</h3>
+            <div class="setup-meta"><span>성능 최고</span><span>보안: 권한 관리 필수</span><span>편의성 낮음</span></div>
+            <p><strong>언제:</strong> 개인 데이터·로컬 봇·운영 서버·DB를 직접 다룰 때.</p>
+            <ol>
+              <li>노트북에 Node.js와 <code>@openai/codex</code> 설치</li>
+              <li>프로젝트별 디렉터리·Git·<code>.env</code> 분리</li>
+              <li>기본은 승인 모드, 운영 작업은 별도 계정</li>
+              <li>실행 전 테스트·로그·롤백 경로 확인</li>
+            </ol>
+          </div>
+          <div class="card setup-card green-line">
+            <div class="eyebrow">Remote access · balanced default</div>
+            <h3>2 · Desktop → Tailscale SSH → 서버 Codex CLI</h3>
+            <div class="setup-meta"><span>속도 높음</span><span>보안 균형 최고</span><span>편의성 중상</span></div>
+            <p><strong>언제:</strong> 카페·외부 Desktop에서 집 노트북을 대화형으로 관리할 때.</p>
+            <ol>
+              <li>Desktop·노트북 양쪽에 Tailscale 설치·장비 승인</li>
+              <li>Desktop 전용 <code>ed25519</code> 키 등록</li>
+              <li>SSH는 Tailscale 인터페이스만 허용</li>
+              <li>공인 22/tcp 포트포워딩·비밀번호 로그인 제거</li>
+            </ol>
+          </div>
+          <div class="card setup-card yellow-line">
+            <div class="eyebrow">Remote trigger · controlled automation</div>
+            <h3>3 · Telegram + cokacdir → Codex 작업 트리거</h3>
+            <div class="setup-meta"><span>속도 중간</span><span>allowlist 필수</span><span>편의성 높음</span></div>
+            <p><strong>언제:</strong> 모바일 상태 확인·작업 시작·장시간 작업 보고가 필요할 때.</p>
+            <ol>
+              <li>Telegram 사용자·채팅 ID allowlist 고정</li>
+              <li>임의 셸 프롬프트가 아닌 승인된 작업명만 허용</li>
+              <li>전용 제한 계정으로 봇 프로세스 실행</li>
+              <li>토큰·키·<code>.env</code>를 메시지·로그·인자에 노출하지 않음</li>
+            </ol>
+          </div>
+          <div class="card setup-card purple-line">
+            <div class="eyebrow">Cloud execution · isolated workspace</div>
+            <h3>4 · Codex 웹앱 / Cloud</h3>
+            <div class="setup-meta"><span>병렬 성능 강함</span><span>호스트 격리</span><span>민감자료 금지</span></div>
+            <p><strong>언제:</strong> 공개·정제 저장소의 PR·리뷰·테스트·병렬 개발을 할 때.</p>
+            <ol>
+              <li>GitHub에 비밀 제거 저장소 연결</li>
+              <li>프로젝트 환경과 setup script 정의</li>
+              <li>인터넷은 기본 차단, 필요한 도메인만 허용</li>
+              <li>결과 diff·테스트·PR을 사람이 검토 후 반영</li>
+            </ol>
+          </div>
+          <div class="card setup-card">
+            <div class="eyebrow">Mobile collaboration · convenience first</div>
+            <h3>5 · ChatGPT Work — 모바일·웹 협업</h3>
+            <div class="setup-meta"><span>편의성 최고</span><span>클라우드 처리</span><span>공유 권한 관리</span></div>
+            <p><strong>언제:</strong> 이동 중 문서·대화·계획·작업 조율이 필요할 때.</p>
+            <ol>
+              <li>Work 공간과 프로젝트별 지침 분리</li>
+              <li>공유 파일은 비밀 제거본만 사용</li>
+              <li>운영 서버 직접 조작 대신 원격 작업을 조율</li>
+              <li>민감 정보·API 키·사내 원문은 업로드하지 않음</li>
+            </ol>
+          </div>
+        </div>
+        <div class="quote">권장 조합: 민감·운영 작업은 서버 Codex CLI, 카페 원격관리는 Tailscale SSH, 모바일 트리거는 제한된 cokacdir, 비민감 병렬 개발은 Codex Cloud.</div>
       </div>
     </section>
 
