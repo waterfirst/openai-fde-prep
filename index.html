@@ -232,6 +232,8 @@
       <a href="#thinking">How I design</a>
       <a href="#research-insights">Research insights</a>
       <a href="#anthropic-research">Anthropic research</a>
+      <a href="#google-research">Google research</a>
+      <a href="#china-research">China research</a>
       <a href="#codex-setup">Codex setup</a>
       <a href="#safety">Safety &amp; data</a>
       <a href="#impact">Impact</a>
@@ -484,6 +486,109 @@
           </div>
         </div>
         <div class="quote">면접 준비 포인트: Anthropic 연구에서 반복되는 질문은 “모델이 얼마나 똑똑한가?”보다 <strong>누가 무엇을 맡기고, 언제 확인하며, 실패를 어떻게 발견하고 되돌리는가?</strong>이다.</div>
+      </div>
+    </section>
+
+    <section id="google-research">
+      <div class="card">
+        <div class="eyebrow">Google Research / DeepMind → FDE interview insights</div>
+        <h2>Google 연구를 고객 문제 해결 프레임으로 번역하기</h2>
+        <p class="lead">핵심은 <strong>모델 단독이 아니라 도구·검색·평가·현장 환경을 결합한 시스템</strong>이다.</p>
+        <div class="grid2">
+          <div class="card">
+            <div class="eyebrow">AlphaEvolve · 2025-05-14</div>
+            <h3>생성 모델 + 자동 평가기가 탐색을 만든다</h3>
+            <p><strong>연구:</strong> Gemini가 알고리즘 후보를 생성하고 evaluator가 정확도·품질을 측정하며 evolutionary loop가 반복 개선한다. 데이터센터·칩 설계·AI 학습 최적화에 적용됐다.</p>
+            <p><strong>FDE 적용:</strong> 에이전트에게 좋은 답을 요구하기 전에 실행 가능한 테스트·채점기·목표함수를 만든다.</p>
+            <p><strong>내 사례:</strong> KOSPI 자동 채점·복기와 KIS 리스크 게이트로 결과를 숫자로 검증했다.</p>
+            <p><a href="https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/" target="_blank" rel="noopener">Google DeepMind 원문 ↗</a> · <span class="muted">“I pair generation with an objective evaluator.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">AI Co-Scientist · 2025-02-19</div>
+            <h3>멀티에이전트 역할 분리가 복잡한 탐색을 확장</h3>
+            <p><strong>연구:</strong> Generation·Reflection·Ranking·Evolution·Proximity·Meta-review 에이전트가 가설을 만들고 토론·평가·개선한다.</p>
+            <p><strong>FDE 적용:</strong> 하나의 거대 프롬프트보다 생성·검토·근거·승인 역할을 분리하고 사람이 목표와 최종 판단을 유지한다.</p>
+            <p><strong>내 사례:</strong> 로컬 마스킹→Codex 검토→법령 MCP 근거확인의 분리 구조를 적용했다.</p>
+            <p><a href="https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/" target="_blank" rel="noopener">Google Research 원문 ↗</a> · <span class="muted">“I separate generation, critique, evidence, and approval.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">AlphaEvolve research partner · 2025-09-30</div>
+            <h3>검증 가능한 문제부터 에이전트화</h3>
+            <p><strong>연구:</strong> AlphaEvolve는 조합 구조·최적화 문제에서 후보를 탐색하고 검증하는 코딩 에이전트로 확장됐다.</p>
+            <p><strong>FDE 적용:</strong> 고객 문제를 “무엇이든 자동화”로 잡지 말고 성공 여부를 객관적으로 확인할 수 있는 bounded problem으로 재정의한다.</p>
+            <p><strong>내 사례:</strong> OLED 수명 분석은 물리 모델과 재현 가능한 계산 결과가 있어 셀프서비스화할 수 있었다.</p>
+            <p><a href="https://research.google/blog/ai-as-a-research-partner-advancing-theoretical-computer-science-with-alphaevolve/" target="_blank" rel="noopener">Google Research 원문 ↗</a> · <span class="muted">“I make the customer problem measurable before making it agentic.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Gemini Robotics On-Device · 2025-06-24</div>
+            <h3>지연·프라이버시·연결성은 아키텍처 결정</h3>
+            <p><strong>연구:</strong> 로봇 자체에서 실행되는 효율적인 vision-language-action 모델을 제시하고, 적은 시연만으로 새로운 작업에 적응하도록 했다.</p>
+            <p><strong>FDE 적용:</strong> latency·네트워크·민감도·비용에 따라 local/cloud 경계를 설계한다.</p>
+            <p><strong>내 사례:</strong> 변호사 원문을 로컬에서 마스킹하고 카페 Desktop은 Tailscale로 지시만 전달한다.</p>
+            <p><a href="https://deepmind.google/blog/gemini-robotics-on-device-brings-ai-into-the-physical-world/" target="_blank" rel="noopener">Google DeepMind 원문 ↗</a> · <span class="muted">“Deployment constraints shape the model architecture.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Interview synthesis</div>
+            <h3>Google식 답변 구조</h3>
+            <p><strong>문제:</strong> 현장 병목 → <strong>시스템:</strong> 모델·도구·사람·평가기 → <strong>검증:</strong> 자동 테스트·인간 검토 → <strong>운영:</strong> 비용·지연·안전·채택.</p>
+            <p>사용자의 제조·품질 경험은 “모델을 현장 KPI와 검증 루프에 연결한 사례”로 설명한다.</p>
+            <p><span class="muted">“I translate frontier research into measurable customer workflows.”</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="china-research">
+      <div class="card">
+        <div class="eyebrow">Chinese company papers → FDE interview insights</div>
+        <h2>중국 AI 기업 논문에서 읽는 비용·개방성·추론 전략</h2>
+        <p class="lead">핵심은 <strong>낮은 비용으로 추론을 확장하고 오픈 가중치·효율화로 배포 경계를 넓히는 것</strong>이다.</p>
+        <div class="grid2">
+          <div class="card">
+            <div class="eyebrow">DeepSeek-R1 · 2025-01-22</div>
+            <h3>강한 추론은 RL·검증·증류의 시스템</h3>
+            <p><strong>논문:</strong> R1-Zero의 강화학습 실험과 R1의 cold-start·추론 데이터·RL·증류 조합을 공개하고 여러 크기의 모델로 지식을 전파했다.</p>
+            <p><strong>FDE 적용:</strong> 모델 크기보다 검증 가능한 reward·작업 분해·작은 모델로의 증류 가능성을 본다.</p>
+            <p><strong>내 사례:</strong> KOSPI 복기와 KIS eval gate처럼 실패를 다음 규칙과 reward 신호로 바꾼다.</p>
+            <p><a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener">논문 원문 ↗</a> · <span class="muted">“I turn feedback and evaluation into an improvement signal.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Qwen3 · Alibaba · 2025-05-14</div>
+            <h3>모델 포트폴리오와 작업별 라우팅</h3>
+            <p><strong>논문:</strong> dense와 MoE, 0.6B부터 235B까지 다양한 크기, thinking/non-thinking 모드를 제공하고 다국어 범위를 확장했다.</p>
+            <p><strong>FDE 적용:</strong> 작업별로 frontier 모델을 고정하지 말고 지연·비용·정확도·민감도에 따라 routing과 fallback을 설계한다.</p>
+            <p><strong>내 사례:</strong> Codex·Claude 비교 채점과 서버 CLI·Telegram·Cloud 실행 표면을 분리했다.</p>
+            <p><a href="https://arxiv.org/abs/2505.09388" target="_blank" rel="noopener">Qwen3 Technical Report ↗</a> · <span class="muted">“I route tasks to the smallest model that meets the quality bar.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Kimi k1.5 · Moonshot AI · 2025-01-22</div>
+            <h3>긴 컨텍스트보다 중요한 작업 전략</h3>
+            <p><strong>논문:</strong> 멀티모달·텍스트 추론에서 RL을 확장하고 long-context와 rollout 전략을 결합했다.</p>
+            <p><strong>FDE 적용:</strong> 긴 문서를 한 번에 넣기보다 계획·검색·검증·요약 단계로 나누고 비용과 오류를 측정한다.</p>
+            <p><strong>내 사례:</strong> 법률 원문을 모델에 직접 보내지 않고 로컬 마스킹과 검토 패킷으로 경계를 만들었다.</p>
+            <p><a href="https://arxiv.org/abs/2501.12599" target="_blank" rel="noopener">Kimi k1.5 논문 ↗</a> · <span class="muted">“Long context is useful only when the workflow can verify it.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">MiniMax-01 · 2025-01-14</div>
+            <h3>아키텍처 혁신은 실제 배포 비용을 바꾼다</h3>
+            <p><strong>논문:</strong> Lightning Attention으로 긴 컨텍스트와 효율적인 추론을 목표로 하며, 품질뿐 아니라 메모리·처리량·실행 비용을 함께 다룬다.</p>
+            <p><strong>FDE 적용:</strong> benchmark만 제시하지 말고 token cost·latency·GPU/RAM·동시 사용자·운영 복잡도를 함께 제시한다.</p>
+            <p><strong>내 사례:</strong> token-frugal agent playbook과 local-first 서버 운영으로 비용·보안·속도의 trade-off를 설명한다.</p>
+            <p><a href="https://arxiv.org/abs/2501.08313" target="_blank" rel="noopener">MiniMax-01 논문 ↗</a> · <span class="muted">“Architecture choices become customer-facing economics.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Interview synthesis</div>
+            <h3>중국 기업 논문 면접 키워드</h3>
+            <ul>
+              <li><strong>Efficiency:</strong> 같은 품질을 더 낮은 비용·지연으로.</li>
+              <li><strong>Open weights:</strong> 로컬·사내 환경과 커스터마이징.</li>
+              <li><strong>Reasoning:</strong> test-time compute와 reward/eval.</li>
+              <li><strong>Routing:</strong> 작업별 모델 선택과 fallback.</li>
+              <li><strong>Deployment:</strong> benchmark가 아닌 실제 운영 KPI.</li>
+            </ul>
+            <p><span class="muted">“I compare models by total workflow economics, not leaderboard rank.”</span></p>
+          </div>
+        </div>
       </div>
     </section>
 
