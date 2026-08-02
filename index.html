@@ -231,6 +231,7 @@
       <a href="#work">Selected work</a>
       <a href="#thinking">How I design</a>
       <a href="#research-insights">Research insights</a>
+      <a href="#anthropic-research">Anthropic research</a>
       <a href="#codex-setup">Codex setup</a>
       <a href="#safety">Safety &amp; data</a>
       <a href="#impact">Impact</a>
@@ -408,6 +409,81 @@
           </div>
         </div>
         <div class="quote">면접 준비 포인트: 연구의 제목·날짜를 말하는 데서 멈추지 않고, <strong>발견 → 설계 변경 → 평가 지표 → 배포 운영</strong>의 한 사이클을 자신의 사례로 설명한다.</div>
+      </div>
+    </section>
+
+    <section id="anthropic-research">
+      <div class="card">
+        <div class="eyebrow">Anthropic research → FDE decisions · 2024-08—2026-08</div>
+        <h2>Anthropic 연구를 현장 배포 인사이트로 번역하기</h2>
+        <p class="lead">Claude·에이전트 연구를 <strong>자율성·권한·측정·채택</strong> 문제로 바꿔 읽는다.</p>
+        <div class="grid2">
+          <div class="card">
+            <div class="eyebrow">Agentic coding · 2026-06-16</div>
+            <h3>도메인 전문성이 에이전트 성과를 증폭</h3>
+            <p><strong>연구:</strong> 약 40만 개 Claude Code 세션에서 사람은 무엇을 만들지 결정하고 Claude는 어떻게 만들지 실행하는 분업이 나타났다. 도메인 이해가 높을수록 성공률과 지시당 처리량이 높았다.</p>
+            <p><strong>FDE 적용:</strong> 코딩 교육보다 문제 정의·검수 기준·업무 맥락을 구조화한다. 핵심은 모델보다 <em>도메인 번역</em>이다.</p>
+            <p><strong>내 사례:</strong> 20년 제조·품질 경험을 OLED 수명 분석과 AI 세미나의 현업 워크플로우로 연결했다.</p>
+            <p><a href="https://www.anthropic.com/research/claude-code-expertise" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“Domain expertise determines what the agent can deliver.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Agent autonomy · 2026-02-18</div>
+            <h3>자율성은 추상어가 아니라 측정 대상</h3>
+            <p><strong>연구:</strong> Claude Code와 API의 실제 상호작용을 분석했다. 장시간 Claude Code 세션의 중단 전 작업 시간이 약 3개월 동안 25분 미만에서 45분 이상으로 늘었다.</p>
+            <p><strong>FDE 적용:</strong> 자동화율 대신 세션 길이·승인 횟수·중단 이유·위험한 도구 사용·성공률을 기록해 권한을 단계적으로 확장한다.</p>
+            <p><strong>내 사례:</strong> Telegram+cokacdir는 allowlist 트리거, 서버 Codex는 승인 모드로 나눴다.</p>
+            <p><a href="https://www.anthropic.com/research/measuring-agent-autonomy" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“I measure autonomy before increasing permissions.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Trustworthy agents · 2026-04-09</div>
+            <h3>에이전트 신뢰는 다층 설계</h3>
+            <p><strong>연구:</strong> 인간 통제·가치 정렬·상호작용 보안·투명성·개인정보 보호를 신뢰 가능한 에이전트의 핵심 원칙으로 제시했다. 단일 방어선으로 prompt injection을 보장할 수 없다.</p>
+            <p><strong>FDE 적용:</strong> 도구별 always allow·approval·block 권한을 설계하고, 모호한 상황에서는 추정하지 말고 확인하게 한다.</p>
+            <p><strong>내 사례:</strong> 고객 원문은 기기에 남기고 모델에는 마스킹 결과만 전달하는 local-first 경계를 적용했다.</p>
+            <p><a href="https://www.anthropic.com/research/trustworthy-agents" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“Trust is a product decision, not only a model property.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Work transformation · 2025-12-02</div>
+            <h3>검증 가능한 업무부터 위임</h3>
+            <p><strong>연구:</strong> Anthropic 내부에서 AI 사용은 업무 속도와 범위를 넓혔고, Claude Code 과제는 더 복잡해졌다. 동시에 결과를 쉽게 검수할 수 있는 저위험·반복 업무부터 위임하는 경향이 강했다.</p>
+            <p><strong>FDE 적용:</strong> 실패 비용이 낮은 업무부터 시작하고, 성과가 확인되면 더 중요한 업무로 위임 범위를 확장한다.</p>
+            <p><strong>내 사례:</strong> 제조·품질 엔지니어 대상 세미나와 Letuin 강의로 현업 채택의 첫 단계를 만들었다.</p>
+            <p><a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“Start with verifiable work, then expand delegation.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Safe agents framework · 2025-08-04</div>
+            <h3>자율성과 인간 통제를 함께 설계</h3>
+            <p><strong>연구:</strong> 에이전트는 계획→행동→관찰→수정 루프를 수행한다. 사용자가 계획을 보고 언제든 개입할 수 있어야 하며, MCP 도구도 보안·호환성 기준을 가져야 한다.</p>
+            <p><strong>FDE 적용:</strong> 계획 가시화·중간 승인·도구 권한·감사 로그를 UX의 일부로 만든다. “완전 자율”보다 <em>의미 있는 인간 통제</em>를 남긴다.</p>
+            <p><strong>내 사례:</strong> Codex 운영을 직접 실행·SSH·Telegram·Cloud로 나누고 케이스별 권한을 명시했다.</p>
+            <p><a href="https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“The user should see and control the agent’s plan.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Threat intelligence · 2025-08-27</div>
+            <h3>악용은 조언에서 실행으로 이동</h3>
+            <p><strong>연구:</strong> Claude Code를 이용한 갈취, 사기 채용, AI 생성 랜섬웨어 판매 사례를 공개하며 에이전트형 AI가 사이버 공격을 직접 수행하는 방향으로 이동한다고 보고했다.</p>
+            <p><strong>FDE 적용:</strong> 최소 권한·사용자/채팅 allowlist·명령 allowlist·비밀정보 비노출·이상행동 로그를 기본값으로 둔다.</p>
+            <p><strong>내 사례:</strong> 공인 SSH보다 Tailscale·전용 키를 우선하고, Telegram은 승인된 작업명만 받도록 설계했다.</p>
+            <p><a href="https://www.anthropic.com/news/detecting-countering-misuse-aug-2025" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“I design for abuse resistance, not only productivity.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Interpretability · 2025-03-27</div>
+            <h3>운영 trace가 불투명한 실패를 디버깅 가능하게 한다</h3>
+            <p><strong>연구:</strong> 대형 언어 모델의 내부 추론 과정을 추적하는 방법을 제시하며, 중간 표현을 관찰하면 행동의 원인과 위험 신호를 더 잘 이해할 가능성을 보였다.</p>
+            <p><strong>FDE 적용:</strong> 최종 답변만 저장하지 말고 도구 호출·검색 근거·수정·재시도·승인 이벤트를 구조화해 모니터링과 사후 분석에 활용한다.</p>
+            <p><strong>내 사례:</strong> KOSPI 예측 채점·복기에서 결과와 실패 원인·개선 규칙을 함께 기록했다.</p>
+            <p><a href="https://www.anthropic.com/news/tracing-the-thoughts-of-a-large-language-model" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“Operational traces turn opaque failures into debuggable systems.”</span></p>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Responsible Scaling Policy · 2024-10-15</div>
+            <h3>위험이 커지면 보호조치도 비례해 커져야 한다</h3>
+            <p><strong>연구·정책:</strong> 능력 임계값에 도달하면 더 강한 안전·보안 조치를 요구하는 ASL 체계를 제시했다. 자율 AI 연구개발처럼 고위험 능력에는 별도 보호 수준과 안전 근거가 필요하다.</p>
+            <p><strong>FDE 적용:</strong> 모델·도구·데이터·업무 영향도로 위험 등급을 나누고, 고위험일수록 승인·격리·평가·롤백을 강화한다.</p>
+            <p><strong>내 사례:</strong> 변호사 원문·운영 서버·공개 코드·모바일 상태 확인을 서로 다른 실행 표면으로 분리했다.</p>
+            <p><a href="https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy" target="_blank" rel="noopener">Anthropic 원문 ↗</a> · <span class="muted">“Safeguards should scale with capability and consequence.”</span></p>
+          </div>
+        </div>
+        <div class="quote">면접 준비 포인트: Anthropic 연구에서 반복되는 질문은 “모델이 얼마나 똑똑한가?”보다 <strong>누가 무엇을 맡기고, 언제 확인하며, 실패를 어떻게 발견하고 되돌리는가?</strong>이다.</div>
       </div>
     </section>
 
