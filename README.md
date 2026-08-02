@@ -1,6 +1,6 @@
 # OpenAI FDE Prep
 
-낙초님의 OpenAI Forward Deployed Engineer — Seoul 입사 준비용 GitHub Pages입니다.
+OpenAI Forward Deployed Engineer — Seoul 트랙 준비/포트폴리오 GitHub Pages.
 
 ## 목적
 
