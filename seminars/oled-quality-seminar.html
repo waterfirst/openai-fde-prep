@@ -10,7 +10,6 @@
 <style>
 :root{--navy:#071326;--blue:#2563eb;--cyan:#0891b2;--green:#059669;--orange:#d97706;--red:#dc2626;--violet:#7c3aed;--ink:#172033;--muted:#5f6c80;--line:#dce4ef;--bg:#f4f7fb}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;line-height:1.72}a{color:#1d4ed8}.wrap,main{max-width:1120px;margin:auto}
-/* 기존 OLED 픽셀 인트로 */
 .intro-overlay{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#0e7490 0,#082f49 30%,#020617 72%);color:#e0f2fe;animation:splashOut .8s ease 3.2s forwards}
 .intro-card{width:min(880px,92vw);padding:34px;border:1px solid rgba(147,197,253,.35);border-radius:28px;background:rgba(2,6,23,.62);box-shadow:0 30px 90px rgba(0,0,0,.45);text-align:center;overflow:hidden}
 .intro-title{font-size:clamp(30px,5vw,58px);font-weight:900;line-height:1.08;margin:0 0 12px}.intro-sub{font-size:clamp(15px,2.2vw,20px);color:#bfdbfe;margin:0 0 24px}
@@ -21,9 +20,9 @@ header{padding:70px 22px 58px;color:white;background:linear-gradient(135deg,#071
 nav{position:sticky;top:0;z-index:5;background:#0b1730f2;border-bottom:1px solid #314363;backdrop-filter:blur(10px)}nav div{max-width:1120px;margin:auto;padding:12px 22px;display:flex;gap:19px;overflow:auto;white-space:nowrap}nav a{color:#dbeafe;text-decoration:none;font-size:14px}
 main{padding:34px 22px 74px}section{margin-bottom:22px;padding:29px;background:white;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px #0f172a0d}h2{margin:0 0 13px;font-size:29px;line-height:1.28;letter-spacing:-.025em}h3{margin:21px 0 8px;font-size:20px}.lead{font-size:18px;color:#334155}.muted{color:var(--muted)}.tag{display:inline-block;padding:4px 10px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:12px;font-weight:850}.time{float:right;background:#172554;color:#dbeafe;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:800}
 .grid{display:grid;gap:15px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.card{padding:18px;border:1px solid #dfe7f1;border-radius:15px;background:#fbfdff}.card h3{margin-top:0}.num{display:inline-grid;place-items:center;width:31px;height:31px;margin-right:7px;border-radius:50%;background:#dbeafe;color:#1e3a8a;font-weight:900}
-.callout{margin:17px 0;padding:16px 18px;border-left:5px solid var(--blue);border-radius:12px;background:#eff6ff}.good{border-color:var(--green);background:#ecfdf5}.warn{border-color:var(--orange);background:#fffbeb}.danger{border-color:var(--red);background:#fef2f2}.question{border-color:var(--violet);background:#f5f3ff}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}.process div{padding:17px 10px;border:1px solid #bfdbfe;border-radius:13px;background:#eff6ff;text-align:center;font-weight:800;color:#1e3a8a}.process small{display:block;margin-top:4px;color:#53657c;font-weight:500}.agenda{counter-reset:item}.agenda li{list-style:none;display:grid;grid-template-columns:78px 1fr 70px;gap:12px;padding:12px 0;border-bottom:1px solid #e2e8f0}.agenda li:before{counter-increment:item;content:counter(item,decimal-leading-zero);font-weight:900;color:#2563eb}.agenda b:last-child{text-align:right;color:#475569}
+.callout{margin:17px 0;padding:16px 18px;border-left:5px solid var(--blue);border-radius:12px;background:#eff6ff}.good{border-color:var(--green);background:#ecfdf5}.warn{border-color:var(--orange);background:#fffbeb}.danger{border-color:var(--red);background:#fef2f2}.question{border-color:var(--violet);background:#f5f3ff}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}.flow div{padding:14px 9px;border:1px solid #bfdbfe;border-radius:12px;background:#eff6ff;text-align:center;font-weight:800;color:#1e3a8a}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}.process div{padding:17px 10px;border:1px solid #bfdbfe;border-radius:13px;background:#eff6ff;text-align:center;font-weight:800;color:#1e3a8a}.process small{display:block;margin-top:4px;color:#53657c;font-weight:500}.agenda{counter-reset:item}.agenda li{list-style:none;display:grid;grid-template-columns:78px 1fr 70px;gap:12px;padding:12px 0;border-bottom:1px solid #e2e8f0}.agenda li:before{counter-increment:item;content:counter(item,decimal-leading-zero);font-weight:900;color:#2563eb}.agenda b:last-child{text-align:right;color:#475569}
 table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}th{background:#f1f5f9}.scroll{overflow:auto}.formula{padding:14px;border-radius:12px;background:#0f172a;color:#e0f2fe;font-family:ui-monospace,monospace;text-align:center}.bar{height:13px;margin:5px 0 11px;border-radius:999px;background:#e2e8f0;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#2563eb,#06b6d4)}.cycle{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cycle div{padding:20px 12px;border-radius:18px;text-align:center;color:white;font-weight:900}.p{background:#2563eb}.d{background:#0891b2}.c{background:#d97706}.a{background:#059669}.lecture-note{margin-top:14px;padding:12px 15px;border-radius:10px;background:#f8fafc;color:#475569;font-size:14px}.lecture-note:before{content:"강의 포인트 · ";font-weight:900;color:#1e3a8a}.trend{border-top:4px solid #0ea5e9}.quiz li{margin-bottom:10px}.label{display:inline-block;padding:4px 10px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:12px;font-weight:850}.visual-card{border:1px solid #cbd5e1;border-radius:18px;overflow:hidden;margin:20px 0;background:#06111f;box-shadow:0 16px 36px rgba(15,23,42,.16)}.visual-card img{display:block;width:100%;height:auto}.visual-card figcaption{padding:12px 16px;background:#f8fafc;color:#334155;font-size:14px;border-top:1px solid #e2e8f0}.visual-note{font-weight:800;color:#075985}.pdf-figure{border-color:#bae6fd;background:#f8fafc}.mini{font-size:13px;color:#64748b}.footer{text-align:center;color:#64748b;font-size:13px;margin-top:28px}
-@media(max-width:820px){.g2,.g3,.g4,.hero-flow,.process{grid-template-columns:1fr}.agenda li{grid-template-columns:46px 1fr 55px}.cycle{grid-template-columns:repeat(2,1fr)}section{padding:21px}header{padding-top:52px}.time{float:none;display:inline-block;margin-left:7px}}
+@media(max-width:820px){.g2,.g3,.g4,.hero-flow,.process,.flow{grid-template-columns:1fr}.agenda li{grid-template-columns:46px 1fr 55px}.cycle{grid-template-columns:repeat(2,1fr)}section{padding:21px}header{padding-top:52px}.time{float:none;display:inline-block;margin-left:7px}}
 </style>
 </head>
 <body>
@@ -81,84 +80,17 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
 <h3>가속시험의 논리</h3><div class="formula">강한 스트레스 → 열화 관찰 → 고장 메커니즘 확인 → 모델과 불확실성 제시 → 사용조건 예측</div><ul><li><b>온도:</b> 반응속도 증가를 이용하지만 실제와 다른 열화가 생기지 않는지 확인합니다.</li><li><b>구동:</b> 높은 휘도·전류 조건으로 시간을 단축하되, 응력 범위의 타당성이 필요합니다.</li><li><b>통계:</b> 평균수명만이 아니라 조기고장 위험, 샘플 간 산포와 신뢰구간을 함께 봅니다.</li></ul>
 <div class="callout danger"><b>잘못된 접근:</b> 가장 강한 조건에서 빨리 고장 내면 좋은 가속시험이라는 생각. 실제 사용과 다른 고장모드가 생기면 빠르지만 틀린 예측이 됩니다.</div><p class="lecture-note">‘시험시간 단축’보다 ‘동일 고장 메커니즘 유지’가 먼저라는 점을 반복합니다. 수식 암기보다 가정과 한계를 설명하게 합니다.</p></section>
 
-<section id="deep-dive"><span class="tag">OPTIONAL DEEP DIVE</span><h2>기존 수식·물리·모델 자료 보존 영역</h2><p class="lead">아래 내용은 기존 세미나의 학술 자료를 보존한 심화학습 영역이다. 120분 본 강의에서는 핵심만 설명하고, 나머지는 사전학습 또는 복습자료로 활용한다.</p><div class="callout good"><b>추천 순서:</b> 물리적 배경 → 최소 수식 → Weibull → 가속수명 → 오버슈팅 → 모델 비교 → 오디오 복습</div></section>
+<section id="deep-dive"><span class="tag">PHYSICS × STATISTICS</span><h2>수명평가의 물리·통계 심화</h2><p class="lead">OLED와 TFT 열화를 수식, 물리모델과 신뢰성 통계로 연결한다. 본 강의에서는 핵심 개념을 다루고 세부 내용은 예습·복습에 활용한다.</p><div class="callout good"><b>추천 순서:</b> 물리적 배경 → 최소 수식 → Weibull → 가속수명 → 오버슈팅 → 모델 비교 → 오디오 복습</div></section>
 <section id="tft-oled-bridge"><span class="label">Physics × Statistics Core</span><h2>OLED 수명과 TFT Vth 열화 — 같은 수학, 다른 물리, 하나의 패널 품질</h2><p class="lead">패널의 휘도 변화는 발광소자만의 문제가 아니다. TFT가 공급하는 화소 전류와 OLED의 발광효율이 함께 시간에 따라 변하므로, 두 열화를 분리해 이해하고 다시 시스템 수준에서 결합해야 한다.</p>
 <div class="grid g2"><div class="card"><h3>TFT 임계전압 열화</h3><p>게이트 바이어스와 온도 스트레스 아래에서 전하 트래핑, 계면상태 변화 등이 누적되면 임계전압 <i>V</i><sub>th</sub>가 이동할 수 있다. 그 결과 같은 구동신호에서도 화소 전류가 달라진다.</p><div class="formula">\[\Delta V_{th}(t)=\Delta V_{th,\infty}\left\{1-\exp\left[-\left(\frac{t}{\tau_{TFT}}\right)^{\beta_{TFT}}\right]\right\}\]</div></div>
 <div class="card"><h3>OLED 휘도 열화</h3><p>유기재료와 계면에서는 여기자–폴라론 상호작용, 결함 생성, 전하 균형 변화 등이 발광효율을 낮출 수 있다. 정규화 휘도는 흔히 stretched exponential로 표현한다.</p><div class="formula">\[\frac{L(t)}{L_0}=\exp\left[-\left(\frac{t}{\tau_{OLED}}\right)^{\beta_{OLED}}\right]\]</div></div></div>
 <h3>패널 수준에서는 두 경로가 결합된다</h3><div class="formula">\[L_{panel}(t)\ \propto\ I_{pixel}\!\left(V_{th}(t),\mu(t)\right)\times\eta_{EL}(t)\times\eta_{out}(t)\]</div><div class="grid g3"><div class="card"><b>TFT 경로</b><br><i>V</i><sub>th</sub>, 이동도와 화소전류 변화</div><div class="card"><b>OLED 경로</b><br>내부 발광효율과 재료·계면 열화</div><div class="card"><b>광학 경로</b><br>광추출·micro-cavity·봉지구조 변화</div></div>
 <div class="callout good"><b>물리학과 통계학의 만남:</b> SED/KWW는 한 소자의 열화곡선을, Weibull은 여러 소자의 생존확률을 설명한다. 두 식은 <code>exp[-(t/τ)<sup>β</sup>]</code>라는 동일한 형태에서 만나며, β는 물리에서는 시간상수·장벽 분포의 폭, 통계에서는 hazard 형태와 조기고장 위험을 해석하는 연결변수가 된다.</div>
 <div class="callout danger"><b>해석 주의:</b> TFT (V_{th})와 OLED 휘도가 같은 SED 형태를 보인다고 열화 메커니즘까지 같다고 결론내릴 수는 없다. 온도·전류·재료·구조에 따른 β와 τ의 변화, 전기·광학 측정과 고장분석을 함께 사용해야 한다.</div></section>
-<section id="lifetime-message">
-<span class="label">Executive Summary</span>
-<h2>OLED 수명평가는 측정표준과 모델검증을 연결하는 일이다</h2>
-<p class="lead">이 프로젝트의 목적은 “수명 예측 마법”이 아니다. 사람이 엑셀과 그래프를 보며 반복하던 판단을 데이터 파이프라인으로 고정해, 누가 분석해도 같은 기준으로 L93, P10, 이상점, 모델품질을 확인하게 만드는 것이다.</p>
-<div aria-label="OLED lifetime model development infographic" class="svgbox">
-<svg role="img" viewbox="0 0 1200 430">
-<defs>
-<lineargradient id="g1" x1="0" x2="1">
-<stop offset="0" stop-color="#0f172a"></stop><stop offset="1" stop-color="#164e63"></stop>
-</lineargradient>
-<filter id="shadow"><fedropshadow dx="0" dy="8" flood-opacity=".25" stddeviation="8"></fedropshadow></filter>
-</defs>
-<rect fill="url(#g1)" height="430" rx="24" width="1200"></rect>
-<text fill="#e0f2fe" font-family="Segoe UI,Noto Sans KR" font-size="26" font-weight="800" x="44" y="54">왜 OLED·TFT 열화모델 연구가 계속 필요한가?</text>
-<text fill="#94a3b8" font-family="Segoe UI,Noto Sans KR" font-size="15" x="44" y="84">전통 평가법과 표준은 측정의 언어를 제공하지만, 신규 재료·구조·계측 노이즈까지 자동 판단하려면 모델 검증 체계가 필요하다.</text>
-<g filter="url(#shadow)" font-family="Segoe UI,Noto Sans KR">
-<rect fill="#eff6ff" height="210" rx="20" width="250" x="44" y="122"></rect>
-<text fill="#1e3a8a" font-size="20" font-weight="800" text-anchor="middle" x="169" y="158">전통 수명평가</text>
-<text fill="#334155" font-size="15" x="70" y="198">• 엑셀/수동 그래프</text>
-<text fill="#334155" font-size="15" x="70" y="225">• 단일 SED fitting</text>
-<text fill="#334155" font-size="15" x="70" y="252">• Blue overshoot 중심</text>
-<text fill="#334155" font-size="15" x="70" y="279">• 평균/대표값 위주</text>
-<rect fill="#ecfeff" height="210" rx="20" width="250" x="335" y="122"></rect>
-<text fill="#0e7490" font-size="20" font-weight="800" text-anchor="middle" x="460" y="158">표준·논문이 준 것</text>
-<text fill="#334155" font-size="15" x="361" y="198">• IEC/CIE: 측정 기준</text>
-<text fill="#334155" font-size="15" x="361" y="225">• SED: 열화곡선 언어</text>
-<text fill="#334155" font-size="15" x="361" y="252">• Arrhenius: 온도 가속</text>
-<text fill="#334155" font-size="15" x="361" y="279">• Weibull/P10: 산포</text>
-<rect fill="#fff7ed" height="210" rx="20" width="250" x="626" y="122"></rect>
-<text fill="#b45309" font-size="20" font-weight="800" text-anchor="middle" x="751" y="158">실제 측정 데이터의 문제</text>
-<text fill="#334155" font-size="15" x="652" y="198">• WRGB별 overshoot</text>
-<text fill="#334155" font-size="15" x="652" y="225">• cutoff 기준 모호</text>
-<text fill="#334155" font-size="15" x="652" y="252">• 전류/온도 정규화</text>
-<text fill="#334155" font-size="15" x="652" y="279">• 이상점·외삽 위험</text>
-<rect fill="#ecfdf5" height="210" rx="20" width="239" x="917" y="122"></rect>
-<text fill="#047857" font-size="20" font-weight="800" text-anchor="middle" x="1036" y="158">통합 모델 연구</text>
-<text fill="#334155" font-size="15" x="943" y="198">• 4-way 모델 비교</text>
-<text fill="#334155" font-size="15" x="943" y="225">• L93/P10 자동 계산</text>
-<text fill="#334155" font-size="15" x="943" y="252">• QC/불확실성 표시</text>
-<text fill="#334155" font-size="15" x="943" y="279">• HTML 보고서 표준화</text>
-</g>
-<g fill="none" stroke="#93c5fd" stroke-width="4">
-<path d="M294 226 H333"></path><path d="M585 226 H624"></path><path d="M876 226 H915"></path>
-</g>
-<g fill="#93c5fd">
-<path d="M333 226 l-12 -8 v16z"></path><path d="M624 226 l-12 -8 v16z"></path><path d="M915 226 l-12 -8 v16z"></path>
-</g>
-<text fill="#dbeafe" font-family="Segoe UI,Noto Sans KR" font-size="18" font-weight="700" text-anchor="middle" x="600" y="382">측정 표준 + 물리 모델 + 통계 검증 + 재현 가능한 분석 절차 = 공통 수명평가 언어</text>
-</svg>
-</div>
-<div class="callout">
-<b>인트로 메시지</b><br/>
-    전통적인 OLED 수명분석은 일정 조건에서 휘도 유지율을 측정하고 SED 같은 경험식을 맞춰 LT/L93을 구했다. IEC·CIE 등 표준기구는 측정 조건과 광학 측정의 공통 언어를 제공했고, 논문들은 SED, Arrhenius, inverse power law, Weibull/B10 같은 모델을 제시했다. 그러나 평가 현장 데이터는 WRGB별 초기 오버슈팅, TFE·micro-cavity 변화, 전류 정규화, 접합부 온도, 이상점, 장수명 외삽이 얽혀 있어 단일 모델로는 안정적인 판단이 어렵다. 따라서 앞으로 필요한 연구는 “새 수식 하나”가 아니라, 여러 모델을 같은 데이터에 돌리고 신뢰도·편향·외삽위험을 함께 평가하는 다중 모델 검증 체계다.
-  </div>
-<div class="callout good" id="prelisten-note">
-<b>세미나 시작 전 사전 청취</b><br/>
-    본 자료는 수식과 모델이 많으므로, 세미나 전에 NotebookLM 오디오 리뷰를 먼저 들어보면 전체 흐름을 잡는 데 도움이 된다.
-    오디오에서는 OLED 수명평가의 배경, 오버슈팅, 모델선택, 일관된 분석 필요성을 큰 줄기로 먼저 이해하고, 세미나에서는 실제 데이터와 수식, 자동분석 결과를 확인한다.
-    <br/><br/>
-<a href="https://notebook.google.com/notebook/9dbb3efb-6f3d-472d-8d0a-8d07e0a9f413/artifact/47f4b46c-b09f-4383-ab77-d944be67edb2?utm_source=nlm_web_share&amp;utm_medium=google_oo&amp;utm_campaign=art_share_1&amp;utm_content=&amp;utm_smc=nlm_web_share_google_oo_art_share_1_" rel="noopener" target="_blank">NotebookLM 오디오 리뷰 먼저 듣기 →</a>
-</div>
-<div class="grid g3">
-<div class="card"><h3>문제</h3><p>Blue overshoot만 고려하거나, W/R/G를 100% 고정으로 보는 기존 방식은 신규 재료·구조에서 편향을 만들 수 있다.</p></div>
-<div class="card"><h3>접근</h3><p>PD와 CA310을 시험 식별자 기준으로 결합하고, WRGB 각각의 overshoot/cutoff/fitting을 모델별로 비교한다.</p></div>
-<div class="card"><h3>결과</h3><p>L93/P10, 이상점, RGB 수명순서 QC, 모델 추천을 단일 HTML 보고서로 자동 생성한다.</p></div>
-</div>
-</section>
 <section id="lifetime-sequence">
 <span class="label">Learning Order</span>
 <h2>OLED·TFT 수명평가의 이해 순서</h2>
-<p class="lead">OLED 수명평가는 측정, 정규화, 가속모델, 열화곡선 fitting, 통계적 신뢰성 판단이 연결된 문제다. 본 세미나는 평가 현장 평가자가 같은 기준으로 데이터를 해석할 수 있도록 핵심 개념을 단계별로 정리한다.</p>
+<p class="lead">OLED 수명평가는 측정, 정규화, 가속모델, 열화곡선 적합과 통계적 신뢰성 판단이 연결된 문제다. 핵심 개념을 단계별로 정리한다.</p>
 <table>
 <thead><tr><th>순서</th><th>주제</th><th>핵심 질문</th><th>세미나 메시지</th></tr></thead>
 <tbody>
@@ -168,26 +100,12 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
 <tr><td>4</td><td>가속수명</td><td>온도·전류·전압 조건을 어떻게 수명으로 환산하나?</td><td>온도는 Arrhenius, 전류/전압 스트레스는 power law 성격으로 본다.</td></tr>
 <tr><td>5</td><td>오버슈팅</td><td>초기 상승을 열화 fitting에 넣어도 되나?</td><td>초기 positive aging/TFE 변화는 cutoff 전 구간으로 분리해야 한다.</td></tr>
 <tr><td>6</td><td>모델 비교</td><td>기존 Blue-only 방식이 항상 맞나?</td><td>Legacy는 기준선, 4-way 모델은 편향과 과적합을 검증하는 장치다.</td></tr>
-<tr><td>7</td><td>일관된 분석</td><td>누가 해도 같은 결과가 나오나?</td><td>REQ_ID 기반 파이프라인과 manifest로 재현성을 확보한다.</td></tr>
-<tr><td>8</td><td>운영표준</td><td>최종 판단은 누가 하나?</td><td>AI/코드는 반복분석, 엔지니어는 물리해석과 품질판정을 맡는다.</td></tr>
+
+
 </tbody>
 </table>
 </section>
-<section id="lifetime-data">
-<span class="label">Measurement</span>
-<h2>데이터 구조: PD 시간열화 + CA310 초기 광특성</h2>
-<div class="flow">
-<div>REQ_ID</div><div>PD raw 조회</div><div>CA310 raw 조회</div><div>Join/QC</div><div>HTML 보고서</div>
-</div>
-<div class="grid g2" style="margin-top:18px">
-<div class="card"><h3>PD 데이터</h3><p>시간별 photo diode intensity, VBAT, XVBAT, aging gray, measure gray를 이용해 휘도/전류 proxy/효율 유지율을 만든다.</p></div>
-<div class="card"><h3>CA310 데이터</h3><p>초기 xyY, 색좌표, 휘도 기준값을 확보한다. 시간열화 PD 데이터와 결합해 색별 초기 상태를 추적한다.</p></div>
-</div>
-<div class="callout">
-<b>일관된 분석의 핵심</b><br/>
-    시험 식별자만 넣으면 조회기간, PD/CA310 Join, 모델 피팅, 그림, 표, HTML 보고서까지 한 번에 이어진다.
-  </div>
-</section>
+<section id="lifetime-data"><span class="label">Measurement</span><h2>수명평가 데이터: 시간열화와 초기 광특성</h2><div class="flow"><div>시험 조건</div><div>시간열화</div><div>초기 광특성</div><div>정규화·QC</div><div>모델 해석</div></div><div class="grid g2" style="margin-top:18px"><div class="card"><h3>시간열화 데이터</h3><p>시간에 따른 휘도, 전압과 전류 변화를 이용해 휘도·전류·효율 유지율을 계산한다.</p></div><div class="card"><h3>초기 광특성</h3><p>초기 xyY, 색좌표와 휘도 기준값을 확보하고 시간열화 데이터와 결합해 색별 변화를 추적한다.</p></div></div><div class="callout"><b>데이터 해석의 핵심</b><br>동일한 시험조건에서 시간열화와 초기 광특성을 연결하고, 정규화와 품질확인 후 수명모델을 비교한다.</div></section>
 <section id="academic">
 <span class="label">Academic Background</span>
 <h2>OLED 수명평가법은 측정표준, 물리모델, 통계 신뢰성이 결합되며 발전해왔다</h2>
@@ -204,7 +122,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
 <figcaption><span class="visual-note">그림으로 이해하기:</span> 시간열화 데이터는 상대 변화를, 초기 광특성은 색과 휘도의 기준을 제공한다. 두 데이터를 시험 식별자 기준으로 연결하면 효율수명을 일관된 언어로 해석할 수 있다.</figcaption>
 </figure>
 <p>첨부된 IEC 기반 측정 매뉴얼은 측정환경, 패턴, 잔상, 오버슈팅, 전류정규화, B10 선언까지 실무 절차를 더 구체화한다. 특히 암실 stray light 관리, 표준 측정 geometry, Full Box·Window·Checkerboard 패턴, CIEDE2000 기반 잔상 정량화, Black/Dark current 추적은 수명 모델 이전에 데이터 품질을 좌우하는 항목이다.</p>
-<h3>4. 현재 방식의 한계</h3>
+<h3>4. 수명평가의 대표적 한계</h3>
 <div class="grid g3">
 <div class="card"><h3>초기 오버슈팅</h3><p>Blue뿐 아니라 White, 일부 Green/Red에서도 초기 상승 후 하강이 관찰될 수 있다. 이를 열화구간에 포함하면 수명이 과대평가될 수 있다.</p></div>
 <div class="card"><h3>Cutoff 모호성</h3><p>peak 시점, 하강 시작점, 일정 margin 중 무엇을 fitting 시작점으로 볼지에 따라 L93가 달라진다.</p></div>
@@ -583,9 +501,9 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
 </table>
 </section>
 <section id="lifetime-upgrade">
-<span class="label">Model Upgrade v2</span>
+<span class="label">Model Validation</span>
 <h2>심화 모델검증: 데이터 주도 β · 물리 하한 · 외삽 검증</h2>
-<p class="lead">기준 4모델 위에, 웹앱(<a href="https://github.com/waterfirst/vue_oled_lifetime_analysis">vue_oled_lifetime_analysis</a>) 검증 과정에서 발견한 편향을 없애는 5가지 개선을 얹었다. 핵심은 “같은 SED 형태를 유지하되, 파라미터와 판정을 물리에 맞춘다”이다.</p>
+<p class="lead">여러 SED 모델에서 발생할 수 있는 편향을 줄이기 위한 다섯 가지 검증 원칙이다. 핵심은 같은 수식 형태를 유지하되 파라미터와 판정을 물리적 근거에 맞추는 것이다.</p>
 <h3>1. 데이터 주도 empirical β (색상 × split)</h3>
 <p>SED에서 β와 θ는 강하게 상관된다. 짧은 데이터에서 β를 완전 자유로 두면 θ(=수명)가 흔들리고, 반대로 하드코딩 고정값(예: Blue β=0.75)이 실제 재료와 안 맞으면 수명이 통째로 편향된다. 그래서 <b>“데이터에서 뽑은 global β + 샘플별 local θ”</b>로 분해한다.</p>
 <div class="formula">\[ \hat\beta_{\text{color,split}}=\operatorname{median}\{\hat\beta_i^{\text{free}}\ \mid\ \text{신뢰 fit},\ \beta_i\ \text{경계 미접촉}\},\qquad \hat\theta_i=\arg\min_\theta \sum (L_i(t)-L_0 e^{-((t-t_{\text{cut}})/\theta)^{\hat\beta}})^2 \]</div>
@@ -616,7 +534,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
 <h3>3. 실측 crossing 물리 하한 (overshoot guardrail)</h3>
 <p>오버슛/cutoff 처리 뒤에도 모델이 실측보다 이르게 죽는다고 예측하면 물리적 모순이다(기기가 그 시각까지 target 이상이었음이 관측됨). 모델 수명이 실측 crossing보다 작으면 최소한 실측 crossing으로 floor 보정한다.</p>
 <div class="formula">\[ L93_{\text{final}}=\max\!\left(L93_{\text{model}},\ t_{\text{cross}}^{\text{obs}}\right),\qquad r=\frac{L93_{\text{model}}}{t_{\text{cross}}^{\text{obs}}} \]</div>
-<div class="callout warn"><b>단, floor로 숨기지 않는다.</b> 비율 \(r&lt;0.8\)이면(모델이 2배 이상 빗나감) 그 fit은 <code>GUARDRAIL_UNDERPREDICT</code>로 강등해 신뢰/추천에서 제외한다. 교육용 검증에서도 실측 crossing보다 지나치게 짧게 예측한 적합결과를 이 규칙으로 걸러낼 수 있다.</div>
+<div class="callout warn"><b>단, floor로 숨기지 않는다.</b> 비율 \(r&lt;0.8\)이면(모델이 2배 이상 빗나감) 그 fit은 <code>과소예측 모델</code>로 강등해 신뢰/추천에서 제외한다. 교육용 검증에서도 실측 crossing보다 지나치게 짧게 예측한 적합결과를 이 규칙으로 걸러낼 수 있다.</div>
 <h3>4. 외삽 holdout 검증 (AICc의 한계 보완)</h3>
 <p>AICc·RMSE는 <b>측정 구간 안</b>의 적합도만 본다. 그러나 목적은 측정 뒤(예: L95까지 측정)에서 L93을 <b>외삽</b>하는 것이다. 그래서 앞 70% 시간으로만 재적합해 뒷 30% 측정점을 예측하는 holdout 오차를 본다.</p>
 <figure class="visual-card pdf-figure">
@@ -624,18 +542,14 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
 <figcaption><span class="visual-note">PDF 비유:</span> 짧은 초기 구간만 보고 장기 수명을 외삽하면 실제 열화의 꺾임을 놓칠 수 있다. 그래서 모델은 잘 맞는 곡선 하나가 아니라, holdout·외삽비·실측 crossing guardrail로 검증해야 한다.</figcaption>
 </figure>
 <div class="formula">\[ \text{RMSE}_{\text{holdout}}=\sqrt{\frac1{n_{\text{test}}}\sum_{t&gt;t_{0.7}}\big(L(t)-\hat L_{\text{train}}(t)\big)^2} \]</div>
-<p>holdout은 신뢰 fit을 제외하지 않고 <b>추천 선택의 tiebreaker</b>로 쓴다. in-sample AICc는 좋지만 뒷구간 예측이 나쁜 모델(예: 얕은 데이터에서 double SED 과적합)이 최우선 추천으로 뽑히는 오선택을 막는다.</p>
+<p>holdout은 신뢰 fit을 제외하지 않고 <b>모델 선택의 보조 기준</b>로 쓴다. in-sample AICc는 좋지만 뒷구간 예측이 나쁜 모델(예: 얕은 데이터에서 double SED 과적합)이 최우선 추천으로 뽑히는 오선택을 막는다.</p>
 <h3>5. 효율 = 휘도 / 전류 (정규화 전제)</h3>
 <p>효율 유지율은 구동방식에 무관한 본질적 열화 지표다. PD 휘도 proxy를 전류 proxy(<code>vbat − xvbat</code>)로 나눠 계산한다.</p>
 <div class="formula">\[ \eta(t)=\frac{L_{\text{PD}}(t)/L_{\text{PD}}(0)}{I(t)/I(0)}\times100 \]</div>
-<div class="callout danger"><b>검증 필요 전제.</b> \(vbat-xvbat\)가 전류에 비례한다는 가정은 그 ΔV가 sense-resistor 양단 전압일 때만 성립한다 — 실제 리그 회로로 확인할 것. 또 정전류 구동에선 효율≈휘도 유지율이지만 정휘도 구동에선 다르므로, <code>efficiency_retention</code> 샘플과 <code>luminance_fallback</code> 샘플(전류 coverage &lt; 80%)을 같은 수명 분포에 섞어 pooling하면 편향된다.</div>
-<h3>6. REQ_ID 서버 추출 견고화</h3>
-<div class="grid g3">
-<div class="card"><h3>날짜필터 fallback</h3><p>날짜 컬럼 조회가 실패하면 예외를 잡아 <code>WHERE req_id</code> 단독 조회로 반드시 복구(과거 동작 보장).</p></div>
-<div class="card"><h3>조회창 확대</h3><p>-7/+20일 → -30/+365일(env 조정). 수십~수백 시간 수명평가의 뒷구간이 잘려 수명이 짧아지던 truncation 방지.</p></div>
-<div class="card"><h3>자가 진단</h3><p><code>/api/req-diagnostics?req_id=…</code>로 캐시·cubic_core import·날짜창을 단계별 확인(비밀값 미노출).</p></div>
-</div>
-<div class="callout"><b>요약</b><br/>SED 형태는 유지하되 β는 데이터에서, 하한은 물리에서, 선택은 외삽 검증에서 정한다. 하드코딩·in-sample 편향을 걷어내 수명 분포를 더 신뢰할 수 있게 만든 것이 v2의 핵심이다.</div>
+<div class="callout danger"><b>검증 필요 전제.</b> \(vbat-xvbat\)가 전류에 비례한다는 가정은 그 ΔV가 sense-resistor 양단 전압일 때만 성립한다 — 측정회로로 확인할 것. 또 정전류 구동에선 효율≈휘도 유지율이지만 정휘도 구동에선 다르므로, <code>efficiency_retention</code> 샘플과 <code>luminance_fallback</code> 샘플(전류 coverage &lt; 80%)을 같은 수명 분포에 섞어 pooling하면 편향된다.</div>
+
+
+<div class="callout"><b>요약</b><br/>SED 형태는 유지하되 β는 데이터에서, 하한은 물리에서, 선택은 외삽 검증에서 정한다. 하드코딩·in-sample 편향을 걷어내 수명 분포를 더 신뢰할 수 있게 만든 것이 모델검증의 핵심이다.</div>
 <figure class="visual-card pdf-figure">
 <img alt="신뢰성 제1원리를 미시적 무질서, 수학적 수렴, 거시적 응용으로 요약한 이미지" loading="lazy" src="assets/reliability_pdf/pdf_reliability_summary.webp"/>
 <figcaption><span class="visual-note">PDF 요약:</span> 신뢰성 평가는 미시적 무질서, 수학적 수렴, 거시적 품질판정을 연결하는 일이다. 이번 OLED 자동분석은 이 원리를 실제 측정 데이터, 모델검증, 보고서 일관된 분석로 구현하려는 시도다.</figcaption>
