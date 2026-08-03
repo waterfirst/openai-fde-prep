@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="대학생을 위한 120분 품질 및 디스플레이 패널 품질관리 세미나">
 <title>품질의 기본과 디스플레이 패널 품질관리 — 120분 대학 세미나</title>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]],processEscapes:true},svg:{fontCache:"global"}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style>
 :root{--navy:#071326;--blue:#2563eb;--cyan:#0891b2;--green:#059669;--orange:#d97706;--red:#dc2626;--violet:#7c3aed;--ink:#172033;--muted:#5f6c80;--line:#dce4ef;--bg:#f4f7fb}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;line-height:1.72}a{color:#1d4ed8}.wrap,main{max-width:1120px;margin:auto}
@@ -20,7 +22,7 @@ nav{position:sticky;top:0;z-index:5;background:#0b1730f2;border-bottom:1px solid
 main{padding:34px 22px 74px}section{margin-bottom:22px;padding:29px;background:white;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 30px #0f172a0d}h2{margin:0 0 13px;font-size:29px;line-height:1.28;letter-spacing:-.025em}h3{margin:21px 0 8px;font-size:20px}.lead{font-size:18px;color:#334155}.muted{color:var(--muted)}.tag{display:inline-block;padding:4px 10px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:12px;font-weight:850}.time{float:right;background:#172554;color:#dbeafe;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:800}
 .grid{display:grid;gap:15px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.card{padding:18px;border:1px solid #dfe7f1;border-radius:15px;background:#fbfdff}.card h3{margin-top:0}.num{display:inline-grid;place-items:center;width:31px;height:31px;margin-right:7px;border-radius:50%;background:#dbeafe;color:#1e3a8a;font-weight:900}
 .callout{margin:17px 0;padding:16px 18px;border-left:5px solid var(--blue);border-radius:12px;background:#eff6ff}.good{border-color:var(--green);background:#ecfdf5}.warn{border-color:var(--orange);background:#fffbeb}.danger{border-color:var(--red);background:#fef2f2}.question{border-color:var(--violet);background:#f5f3ff}.process{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}.process div{padding:17px 10px;border:1px solid #bfdbfe;border-radius:13px;background:#eff6ff;text-align:center;font-weight:800;color:#1e3a8a}.process small{display:block;margin-top:4px;color:#53657c;font-weight:500}.agenda{counter-reset:item}.agenda li{list-style:none;display:grid;grid-template-columns:78px 1fr 70px;gap:12px;padding:12px 0;border-bottom:1px solid #e2e8f0}.agenda li:before{counter-increment:item;content:counter(item,decimal-leading-zero);font-weight:900;color:#2563eb}.agenda b:last-child{text-align:right;color:#475569}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}th{background:#f1f5f9}.scroll{overflow:auto}.formula{padding:14px;border-radius:12px;background:#0f172a;color:#e0f2fe;font-family:ui-monospace,monospace;text-align:center}.bar{height:13px;margin:5px 0 11px;border-radius:999px;background:#e2e8f0;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#2563eb,#06b6d4)}.cycle{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cycle div{padding:20px 12px;border-radius:18px;text-align:center;color:white;font-weight:900}.p{background:#2563eb}.d{background:#0891b2}.c{background:#d97706}.a{background:#059669}.lecture-note{margin-top:14px;padding:12px 15px;border-radius:10px;background:#f8fafc;color:#475569;font-size:14px}.lecture-note:before{content:"강의 포인트 · ";font-weight:900;color:#1e3a8a}.trend{border-top:4px solid #0ea5e9}.quiz li{margin-bottom:10px}.footer{text-align:center;color:#64748b;font-size:13px;margin-top:28px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}th{background:#f1f5f9}.scroll{overflow:auto}.formula{padding:14px;border-radius:12px;background:#0f172a;color:#e0f2fe;font-family:ui-monospace,monospace;text-align:center}.bar{height:13px;margin:5px 0 11px;border-radius:999px;background:#e2e8f0;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#2563eb,#06b6d4)}.cycle{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cycle div{padding:20px 12px;border-radius:18px;text-align:center;color:white;font-weight:900}.p{background:#2563eb}.d{background:#0891b2}.c{background:#d97706}.a{background:#059669}.lecture-note{margin-top:14px;padding:12px 15px;border-radius:10px;background:#f8fafc;color:#475569;font-size:14px}.lecture-note:before{content:"강의 포인트 · ";font-weight:900;color:#1e3a8a}.trend{border-top:4px solid #0ea5e9}.quiz li{margin-bottom:10px}.label{display:inline-block;padding:4px 10px;border-radius:999px;background:#e0f2fe;color:#075985;font-size:12px;font-weight:850}.visual-card{border:1px solid #cbd5e1;border-radius:18px;overflow:hidden;margin:20px 0;background:#06111f;box-shadow:0 16px 36px rgba(15,23,42,.16)}.visual-card img{display:block;width:100%;height:auto}.visual-card figcaption{padding:12px 16px;background:#f8fafc;color:#334155;font-size:14px;border-top:1px solid #e2e8f0}.visual-note{font-weight:800;color:#075985}.pdf-figure{border-color:#bae6fd;background:#f8fafc}.mini{font-size:13px;color:#64748b}.footer{text-align:center;color:#64748b;font-size:13px;margin-top:28px}
 @media(max-width:820px){.g2,.g3,.g4,.hero-flow,.process{grid-template-columns:1fr}.agenda li{grid-template-columns:46px 1fr 55px}.cycle{grid-template-columns:repeat(2,1fr)}section{padding:21px}header{padding-top:52px}.time{float:none;display:inline-block;margin-left:7px}}
 </style>
 </head>
@@ -32,9 +34,29 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
   </div><div class="intro-line" aria-hidden="true"></div></div>
 </div>
 <header><div class="wrap"><div class="eyebrow">UNIVERSITY QUALITY SEMINAR · 120 MINUTES</div><h1>품질의 기본과<br>디스플레이 패널 품질관리</h1><p>품질의 기본 원리에서 출발해 패널 주요 평가항목, 화질과 신뢰성, 공정품질, 고객 요구사항과 시장 변화까지 한 흐름으로 이해하는 2시간 입문 강의입니다.</p><div class="badges"><span class="badge">품질의 중요성</span><span class="badge">패널 평가</span><span class="badge">화질·신뢰성</span><span class="badge">공정·고객 품질</span><span class="badge">시장동향</span><button class="badge replay" onclick="replayIntro()">인트로 다시 보기</button></div><div class="hero-flow"><div>고객의 기대</div><div>측정 가능한 CTQ</div><div>안정된 공정</div><div>신뢰성 있는 제품</div><div>시장 경쟁력</div></div></div></header>
-<nav><div><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">사례·토론</a></div></nav>
+<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">사례·토론</a><a href="#deep-dive">수식 심화</a><a href="#audio">오디오 복습</a></div></nav>
 <main>
 
+<section id="prelisten">
+<span class="label">Pre-listening</span>
+<h2>세미나 전 10분 예습 — 오디오 오버뷰와 PDF 자료</h2>
+<p class="lead">본 세미나를 듣기 전에 아래 NotebookLM 오디오 오버뷰를 먼저 들으면, OLED 수명평가의 원리와 오늘 다룰 핵심 흐름을 빠르게 잡을 수 있다.</p>
+<div class="grid g2">
+<div class="card">
+<h3>🎧 오디오 오버뷰</h3>
+<p>OLED 수명평가 표준화, 열화 데이터, L93/P10, 모델검증의 큰 그림을 음성으로 먼저 듣는다.</p>
+<p><a href="https://notebook.google.com/notebook/9dbb3efb-6f3d-472d-8d0a-8d07e0a9f413/artifact/47f4b46c-b09f-4383-ab77-d944be67edb2?utm_source=nlm_web_share&amp;utm_medium=google_oo&amp;utm_campaign=art_share_1&amp;utm_content=&amp;utm_smc=nlm_web_share_google_oo_art_share_1_" rel="noopener" target="_blank">NotebookLM 오디오 오버뷰 열기</a></p>
+</div>
+<div class="card">
+<h3>📄 PDF 예습 자료</h3>
+<p>오디오와 함께 볼 수 있는 요약 PDF 자료다. 세미나 전후 복습용으로 사용한다.</p>
+<p><a href="https://notebook.google.com/notebook/9dbb3efb-6f3d-472d-8d0a-8d07e0a9f413/artifact/5d7dd0e9-f146-4395-a1ba-c0fad664f169?utm_source=nlm_web_share&amp;utm_medium=google_oo&amp;utm_campaign=art_share_1&amp;utm_content=&amp;utm_smc=nlm_web_share_google_oo_art_share_1_" rel="noopener" target="_blank">NotebookLM PDF 자료 열기</a></p>
+</div>
+</div>
+<div class="callout good">
+<b>듣는 순서:</b> 오디오 오버뷰 → 품질 기본 → 화질·신뢰성 → 데이터와 수식 → 사례 토론.
+  </div>
+</section>
 <section id="agenda"><span class="tag">LECTURE MAP</span><span class="time">총 120분</span><h2>강의 목표와 시간 구성</h2><p class="lead">강의가 끝나면 학생은 품질을 검사 업무가 아닌 <b>고객 요구–설계–공정–평가–개선의 연결 시스템</b>으로 설명할 수 있어야 합니다.</p><ol class="agenda">
   <li><span>도입과 학습목표</span><b>왜 화면 품질은 즉시 보이는가</b><b>5분</b></li><li><span>품질의 중요성</span><b>QC·QA·QMS·품질비용과 예방</b><b>15분</b></li><li><span>패널 주요 평가</span><b>전기·광학·외관·기구·환경 CTQ</b><b>20분</b></li><li><span>화질 평가</span><b>휘도·색·균일도·Mura·동화질</b><b>15분</b></li><li><span>신뢰성 평가</span><b>수명·가속시험·고장 메커니즘</b><b>15분</b></li><li><span>휴식</span><b>질문 수집</b><b>10분</b></li><li><span>공정품질</span><b>SPC·MSA·Pareto·원인검증</b><b>15분</b></li><li><span>고객 품질</span><b>VOC·요구사항·변경·8D</b><b>10분</b></li><li><span>시장동향</span><b>IT·차량·폴더블·대형 OLED</b><b>10분</b></li><li><span>사례와 정리</span><b>교육용 사례·핵심 메시지</b><b>5분</b></li>
 </ol></section>
@@ -59,6 +81,457 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px
 <h3>가속시험의 논리</h3><div class="formula">강한 스트레스 → 열화 관찰 → 고장 메커니즘 확인 → 모델과 불확실성 제시 → 사용조건 예측</div><ul><li><b>온도:</b> 반응속도 증가를 이용하지만 실제와 다른 열화가 생기지 않는지 확인합니다.</li><li><b>구동:</b> 높은 휘도·전류 조건으로 시간을 단축하되, 응력 범위의 타당성이 필요합니다.</li><li><b>통계:</b> 평균수명만이 아니라 조기고장 위험, 샘플 간 산포와 신뢰구간을 함께 봅니다.</li></ul>
 <div class="callout danger"><b>잘못된 접근:</b> 가장 강한 조건에서 빨리 고장 내면 좋은 가속시험이라는 생각. 실제 사용과 다른 고장모드가 생기면 빠르지만 틀린 예측이 됩니다.</div><p class="lecture-note">‘시험시간 단축’보다 ‘동일 고장 메커니즘 유지’가 먼저라는 점을 반복합니다. 수식 암기보다 가정과 한계를 설명하게 합니다.</p></section>
 
+<section id="deep-dive"><span class="tag">OPTIONAL DEEP DIVE</span><h2>기존 수식·물리·모델 자료 보존 영역</h2><p class="lead">아래 내용은 기존 세미나의 학술 자료를 보존한 심화학습 영역이다. 120분 본 강의에서는 핵심만 설명하고, 나머지는 사전학습 또는 복습자료로 활용한다.</p><div class="callout good"><b>추천 순서:</b> 물리적 배경 → 최소 수식 → Weibull → 가속수명 → 오버슈팅 → 모델 비교 → 오디오 복습</div></section>
+<section id="academic">
+<span class="label">Academic Background</span>
+<h2>OLED 수명평가법은 측정표준, 물리모델, 통계 신뢰성이 결합되며 발전해왔다</h2>
+<p class="lead">OLED 수명평가는 단순히 “얼마나 오래 켜지는가”를 재는 시험이 아니다. 표준화된 광학 측정, 전기적 구동 조건, 열·전류 가속모델, 휘도 열화 곡선, 통계적 하한 수명 해석이 함께 결합된 신뢰성 평가 체계다.</p>
+<h3>1. 전통적인 OLED 수명평가의 출발점</h3>
+<p>전통적인 OLED 수명평가는 일정한 구동 조건에서 시간에 따른 휘도 저하를 측정하고, 초기 휘도 대비 특정 비율까지 감소하는 시간을 수명으로 정의하는 방식에서 출발했다. IEC 62341-5-3은 OLED 디스플레이 패널과 모듈의 image sticking 및 luminance lifetime 측정 방법을 다루며, 수명평가의 기본 측정 언어를 제공한다.<sup><a href="#ref-iec62341">[1]</a></sup> CA310과 같은 색채휘도계가 제공하는 xyY, 색좌표, 색차 해석은 CIE colorimetry 체계와 연결된다.<sup><a href="#ref-cie15">[2]</a></sup></p>
+<h3>2. 물리적 모델이 의미하는 것</h3>
+<p>OLED 열화곡선에는 stretched exponential decay, 즉 SED 모델이 널리 사용된다. SED는 단일 열화속도가 아니라 유기박막 내부의 트랩, 결함, 계면 상태, 에너지 무질서도처럼 여러 시간상수가 섞인 열화 분포를 경험적으로 표현한다.<sup><a href="#ref-sed-physics">[3]</a></sup> 따라서 \(\theta\)는 대표 열화 시간상수, \(\beta\)는 열화속도 분포의 폭과 곡선 형태를 나타내는 계수로 해석할 수 있다.</p>
+<p>가속수명에서는 온도 효과를 Arrhenius 관계로, 전류밀도 또는 전기적 스트레스를 inverse power law 형태로 모델링하는 접근이 많이 사용된다.<sup><a href="#ref-alt">[4]</a></sup> 이는 고온·고전류 조건에서 빠르게 얻은 데이터를 사용 조건으로 환산하기 위한 틀이다. 하지만 실제 패널에서는 챔버온도와 접합부 온도 \(T_j\), 전류 변화, 전압강하, 광추출 효율 변화가 함께 섞이므로 단순 가속계수만으로는 충분하지 않다.</p>
+<h3>3. 교육용 측정 흐름 예시</h3>
+<p>교육용 수명평가에서는 시간열화 데이터와 초기 광특성을 연결하고, 색상·샘플·시험조건별 휘도 및 효율 유지율을 계산한다. 이후 열화곡선, L93, 하한수명, 이상점과 외삽 위험을 함께 해석한다.</p>
+<figure class="visual-card">
+<img alt="PD 시간열화 데이터와 CA310 초기 광특성을 분석 엔진에서 결합해 보고서로 만드는 개념 이미지" loading="lazy" src="assets/ai_visuals/pd_ca310_pipeline_concept.webp"/>
+<figcaption><span class="visual-note">그림으로 이해하기:</span> 시간열화 데이터는 상대 변화를, 초기 광특성은 색과 휘도의 기준을 제공한다. 두 데이터를 시험 식별자 기준으로 연결하면 효율수명을 일관된 언어로 해석할 수 있다.</figcaption>
+</figure>
+<p>첨부된 IEC 기반 측정 매뉴얼은 측정환경, 패턴, 잔상, 오버슈팅, 전류정규화, B10 선언까지 실무 절차를 더 구체화한다. 특히 암실 stray light 관리, 표준 측정 geometry, Full Box·Window·Checkerboard 패턴, CIEDE2000 기반 잔상 정량화, Black/Dark current 추적은 수명 모델 이전에 데이터 품질을 좌우하는 항목이다.</p>
+<h3>4. 현재 방식의 한계</h3>
+<div class="grid g3">
+<div class="card"><h3>초기 오버슈팅</h3><p>Blue뿐 아니라 White, 일부 Green/Red에서도 초기 상승 후 하강이 관찰될 수 있다. 이를 열화구간에 포함하면 수명이 과대평가될 수 있다.</p></div>
+<div class="card"><h3>Cutoff 모호성</h3><p>peak 시점, 하강 시작점, 일정 margin 중 무엇을 fitting 시작점으로 볼지에 따라 L93가 달라진다.</p></div>
+<div class="card"><h3>정규화 문제</h3><p>휘도 저하가 소자 열화인지, 전류 변화인지, 광학 효율 변화인지 분리해야 한다.</p></div>
+<div class="card"><h3>외삽 위험</h3><p>Red처럼 장수명인 색은 측정시간 안에 L93에 도달하지 않아 모델 외삽 의존도가 커진다.</p></div>
+<div class="card"><h3>통계 산포</h3><p>평균값만 보면 낮은 tail sample과 P10 리스크를 놓칠 수 있다.</p></div>
+<div class="card"><h3>모델 선택</h3><p>단일 모델의 RMSE만으로는 물리적 타당성, 과적합, 고객 요구사항 대응성을 판단하기 어렵다.</p></div>
+</div>
+<h3>5. 여러 모델을 함께 비교하는 이유</h3>
+<p>통합분석은 기존 평가법을 부정하는 것이 아니라, 표준과 논문의 수명평가 언어를 측정 데이터에 연결하는 접근이다. 시간열화와 초기 광특성을 결합하고 여러 수명모델을 같은 데이터에 적용해 L93, 하한수명, 이상점, 외삽비와 모델 안정성을 함께 비교한다.</p>
+<div class="callout good">
+<b>중요한 입장</b><br/>
+    이 방법은 아직 완결된 정답이 아니다. 앞으로 다양한 공개·교육 사례를 누적 분석하면서 재료군, 구조, 온도, 전류밀도, 고객 요구사항, 국제표준을 함께 반영해 최적의 평가 방법으로 발전시켜야 한다.
+  </div>
+</section>
+<section id="physics-foundation">
+<span class="label">First Principles</span>
+<h2>왜 이 수식들인가 — SE(모양)·아레니우스(온도)·멱법칙(응력)의 통합</h2>
+<p class="lead">TFT 소자의 \(\Delta V_{th}\) 열화도, 유기 EL의 휘도 열화도 stretched exponential(SE, Kohlrausch–Williams–Watts)을 기본으로 쓴다. 우연이 아니라, 자연에서 이 형태를 낳는 공통 수학 구조가 있기 때문이다. 핵심은 열화를 <b>속도(rate) 과정</b>으로 보고 <b>시간 모양(β)</b>과 <b>시간 스케일(τ)</b>을 분리하는 것이다. 모든 응력 법칙은 τ 안으로 들어간다.</p>
+<figure class="visual-card">
+<img alt="OLED 휘도 유지율이 시간에 따라 완만하게 감소하고 L93 기준선을 만나는 개념 이미지" loading="lazy" src="assets/ai_visuals/sed_decay_concept.webp"/>
+<figcaption><span class="visual-note">수식을 그림으로 풀면:</span> SED는 하나의 직선 하락이 아니라, 여러 열화속도가 섞인 완만한 곡선이다. L93은 이 곡선이 93% 기준선을 처음 만나는 시간이고, P10은 여러 샘플 중 하위 10% 수명을 보는 품질보증 관점이다.</figcaption>
+</figure>
+<div class="formula">\[ L(t)=L_0\exp\!\left[-\left(\frac{t}{\tau(T,S)}\right)^{\beta}\right],\qquad \frac{1}{\tau(T,S)}\ \propto\ \underbrace{S^{\,n}}_{\text{전압·전류·힘}}\ \underbrace{\exp\!\left(-\frac{E_a}{k_BT}\right)}_{\text{온도}} \]</div>
+<h3>A. 왜 자연은 stretched exponential을 쓰는가</h3>
+<p>실제 OLED 열화는 하나의 원인으로만 진행되지 않는다. 어떤 결함은 빠르게 생기고, 어떤 계면 변화는 천천히 진행되며, 어떤 재료 열화는 장시간에 걸쳐 나타난다. 이렇게 <b>속도가 다른 여러 열화 과정</b>이 동시에 섞이면, 전체 휘도는 단순한 한 개의 지수곡선이 아니라 더 완만하게 휘어진 stretched exponential 형태로 보인다.</p>
+<figure class="visual-card pdf-figure">
+<img alt="단순 지수 감쇠와 stretched exponential을 파이프와 스펀지 물 빠짐으로 비교한 비유 이미지" loading="lazy" src="assets/reliability_pdf/pdf_pipe_sponge_se.webp"/>
+<figcaption><span class="visual-note">PDF 비유:</span> 단순 지수 감쇠는 한 개의 파이프에서 물이 빠지는 것과 비슷하고, stretched exponential은 여러 구멍과 경로를 가진 스펀지에서 물이 천천히 빠지는 것과 비슷하다. OLED 열화는 스펀지형에 가깝다.</figcaption>
+</figure>
+<div class="formula">\[ \Phi(t)=\int_0^\infty g(\tau)\,e^{-t/\tau}\,d\tau \;\xrightarrow{\ \text{heavy-tailed}\ }\; \exp\!\big[-(t/\tau)^\beta\big] \]</div>
+<p>위 수식은 “여러 개의 단순 감쇠곡선을 가중평균하면 하나의 SED 곡선처럼 보인다”는 뜻이다. 따라서 <b>β는 열화 원인이 얼마나 넓게 퍼져 있는지</b>를 나타내는 모양 계수로 해석할 수 있다. β가 1에 가까우면 비교적 한 가지 시간상수가 지배하고, β가 작아질수록 빠른 열화와 느린 열화가 넓게 섞인 상태로 볼 수 있다. 비정질 Si, 유기반도체, 유리처럼 무질서한 재료에서 SED가 자주 나타나는 이유도 여기에 있다.<sup><a href="#ref-sed-physics">[3]</a></sup></p>
+<figure class="visual-card pdf-figure">
+<img alt="에너지 무질서 지형과 shallow trap deep trap을 이용해 stretched exponential을 설명하는 이미지" loading="lazy" src="assets/reliability_pdf/pdf_energy_landscape.webp"/>
+<figcaption><span class="visual-note">PDF 비유:</span> 무질서한 재료는 평평한 도로가 아니라 울퉁불퉁한 산악지형과 같다. 얕은 trap은 빠르게 풀리고, 깊은 trap은 오래 남는다. 이처럼 에너지 장벽이 넓게 퍼지면 β가 작아지고 긴 tail을 가진 열화곡선이 된다.</figcaption>
+</figure>
+<div class="callout">
+<b>쉽게 말하면</b><br/>
+    SED는 “열화 원인이 하나가 아니다”라는 신호다. β는 그 복잡도를 한 숫자로 압축한 값이다.
+    그래서 β를 단순 fitting 계수로만 보지 말고, 재료·계면·구조 열화가 얼마나 섞였는지 보는 힌트로 사용해야 한다.
+  </div>
+<table>
+<thead><tr><th>경로</th><th>기전</th><th>β의 의미</th></tr></thead>
+<tbody>
+<tr><td>완화시간 분포 중첩</td><td>병렬 감쇠 채널 + heavy-tailed rate 분포(Lévy)</td><td>분포 폭(무질서)</td></tr>
+<tr><td>분산 수송 (Scher–Montroll)</td><td>band-tail 국재상태 hopping/multiple-trapping</td><td>\(\beta\approx k_BT/E_0=T/T_0\)</td></tr>
+<tr><td>계층적 구속 완화</td><td>빠른 자유도가 풀려야 느린 자유도가 완화</td><td>구속 위계의 폭</td></tr>
+<tr><td>무작위 trap 확산 (Donsker–Varadhan)</td><td>수분/산소·결함의 반응자리 확산</td><td>\(\beta=d/(d+2)\) (3D=0.6)</td></tr>
+<tr><td>장벽 분포 결함반응</td><td>exciton–polaron 결함생성, 결합파괴</td><td>활성화에너지 분포 폭</td></tr>
+</tbody>
+</table>
+<div class="callout good">
+<b>QA에 강력한 연결 — Weibull = SE</b><br/>
+    신뢰성의 Weibull 신뢰도가 곧 SE의 생존형이다: \( R(t)=\exp[-(t/\tau)^\beta] \), β=Weibull 형상모수. 물리(KWW 완화)와 통계(고장분포)가 같은 식에서 만난다. β&lt;1=초기고장/넓은 결함분포, β=1=무작위(무기억), β&gt;1=wear-out(단일 지배 마모).
+  </div>
+<figure class="visual-card pdf-figure">
+<img alt="물리학의 stretched exponential과 통계학의 Weibull 신뢰도 함수가 같은 형태임을 보여주는 이미지" loading="lazy" src="assets/reliability_pdf/pdf_se_weibull_bridge.webp"/>
+<figcaption><span class="visual-note">PDF 비유:</span> 물리학에서는 같은 곡선을 KWW/SE 완화로 보고, 신뢰성 공학에서는 Weibull 생존함수로 본다. 즉 같은 수식이 한쪽에서는 열화곡선, 다른 쪽에서는 고장확률 언어가 된다.</figcaption>
+</figure>
+<figure class="visual-card pdf-figure">
+<img alt="베타 값이 1보다 작음, 같음, 큼에 따라 초기고장 무작위고장 마모고장을 구분하는 진단 표" loading="lazy" src="assets/reliability_pdf/pdf_beta_diagnostic.webp"/>
+<figcaption><span class="visual-note">PDF 비유:</span> β는 곡선 모양 계수이면서 품질 진단 신호다. β&lt;1이면 초기 결함·넓은 분포, β≈1이면 단순 지수형, β&gt;1이면 wear-out 성격을 의심한다.</figcaption>
+</figure>
+<h3>B. 온도 = 아레니우스 (지수형은 통계역학의 필연)</h3>
+<div class="formula">\[ k=\nu\exp\!\left(-\frac{E_a}{k_BT}\right)\quad\Rightarrow\quad \tau\propto\exp\!\left(+\frac{E_a}{k_BT}\right) \]</div>
+<p>열에너지는 <b>볼츠만 분포</b>를 따르고, 장벽 이상의 에너지를 가진 요동 비율이 정확히 \(e^{-E_a/k_BT}\)(전이상태이론/Kramers). 온도는 <b>에너지에 켤레인 유일한 변수</b>라 장벽 넘기 확률에 지수적으로 들어갈 수밖에 없다 — 회피 불가능한 통계역학. 그래서 온도만 아레니우스(지수)형이다.</p>
+<h3>C. 전압·전류·힘 = 멱법칙 (세 가지 근원)</h3>
+<div class="grid g3">
+<div class="card"><h3>① 반응 차수 (OLED 직결)</h3><p>여기자 밀도 ∝ J. 결함생성이 exciton–polaron(이분자)이면 속도 ∝ J², 단분자면 ∝ J¹. 따라서 \(1/\tau\propto J^{\,n}\), <b>지수 n = 구동량의 반응 차수</b>. coulombic 열화 n≈1.5~2.</p></div>
+<div class="card"><h3>② 척도불변 역학 (기계 피로)</h3><p>선형 탄성엔 고유 스케일이 없다. \(K\propto\sigma\sqrt a\), Paris \(da/dN\propto\Delta K^m\), Coffin–Manson \(N_f\propto(\Delta\varepsilon)^{-n}\). <b>멱법칙=자기유사(scale-free) 응답의 지문</b>.</p></div>
+<div class="card"><h3>③ 로그형 장벽저하 (Eyring)</h3><p>\(k=\nu\exp[-(E_a-b\,g(S))/k_BT]\). \(g(S)=S\)면 지수형(TDDB E-model), \(g(S)=\ln S\)면 <b>멱법칙</b> \(k\propto S^{b/k_BT}\). Black EM \(\text{MTTF}=A\,J^{-n}e^{E_a/k_BT}\).</p></div>
+</div>
+<div class="callout warn">
+<b>뉘앙스</b><br/>
+    전류·기계 피로는 멱법칙이 견고하지만, 전압은 기전에 따라 멱법칙(inverse power law)일 수도, 지수형(E-model \(e^{\gamma E}\), \(1/E\)-model \(e^{G/E}\))일 수도 있다. “멱이냐 지수냐”가 곧 기전 판별 포인트다.
+  </div>
+<figure class="visual-card">
+<img alt="전류와 기계 피로는 멱법칙, 전압 가속은 기전에 따라 inverse power law 또는 E-model로 갈라지는 개념 이미지" loading="lazy" src="assets/ai_visuals/power_vs_exponential_voltage_concept.webp"/>
+<figcaption><span class="visual-note">수식을 그림으로 풀면:</span> 전류·기계 피로는 보통 log-log 축에서 직선이 되는 멱법칙으로 잘 정리된다. 반면 전압 가속은 열화 장벽을 어떻게 낮추는지에 따라 inverse power law 또는 E-model/1/E-model로 갈라진다. 따라서 같은 가속시험이라도 그래프 축을 바꿔 보며 “직선이 어디서 나오는가”를 확인하는 것이 기전 판별의 출발점이다.</figcaption>
+</figure>
+<h3>D. 통합 — 하나의 rate, τ(T,S)</h3>
+<p>결정적 연결: <b>아레니우스와 SE는 같은 활성화에너지 분포의 다른 모멘트다.</b> 단일 장벽이면 단일 τ → 단순 지수(β=1). 장벽 <b>분포</b> \(p(E_a)\)면</p>
+<div class="formula">\[ \Phi(t)=\int p(E)\,\exp\!\big(-t\,\nu\,e^{-E/k_BT}\big)\,dE\ \approx\ \exp\!\big[-(t/\tau)^\beta\big] \]</div>
+<div class="callout">
+<b>세 법칙의 자리</b><br/>
+    • <b>β</b> ← 장벽 분포의 <b>2차 모멘트(분산=무질서)</b><br/>
+    • <b>τ의 아레니우스</b> ← 분포의 <b>1차 모멘트(평균 장벽, 온도)</b><br/>
+    • <b>τ의 멱법칙</b> ← 반응 차수·척도불변 역학(전압·전류·힘)이 평균 rate를 밀어냄
+  </div>
+<p>가속시험은 이 τ를 측정한다:</p>
+<div class="formula">\[ AF=\frac{\tau_{\text{use}}}{\tau_{\text{stress}}}=\left(\frac{S_{\text{stress}}}{S_{\text{use}}}\right)^{n}\exp\!\left[\frac{E_a}{k_B}\!\left(\frac{1}{T_{\text{use}}}-\frac{1}{T_{\text{stress}}}\right)\right] \]</div>
+<p>ln τ vs 1/T 기울기 → \(E_a\), ln τ vs ln S 기울기 → n(반응 차수). 가속수명 모델링의 근거다.<sup><a href="#ref-alt">[4]</a></sup></p>
+<div class="callout danger">
+<b>β의 불변성 = 기전 동일성 검증</b><br/>
+    응력·온도를 바꿔도 β가 일정하면 같은 열화 기전이므로 외삽이 정당하다. β가 꺾이면 기전 전환 → 그 구간 외삽 금지. SE가 잘 맞는다는 사실만으로 기전을 특정할 수 없으므로(여러 기전이 SE로 수렴), β·τ의 온도·응력 의존성과 분광으로 교차검증해야 한다.
+  </div>
+<div class="callout good">
+<b>한 문장 통일</b><br/>
+    열화는 장벽 분포를 가진 rate 과정이다. 분포의 <b>폭</b>이 SE의 β(모양)를, <b>평균 장벽</b>이 τ의 아레니우스(온도)를, 구동량의 <b>반응 차수·척도불변성</b>이 τ의 멱법칙(전압·전류·힘)을 만든다.
+  </div>
+</section>
+<section id="weibull">
+<span class="label">Weibull Reliability</span>
+<h2>와이블 분포는 “몇 %가 먼저 죽는가”를 보는 신뢰성 언어다</h2>
+<p class="lead">SED가 한 샘플의 휘도 열화곡선 \(L(t)\)을 설명한다면, 와이블 분포는 여러 샘플의 <b>수명 산포</b>를 설명한다. 그래서 OLED 수명평가에서 평균 L93만 보면 부족하고, P10/B10처럼 낮은 tail을 함께 봐야 한다.</p>
+<div class="grid g2">
+<div class="card">
+<h3>1. 누적 고장확률과 신뢰도</h3>
+<div class="formula">\[ F(t)=1-\exp\!\left[-\left(\frac{t}{\eta}\right)^\beta\right],\qquad R(t)=1-F(t)=\exp\!\left[-\left(\frac{t}{\eta}\right)^\beta\right] \]</div>
+<p>\(F(t)\)는 t시간까지 고장난 비율, \(R(t)\)는 살아남은 비율이다. 여기서 \(\eta\)는 scale 또는 characteristic life이고, \(t=\eta\)일 때 약 63.2%가 고장난다.<sup><a href="#ref-weibull-nist">[18]</a></sup></p>
+</div>
+<div class="card">
+<h3>2. P10/B10의 의미</h3>
+<div class="formula">\[ B_{10}=Q(0.10)=\eta[-\ln(0.90)]^{1/\beta} \]</div>
+<p>B10 또는 P10은 “10% 샘플이 이미 목표 수명 이하로 떨어지는 지점”이다. 고객 관점에서는 평균보다 B10이 더 중요하다. 평균은 좋아도 tail sample이 짧으면 field risk가 커진다.</p>
+</div>
+</div>
+<figure class="visual-card pdf-figure">
+<img alt="물리학의 stretched exponential과 통계학의 Weibull 신뢰도 함수가 같은 형태임을 보여주는 이미지" loading="lazy" src="assets/reliability_pdf/pdf_se_weibull_bridge.webp"/>
+<figcaption><span class="visual-note">핵심 연결:</span> \(R(t)=\exp[-(t/\eta)^\beta]\)는 SED의 생존함수 형태와 같다. 같은 수식이 한쪽에서는 물리적 열화곡선, 다른 쪽에서는 통계적 생존확률로 읽힌다.</figcaption>
+</figure>
+<h3>3. β는 고장 모드를 말해준다</h3>
+<div class="grid g3">
+<div class="card">
+<h3>β &lt; 1</h3>
+<p><b>초기 불량/infant failure</b>. 시간이 갈수록 hazard가 감소한다. 제조 초기 결함, 약한 샘플이 먼저 탈락하는 상황을 의심한다.</p>
+</div>
+<div class="card">
+<h3>β ≈ 1</h3>
+<p><b>무작위 고장</b>. 지수분포와 같아지고 hazard가 거의 일정하다. 특정 aging 진행보다 외부 random event가 지배하는 상황에 가깝다.</p>
+</div>
+<div class="card">
+<h3>β &gt; 1</h3>
+<p><b>wear-out/마모 고장</b>. 시간이 갈수록 hazard가 증가한다. 재료 열화, 계면 변화, 누적 손상이 지배하는 장수명 평가에서 자주 중요해진다.</p>
+</div>
+</div>
+<figure class="visual-card pdf-figure">
+<img alt="베타 값으로 초기고장 무작위고장 마모고장을 구분하는 진단 이미지" loading="lazy" src="assets/reliability_pdf/pdf_beta_diagnostic.webp"/>
+<figcaption><span class="visual-note">해석 포인트:</span> 와이블 β는 단순 fitting 숫자가 아니라 고장률의 시간 의존성을 압축한 지표다. OLED에서는 색상·재료·split별 β 차이가 열화 기전 차이의 후보 신호가 된다.</figcaption>
+</figure>
+<h3>4. Minitab식 실무 해석: β는 hazard의 모양이다</h3>
+<p>신뢰성 분석 툴에서는 와이블을 “고장시간 데이터의 표준 언어”처럼 사용한다. Minitab 설명처럼 와이블은 왼쪽/오른쪽 치우침과 대칭형 데이터를 모두 표현할 수 있고, β를 바꾸면 감소·일정·증가 hazard를 모두 나타낼 수 있다.<sup><a href="#ref-weibull-minitab">[20]</a></sup></p>
+<table>
+<thead><tr><th>β 범위</th><th>hazard 모양</th><th>품질 해석</th><th>OLED 평가에서 볼 것</th></tr></thead>
+<tbody>
+<tr><td>\(0&lt;\beta&lt;1\)</td><td>시간이 갈수록 감소</td><td>초기 불량, 약한 샘플 선별</td><td>초기 오버슈팅·초기 trap 안정화·공정 defect</td></tr>
+<tr><td>\(\beta=1\)</td><td>거의 일정</td><td>랜덤 고장, 다중 원인</td><td>측정 노이즈, 외란, 샘플 간 혼합 가능성</td></tr>
+<tr><td>\(\beta&gt;1\)</td><td>시간이 갈수록 증가</td><td>wear-out, 누적 열화</td><td>재료 열화, 계면 변화, 전극/봉지 열화</td></tr>
+<tr><td>\(\beta\gg1\)</td><td>특정 시간대 급증</td><td>급격한 마모 또는 임계현상</td><td>공통 구조 약점, 특정 split의 임계 failure 의심</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<b>Weakest-link 비유</b><br/>
+    많은 결함 후보 중 가장 약한 위치가 먼저 임계점에 도달해 고장을 만든다면 와이블이 잘 맞을 수 있다. OLED에서는 pixel, sub-pixel, 계면, 봉지 pinhole, 국부 hot spot 중 가장 약한 경로가 tail sample을 만들 수 있다는 관점으로 연결된다.
+  </div>
+<div class="callout warn">
+<b>단, 와이블 만능론은 금물</b><br/>
+    부식·수분침투·화학반응처럼 누적 반응과 확산이 강하게 섞인 경우에는 로그정규 등 다른 분포가 더 적합할 수 있다. 따라서 통합분석은 와이블 B10을 기본으로 보여주되, lognormal·비모수 percentile과 비교하는 방향으로 확장해야 한다.
+  </div>
+<h3>5. OLED 수명평가에서의 사용법</h3>
+<ol>
+<li>각 샘플의 \(L93\), \(L95\), 또는 목표 retention crossing time을 먼저 구한다.</li>
+<li>색상(W/R/G/B), split, 모델별로 수명값을 모은다.</li>
+<li>와이블 또는 비모수 percentile로 P10/B10을 계산한다.</li>
+<li>평균·중앙값만 보지 말고 B10, outlier, β 변화를 함께 판단한다.</li>
+<li>β가 조건별로 크게 달라지면 같은 기전 외삽으로 보기 어렵기 때문에 모델 추천을 보수화한다.</li>
+</ol>
+<div class="callout warn">
+<b>주의</b><br/>
+    표본 수가 적으면 와이블 β와 B10은 매우 흔들린다. 따라서 세미나에서는 “정답 수명”으로 선언하기보다, <b>평균 중심 판단을 tail risk 중심 판단으로 바꾸는 도구</b>로 설명하는 것이 안전하다.
+  </div>
+</section>
+<section id="device-trend">
+<span class="label">Recent Research Trend</span>
+<h2>TADF, Tandem, OCF/LEAD 구조 변화는 수명평가법도 바꾸고 있다</h2>
+<p class="lead">최근 OLED 개발은 단순히 “더 밝은 재료”를 찾는 단계에서, 발광재료·전하수송층·광추출·봉지·반사저감 구조를 함께 설계하는 방향으로 이동하고 있다. 그래서 수명평가도 기존의 단일 SED fitting 중심에서, 재료 열화와 구조 열화를 분리하고 조건별 모델을 비교하는 방식으로 확장되어야 한다.</p>
+<div class="grid g4">
+<div class="card">
+<h3>TADF / Hyperfluorescence</h3>
+<p>TADF는 삼중항 exciton을 지연형광으로 회수해 높은 내부양자효율을 노리는 재료군이다. 최근 MR-TADF와 hyperfluorescence 연구는 색순도와 효율을 높이는 동시에 delayed lifetime, triplet-polaron quenching, exciton density가 수명에 미치는 영향을 함께 본다.<sup><a href="#ref-tadf-sid">[9]</a></sup><sup><a href="#ref-blue-problem">[10]</a></sup></p>
+</div>
+<div class="card">
+<h3>Tandem OLED</h3>
+<p>Tandem은 발광 유닛을 적층해 같은 휘도를 더 낮은 전류밀도로 내거나 더 높은 peak brightness를 얻는 구조다. SID 발표에서는 효율 증가와 lifetime extension이 동시에 보고되지만, 중간 연결층, lateral leakage, charge balance, stack 간 색별 열화 차이가 새로운 평가 변수로 등장한다.<sup><a href="#ref-sid-tandem">[11]</a></sup><sup><a href="#ref-sid2025">[12]</a></sup></p>
+</div>
+<div class="card">
+<h3>OCF / LEAD</h3>
+<p>OCF/LEAD는 polarizer를 제거하거나 대체해 투과율을 높이고 소비전력·두께를 줄이는 구조다. 같은 밝기를 더 낮은 전력으로 만들 수 있어 lifetime에는 유리할 수 있지만, color filter on encapsulation, black matrix, 저반사 재료, 봉지층 변형이 장기 신뢰성 평가에 추가된다.<sup><a href="#ref-sdc-ocf">[13]</a></sup><sup><a href="#ref-sdc-lead">[14]</a></sup></p>
+</div>
+<div class="card">
+<h3>TFE / 환경 신뢰성</h3>
+<p>Flexible·foldable·rollable 구조에서는 수분·산소·UV·열·기계응력이 유기재료 열화와 동시에 작동한다. 따라서 단순 luminance decay뿐 아니라 dark spot, shrinkage, delamination, edge ingress, 색좌표 이동까지 함께 추적해야 한다.<sup><a href="#ref-encap">[15]</a></sup></p>
+</div>
+</div>
+<h3>수명평가법 관점에서 바뀌는 질문</h3>
+<table>
+<thead><tr><th>기술 변화</th><th>기존 평가 질문</th><th>앞으로 추가해야 할 질문</th><th>통합분석에 넣을 포인트</th></tr></thead>
+<tbody>
+<tr><td>TADF / HF</td><td>LT95/LT90가 얼마나 긴가?</td><td>효율 roll-off, exciton lifetime, delayed component가 열화곡선 형태를 바꾸는가?</td><td>초기 overshoot, 빠른 성분/느린 성분, 전류밀도별 \(\beta\) 변화 비교</td></tr>
+<tr><td>Tandem</td><td>같은 휘도에서 수명이 늘었는가?</td><td>stack별 charge balance와 intermediate connector 열화가 분리되는가?</td><td>색별 lifetime order, voltage drift, lateral leakage 의심 flag</td></tr>
+<tr><td>OCF / LEAD</td><td>전력 절감으로 수명이 좋아지는가?</td><td>저반사/CF/black matrix/encapsulation 구조가 색좌표와 shrinkage에 영향을 주는가?</td><td>휘도 유지율 + color shift + OPR/패턴 의존성 동시 판정</td></tr>
+<tr><td>TFE / Foldable</td><td>85℃/85%RH에서 버티는가?</td><td>수분 ingress와 재료 자체 열화가 시간상수로 구별되는가?</td><td>Double SED, edge/center 비교, UV/습도/열 split matrix</td></tr>
+</tbody>
+</table>
+<div class="callout warn">
+<b>세미나 메시지</b><br/>
+    최신 재료와 구조가 들어가면 “수명 숫자 하나”보다 “왜 그런 곡선이 나왔는가”가 더 중요해진다. 앞으로의 수명평가는 LT/L93 계산을 넘어서, 재료 열화·전하 불균형·광학구조 변화·봉지 열화를 분리해 보는 모델검증 체계로 가야 한다.
+  </div>
+<h3>강의에 반영할 연구 방향</h3>
+<ol>
+<li><b>모델 다중화:</b> Single SED, Double SED, power law, Weibull/P10을 같은 데이터에 적용하고, RMSE뿐 아니라 외삽비·파라미터 안정성·물리 해석 가능성을 함께 본다.</li>
+<li><b>구조별 metadata:</b> TADF/HF, Tandem stack 수, OCF/LEAD 적용, TFE 구조, OPR, 패턴, 온습도, UV split을 입력 metadata로 남긴다.</li>
+<li><b>원인분해:</b> \(L(t)\), \(V(t)\), 색좌표 \((x,y)\), dark current, edge/center 차이를 함께 보고 재료수명과 구조/봉지 열화를 구별한다.</li>
+<li><b>학회/표준 추적:</b> SID·IMID 발표와 IEC/CIE 표준 변화를 주기적으로 반영해 모델추천 기준을 업데이트한다.</li>
+</ol>
+</section>
+<section id="lifetime-math">
+<span class="label">Equations</span>
+<h2>수명평가의 최소 수식</h2>
+<h3>1. 휘도 유지율</h3>
+<div class="formula">\[ L_w(t)=\frac{PD(t)}{PD(0)} \]</div>
+<h3>2. 전류 Proxy 유지율</h3>
+<div class="formula">\[ L_b(t)=\frac{VBAT(t)-XVBAT(t)}{VBAT(0)-XVBAT(0)} \]</div>
+<h3>3. 효율 유지율</h3>
+<div class="formula">\[ L_{eff}(t)=\frac{L_w(t)}{L_b(t)}\times100 \]</div>
+<h3>4. Stretched Exponential Decay, SED</h3>
+<div class="formula">\[ L(t)=L_0\exp\left[-\left(\frac{t-t_{cut}}{\theta}\right)^{\beta}\right] \]</div>
+<h3>5. L93</h3>
+<div class="formula">\[ L93=t_{cut}+\theta\left[-\ln\left(\frac{0.93}{L_0/100}\right)\right]^{1/\beta} \]</div>
+<h3>6. Weibull B10 신뢰수명</h3>
+<div class="formula">\[ T_{B10}=\eta\left[-\ln(0.90)\right]^{1/m} \]</div>
+<div class="callout warn">
+<b>해석 주의</b><br/>
+    β는 단순한 fitting 계수가 아니라 열화 속도 분포와 관련된 형태 계수다. β, θ, cutoff는 서로 강하게 상관될 수 있으므로 단일 샘플 결과만으로 물리 결론을 내리면 안 된다.
+  </div>
+</section>
+<section id="standard-check">
+<span class="label">Standard Checklist</span>
+<h2>첨부 IEC 기반 자료에서 반영할 운영 체크포인트</h2>
+<p class="lead">모델이 아무리 좋아도 입력 데이터가 흔들리면 수명 예측은 흔들린다. 따라서 통합분석법은 측정 표준 체크와 모델 검증을 함께 가져가야 한다.</p>
+<table>
+<thead><tr><th>항목</th><th>첨부자료 요지</th><th>통합분석 반영 방향</th></tr></thead>
+<tbody>
+<tr><td>측정환경</td><td>암실, stray light, 온습도, 센서-패널 geometry 관리</td><td>측정환경 메타데이터를 manifest에 기록하고 이상조건은 report warning으로 표시</td></tr>
+<tr><td>광학측정</td><td>9포인트/13포인트 휘도, 색도, 명암비, 균일도</td><td>CA310 초기값과 위치별 산포를 수명 결과와 연결</td></tr>
+<tr><td>표준 패턴</td><td>Full Box, Window, Checkerboard 패턴으로 열/IR drop/차등열화 분리</td><td>패턴별로 모델 추천을 분리하고 서로 다른 물리 원인을 혼합하지 않음</td></tr>
+<tr><td>잔상 정량화</td><td>Gray 복귀 후 CIEDE2000 색차로 image sticking 평가</td><td>수명 L93와 색차/잔상 지표를 별도 KPI로 병행 관리</td></tr>
+<tr><td>초기 안정화</td><td>Pre-aging 또는 초기 cut-off로 positive aging 구간 제거</td><td>peak가 아니라 지속 하강 시작점과 안정화 조건을 자동 산출</td></tr>
+<tr><td>전류정규화</td><td>전압 시프트와 전류 변화가 효율 열화를 왜곡할 수 있음</td><td>\(VBAT-XVBAT\) 기반 current proxy를 사용해 \(L_{eff}\) 계산</td></tr>
+<tr><td>접합부 온도</td><td>챔버온도 \(T_a\)가 아니라 실제 픽셀 \(T_j\)를 고려</td><td>\(T_j=T_a+R_{th}IV\) 보정을 가속수명 해석에 연결</td></tr>
+<tr><td>B10/P10</td><td>평균수명보다 하위 tail 신뢰수명이 품질보증에 중요</td><td>Raw P10, clean P10, Weibull B10 후보를 함께 표시</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<b>운영 원칙</b><br/>
+    측정 표준은 데이터의 신뢰도를 만들고, 분석 모델은 그 데이터를 해석하는 일관성을 만든다. 둘 중 하나만으로는 고객 대응 가능한 수명평가 체계가 되기 어렵다.
+  </div>
+</section>
+<section id="acceleration">
+<span class="label">Acceleration Physics</span>
+<h2>가속수명: 온도는 Arrhenius, 전류/전압은 Power Law로 본다</h2>
+<p class="lead">OLED 수명 평가는 단순 시간 fitting만으로 끝나지 않는다. 고온·고전류·고휘도 조건에서 얻은 열화 데이터를 상온 사용 조건으로 환산해야 한다.</p>
+<figure class="visual-card">
+<img alt="온도 전류 습도 스트레스를 조절해 OLED 가속수명 시험을 수행하는 개념 이미지" loading="lazy" src="assets/ai_visuals/accelerated_life_concept.webp"/>
+<figcaption><span class="visual-note">수식을 그림으로 풀면:</span> 가속시험은 시간을 당겨 쓰는 실험이다. 온도는 Arrhenius처럼 반응속도를 지수적으로 키우고, 전류·전압 같은 구동 스트레스는 power law 형태로 수명 스케일을 줄인다. 습도는 수분 침투·부식·계면 열화와 연결되는 별도 스트레스 축으로 다뤄야 한다.</figcaption>
+</figure>
+<figure class="visual-card pdf-figure">
+<img alt="온도는 아레니우스 장벽 넘기, 전압과 힘은 지형 기울어진 언덕으로 표현한 물리 비유 이미지" loading="lazy" src="assets/reliability_pdf/pdf_arrhenius_powerlaw.webp"/>
+<figcaption><span class="visual-note">PDF 비유:</span> 온도는 입자가 에너지 장벽을 넘을 확률을 키우는 효과라 Arrhenius 식으로 표현된다. 전압·전류·힘은 지형을 기울여 열화 방향의 구동력을 키우는 효과라 power law 또는 E-model 형태로 나타난다.</figcaption>
+</figure>
+<div class="grid g2">
+<div class="card">
+<h3>온도 가속: Arrhenius</h3>
+<div class="formula">\[ AF_T=\exp\left[\frac{E_a}{k_B}\left(\frac{1}{T_{use}}-\frac{1}{T_{stress}}\right)\right] \]</div>
+<p>온도는 유기재료 반응속도, 확산, 계면 열화와 연결되므로 활성화에너지 기반 Arrhenius 식으로 다룬다.</p>
+</div>
+<div class="card">
+<h3>전류밀도 가속: Inverse Power Law</h3>
+<div class="formula">\[ \tau=CJ^{-n}\exp\left(\frac{E_a}{k_BT_j}\right) \]</div>
+<p>전류밀도 증가에 따른 exciton, polaron, Joule heating 스트레스는 power exponent n으로 표현한다.</p>
+</div>
+</div>
+<h3>접합부 온도 보정</h3>
+<div class="formula">\[ T_j=T_a+R_{th}\left(I_{OLED}V_{OLED}\right) \]</div>
+<div class="callout warn">
+<b>세미나 포인트</b><br/>
+    챔버 온도는 실제 소자 온도가 아니다. 고전류 구동에서는 픽셀 접합부 온도 상승을 보정하지 않으면 수명 가속계수가 왜곡된다.
+  </div>
+</section>
+<section id="overshoot">
+<span class="label">Initial Overshoot</span>
+<h2>초기 오버슈팅은 “좋아진 것”이 아니라 분리해야 할 구간이다</h2>
+<p class="lead">초기 휘도 상승을 열화 곡선에 그대로 넣으면 SED의 β와 θ가 왜곡되고, L93/LT 예측이 과대평가될 수 있다.</p>
+<div class="grid g3">
+<div class="card"><h3>전기적 원인</h3><p>전하 주입 장벽 완화, trap filling, 초기 positive aging으로 단기 휘도 상승이 발생할 수 있다.</p></div>
+<div class="card"><h3>광학적 원인</h3><p>TFE 무기막 응력 완화, 굴절률 n과 두께 d 변화가 micro-cavity 조건을 바꿔 광추출 효율을 올릴 수 있다.</p></div>
+<div class="card"><h3>분석적 처리</h3><p>peak가 아니라 지속 하강 시작점을 cutoff로 잡고, cutoff 이후 구간을 실제 열화 fitting 대상으로 삼는다.</p></div>
+</div>
+<h3>Micro-cavity 조건</h3>
+<div class="formula">\[ 2n(t)d(t)\cos\theta+\frac{\Delta\phi}{2\pi}\lambda=m\lambda \]</div>
+<table>
+<thead><tr><th>색</th><th>오버슈팅 경향</th><th>해석</th></tr></thead>
+<tbody>
+<tr><td>Blue</td><td>가장 큼</td><td>단파장이라 optical path 변화에 민감하고 기존 모델에서도 주로 고려됨.</td></tr>
+<tr><td>White</td><td>반복 관찰 가능</td><td>Blue 성분과 구조 효과가 섞여 fixed-100 가정이 틀릴 수 있음.</td></tr>
+<tr><td>Green/Red</td><td>작지만 존재 가능</td><td>재료·구조·구동조건에 따라 독립 검출 필요.</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<b>평가 규칙</b><br/>
+    단순히 peak &gt; 102% 같은 고정 기준만 쓰지 않고, rolling median, noise sigma, 최소 상승량, 최소 하강량, 연속 하강점을 함께 본다.
+  </div>
+</section>
+<section id="models">
+<span class="label">4-way Model Validation</span>
+<h2>4가지 모델을 동시에 돌려 편향과 과적합을 비교한다</h2>
+<table>
+<thead><tr><th>모델</th><th>핵심 가정</th><th>장점</th><th>주의점</th></tr></thead>
+<tbody>
+<tr><td><b>1. legacy_shared_sed</b></td><td>Blue overshoot 기준 cutoff를 WRGB에 공유. β는 색별 global 고정.</td><td>기존 방식 재현, 변경 영향도 비교에 적합.</td><td>W/R/G overshoot 또는 색별 열화 차이를 숨길 수 있음.</td></tr>
+<tr><td><b>2. pattern_cutoff_fixed_beta_sed</b></td><td>Sample×Color별 cutoff, Lc, τ 최적화. β는 색별 고정.</td><td>색별 cutoff 차이를 반영하면서 자유도는 제한.</td><td>β 고정값이 재료군에 안 맞으면 편향 가능.</td></tr>
+<tr><td><b>3. pattern_cutoff_free_beta_sed</b></td><td>Sample×Color별 cutoff, Lc, τ, β 모두 자유.</td><td>신규 재료·구조 변화에 적응력 높음.</td><td>단기 데이터에서는 β/τ 상관과 외삽 위험 증가.</td></tr>
+<tr><td><b>4. double_sed</b></td><td>빠른 열화와 느린 열화 2항으로 분리.</td><td>초기/장기 메커니즘이 섞인 데이터 설명력 우수.</td><td>파라미터가 많아 AICc/CV/식별성 검증이 필수.</td></tr>
+</tbody>
+</table>
+<div class="callout good">
+<b>권장 운영</b><br/>
+    Legacy는 기준선, pattern fixed-β는 공식 challenger, free-β/double SED는 연구용 후보로 둔다. 최종 선택은 RMSE 하나가 아니라 CV, AICc, BIC, 잔차추세, 외삽비, cutoff 안정성, RGB 물리 QC를 함께 본다.
+  </div>
+<h3>재료/구조별 모델 분리</h3>
+<table>
+<thead><tr><th>구조/재료</th><th>추천 관점</th><th>추가 확인</th></tr></thead>
+<tbody>
+<tr><td>형광/인광 단일 구조</td><td>SED 기반 모델을 기준선으로 사용</td><td>β global 안정성, RGB 순서 QC</td></tr>
+<tr><td>TADF</td><td>초기 plateau 또는 delayed degradation 가능성 확인</td><td>Transient EL, TPA 관련 신호</td></tr>
+<tr><td>Tandem</td><td>CGL 계면, 다단계 열화, double SED 후보 검토</td><td>IS/C-V-f, 구간별 slope 변화</td></tr>
+<tr><td>QD/무기물 기반</td><td>Power law 또는 장기 tail 모델 검토</td><td>초기 급락 후 완만한 잔여 열화</td></tr>
+</tbody>
+</table>
+<h3>Double SED의 연구적 의미: 빠른 성분과 느린 성분의 분해</h3>
+<p>Double SED는 단순히 RMSE를 낮추기 위한 복잡한 fitting 모델이 아니다. OLED 열화가 하나의 원인으로만 진행되지 않는다는 가정 아래, 서로 다른 시간상수를 가진 두 열화 성분을 분리해 보는 연구 도구로 사용할 수 있다.</p>
+<figure class="visual-card">
+<img alt="OLED 열화에서 빠른 초기 성분과 느린 장기 성분이 합쳐져 하나의 수명곡선을 만드는 개념 이미지" loading="lazy" src="assets/ai_visuals/double_sed_concept.webp"/>
+<figcaption><span class="visual-note">수식을 그림으로 풀면:</span> Double SED는 하나의 열화곡선을 두 성분으로 나눠 보는 렌즈다. 빠른 성분은 초기 재료·계면 안정화, 느린 성분은 장기 재료열화·수분·UV·열 구조변화를 의심하게 만든다. 단, 원인 확정은 split 실험과 보조 계측으로 검증해야 한다.</figcaption>
+</figure>
+<div class="formula">\[ L(t)=L_0\left[a\exp\left[-\left(\frac{t}{\tau_f}\right)^{\beta_f}\right]+(1-a)\exp\left[-\left(\frac{t}{\tau_s}\right)^{\beta_s}\right]\right] \]</div>
+<div class="grid g2">
+<div class="card">
+<h3>빠른 성분 후보</h3>
+<p>초기 exciton/polaron 관련 재료 열화, trap filling, 계면 안정화, 전하 주입 장벽 변화, 초기 positive aging 성분으로 해석할 수 있다.</p>
+</div>
+<div class="card">
+<h3>느린 성분 후보</h3>
+<p>장기 재료 열화, 수분/산소 침투, UV·열에 의한 TFE shrinkage, micro-cavity 변화, 광추출 효율 변화 후보로 볼 수 있다.</p>
+</div>
+</div>
+<div class="callout">
+<b>TFT 열화 해석과의 비유</b><br/>
+    TFT 소자 열화에서 shallow trap과 deep trap을 나누어 Vth shift를 해석하듯이, OLED에서도 Double SED를 사용해 빠른 초기 열화와 느린 장기 열화를 분리해 볼 수 있다.
+  </div>
+<figure class="visual-card pdf-figure">
+<img alt="복합 열화 기전에서 shallow trap, deep trap 등 여러 성분을 분리하는 고급 QA 분석 이미지" loading="lazy" src="assets/reliability_pdf/pdf_decomposition.webp"/>
+<figcaption><span class="visual-note">PDF 비유:</span> 측정된 하나의 변화량 안에는 여러 성분이 숨어 있다. TFT의 shallow/deep trap 분해처럼 OLED에서도 빠른 초기 열화와 느린 장기 열화를 분해하면, 재료수명·수분침투·UV·열 구조변화의 후보를 더 체계적으로 볼 수 있다.</figcaption>
+</figure>
+<div class="callout warn">
+<b>해석 안전선</b><br/>
+    Double SED fitting만으로 \(\tau_f\)는 exciton 재료수명, \(\tau_s\)는 TFE shrinkage라고 단정하면 안 된다. 원인 확정은 전류밀도, 온도, 습도, UV, TFE 구조, 색좌표, 구동전압, EL spectrum, dark current split을 함께 검증해야 한다.
+  </div>
+<table>
+<thead><tr><th>관찰되는 성분</th><th>가능한 물리 원인</th><th>검증 split / 보조 계측</th></tr></thead>
+<tbody>
+<tr><td>초기 빠른 변화</td><td>exciton/polaron 열화, trap filling, 주입 장벽 안정화</td><td>전류밀도, 고휘도 구동, 구동전압, 전류효율, EL spectrum</td></tr>
+<tr><td>장기 느린 변화</td><td>수분/산소 침투, UV/열, TFE shrinkage, micro-cavity shift</td><td>고온고습, UV exposure, dark storage, TFE 구조, 색좌표, dark current</td></tr>
+<tr><td>Blue/White 민감 변화</td><td>단파장 micro-cavity 민감도, Blue 재료 열화</td><td>색별 spectrum peak, xy shift, WRGB 독립 cutoff 비교</td></tr>
+</tbody>
+</table>
+</section>
+<section id="audio">
+<span class="label">NotebookLM Audio Review</span>
+<h2>출퇴근길에 듣는 OLED 수명모델 오디오 리뷰</h2>
+<p class="lead">NotebookLM으로 만든 오디오 리뷰를 세미나 사전학습 자료로 연결한다. 학습자는 세미나 전에 큰 흐름을 귀로 먼저 익히고, 세미나에서는 교육 사례·수식·모델 비교 결과를 확인한다.</p>
+<div class="grid g2">
+<div class="card">
+<h3>활용 방법</h3>
+<p>세미나 전날 또는 출퇴근길에 듣게 하고, 세미나에서는 “왜 overshoot/cutoff/model selection이 중요한가”만 짧게 확인한다.</p>
+</div>
+<div class="card">
+<h3>링크</h3>
+<p><a href="https://notebooklm.google.com/notebook/e6415038-3c3d-4d9e-8d77-9a407eecfff8/artifact/c8aa391c-92d4-44b4-a025-40588af612d2?utm_source=nlm_web_share&amp;utm_medium=google_oo&amp;utm_campaign=art_share_1&amp;utm_content=&amp;utm_smc=nlm_web_share_google_oo_art_share_1_" rel="noopener" target="_blank">NotebookLM 오디오 리뷰 열기 →</a></p>
+</div>
+</div>
+<div class="callout warn">
+<b>주의</b><br/>
+    NotebookLM 오디오는 이해를 돕는 보조자료다. 실제 품질판정은 평가 원본 데이터, 적합 결과, QC와 하한수명 검증 결과를 기준으로 한다.
+  </div>
+</section>
+<section id="technical-refs">
+<span class="label">Standards &amp; References</span>
+<h2>참고문헌 및 표준</h2>
+<p class="lead">본 통합분석법은 아래 표준과 문헌을 기반으로 하되, 측정 데이터의 overshoot, cutoff, current normalization, outlier, extrapolation 문제를 해결하기 위한 운영형 검증 체계로 확장한다.</p>
+<table>
+<thead><tr><th>각주</th><th>자료</th><th>세미나에서의 역할</th></tr></thead>
+<tbody>
+<tr id="ref-iec62341"><td>[1]</td><td><a href="https://webstore.iec.ch/en/publication/59744" rel="noopener" target="_blank">IEC 62341-5-3:2019, OLED displays — Measuring methods of image sticking and lifetime</a></td><td>OLED 패널/모듈의 image sticking 및 luminance lifetime 측정 방법의 기준.</td></tr>
+<tr id="ref-cie15"><td>[2]</td><td><a href="https://cie.co.at/publications/colorimetry-4th-edition" rel="noopener" target="_blank">CIE 15:2018 Colorimetry, 4th Edition</a></td><td>색좌표, tristimulus values, colour difference 등 CA310 광색측정 해석의 기반.</td></tr>
+<tr id="ref-sed-physics"><td>[3]</td><td><a href="https://pubs.aip.org/aip/apl/article/87/21/213502/328398/Physical-mechanism-responsible-for-the-stretched" rel="noopener" target="_blank">Physical mechanism responsible for the stretched exponential decay behavior of aging OLEDs</a></td><td>OLED 휘도 열화곡선에 SED가 널리 쓰이는 물리적 배경.</td></tr>
+<tr id="ref-alt"><td>[4]</td><td><a href="https://hal.science/hal-02319746v1/document" rel="noopener" target="_blank">Parametric lifespan models for OLEDs using design of experiments</a></td><td>온도 Arrhenius, 전류 inverse power law 기반 가속수명 모델링의 참고 틀.</td></tr>
+<tr><td>[5]</td><td><a href="https://ieeexplore.ieee.org/document/10381431/" rel="noopener" target="_blank">Temperature and luminance combined degradation model for OLEDs</a></td><td>온도와 초기휘도/전류 조건을 함께 고려한 OLED 열화 모델 연구 흐름.</td></tr>
+<tr><td>[6]</td><td><a href="https://doi.org/10.1109/LED.2015.2394451" rel="noopener" target="_blank">Lifetime extension method using modified SED model for AMOLED degradation</a></td><td>Modified SED를 이용한 OLED 열화 보상 및 수명 연장 연구 사례.</td></tr>
+<tr><td>[7]</td><td>첨부자료: <code>OLEDIEC.pdf</code></td><td>IEC 기반 측정환경, 표준 패턴, 오버슈팅 cut-off, 전류정규화, B10 선언 절차를 세미나 운영 체크포인트로 반영.</td></tr>
+<tr><td>[8]</td><td>첨부자료: <code>OLED_Reliability_Standard_Presentation_Slides.html</code></td><td>대학 세미나 발표 흐름, TFE/micro-cavity, Tandem/TADF, 표준 패턴, 통계 정제 내용을 보강.</td></tr>
+<tr id="ref-tadf-sid"><td>[9]</td><td><a href="https://sid.onlinelibrary.wiley.com/doi/10.1002/jsid.70077" rel="noopener" target="_blank">High-Efficiency and Long-Lifetime Narrowband Green MR-TADF OLEDs, Journal of SID</a></td><td>MR-TADF 계열에서 색순도·효율·수명을 동시에 개선하려는 최신 재료개발 흐름.</td></tr>
+<tr id="ref-blue-problem"><td>[10]</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10839906/" rel="noopener" target="_blank">The Blue Problem: OLED Stability and Degradation Mechanisms</a></td><td>Blue OLED/TADF의 exciton lifetime, roll-off, 안정성 문제가 수명평가 모델에 주는 의미.</td></tr>
+<tr id="ref-sid-tandem"><td>[11]</td><td><a href="https://sid.onlinelibrary.wiley.com/doi/abs/10.1002/sdtp.18304" rel="noopener" target="_blank">SID 2025: Lateral-Leakage Current Reduction in Tandem RGB OLED</a></td><td>Tandem OLED에서 효율과 수명 향상뿐 아니라 leakage/current path 제어가 평가 항목이 되는 사례.</td></tr>
+<tr id="ref-sid2025"><td>[12]</td><td><a href="https://sid.onlinelibrary.wiley.com/doi/10.1002/msid.1597" rel="noopener" target="_blank">Display Week 2025 Highlights, Information Display</a></td><td>SID 2025에서 OLED capacitance, color gamut, polariton-coupling, reliability 이슈가 함께 다뤄지는 흐름.</td></tr>
+<tr id="ref-sdc-ocf"><td>[13]</td><td><a href="https://global.samsungdisplay.com/31344" rel="noopener" target="_blank">Samsung Display OCF Leadership at MWC25</a></td><td>OCF가 polarizer-less, 고휘도, 저전력, 박형화 구조로 확대되는 산업 동향.</td></tr>
+<tr id="ref-sdc-lead"><td>[14]</td><td><a href="https://www.samsungdisplay.com/eng/tech/oled-display.jsp" rel="noopener" target="_blank">Samsung Display OLED Display Technology — LEAD™</a></td><td>LEAD™: polarizer 제거와 신규 panel stack을 통한 저전력·고투과 구조 설명.</td></tr>
+<tr id="ref-encap"><td>[15]</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9502182/" rel="noopener" target="_blank">A Review of Various Attempts on Multi-Functional Encapsulation Technologies for OLEDs</a></td><td>TFE/봉지 구조가 수분·산소·기계응력 신뢰성에 미치는 영향.</td></tr>
+<tr><td>[16]</td><td><a href="https://www.oled-info.com/tags/tandem-architecture?page=4" rel="noopener" target="_blank">OLED-Info: Tandem architecture / IMID 2024 industry trend summary</a></td><td>IMID 2024 전후 polarizer-free OLED, multi-frequency driving, tandem, high-efficiency blue emitter 논의 흐름.</td></tr>
+<tr><td>[17]</td><td>첨부자료: <code>First_Principles_of_Reliability.pdf</code></td><td>SE, Weibull, Arrhenius, Power law, β 해석, 복합 열화분해, 외삽위험을 직관적 비유와 그림으로 설명한 신뢰성 제1원리 자료.</td></tr>
+<tr id="ref-weibull-nist"><td>[18]</td><td><a href="https://www.itl.nist.gov/div898/handbook/apr/section1/apr162.htm" rel="noopener" target="_blank">NIST/SEMATECH e-Handbook of Statistical Methods — Weibull</a></td><td>와이블 분포의 신뢰도 함수, 누적위험, characteristic life, shape parameter 해석의 기준 자료.</td></tr>
+<tr><td>[19]</td><td><a href="https://m.blog.naver.com/ahn_ss75/222165307768" rel="noopener" target="_blank">사용자 제공 참고자료: 와이블 분포 설명 블로그</a></td><td>세미나 청중에게 와이블 분포를 직관적으로 설명하기 위한 추가 읽기 링크.</td></tr>
+<tr id="ref-weibull-minitab"><td>[20]</td><td><a href="https://support.minitab.com/ko-kr/minitab/help-and-how-to/statistical-modeling/reliability/supporting-topics/distribution-models/weibull-distribution/" rel="noopener" target="_blank">Minitab Support — 신뢰도 분석의 Weibull 분포</a></td><td>β에 따른 hazard 해석, 초기고장/랜덤고장/wear-out 구분, weakest-link 모델, 실무 신뢰성 분석 관점.</td></tr>
+</tbody>
+</table>
+<div class="callout good">
+<b>연구 필요성 한 줄</b><br/>
+    표준은 “어떻게 측정할 것인가”를 정하고, 논문은 “어떤 모델이 가능한가”를 제시한다. 신뢰성 평가 연구는 그 둘을 연결해 “우리 데이터에서 어떤 모델을 언제 믿을 것인가”를 결정한다.
+  </div>
+<p class="mini">
+    참고: IEC 62341 OLED display measurement standards, CIE photometry/colorimetry framework, OLED luminance decay stretched exponential literature, accelerated life Arrhenius/inverse power law reliability modeling, Weibull/B10 reliability analysis.
+  </p>
+</section>
 <section id="process"><span class="tag">PART 5</span><span class="time">15분</span><h2>공정품질 관리: 검사에서 예방으로</h2><p class="lead">패널은 여러 공정의 결과가 누적되는 제품입니다. 완제품 검사만 강화해서는 재료 손실과 재작업을 줄일 수 없습니다.</p>
 <div class="process"><div>입고품질<small>원재료·부품</small></div><div>공정조건<small>설비·레시피</small></div><div>중간검사<small>조기 이상검출</small></div><div>출하검사<small>성능·외관</small></div><div>시장정보<small>VOC·반품</small></div></div>
 <div class="grid g3"><div class="card"><h3>MSA</h3><p>측정시스템의 반복성·재현성을 먼저 확인합니다. 나쁜 측정으로는 좋은 공정을 만들 수 없습니다.</p></div><div class="card"><h3>SPC·관리도</h3><p>규격 합격 여부뿐 아니라 시간에 따른 중심과 산포의 이상 신호를 탐지합니다.</p></div><div class="card"><h3>공정능력</h3><p>공정 분포가 규격 안에 안정적으로 들어오는지 평가하되, 안정성 확인이 먼저입니다.</p></div><div class="card"><h3>Pareto</h3><p>불량 종류와 손실 규모를 분류해 개선 우선순위를 정합니다.</p></div><div class="card"><h3>특성요인도·5 Why</h3><p>사람·설비·재료·방법·측정·환경을 탐색하고 근본원인을 검증합니다.</p></div><div class="card"><h3>FMEA·관리계획</h3><p>잠재 고장과 영향을 사전에 검토하고 예방·검출 관리항목을 표준화합니다.</p></div></div>
