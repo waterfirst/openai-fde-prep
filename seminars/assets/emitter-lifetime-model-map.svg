@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">OLED 발광재료 세대와 색별 수명모델 선택 지도</title>
+  <desc id="desc">Red와 Green 인광, Blue 형광, Blue TADF 또는 하이브리드 구조에 공통 SED 기준모델을 적용한 뒤 각 재료의 여기자 동역학에 따라 물리 모델을 추가하는 흐름을 보여준다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071326"/><stop offset="1" stop-color="#173d66"/></linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#075985"/><stop offset="1" stop-color="#4338ca"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#020617" flood-opacity=".38"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7dd3fc"/></marker>
+    <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;fill:#eff6ff}.title{font-size:29px;font-weight:850}.sub{font-size:15px;fill:#bfdbfe}.h{font-size:21px;font-weight:850}.b{font-size:15px}.s{font-size:13px;fill:#cbd5e1}.eq{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:17px;font-weight:750}.line{stroke:#7dd3fc;stroke-width:3;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="800" rx="26" fill="url(#bg)"/>
+  <text x="600" y="48" text-anchor="middle" class="title">양산 재료가 바뀌면 수명모델의 상태변수도 바뀐다</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">색만 나누지 말고 emission mechanism × stack × stress history로 모델을 선택한다</text>
+
+  <g filter="url(#shadow)">
+    <rect x="65" y="112" width="325" height="142" rx="20" fill="#7f1d1d" stroke="#f87171"/>
+    <text x="90" y="148" class="h">Red · Green 인광</text><text x="90" y="180" class="b">상용화 확인 · singlet+triplet 수확</text><text x="90" y="208" class="s">주요 상태: nT, nP, TTA, TPA, quencher</text><text x="90" y="232" class="s">장수명·미도달 → censoring/B10 중요</text>
+    <rect x="438" y="112" width="325" height="142" rx="20" fill="#143d70" stroke="#60a5fa"/>
+    <text x="463" y="148" class="h">Blue 형광</text><text x="463" y="180" class="b">안정성 기준선 · prompt singlet 발광</text><text x="463" y="208" class="s">주요 상태: nS, polaron, chemical trap</text><text x="463" y="232" class="s">초기 burn-in + 고에너지 장기열화</text>
+    <rect x="810" y="112" width="325" height="142" rx="20" fill="#4c1d67" stroke="#c084fc"/>
+    <text x="835" y="148" class="h">Blue TADF · HF</text><text x="835" y="180" class="b">RISC로 triplet 회수 · 공개 양산 제한</text><text x="835" y="208" class="s">주요 상태: nS, nT, kRISC, delayed τ</text><text x="835" y="232" class="s">TTA·TPA·STA·계면열화 동시 고려</text>
+  </g>
+
+  <path d="M228 254 C250 304 410 314 470 342" class="line"/><path d="M600 254 L600 335" class="line"/><path d="M972 254 C950 304 790 314 730 342" class="line"/>
+  <g filter="url(#shadow)"><rect x="385" y="330" width="430" height="150" rx="25" fill="url(#core)" stroke="#bae6fd" stroke-width="2"/>
+    <text x="600" y="368" text-anchor="middle" class="h">공통 QA 기준모델</text>
+    <text x="600" y="406" text-anchor="middle" class="eq">L/L₀ = exp[−(t/τc)^βc]</text>
+    <text x="600" y="439" text-anchor="middle" class="eq">τc = τref(Jref/J)^nc · Arrhenius(T)</text>
+    <text x="600" y="466" text-anchor="middle" class="s">βc·nc·Ea를 색/재료/stack별로 독립 추정</text>
+  </g>
+
+  <path d="M470 480 C440 515 340 516 280 545" class="line"/><path d="M600 480 L600 535" class="line"/><path d="M730 480 C760 515 860 516 920 545" class="line"/>
+  <g filter="url(#shadow)">
+    <rect x="65" y="535" width="325" height="132" rx="18" fill="#3f1d1d" stroke="#fb7185"/>
+    <text x="228" y="572" text-anchor="middle" class="h">인광 물리모델</text><text x="228" y="607" text-anchor="middle" class="eq">dNq/dt ∝ nT·nP + nT² + nP</text><text x="228" y="638" text-anchor="middle" class="s">전압상승 + EQE loss + triplet/polaron</text>
+    <rect x="438" y="535" width="325" height="132" rx="18" fill="#102b52" stroke="#38bdf8"/>
+    <text x="600" y="572" text-anchor="middle" class="h">형광 2구간 모델</text><text x="600" y="607" text-anchor="middle" class="eq">L/L₀ ≈ w·Φfast +(1−w)·Φslow</text><text x="600" y="638" text-anchor="middle" class="s">burn-in 분리 · spectrum/V/EQE 동시검증</text>
+    <rect x="810" y="535" width="325" height="132" rx="18" fill="#33164d" stroke="#a78bfa"/>
+    <text x="972" y="572" text-anchor="middle" class="h">TADF 동역학 모델</text><text x="972" y="607" text-anchor="middle" class="eq">dnT/dt … −kRISC nT −kTTA nT²</text><text x="972" y="638" text-anchor="middle" class="s">delayed τ + RISC + TPA/STA + interface</text>
+  </g>
+
+  <g filter="url(#shadow)"><rect x="155" y="710" width="890" height="60" rx="18" fill="#0f172a" stroke="#f8fafc"/>
+    <text x="600" y="748" text-anchor="middle" class="h">Tandem·hybrid: 단일 SE 금지 → Ltotal(t)=Σℓ Lℓ(t), stack별 current sharing을 함께 추정</text>
+  </g>
+</svg>

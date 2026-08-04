@@ -45,7 +45,7 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
   </div><div class="intro-line" aria-hidden="true"></div></div>
 </div>
 <header><div class="wrap"><div class="eyebrow">QUALITY PRACTITIONER SEMINAR · 120 MINUTES</div><h1>디스플레이 품질관리와<br>OLED 수명 데이터 분석</h1><p>품질·신뢰성·공정·재료·분석 구성원이 패널 CTQ를 정의하고, 측정 원천 데이터를 정제·시각화·모델링해 고객과 공정의 의사결정으로 연결하는 2시간 실무 세미나입니다.</p><div class="badges"><span class="badge">패널 CTQ</span><span class="badge">화질·신뢰성</span><span class="badge">실제 데이터 분석법</span><span class="badge">공정·고객 품질</span><span class="badge">OLED·TFT 열화</span><button class="badge replay" onclick="replayIntro()">인트로 다시 보기</button></div><div class="hero-flow"><div>고객의 기대</div><div>측정 가능한 CTQ</div><div>신뢰할 수 있는 데이터</div><div>검증된 원인·모델</div><div>표준화된 조치</div></div></div></header>
-<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#cross-domain-insight">통합 인사이트</a><a href="#weibull-genealogy">고장분포 계보</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
+<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#emitter-production-lifetime">양산재료·수명</a><a href="#cross-domain-insight">통합 인사이트</a><a href="#weibull-genealogy">고장분포 계보</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
 <main>
 
 <section id="prelisten">
@@ -230,6 +230,97 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 <li>최종 판정에는 휘도뿐 아니라 전압상승, 효율, 색좌표, dark spot와 소자군 하한수명을 포함합니다.</li>
 </ul>
 <div class="callout good"><b>연구 주제 한 문장:</b> “왜 TFT \(\Delta V_{TH}\)와 OLED \(L/L_0\)가 같은 SE 커널을 공유하며, 패널에서 관측되는 휘도 열화를 두 경로로 어떻게 식별·분해할 것인가?”</div>
+</section>
+<section id="emitter-production-lifetime">
+<span class="tag">PRODUCTION MATERIAL × LIFETIME MODEL</span>
+<h2>시기별 양산 발광재료와 Red·Green·Blue 수명모델 선택</h2>
+<p class="lead">공개적으로 확인되는 큰 흐름은 <b>Red·Green 인광, Blue 형광</b>입니다. 그러나 TADF·hyperfluorescence, blue 인광과 tandem 구조가 추가되면서 이제 수명모델은 RGB 색상만이 아니라 <b>발광 메커니즘·stack 수·여기자 수명·구동이력</b>까지 구분해야 합니다.</p>
+<div class="callout warn"><b>공개정보 한계:</b> 실제 양산 dopant·host의 분자명, 조성, 농도와 세대전환 시점은 영업비밀인 경우가 많습니다. 아래 표는 기업·학술기관이 공개한 기술세대와 상용화 수준을 정리한 것이며, 특정 제품의 미공개 재료를 추정하지 않습니다.</div>
+
+<figure class="visual-card">
+<img src="assets/emitter-lifetime-model-map.svg" alt="Red와 Green 인광, Blue 형광, Blue TADF 또는 하이퍼플루오레선스에 공통 SED 기준모델을 적용한 뒤 발광 메커니즘별 물리 수명모델을 선택하는 지도" width="1200" height="800" loading="lazy">
+<figcaption><span class="visual-note">모델 선택 원칙:</span> SED는 모든 재료의 비교 기준선으로 유지하되, 인광에는 triplet/polaron 결함생성, 형광에는 초기·장기 성분 분리, TADF에는 RISC와 delayed lifetime을 포함한 동역학 모델을 challenger로 추가합니다.</figcaption>
+</figure>
+
+<h3>1. 시기별 연구·상용화·양산 이력</h3>
+<div class="scroll"><table><thead><tr><th>시기</th><th>공개된 재료·구조 변화</th><th>상용화 수준</th><th>수명모델에 생긴 변화</th><th>근거와 주의</th></tr></thead><tbody>
+<tr><td><b>1987</b></td><td>Tang–VanSlyke의 소분자 형광 OLED</td><td>현대 OLED 구조의 연구 출발점</td><td>단일/SE 휘도감쇠와 전압상승을 기본 관측으로 사용</td><td>초기 소자는 현재 양산 stack과 동일하지 않음.<sup><a href="#ref-oled-tang">[41]</a></sup></td></tr>
+<tr><td><b>1998</b></td><td>Pt 계열 인광 도펀트로 singlet·triplet 에너지 수확 입증</td><td>인광 OLED의 연구 기반 확립</td><td>triplet lifetime, TTA·TPA와 dopant/host 열화를 상태변수로 추가</td><td>Baldo 등의 red 인광 실증.<sup><a href="#ref-oled-baldo">[42]</a></sup></td></tr>
+<tr><td><b>2003 이후</b></td><td>상용 PHOLED emitter 공급; Red·Green 인광 세대 확대</td><td>Red·Green 양산 적용이 공식 확인됨</td><td>장수명 색은 미도달 censoring·B10과 색별 가속지수 관리가 중요</td><td>UDC는 2003년부터 상용 PHOLED emitter 공급을 공개했고, Samsung Display는 Red·Green 인광 상용화를 설명함.<sup><a href="#ref-udc-commercial">[57]</a></sup><sup><a href="#ref-sdc-phosphorescence">[56]</a></sup></td></tr>
+<tr><td><b>2012</b></td><td>희소금속 없이 triplet을 RISC로 회수하는 TADF</td><td>고효율 지연형광의 연구세대 확립</td><td>\(k_{ISC},k_{RISC},\Delta E_{ST}\), prompt/delayed lifetime과 TTA·TPA·STA 필요</td><td>Uoyama–Adachi의 TADF 원 논문.<sup><a href="#ref-tadf-2012">[58]</a></sup></td></tr>
+<tr><td><b>2013–2024</b></td><td>대형 WOLED, 자동차·IT용 tandem/다중 stack 확대</td><td>LG Display: 2013 대형 OLED, 2019 tandem 상용화, 2024 노트북 tandem 양산</td><td>각 stack의 열화와 current sharing을 분리하는 합성모델 필요</td><td>구조 양산 이력이지 특정 dopant 공개는 아님.<sup><a href="#ref-lgd-tandem-mp">[60]</a></sup></td></tr>
+<tr><td><b>2020</b></td><td>TADF/Hyperfluorescence 재료의 첫 상용 출하 사례</td><td>WiseChip의 <b>yellow PMOLED</b>; blue 대량 양산 증거는 아님</td><td>sensitizer→terminal emitter 에너지전달과 두 재료 열화를 분리</td><td>색과 제품군을 생략하고 “TADF 양산”으로 일반화하면 안 됨.<sup><a href="#ref-kyulux-commercial">[59]</a></sup></td></tr>
+<tr><td><b>2021–2026</b></td><td>QD‑OLED의 blue OLED 광원과 4→5층 Penta Tandem</td><td>2021 이후 TV·monitor 양산; 2026 5층 구조 확대</td><td>blue EML 다층 합성 + QD 변환효율·광학열화까지 분리</td><td>공식 자료는 blue 광원과 층수는 공개하지만 발광분자의 형광/TADF 세대는 명시하지 않음.<sup><a href="#ref-qd-oled-production">[62]</a></sup><sup><a href="#ref-qd-oled-penta">[63]</a></sup></td></tr>
+<tr><td><b>2025</b></td><td>Blue 형광+인광의 hybrid two-stack</td><td>LG Display가 양산라인에서 <b>상용화 수준 검증</b>; 대량 출하 완료와는 구분</td><td>\(L_B=w_F L_F+w_P L_P\)의 stack/방식별 혼합모델 필요</td><td>기존 안정성과 유사하면서 전력 약 15% 절감은 회사 발표 기준.<sup><a href="#ref-lgd-blue-pholed">[61]</a></sup></td></tr>
+</tbody></table></div>
+
+<h3>2. 모든 색에 유지할 공통 QA 기준모델</h3>
+<div class="formula">\[\frac{L_c(t,J,T)}{L_{c,0}}=\exp\!\left[-\left(\frac{t}{\tau_c(J,T)}\right)^{\beta_c}\right]\]</div>
+<div class="formula">\[\tau_c(J,T)=\tau_{c,ref}\left(\frac{J_{ref}}{J}\right)^{n_c}\exp\!\left[\frac{E_{a,c}}{k_B}\left(\frac1T-\frac1{T_{ref}}\right)\right]\]</div>
+<ul class="checklist">
+<li>\(\beta_c,n_c,E_{a,c}\)를 RGB 공통값으로 고정하지 않고 <b>색×발광방식×stack 세대</b>별로 추정합니다.</li>
+<li>가속시험에서 색좌표·전압·EQE·스펙트럼·FA가 같은 고장모드를 유지할 때만 사용조건으로 환산합니다.</li>
+<li>SED는 비교 가능한 baseline이지, 형광·인광·TADF의 원인을 식별하는 최종 물리모델이 아닙니다.<sup><a href="#ref-oled-app-model">[69]</a></sup></li>
+</ul>
+
+<h3>3. Red·Green 인광: SED + triplet/polaron 결함생성 모델</h3>
+<div class="formula">\[\frac{dN_q}{dt}=a_Pn_P+a_Tn_T+a_{TP}n_Tn_P+a_{TT}n_T^2,\qquad \eta_{EL}(t)\approx\frac{\eta_0}{1+K_qN_q(t)}\]</div>
+<div class="grid g3">
+<div class="card"><b>필수 관측</b><br>L, J, V, EQE, spectrum, 실제 EML 온도와 stress/recovery.</div>
+<div class="card"><b>주요 원인 후보</b><br>dopant polaron, TPA·TTA, host/transport-layer trap, recombination-zone 이동.</div>
+<div class="card"><b>품질 통계</b><br>Red·Green 장수명에서 L90/L80 미도달은 right-censoring으로 보존하고 B10+CI를 보고.</div>
+</div>
+<p>인광 모델은 휘도만 맞추는 대신 quencher density로 EQE loss와 voltage rise를 동시에 설명해야 합니다. 실제 연구에서도 polaron·exciton·TPA·TTA와 불순물 효과를 결합한 rate model이 사용됐습니다.<sup><a href="#ref-oled-sim">[34]</a></sup></p>
+
+<h3>4. Blue 형광: 안정성 기준선이지만 ‘triplet 없음’은 아니다</h3>
+<div class="formula">\[\frac{L_B(t)}{L_{B,0}}=w\,e^{-(t/\tau_f)^{\beta_f}}+(1-w)e^{-(t/\tau_s)^{\beta_s}}\]</div>
+<div class="scroll"><table><thead><tr><th>모델 성분</th><th>가능한 물리</th><th>구분 데이터</th><th>판정</th></tr></thead><tbody>
+<tr><td>빠른 \(\Phi_f\)</td><td>초기 burn-in, 전하재배치, 불순물·약한 계면</td><td>초기 V·L/J·spectrum, cutoff 민감도</td><td>안정화 전후를 하나의 장기 \(\tau\)로 강제하지 않음.</td></tr>
+<tr><td>느린 \(\Phi_s\)</td><td>고에너지 excited-state 결합절단, radical·quencher 축적</td><td>장기 L·V·EQE, 질량분석/분광</td><td>색별 current acceleration과 온도 가속을 별도 추정.</td></tr>
+<tr><td>잔류 triplet 영향</td><td>전기생성 exciton 중 비발광 triplet과 polaron 상호작용</td><td>magnetic-field effect, transient EL, current-density 의존성</td><td>형광이라는 이유만으로 triplet 항을 자동 제거하지 않음.</td></tr>
+</tbody></table></div>
+<div class="callout warn"><b>Blue 모델의 핵심:</b> 형광은 prompt singlet 방출이 짧아 triplet-harvesting 방식보다 안정성에 유리할 수 있지만, blue의 높은 여기 에너지와 재결합영역의 화학열화는 별도입니다. 실제 blue 인광 수명이 기존 blue 형광보다 짧았던 연구도 있어 효율과 수명을 같은 축으로 판단하면 안 됩니다.<sup><a href="#ref-blue-pholed-limit">[70]</a></sup></div>
+
+<h3>5. Blue TADF·지연형광: SED만으로는 상태변수가 부족하다</h3>
+<div class="formula">\[\begin{aligned}
+\frac{dn_S}{dt}&=G_S+k_{RISC}n_T-(k_r^S+k_{nr}^S+k_{ISC})n_S-k_{STA}n_Sn_T,\\
+\frac{dn_T}{dt}&=G_T+k_{ISC}n_S-(k_{RISC}+k_{nr}^T)n_T-2k_{TTA}n_T^2-k_{TPA}n_Tn_P,\\
+\frac{dN_q}{dt}&=a_{TTA}n_T^2+a_{TPA}n_Tn_P+a_{STA}n_Sn_T
+\end{aligned}\]</div>
+<div class="formula">\[k_{RISC}(T)\propto e^{-\Delta E_{ST}/k_BT},\qquad \tau_T^{device}\approx\tau_{DF}\ \text{(검증된 조건에서)}\]</div>
+<div class="grid g3">
+<div class="card"><b>SED의 역할</b><br>양산 QC와 세대 간 비교를 위한 baseline. TADF 원인식으로 해석하지 않습니다.</div>
+<div class="card"><b>추가 계측</b><br>prompt/delayed EL·PL, 온도별 \(\tau_{DF}\), roll-off, CV/impedance, recombination-zone 위치.</div>
+<div class="card"><b>열화 원인</b><br>TPA trap, TTA·STA, hole trapping, radical-cation 반응, EML/ETL 계면열화.</div>
+</div>
+<p>도핑농도 비교에서는 인광의 TTA와 TADF의 TPA가 서로 다른 지배 열화 후보로 관찰됐고, 후속 연구에서는 TADF의 TPA 유도 trap 생성, blue PHOLED/TADF의 EML–ETL 계면 화학열화, MR‑TADF의 hole-trapping 기반 반응이 각각 확인됐습니다.<sup><a href="#ref-ph-tadf-doping">[64]</a></sup><sup><a href="#ref-tadf-tpa">[65]</a></sup><sup><a href="#ref-blue-interface">[66]</a></sup><sup><a href="#ref-mr-tadf-deg">[67]</a></sup> 또한 동작 소자의 triplet lifetime을 delayed-fluorescence lifetime으로 근사하는 연구는 \(n_T\)를 실제 계측과 연결할 수 있는 경로를 제시합니다.<sup><a href="#ref-tadf-triplet-life">[68]</a></sup></p>
+
+<h3>6. Hyperfluorescence·Tandem·Hybrid의 추가 항</h3>
+<div class="formula">\[\frac{dn_F}{dt}=k_{FRET}n_{S,TADF}-(k_r^F+k_{nr}^F)n_F,\qquad L_{total}(t)=\sum_{\ell=1}^{N_{stack}}L_\ell(t)\]</div>
+<ul class="checklist">
+<li>Hyperfluorescence는 TADF sensitizer와 terminal fluorescent emitter의 열화를 분리하고 FRET 효율 변화를 추적합니다.</li>
+<li>Tandem은 각 stack의 전압·전류분담과 charge-generation layer 열화를 함께 봅니다.</li>
+<li>Blue 형광+인광 hybrid는 고정된 가중치로 단순 합산하지 말고, 시간에 따른 발광분담과 spectrum 변화를 측정합니다.</li>
+<li>QD‑OLED는 blue OLED 광원 열화와 red/green QD 변환효율·광학경로 변화를 분리합니다.</li>
+</ul>
+
+<h3>7. 양산 품질팀의 모델 선택표</h3>
+<div class="scroll"><table><thead><tr><th>양산/후보 구조</th><th>Baseline</th><th>필수 challenger</th><th>필수 metadata·계측</th><th>승인 조건</th></tr></thead><tbody>
+<tr><td>Red·Green 인광</td><td>색별 SED + J/T 가속</td><td>triplet/polaron quencher rate model</td><td>dopant/host 세대, 농도, J, V, EQE, T, spectrum</td><td>전압상승과 EQE loss 동시 재현, 미도달 censoring 보존</td></tr>
+<tr><td>Blue 형광</td><td>single-SE</td><td>cutoff+double-SE, chemical degradation</td><td>초기 overshoot, L/J, spectrum, V, current density</td><td>후반 holdout과 저전류 사용조건에서 예측성 유지</td></tr>
+<tr><td>Blue TADF/HF</td><td>SED 비교선</td><td>RISC·TTA·TPA·STA + interface model</td><td>prompt/delayed lifetime, \(\Delta E_{ST}\), CV, EML/ETL, roll-off</td><td>\(\tau_{DF}\), EQE, V, lifetime를 한 파라미터계로 설명</td></tr>
+<tr><td>Tandem/hybrid</td><td>총휘도 SED</td><td>stack별 mixture/current-sharing model</td><td>stack 수, CGL, 층별 spectrum/전압, duty, 온도</td><td>stack 변경 후에도 가중치·열화율이 물리적으로 재현</td></tr>
+<tr><td>재료방식 비공개 제품</td><td>색×세대 계층 SED</td><td>change-point/latent mixture</td><td>공개되지 않은 화학명 대신 검증된 device signature</td><td>형광/TADF를 임의 라벨링하지 않고 예측오차로 승인</td></tr>
+</tbody></table></div>
+
+<h3>8. 첨부 TFT 열화문서와의 최종 결합</h3>
+<div class="formula">\[\frac{L_{panel,c}(t)}{L_{panel,c}(0)}\approx\frac{I_{pixel,c}[V_{TH}(t),\mu(t)]}{I_{pixel,c}(0)}\times\frac{\eta_{EML,c}(t)}{\eta_{EML,c}(0)}\times\frac{\eta_{out,c}(t)}{\eta_{out,c}(0)}\]</div>
+<div class="grid g3">
+<div class="card"><b>첨부 TFT 문서</b><br>\(\Delta V_{TH}\), trapping, HCI, NBIS와 short-term model은 <b>전류공급 경로</b>를 담당합니다.</div>
+<div class="card"><b>이번 발광재료 조사</b><br>인광·형광·TADF의 exciton과 quencher는 <b>EML 효율 경로</b>를 담당합니다.</div>
+<div class="card"><b>품질 통합</b><br>화소전류와 \(L/I\)를 분리 측정해 TFT와 OLED 파라미터가 서로 보상하는 가짜 fit을 방지합니다.</div>
+</div>
+<div class="callout good"><b>최종 연구가설:</b> “Red·Green 인광, Blue 형광/TADF의 서로 다른 여기자 동역학을 색별 SED의 \(\tau,\beta,n,E_a\)와 연결하고, TFT 전류경로를 분리하면 재료세대가 바뀌어도 설명 가능한 패널 수명모델을 만들 수 있다.”</div>
 </section>
 <section id="cross-domain-insight">
 <span class="tag">CROSS-DOMAIN INSIGHT · TFT × OLED</span>
@@ -1050,6 +1141,21 @@ print(summary.reset_index())</code></pre>
 <tr id="ref-weibull-fracture-limit"><td>[53]</td><td><a href="https://doi.org/10.1016/j.engfracmech.2006.05.028" rel="noopener" target="_blank">Danzer et al. (2007) — Fracture statistics of ceramics</a></td><td>weakest-link의 전제, 다봉 결함·R-curve·소표본에서 단일 Weibull이 벗어나는 조건을 검토.</td></tr>
 <tr id="ref-iec-weibull"><td>[54]</td><td><a href="https://webstore.iec.ch/en/publication/66370" rel="noopener" target="_blank">IEC 63287-1:2021 — Semiconductor IC reliability qualification guidelines</a></td><td>반도체 IC 신뢰성 자격평가에서 Weibull 기반 표본·시험조건 설계가 여러 방법 중 하나임을 규정.</td></tr>
 <tr id="ref-tddb-weibull"><td>[55]</td><td><a href="https://doi.org/10.1103/PhysRevApplied.19.024008" rel="noopener" target="_blank">Mechanistic modeling of TDDB in polycrystalline thin films (2023)</a></td><td>두께·전압·온도에 따른 dielectric breakdown 시간의 Weibull 분포를 결함·누설경로 모델과 연결.</td></tr>
+<tr id="ref-sdc-phosphorescence"><td>[56]</td><td><a href="https://global.samsungdisplay.com/30939?type=main" rel="noopener" target="_blank">Samsung Display — Phosphorescence</a></td><td>Red·Green 인광의 상용화와 blue 인광의 효율·안정성 과제를 설명한 공식 기술자료.</td></tr>
+<tr id="ref-udc-commercial"><td>[57]</td><td><a href="https://ir.oled.com/newsroom/press-releases/press-release-details/2012/Universal-Display-Corporation-Introduces-New-PHOLED-Emissive-Layer-Material-Systems/default.aspx" rel="noopener" target="_blank">UDC (2012) — Commercial PHOLED material systems</a></td><td>2003년 이후 상용 PHOLED emitter 공급과 Red·Green·Yellow 재료시스템의 공개 성능.</td></tr>
+<tr id="ref-tadf-2012"><td>[58]</td><td><a href="https://doi.org/10.1038/nature11687" rel="noopener" target="_blank">Uoyama et al. (2012) — Highly efficient OLEDs from delayed fluorescence</a></td><td>작은 singlet–triplet 에너지차와 RISC를 이용해 희소금속 없이 고효율 TADF를 구현한 기초 연구.</td></tr>
+<tr id="ref-kyulux-commercial"><td>[59]</td><td><a href="https://www.kyulux.com/kyulux-commences-shipment-of-tadf-hyperfluorescence-oled-materials/" rel="noopener" target="_blank">Kyulux (2020) — First shipment of TADF/Hyperfluorescence materials</a></td><td>WiseChip yellow PMOLED용 Hyperfluorescence 재료의 상용 출하 사례. Blue 대량양산과는 구분.</td></tr>
+<tr id="ref-lgd-tandem-mp"><td>[60]</td><td><a href="https://www.lgdisplay.com/eng/company/media-center/latest-news?contentId=5326" rel="noopener" target="_blank">LG Display (2024) — Tandem OLED laptop mass production</a></td><td>2019 tandem 상용화와 2024 노트북용 two-stack OLED 양산, 에너지 분산에 따른 수명·성능 향상.</td></tr>
+<tr id="ref-lgd-blue-pholed"><td>[61]</td><td><a href="https://www.lgdisplay.com/eng/company/media-center/latest-news?contentId=5429" rel="noopener" target="_blank">LG Display (2025) — Blue phosphorescent OLED commercialization verification</a></td><td>Blue 형광+인광 hybrid two-stack을 실제 양산라인에서 상용화 수준으로 검증한 공식 발표.</td></tr>
+<tr id="ref-qd-oled-production"><td>[62]</td><td><a href="https://global.samsungdisplay.com/31279" rel="noopener" target="_blank">Samsung Display (2024) — QD-OLED production and shipments</a></td><td>2021 이후 blue OLED 광원 기반 QD‑OLED 양산과 monitor 누적 출하 이력.</td></tr>
+<tr id="ref-qd-oled-penta"><td>[63]</td><td><a href="https://global.samsungdisplay.com/31428" rel="noopener" target="_blank">Samsung Display (2026) — QD-OLED Penta Tandem</a></td><td>Blue 유기발광층을 4층에서 5층으로 확장해 에너지 분산·효율·수명을 개선한 양산 구조. emitter 화학세대는 비공개.</td></tr>
+<tr id="ref-ph-tadf-doping"><td>[64]</td><td><a href="https://doi.org/10.1016/j.jiec.2018.08.006" rel="noopener" target="_blank">Phosphorescent vs TADF OLED degradation (2018)</a></td><td>도핑농도 의존성으로 인광의 TTA와 TADF의 TPA 지배 열화 차이를 비교.</td></tr>
+<tr id="ref-tadf-tpa"><td>[65]</td><td><a href="https://doi.org/10.1103/PhysRevApplied.18.064002" rel="noopener" target="_blank">Triplet-polaron-annihilation-induced TADF degradation (2022)</a></td><td>TPA가 electron/hole trap을 만들고 TADF OLED 수명을 제한하는 rate model과 실험 검증.</td></tr>
+<tr id="ref-blue-interface"><td>[66]</td><td><a href="https://www.nature.com/articles/s41467-023-43840-9" rel="noopener" target="_blank">Direct identification of interfacial degradation in blue OLEDs (2023)</a></td><td>Blue PHOLED와 TADF OLED에서 EML/ETL 계면의 분자 열화를 nanoscale chemical profiling으로 확인.</td></tr>
+<tr id="ref-mr-tadf-deg"><td>[67]</td><td><a href="https://www.nature.com/articles/s41467-024-55620-0" rel="noopener" target="_blank">MR-TADF degradation mechanism (2024)</a></td><td>hole trapping과 radical-cation의 dehydrogenative cyclization을 MR‑TADF 열화의 주요 경로로 제시.</td></tr>
+<tr id="ref-tadf-triplet-life"><td>[68]</td><td><a href="https://doi.org/10.1103/PhysRevB.111.L241201" rel="noopener" target="_blank">Triplet lifetime in TADF OLEDs (2025)</a></td><td>동작 TADF OLED의 triplet lifetime이 delayed-fluorescence lifetime으로 근사될 수 있음을 제시.</td></tr>
+<tr id="ref-oled-app-model"><td>[69]</td><td><a href="https://doi.org/10.1002/jsid.858" rel="noopener" target="_blank">Miller et al. (2020) — OLED lifetime across applications</a></td><td>SED 휘도열화를 시간과 전류밀도의 함수로 확장해 실제 display application 수명을 계산.</td></tr>
+<tr id="ref-blue-pholed-limit"><td>[70]</td><td><a href="https://doi.org/10.1002/adom.201600901" rel="noopener" target="_blank">Blue PHOLED degradation and lifetime strategy (2017)</a></td><td>당시 blue PHOLED 수명이 conventional blue fluorescent OLED보다 짧았던 원인과 개선전략을 정리.</td></tr>
 </tbody>
 </table>
 <div class="callout good">
