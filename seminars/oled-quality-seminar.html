@@ -45,7 +45,7 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
   </div><div class="intro-line" aria-hidden="true"></div></div>
 </div>
 <header><div class="wrap"><div class="eyebrow">QUALITY PRACTITIONER SEMINAR · 120 MINUTES</div><h1>디스플레이 품질관리와<br>OLED 수명 데이터 분석</h1><p>품질·신뢰성·공정·재료·분석 구성원이 패널 CTQ를 정의하고, 측정 원천 데이터를 정제·시각화·모델링해 고객과 공정의 의사결정으로 연결하는 2시간 실무 세미나입니다.</p><div class="badges"><span class="badge">패널 CTQ</span><span class="badge">화질·신뢰성</span><span class="badge">실제 데이터 분석법</span><span class="badge">공정·고객 품질</span><span class="badge">OLED·TFT 열화</span><button class="badge replay" onclick="replayIntro()">인트로 다시 보기</button></div><div class="hero-flow"><div>고객의 기대</div><div>측정 가능한 CTQ</div><div>신뢰할 수 있는 데이터</div><div>검증된 원인·모델</div><div>표준화된 조치</div></div></div></header>
-<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
+<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
 <main>
 
 <section id="prelisten">
@@ -145,6 +145,91 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 </tbody></table></div>
 
 <div class="callout good"><b>품질팀의 실무 결론:</b> 모델 이름보다 먼저 실제 구동 파형과 동일한 고장기전을 재현해야 합니다. 실측 구간과 외삽 구간을 분리하고, \(R^2\)뿐 아니라 RMSE·MAE·잔차·파라미터 신뢰구간·미사용 조건 예측을 함께 검토합니다.</div>
+</section>
+<section id="oled-degradation-research">
+<span class="tag">OLED LIFETIME RESEARCH</span>
+<h2>OLED 수명 열화 연구 — 같은 SE 수식에서 원인 기반 모델까지</h2>
+<p class="lead">OLED 휘도 감소와 TFT 문턱전압 이동은 미시적 원인이 다르지만, 서로 다른 속도를 가진 다수 과정이 섞인 복합계라는 공통점 때문에 동일한 stretched-exponential(SE/KWW) 완화함수를 사용할 수 있습니다. 연구의 핵심은 곡선을 잘 맞추는 데서 끝나지 않고 <b>휘도 감소·전압 상승·전류 변화·결함과 여기자 동역학을 분리해 설명하는 것</b>입니다.</p>
+
+<h3>1. 하나의 완화함수, 서로 다른 관측량</h3>
+<div class="formula">\[\Phi(t)=\exp\!\left[-\left(\frac{t}{\tau}\right)^\beta\right],\qquad \frac{L_{OLED}(t)}{L_0}=\Phi(t),\qquad \frac{\Delta V_{TH}(t)}{\Delta V_{TH,\infty}}=1-\Phi(t)\]</div>
+<div class="grid g3">
+<div class="card"><b>OLED 감소형</b><br>정상적으로 빛을 낼 수 있는 발광 중심·효율의 생존분율을 \(\Phi(t)\)로 표현합니다.</div>
+<div class="card"><b>TFT 증가형</b><br>포획전하와 문턱전압 이동의 누적분율을 \(1-\Phi(t)\)로 표현합니다.</div>
+<div class="card"><b>공통 통계물리</b><br>\(\Phi(t)=\int g(k)e^{-kt}dk\). 넓은 속도·장벽 분포가 단일 지수가 아닌 SE 형태를 만듭니다.</div>
+</div>
+<div class="callout danger"><b>같은 수식 ≠ 같은 메커니즘:</b> OLED의 \(\beta\)와 TFT의 \(\beta\)가 같아도 같은 결함이나 반응을 뜻하지 않습니다. SE는 분산된 시간척도를 압축하는 관측모델이며, 원인 확인에는 전기·광학·화학·공간 분석이 추가로 필요합니다.</div>
+
+<h3>2. 연도별 OLED 열화모델의 발전</h3>
+<div class="scroll"><table>
+<thead><tr><th>연도</th><th>대표 연구·모델</th><th>주요 논점과 수식</th><th>연구 한계</th></tr></thead>
+<tbody>
+<tr><td><b>1999</b></td><td>Aziz et al. — Alq₃ 화학 열화</td><td>Alq₃로의 hole injection이 형광 양자효율을 낮추고 생성물이 quencher로 작용한다는 원인계 제시.<sup><a href="#ref-oled-aziz">[29]</a></sup></td><td>특정 소분자·구조의 원인 규명으로, 보편적인 시간 예측식은 제공하지 않는다.</td></tr>
+<tr><td><b>2005</b></td><td>Féry et al. — SED</td><td>\(L/L_0=\exp[-(t/\tau)^\beta]\). 여러 구동조건의 휘도곡선을 간결하게 피팅하고 저휘도 수명을 외삽.<sup><a href="#ref-oled-fery">[30]</a></sup></td><td>\(\tau,\beta\)만으로 결함 종류를 식별하기 어렵고 전압 상승을 설명하지 못한다.</td></tr>
+<tr><td><b>2008</b></td><td>Giebink et al. — 물리 기반 rate model</td><td>charge·exciton·defect 연립속도식으로 TPA/TTA와 결함 생성, 휘도 감소·전압 상승을 연결.<sup><a href="#ref-oled-giebink">[31]</a></sup></td><td>EML만 열화, 단일 결함종, 단순 exciton 분포 등 강한 가정에 의존했다.</td></tr>
+<tr><td><b>2015</b></td><td>Oh et al. — modified SED</td><td>픽셀 사용이력과 SED 기반 열화추정을 보상전류에 연결해 AMOLED burn-in 지연을 목표로 함.<sup><a href="#ref-oled-modsed">[32]</a></sup></td><td>제품 보상에는 유용하지만 물질·계면의 원인 규명보다 경험적 예측에 가깝다.</td></tr>
+<tr><td><b>2017</b></td><td>Kim et al. — 이변량 가속모델</td><td>온도와 초기휘도 두 응력을 결합해 정상 사용조건 수명을 추정하고 통계적 불확실성을 평가.<sup><a href="#ref-oled-bivariate">[33]</a></sup></td><td>시험 범위 밖 외삽과 응력 간 상호작용 형태가 제품·구조에 따라 달라질 수 있다.</td></tr>
+<tr><td><b>2020</b></td><td>Sim et al. — comprehensive model</td><td>polaron, exciton, TPA, TTA, 불순물과 EML/CTL 열화를 함께 고려해 voltage rise와 EQE loss를 설명.<sup><a href="#ref-oled-sim">[34]</a></sup></td><td>많은 상태변수와 속도상수의 식별성이 낮고 일부 계면·환경 기전은 직접 증거가 제한적이다.</td></tr>
+<tr><td><b>2022</b></td><td>Lee — 모델 리뷰·한계 정리</td><td>SED 경험모델과 physics-based model을 비교하고 결함·전하·여기자 분포를 핵심 입력으로 정의.<sup><a href="#ref-oled-review">[35]</a></sup></td><td>발광방식과 재료를 초월한 보편모델, 가변전류와 스트레스 순서효과 모델이 아직 없다.</td></tr>
+<tr><td><b>2023</b></td><td>열·DC·cyclic / duty-ratio 모델</td><td>실사용 duty와 on/off recovery를 반영해 고정 DC용 SED의 적용범위를 확장.<sup><a href="#ref-oled-cyclic">[36]</a></sup><sup><a href="#ref-oled-duty">[37]</a></sup></td><td>특정 상용소자·구동범위에서 얻은 경험계수의 RGB·구조 간 전이가 보장되지 않는다.</td></tr>
+<tr><td><b>2024</b></td><td>Zhao et al. — Marcus·Purcell 수명 이론</td><td>비복사 결함 생성과 여기자에너지의 관계를 Marcus 이론으로 해석하고 \(T\propto PF^m\)의 수명향상을 제시.<sup><a href="#ref-oled-prx">[38]</a></sup></td><td>주로 blue triplet emitter·microcavity 조건이며 일반 OLED 전체에 바로 적용할 수 없다.</td></tr>
+<tr><td><b>2025</b></td><td>Zhou et al. — UV photoaging SED</td><td>\(L/L_0=\exp[-(t/\tau)^\beta]\), \(T_{50}I_{UV}^{n}=C\). 전기·열 열화에 쓰던 SE를 UV 열화로 확장.<sup><a href="#ref-oled-uv">[39]</a></sup></td><td>한 red OLED와 높은 UV 세기 중심이며 실제 태양광·복합환경의 스펙트럼 전이는 추가 검증이 필요하다.</td></tr>
+<tr><td><b>2026</b></td><td>Lee et al. — operando EPS</td><td>전기 임피던스와 electrically pumped spectroscopy를 결합해 EML 및 계면의 target/parasite exciton 변화를 실시간 분리.<sup><a href="#ref-oled-operando">[40]</a></sup></td><td>진단·국소화의 진전이지만 장기간 수명예측식과 제품 보상모델로의 연결은 후속 과제다.</td></tr>
+</tbody></table></div>
+
+<h3>3. 열화모델 수식 비교</h3>
+<div class="scroll"><table>
+<thead><tr><th>모델</th><th>대표 수식</th><th>설명 가능한 것</th><th>설명하지 못하는 것</th></tr></thead>
+<tbody>
+<tr><td><b>단일 지수</b></td><td>\(L/L_0=e^{-t/\tau}\)</td><td>하나의 지배적 열화속도</td><td>초기 급변과 후기 긴 tail, 복수 원인</td></tr>
+<tr><td><b>SED/KWW</b></td><td>\(L/L_0=e^{-(t/\tau)^\beta}\)</td><td>분산된 열화속도를 가진 휘도곡선</td><td>결함의 화학적 정체, 전압 상승과 위치정보</td></tr>
+<tr><td><b>임계수명 변환</b></td><td>\(T_X=\tau[-\ln(X/100)]^{1/\beta}\)</td><td>동일 모델에서 L95·L90·L80·L50 환산</td><td>실측하지 않은 임계점의 외삽 불확실성</td></tr>
+<tr><td><b>전류·휘도 가속</b></td><td>\(T_XL_0^n=C\) 또는 \(T_XJ_0^n=C\)</td><td>고휘도·고전류 시험을 사용조건으로 환산</td><td>응력이 달라져 고장기전이 바뀌는 경우</td></tr>
+<tr><td><b>온도×휘도 결합</b></td><td>\(\tau=\tau_r(L_r/L_0)^n\exp[\frac{E_a}{k_B}(\frac1T-\frac1{T_r})]\)</td><td>온도와 구동응력의 동시 가속</td><td>자기발열, 습도, 파형, stress sequence를 자동으로 설명하지 않음</td></tr>
+<tr><td><b>결함 생성 rate model</b></td><td>\(\frac{dN_D}{dt}=k_Pn_P+k_Xn_X+k_{TPA}n_Pn_T+k_{TTA}n_T^2\)</td><td>polaron·exciton·TPA·TTA가 결함밀도를 만드는 경로</td><td>각 속도상수와 공간분포를 독립 측정하지 않으면 비식별성이 큼</td></tr>
+<tr><td><b>여기자 소멸·휘도</b></td><td>\(\frac{dn_T}{dt}=G-k_rn_T-k_{TTA}n_T^2-k_{TPA}n_Pn_T-k_qN_Dn_T,\ L\propto k_rn_T\)</td><td>결함 증가가 quenching과 휘도 감소로 이어지는 과정</td><td>다층 계면과 비균일 재결합영역을 lumped parameter로 단순화할 위험</td></tr>
+<tr><td><b>가변구동 누적손상</b></td><td>\(D(t)=\int_0^t k[J(u),T(u)]du,\quad L/L_0=e^{-D(t)^\beta}\)</td><td>시간에 따라 달라지는 전류·온도의 누적 dose</td><td>순서효과와 off-time recovery가 있으면 단순 적분만으로 부족</td></tr>
+<tr><td><b>소자군 수명분포</b></td><td>\(F(T)=1-e^{-(T/\eta)^m}\)</td><td>샘플 간 고장시간·B10/P10 산포</td><td>한 소자의 휘도곡선과 원인기전을 직접 설명하지 않음</td></tr>
+</tbody></table></div>
+<div class="callout"><b>수식 해석의 층위:</b> SED는 <b>한 소자의 시간열화곡선</b>, power law·Arrhenius는 <b>응력 간 시간척도 변환</b>, rate equation은 <b>미시 원인</b>, Weibull은 <b>소자군 산포</b>를 담당합니다. 서로 경쟁하는 식이 아니라 서로 다른 질문에 답하는 식입니다.</div>
+
+<h3>4. OLED 수명 원인계 — 현상에서 증거까지</h3>
+<div class="scroll"><table>
+<thead><tr><th>원인계</th><th>대표 메커니즘</th><th>관측 현상</th><th>필요한 검증</th></tr></thead>
+<tbody>
+<tr><td><b>전하·polaron</b></td><td>charge trapping, radical ion 반응, polaron-induced dissociation</td><td>전압 상승, 이동도·전하균형 변화, 효율 감소</td><td>J–V–L, impedance, 단일캐리어 소자, trap spectroscopy</td></tr>
+<tr><td><b>여기자</b></td><td>TTA, TPA/TPQ, exciton quenching, hot excited state</td><td>EQE 감소, roll-off, 휘도 저하, 결함 생성</td><td>TRPL, transient EL, exciton-distribution sensing, operando EPS</td></tr>
+<tr><td><b>분자·화학</b></td><td>bond cleavage, ligand loss, emitter/host fragmentation</td><td>새로운 quencher·trap, 스펙트럼 변화</td><td>LDI-TOF-MS, XPS/UPS, DFT·Marcus 분석</td></tr>
+<tr><td><b>계면·수송층</b></td><td>EML/HTL·EBL 계면 열화, injection barrier 변화</td><td>전압 상승, 재결합영역 이동, parasite exciton</td><td>층별·bilayer 소자, C–V/IS, 위치별 sensing</td></tr>
+<tr><td><b>열·전기응력</b></td><td>Joule heating, 고전류·고휘도, 국부 current crowding</td><td>가속된 휘도감소, 색·전압 변화, 비균일 열화</td><td>실제 junction 온도, 열화상, 전류밀도·APL별 시험</td></tr>
+<tr><td><b>환경·공정</b></td><td>수분·산소·UV, 불순물, 진공도·tact time, 봉지 손상</td><td>초기 급락, dark spot·shrinkage, 산화·trap 증가</td><td>WVTR·봉지평가, controlled exposure, XPS, 공정이력 연계</td></tr>
+<tr><td><b>광학·구조</b></td><td>microcavity, Purcell effect, recombination-zone 폭, tandem</td><td>여기자밀도와 광추출 변화, 수명·색·효율 동시 변화</td><td>광학모델, angle/spectrum, 층두께·stack 대조실험</td></tr>
+</tbody></table></div>
+
+<h3>5. 현재 연구의 공통 한계와 다음 검증</h3>
+<div class="grid g3">
+<div class="card"><b>SE의 원인 비식별성</b><br>좋은 피팅만으로 TPA·TTA·계면열화 중 무엇이 원인인지 결정할 수 없습니다.</div>
+<div class="card"><b>휘도만 보는 한계</b><br>\(L(t)\)만 맞추면 전압상승, 전류·효율 변화와 TFT 영향을 놓칩니다.</div>
+<div class="card"><b>파라미터 공분산</b><br>짧은 관측구간에서는 \(\tau,\beta,L_0\)가 서로 보상해 장기수명이 불안정해집니다.</div>
+<div class="card"><b>응력 전이 실패</b><br>고온·고전류에서 다른 화학반응이 시작되면 Arrhenius·power-law 외삽이 깨집니다.</div>
+<div class="card"><b>실사용 이력</b><br>DC 시험은 APL, duty, 가변주사율, off-time recovery와 stress sequence를 재현하지 못합니다.</div>
+<div class="card"><b>색·재료 전이</b><br>RGB, 형광·인광·TADF·hyperfluorescence는 여기자 수명과 취약결합이 다릅니다.</div>
+<div class="card"><b>초기구간</b><br>overshoot·positive aging·환경불순물의 초기 급변을 장기 열화와 분리해야 합니다.</div>
+<div class="card"><b>소자→패널 간극</b><br>패널 휘도에는 TFT \(V_{TH}\), 이동도, 보상회로와 광학구조가 함께 작용합니다.</div>
+<div class="card"><b>불확실성 보고</b><br>평균 피팅뿐 아니라 censoring, P10/B10, bootstrap CI와 외삽비가 필요합니다.</div>
+</div>
+
+<h3>6. 품질팀용 통합 검증 설계</h3>
+<div class="process"><div>동시계측<small>L·I·V·색·온도</small></div><div>경로분리<small>TFT 전류 vs OLED 효율</small></div><div>다중모델<small>SE·가속·rate</small></div><div>원인증거<small>전기·광학·화학</small></div><div>외부검증<small>미사용 조건·Lot</small></div></div>
+<div class="formula">\[\eta_r(t)=\frac{L(t)/I(t)}{L_0/I_0},\qquad L_{panel}(t)\propto I_{pixel}[V_{TH}(t),\mu(t)]\,\eta_{EL}(t)\,\eta_{out}(t)\]</div>
+<ul class="checklist">
+<li>Constant-current 소자시험과 실제 화소구동 시험을 분리하고 다시 연결합니다.</li>
+<li>실측 구간의 L95/L93와 외삽 L90/L80/L50을 동일한 값처럼 섞지 않습니다.</li>
+<li>온도·전류·duty·off-time 순서를 바꾼 holdout 시험으로 경로의존성을 확인합니다.</li>
+<li>동일 데이터에 단일지수, SE, double-SE, 물리 rate model을 적용해 잔차와 예측오차를 비교합니다.</li>
+<li>최종 판정에는 휘도뿐 아니라 전압상승, 효율, 색좌표, dark spot와 소자군 하한수명을 포함합니다.</li>
+</ul>
+<div class="callout good"><b>연구 주제 한 문장:</b> “왜 TFT \(\Delta V_{TH}\)와 OLED \(L/L_0\)가 같은 SE 커널을 공유하며, 패널에서 관측되는 휘도 열화를 두 경로로 어떻게 식별·분해할 것인가?”</div>
 </section>
 <section id="lifetime-sequence">
 <span class="label">Learning Order</span>
@@ -819,6 +904,18 @@ print(summary.reset_index())</code></pre>
 <tr id="ref-tft-park"><td>[26]</td><td><a href="https://doi.org/10.5370/KIEE.2023.72.3.402" rel="noopener" target="_blank">Park et al. (2023) — a-IGZO TFT 단기 열화 예측식</a></td><td>초기 문턱전압과 스트레스 전압 의존성을 반영한 단기 열화 모델. ms 영역은 직접 측정하지 않은 외삽임을 구분.</td></tr>
 <tr id="ref-tft-yang-cap"><td>[27]</td><td><a href="https://doi.org/10.1016/j.cap.2022.11.011" rel="noopener" target="_blank">Yang et al. (2023) — Local threshold-voltage shift under current stress</a></td><td>multiple SE, 국부 전계, activation energy와 subgap DOS를 연결한 물리 모델.</td></tr>
 <tr id="ref-tft-yang-edl"><td>[28]</td><td><a href="https://doi.org/10.1109/LED.2022.3202992" rel="noopener" target="_blank">Yang et al. (2022) — Physics-based compact model of a-IGZO degradation</a></td><td>top-gate self-aligned a-IGZO의 current-stress 문턱전압 이동 compact model.</td></tr>
+<tr id="ref-oled-aziz"><td>[29]</td><td><a href="https://doi.org/10.1126/science.283.5409.1900" rel="noopener" target="_blank">Aziz et al. (1999) — Degradation mechanism of small-molecule OLEDs</a></td><td>Alq₃로의 hole injection과 형광 quencher 생성으로 장기 열화의 화학적 원인을 제시.</td></tr>
+<tr id="ref-oled-fery"><td>[30]</td><td><a href="https://doi.org/10.1063/1.2133922" rel="noopener" target="_blank">Féry et al. (2005) — Physical mechanism of stretched-exponential OLED aging</a></td><td>여러 구동조건의 휘도 열화를 SED로 표현하고 가속곡선에서 저휘도 수명 외삽을 논의.</td></tr>
+<tr id="ref-oled-giebink"><td>[31]</td><td><a href="https://doi.org/10.1063/1.2884530" rel="noopener" target="_blank">Giebink et al. (2008) — Intrinsic luminance loss due to bimolecular annihilation</a></td><td>charge·exciton·defect rate equation으로 PHOLED 휘도저하와 전압상승을 연결한 초기 물리 모델.</td></tr>
+<tr id="ref-oled-modsed"><td>[32]</td><td><a href="https://doi.org/10.1109/LED.2015.2394451" rel="noopener" target="_blank">Oh et al. (2015) — AMOLED lifetime extension using modified SED</a></td><td>SED 기반 열화예측을 픽셀 보상과 연결한 제품 적용 연구.</td></tr>
+<tr id="ref-oled-bivariate"><td>[33]</td><td><a href="https://doi.org/10.1109/TIE.2016.2623584" rel="noopener" target="_blank">Kim et al. (2017) — Bivariate lifetime model for OLEDs</a></td><td>온도와 초기휘도를 결합하고 물리·통계 불확실성을 고려한 대형 OLED 수명모델.</td></tr>
+<tr id="ref-oled-sim"><td>[34]</td><td><a href="https://doi.org/10.1103/PhysRevApplied.14.024002" rel="noopener" target="_blank">Sim et al. (2020) — Comprehensive OLED degradation model</a></td><td>polaron·exciton·TPA·TTA·불순물과 EML/CTL 열화를 결합해 voltage rise와 EQE loss를 설명.</td></tr>
+<tr id="ref-oled-review"><td>[35]</td><td><a href="https://doi.org/10.1080/15980316.2022.2126018" rel="noopener" target="_blank">Lee (2022) — Lifetime modeling for OLEDs: review and analysis</a></td><td>SED와 원인 기반 수명모델의 계보, 결함·여기자분포 측정 및 실용화 한계를 종합.</td></tr>
+<tr id="ref-oled-cyclic"><td>[36]</td><td><a href="https://doi.org/10.1109/TIA.2022.3206286" rel="noopener" target="_blank">Al Haddad et al. (2023) — Thermal, constant and cyclic electrical stress</a></td><td>열·연속·주기 구동에서 OLED luminance decay를 모델링한 실사용 확장 연구.</td></tr>
+<tr id="ref-oled-duty"><td>[37]</td><td><a href="https://doi.org/10.1002/bio.4614" rel="noopener" target="_blank">Duty-ratio drive prediction model (2023)</a></td><td>OLED-on-silicon의 duty ratio와 off-time recovery를 반영해 DC SED의 한계를 보완.</td></tr>
+<tr id="ref-oled-prx"><td>[38]</td><td><a href="https://doi.org/10.1103/PhysRevX.14.041044" rel="noopener" target="_blank">Zhao et al. (2024) — Nonradiative defects in blue triplet emitters</a></td><td>Marcus theory와 Purcell factor를 이용해 결함생성·여기자에너지·blue PHOLED 수명을 연결.</td></tr>
+<tr id="ref-oled-uv"><td>[39]</td><td><a href="https://doi.org/10.1039/D5CP00664C" rel="noopener" target="_blank">Zhou et al. (2025) — OLED UV photoaging and SED model</a></td><td>전기·열 열화에 사용된 SE와 power-law 가속관계를 UV 광열화로 확장.</td></tr>
+<tr id="ref-oled-operando"><td>[40]</td><td><a href="https://www.nature.com/articles/s41377-026-02373-8" rel="noopener" target="_blank">Lee et al. (2026) — Operando electrically pumped spectroscopy</a></td><td>전기·광학 동시 측정으로 EML 및 계면의 target/parasite exciton 열화경로를 국소화.</td></tr>
 </tbody>
 </table>
 <div class="callout good">
