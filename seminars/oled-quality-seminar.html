@@ -45,7 +45,7 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
   </div><div class="intro-line" aria-hidden="true"></div></div>
 </div>
 <header><div class="wrap"><div class="eyebrow">QUALITY PRACTITIONER SEMINAR · 120 MINUTES</div><h1>디스플레이 품질관리와<br>OLED 수명 데이터 분석</h1><p>품질·신뢰성·공정·재료·분석 구성원이 패널 CTQ를 정의하고, 측정 원천 데이터를 정제·시각화·모델링해 고객과 공정의 의사결정으로 연결하는 2시간 실무 세미나입니다.</p><div class="badges"><span class="badge">패널 CTQ</span><span class="badge">화질·신뢰성</span><span class="badge">실제 데이터 분석법</span><span class="badge">공정·고객 품질</span><span class="badge">OLED·TFT 열화</span><button class="badge replay" onclick="replayIntro()">인트로 다시 보기</button></div><div class="hero-flow"><div>고객의 기대</div><div>측정 가능한 CTQ</div><div>신뢰할 수 있는 데이터</div><div>검증된 원인·모델</div><div>표준화된 조치</div></div></div></header>
-<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#emitter-production-lifetime">양산재료·수명</a><a href="#cross-domain-insight">통합 인사이트</a><a href="#weibull-genealogy">고장분포 계보</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
+<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#summary">핵심 메시지</a><a href="#audio">오디오 복습</a><a href="#deep-dive">부록: 수식 심화</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#emitter-production-lifetime">양산재료·수명</a><a href="#cross-domain-insight">통합 인사이트</a><a href="#weibull-genealogy">고장분포 계보</a><a href="#statphys-lab">통계물리 그래프</a></div></nav>
 <main>
 
 <section id="prelisten">
@@ -92,7 +92,141 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 <h3>가속시험의 논리</h3><div class="formula">강한 스트레스 → 열화 관찰 → 고장 메커니즘 확인 → 모델과 불확실성 제시 → 사용조건 예측</div><ul><li><b>온도:</b> 반응속도 증가를 이용하지만 실제와 다른 열화가 생기지 않는지 확인합니다.</li><li><b>구동:</b> 높은 휘도·전류 조건으로 시간을 단축하되, 응력 범위의 타당성이 필요합니다.</li><li><b>통계:</b> 평균수명만이 아니라 조기고장 위험, 샘플 간 산포와 신뢰구간을 함께 봅니다.</li></ul>
 <div class="callout danger"><b>잘못된 접근:</b> 가장 강한 조건에서 빨리 고장 내면 좋은 가속시험이라는 생각. 실제 사용과 다른 고장모드가 생기면 빠르지만 틀린 예측이 됩니다.</div><p class="lecture-note">‘시험시간 단축’보다 ‘동일 고장 메커니즘 유지’가 먼저라는 점을 반복합니다. 수식 암기보다 가정과 한계를 설명하게 합니다.</p></section>
 
-<section id="deep-dive"><span class="tag">PHYSICS × STATISTICS · REFERENCE</span><h2>수명평가의 물리·통계 심화</h2><p class="lead">OLED와 TFT 열화를 수식, 물리모델과 신뢰성 통계로 연결합니다. 120분 세미나에서는 의사결정에 필요한 핵심만 다루고, 상세 유도와 연구 배경은 현업 참고 부록으로 활용합니다.</p><div class="callout good"><b>추천 순서:</b> 물리적 배경 → 최소 수식 → Weibull → 가속수명 → 오버슈팅 → 모델 비교 → 오디오 복습</div></section>
+<section id="data-practice">
+<span class="tag">PART 5 · DATA PRACTICE</span><span class="time">25분</span>
+<h2>실제 품질 데이터 분석법 — 원천 데이터에서 판정까지</h2>
+<p class="lead">분석의 목적은 예쁜 그래프를 만드는 것이 아니라 <b>어떤 데이터가 믿을 만하고, 무엇이 변했으며, 어떤 조치가 효과가 있었는지</b> 재현 가능한 근거로 답하는 것입니다. 아래 절차는 사내 원천 데이터에 그대로 적용할 수 있도록 설계한 표준 분석 흐름입니다.</p>
+<div class="callout warn"><b>공개자료 원칙:</b> 아래 숫자와 식별자는 분석법 설명을 위한 익명 합성 예시입니다. 실제 적용 시 고객명·제품명·설비명·Lot·레시피는 승인된 저장소 안에서만 처리하고 외부 AI나 공개 페이지에 입력하지 않습니다.</div>
+
+<h3>1. 분석 질문을 데이터 컬럼으로 번역한다</h3>
+<div class="scroll"><table><thead><tr><th>질문</th><th>필수 키·컬럼</th><th>분석 단위</th><th>대표 출력</th></tr></thead><tbody>
+<tr><td>언제부터 불량이 늘었는가?</td><td>측정시각, 투입시각, Lot, 공정 Step</td><td>시간·교대·일</td><td>시계열, 관리도, change point</td></tr>
+<tr><td>어디에 집중되는가?</td><td>패널 좌표, Glass 위치, 설비·Chamber</td><td>좌표·설비·공정</td><td>Wafer/Panel map, heatmap, 층별 Pareto</td></tr>
+<tr><td>무엇이 달라졌는가?</td><td>재료 Lot, Recipe, 조건값, 변경 이력</td><td>변경 전·후, 대조군</td><td>분포 비교, 효과크기, 회귀·ANOVA</td></tr>
+<tr><td>수명은 얼마나 되는가?</td><td>Sample, Color, Stress, Time, L/V/I</td><td>샘플×색×응력</td><td>L93, B10/P10, 신뢰구간, 외삽비</td></tr>
+<tr><td>조치가 효과가 있었는가?</td><td>조치일, 관리군, 결과 CTQ, 공변량</td><td>전·후+대조군</td><td>효과크기, CI, 재발률, 부작용 CTQ</td></tr>
+</tbody></table></div>
+
+<h3>2. 분석 전에 실행할 데이터 품질 게이트</h3>
+<div class="grid g3">
+<div class="card"><b>식별자·중복</b><br><code>sample_id + color + stress + time_h</code>가 유일한지 확인하고 중복은 원본 이력과 함께 분리합니다.</div>
+<div class="card"><b>단위·범위</b><br>시간 h, 휘도 cd/m², 전류 mA 등 단위를 고정하고 음수·불가능 범위·장비 포화값을 표시합니다.</div>
+<div class="card"><b>시간 순서</b><br>샘플별 시간이 단조 증가하는지, 초기값이 존재하는지, 측정 간격과 중단 구간이 타당한지 봅니다.</div>
+<div class="card"><b>결측·센서 상태</b><br>결측률과 패턴을 요약하고 교정·암전류·온습도 이탈 구간을 데이터와 결합합니다.</div>
+<div class="card"><b>공정 추적성</b><br>Lot–Glass–Panel–공정–설비–재료 키가 끊기지 않는지 확인합니다. 조인 손실률을 반드시 기록합니다.</div>
+<div class="card"><b>원본 보존</b><br>원천은 읽기 전용으로 보존하고 정제 규칙, 제외 사유, 코드 버전, 실행시각을 분석 산출물에 남깁니다.</div>
+</div>
+<div class="formula">분석 가능률 = 유효 분석 행 수 / 원천 행 수 &nbsp;&nbsp;·&nbsp;&nbsp; 조인 손실률 = 미매칭 행 수 / 기준 행 수</div>
+
+<h3>3. OLED 수명 데이터의 최소 스키마와 계산</h3>
+<pre class="code"><code>sample_id,color,temp_c,current_ma,time_h,luminance,voltage,status
+S01,B,60,8.0,0,1000.0,4.10,valid
+S01,B,60,8.0,24,982.0,4.14,valid
+S01,B,60,8.0,72,941.0,4.21,valid
+S02,B,60,8.0,0,1008.0,4.08,valid</code></pre>
+<div class="formula">(L_r(t)=L(t)/L_0,quad I_r(t)=I(t)/I_0,quad eta_r(t)={L(t)/I(t)}/{L_0/I_0})</div>
+<ul class="checklist"><li><b>휘도 유지율 (L_r):</b> 패널에서 관찰되는 최종 광출력 변화.</li><li><b>전류 Proxy (I_r):</b> TFT (V_{th}), 이동도, 구동회로 변화가 전류에 미친 영향의 단서.</li><li><b>효율 유지율 (eta_r):</b> 전류 변화와 분리해 OLED 발광 효율 저하를 보는 지표.</li><li><b>동시 해석:</b> (L_r)만 하락하면 광학·OLED 경로, (I_r)와 함께 하락하면 TFT·구동 경로를 우선 가설로 두되 단정하지 않고 추가 측정으로 검증합니다.</li></ul>
+
+<h3>4. Python으로 재현하는 정제·EDA·L93 산출</h3>
+<pre class="code"><code>import pandas as pd
+
+KEY = ["sample_id", "color", "temp_c", "current_ma", "time_h"]
+df = pd.read_csv("lifetime.csv")
+assert not df.duplicated(KEY).any(), "중복 측정키 확인 필요"
+assert (df["time_h"] &gt;= 0).all() and (df["luminance"] &gt; 0).all()
+
+df = df.sort_values(KEY)
+g = df.groupby(["sample_id", "color", "temp_c", "current_ma"], sort=False)
+df["l0"] = g["luminance"].transform("first")
+df["v0"] = g["voltage"].transform("first")
+df["l_ret"] = df["luminance"] / df["l0"]
+df["voltage_shift"] = df["voltage"] - df["v0"]
+
+# 실측 L93: 0.93 이하 첫 관측점. 미도달은 NaN으로 두고 외삽값과 섞지 않는다.
+l93_observed = (df[df["l_ret"] &lt;= 0.93]
+    .groupby(["sample_id", "color"])["time_h"].min()
+    .rename("l93_observed_h"))
+
+# 조건별 산포와 tail을 함께 본다.
+summary = (df.groupby(["color", "temp_c", "time_h"])["l_ret"]
+    .agg(n="size", mean="mean", median="median", sd="std",
+         p10=lambda x: x.quantile(.10), p90=lambda x: x.quantile(.90)))
+print(summary.reset_index())</code></pre>
+<div class="callout good"><b>판정 규칙:</b> 실측 crossing, 모델 외삽 L93, 샘플 분포 P10/B10을 서로 다른 열로 보존합니다. “평균 L93” 하나로 합치면 미도달 샘플과 조기열화 tail이 가려집니다.</div>
+
+<h3>5. 공정·불량 데이터 분석 도구 선택</h3>
+<div class="scroll"><table><thead><tr><th>상황</th><th>먼저 볼 것</th><th>통계·시각화</th><th>판정 시 주의</th></tr></thead><tbody>
+<tr><td>불량 종류가 많다</td><td>건수와 손실금액</td><td>Pareto, 누적기여율</td><td>검사기회·생산량으로 정규화</td></tr>
+<tr><td>시간에 따라 흔들린다</td><td>순서·교대·점검시점</td><td>I-MR, Xbar-R/S, run chart</td><td>관리한계와 규격한계를 혼동하지 않음</td></tr>
+<tr><td>설비·재료별 차이가 난다</td><td>층별 분포와 표본수</td><td>box/violin, 효과크기, ANOVA·회귀</td><td>p-value만 보지 말고 차이 크기와 CI 확인</td></tr>
+<tr><td>불량 여부를 예측한다</td><td>class imbalance, 누출 변수</td><td>로지스틱 회귀, tree, PR-AUC</td><td>시간 분할 검증과 false escape 비용 반영</td></tr>
+<tr><td>여러 조건을 최적화한다</td><td>주효과·교호작용</td><td>DOE, 반응표면, desirability</td><td>관측 상관관계를 인과로 단정하지 않음</td></tr>
+</tbody></table></div>
+
+<h3>6. MSA → 안정성 → 능력 → 원인검증 순서를 지킨다</h3>
+<div class="process"><div>MSA<small>측정 신뢰성</small></div><div>SPC<small>공정 안정성</small></div><div>Cp·Cpk<small>규격 대비 능력</small></div><div>가설·DOE<small>원인 검증</small></div><div>효과 추적<small>재발·부작용</small></div></div>
+<div class="formula">
+\[C_p=\frac{USL-LSL}{6\hat\sigma},\qquad C_{pk}=\min\left(\frac{USL-\bar{x}}{3\hat\sigma},\frac{\bar{x}-LSL}{3\hat\sigma}\right)\]
+</div>
+<ul class="checklist"><li>공정이 불안정하면 Cpk 한 숫자로 미래 능력을 선언하지 않습니다.</li><li>Gage R&amp;R 비율은 일반적으로 10% 이하 양호, 10~30% 조건부, 30% 초과 개선 필요로 보지만 최종 기준은 고객·사내 규격을 따릅니다.</li><li>전후 비교에는 평균뿐 아니라 산포·tail·불량률·효과크기·신뢰구간을 함께 표시합니다.</li><li>여러 설비·Lot를 동시에 검정하면 다중비교 보정과 표본수 불균형을 확인합니다.</li></ul>
+
+<h3>7. 모델을 믿기 전 검증할 항목</h3>
+<div class="grid g3"><div class="card"><b>Fit 품질</b><br>잔차 패턴, RMSE/MAE, AICc와 파라미터 경계·식별성을 확인합니다.</div><div class="card"><b>외삽 위험</b><br>예측 수명/실측 최대시간 비율을 표시하고 긴 외삽은 별도 경고합니다.</div><div class="card"><b>Holdout</b><br>초기 구간으로 적합한 뒤 숨겨둔 후반 구간을 예측해 실제 외삽 성능을 봅니다.</div><div class="card"><b>물리 정합</b><br>온도·전류가 변할 때 파라미터 방향이 물리 가정과 맞는지 확인합니다.</div><div class="card"><b>불확실성</b><br>bootstrap 또는 모델 기반 CI로 L93·B10의 범위를 함께 제시합니다.</div><div class="card"><b>재현성</b><br>데이터 버전, 제외 목록, 코드·모델 버전, 실행환경과 승인자를 남깁니다.</div></div>
+<div class="callout danger"><b>금지:</b> 이상점을 이유 없이 삭제하기, 최적 모델 하나만 남기기, 미도달 샘플을 0으로 처리하기, 상관관계를 원인으로 단정하기, 내부 원천 데이터를 공개 생성형 AI에 업로드하기.</div>
+
+<h3>8. 실무 보고서의 최소 출력</h3>
+<ol class="checklist"><li>의사결정 질문, 범위, 기준일과 데이터 원천</li><li>표본수, 제외·결측·조인 손실과 측정시스템 상태</li><li>전체 추세와 제품·설비·Lot·위치·시간 층별 분포</li><li>효과크기, 신뢰구간, 모델 가정과 잔차·외삽 위험</li><li>확인된 사실 / 추정 가설 / 추가 검증 필요사항의 분리</li><li>유출방지, 근본대책, 담당·기한, 효과확인 지표와 재발 모니터링</li></ol>
+</section>
+
+<section id="break"><span class="tag">BREAK</span><span class="time">10분</span><h2>휴식 — 현업 데이터 질문 수집</h2><p class="lead">참석자가 자기 데이터에서 막힌 지점을 적어 제출합니다. 후반부 공정품질·고객품질 논의에 사용합니다.</p></section>
+
+<section id="process"><span class="tag">PART 6</span><span class="time">15분</span><h2>공정품질 관리: 검사에서 예방으로</h2><p class="lead">패널은 여러 공정의 결과가 누적되는 제품입니다. 완제품 검사만 강화해서는 재료 손실과 재작업을 줄일 수 없습니다.</p>
+<div class="process"><div>입고품질<small>원재료·부품</small></div><div>공정조건<small>설비·레시피</small></div><div>중간검사<small>조기 이상검출</small></div><div>출하검사<small>성능·외관</small></div><div>시장정보<small>VOC·반품</small></div></div>
+<div class="grid g3"><div class="card"><h3>MSA</h3><p>측정시스템의 반복성·재현성을 먼저 확인합니다. 나쁜 측정으로는 좋은 공정을 만들 수 없습니다.</p></div><div class="card"><h3>SPC·관리도</h3><p>규격 합격 여부뿐 아니라 시간에 따른 중심과 산포의 이상 신호를 탐지합니다.</p></div><div class="card"><h3>공정능력</h3><p>공정 분포가 규격 안에 안정적으로 들어오는지 평가하되, 안정성 확인이 먼저입니다.</p></div><div class="card"><h3>Pareto</h3><p>불량 종류와 손실 규모를 분류해 개선 우선순위를 정합니다.</p></div><div class="card"><h3>특성요인도·5 Why</h3><p>사람·설비·재료·방법·측정·환경을 탐색하고 근본원인을 검증합니다.</p></div><div class="card"><h3>FMEA·관리계획</h3><p>잠재 고장과 영향을 사전에 검토하고 예방·검출 관리항목을 표준화합니다.</p></div></div>
+<h3>현업 분석 실행표</h3><div class="scroll"><table><thead><tr><th>단계</th><th>실행</th><th>산출물</th><th>통과 조건</th></tr></thead><tbody><tr><td>측정 검증</td><td>부품 10개×측정자 3명×반복 2~3회 등 교차 MSA 설계</td><td>%GRR, ndc, 반복·재현 성분</td><td>CTQ 허용오차에 비해 측정오차가 충분히 작음</td></tr><tr><td>기준선</td><td>최근 안정 구간을 설비·제품별로 층별화</td><td>중심, 산포, 관리한계, 결측률</td><td>특별원인 제거 전후가 추적 가능</td></tr><tr><td>이상탐지</td><td>점 초과, 연속 편향, 추세, 산포 증가 룰 적용</td><td>관리도 경보와 원천 행 링크</td><td>경보마다 담당·확인결과·종결상태 존재</td></tr><tr><td>원인검증</td><td>재료·설비·Recipe·시간·위치 효과와 교호작용 분석</td><td>효과크기, CI, 잔차, 실험 결과</td><td>재현 실험 또는 독립 Lot에서 효과 확인</td></tr><tr><td>관리 전환</td><td>관리계획·FMEA·검사조건·반응계획 갱신</td><td>변경 전후 지표와 표준서</td><td>재발률과 부작용 CTQ 모니터링</td></tr></tbody></table></div>
+<div class="callout warn"><b>자동 경보 운영:</b> 관리도 신호는 원인 확정이 아니라 조사 시작 신호입니다. 알람만 늘리지 말고 동일 원인 중복 병합, 영향범위, 확인기한, 오탐률과 missed escape를 함께 관리합니다.</div>
+<h3>PDCA 개선 사이클</h3><div class="cycle"><div class="p">PLAN<br>문제·목표·가설</div><div class="d">DO<br>대책·실험 실행</div><div class="c">CHECK<br>효과·부작용 확인</div><div class="a">ACT<br>표준화·수평전개</div></div><div class="callout good"><b>관리도와 규격은 다릅니다.</b> 규격 안에 있어도 공정 추세가 비정상일 수 있고, 안정된 공정도 고객 규격을 만족하지 못할 수 있습니다.</div></section>
+
+<section id="customer"><span class="tag">PART 7</span><span class="time">10분</span><h2>고객 품질 요구사항: 목소리를 기준으로 바꾸기</h2><p class="lead">고객의 요구는 “더 밝게”, “얼룩 없이”, “오래 사용하게”처럼 시작합니다. 품질 엔지니어는 이를 시험 가능한 기준과 관리항목으로 번역합니다.</p>
+<div class="grid g2"><div class="card"><h3>요구사항 전개</h3><p>사용환경 → 고객 체감 → CTQ → 측정방법 → 허용기준 → 공정 관리항목으로 연결합니다.</p></div><div class="card"><h3>VOC와 시장품질</h3><p>불만 건수만 보지 않고 사용기간, 조건, 증상, 재현성과 심각도를 층별화합니다.</p></div><div class="card"><h3>변경관리</h3><p>재료·설비·공법·설계 변경이 다른 특성과 장기 신뢰성에 미치는 영향을 사전 검증합니다.</p></div><div class="card"><h3>문제해결 보고</h3><p>현상, 영향범위, 임시조치, 원인, 근본대책, 효과와 재발방지를 논리적으로 설명합니다.</p></div></div>
+<h3>좋은 고객 대응의 원칙</h3><ul><li>추정과 확인된 사실을 구분한다.</li><li>불량률뿐 아니라 고객 영향과 안전·기능 위험을 함께 본다.</li><li>임시 유출방지와 근본 재발방지를 혼동하지 않는다.</li><li>해결 후 유사 제품·공정에 교훈을 수평 전개한다.</li></ul><div class="callout question"><b>토론:</b> 고객 규격에는 합격하지만 VOC가 계속 증가한다면, 규격·측정법·사용환경 중 무엇을 다시 검토해야 할까요?</div></section>
+
+<section id="market"><span class="tag">PART 8</span><span class="time">5분</span><h2>디스플레이 시장동향과 새로운 품질 과제</h2><p class="lead">시장동향은 판매량 전망으로 끝나지 않습니다. 적용처가 달라지면 고객이 중요하게 보는 품질특성과 시험방법도 달라집니다.</p>
+<div class="grid g2"><div class="card trend"><h3>IT OLED 확대</h3><p>노트북·태블릿·모니터로 OLED 적용이 확대되며 장시간 정지화면, 소비전력, 번인, 대면적 균일도와 가격 경쟁력이 중요해집니다.</p></div><div class="card trend"><h3>차량용 디스플레이</h3><p>대형·곡면·다중 화면과 스마트 콕핏이 확대되면서 넓은 온도범위, 장기 공급, 진동·충격, 야외 시인성과 안전 관련 요구가 커집니다.</p></div><div class="card trend"><h3>폴더블·폼팩터 혁신</h3><p>반복 굽힘, 주름, 충격, 박막 봉지와 접합 신뢰성이 화질과 함께 핵심 CTQ가 됩니다.</p></div><div class="card trend"><h3>대형·고휘도·고주사율</h3><p>TV와 게이밍에서 밝기·색·응답성 경쟁이 심화되며 발열, 전력, 수명과 균일도 사이의 균형이 중요합니다.</p></div></div>
+<div class="callout"><b>2026 공개 전망:</b> Omdia는 2026년 대면적 OLED 출하량이 전년 대비 18.8% 증가해 3,880만 대에 이를 것으로 전망했습니다. 전망치는 확정 실적이 아니므로 방향성 자료로 해석해야 합니다.</div>
+<h3>시장 변화 → 품질 과제 연결</h3><div class="scroll"><table><thead><tr><th>변화</th><th>새로운 사용조건</th><th>강화되는 품질 질문</th></tr></thead><tbody><tr><td>모바일 → IT</td><td>장시간 업무·정지 UI</td><td>잔상, 수명, 소비전력, 대면적 균일도</td></tr><tr><td>평면 → 폴더블</td><td>반복 굽힘·휴대 충격</td><td>주름, 접합, 박막 손상, 반복 내구성</td></tr><tr><td>실내 → 차량</td><td>고온·저온·진동·강한 외광</td><td>온도 신뢰성, 시인성, 장기 안정성</td></tr><tr><td>단일제품 → 다품종</td><td>서로 다른 고객·용도</td><td>공통 표준과 제품별 CTQ의 균형</td></tr></tbody></table></div>
+<p class="lecture-note">전망 숫자보다 ‘응용처 변화가 어떤 시험과 품질특성을 새로 요구하는가’를 담당 업무와 연결합니다.</p></section>
+
+<section id="case"><span class="tag">PART 9</span><span class="time">5분</span><h2>통합 분석 사례: 저계조 Mura 증가</h2><div class="callout"><b>익명 합성 사례:</b> 분석 순서를 보여주기 위한 데이터이며 특정 회사의 실제 공정조건·규격·생산실적이 아닙니다.</div><p><b>상황:</b> 신규 IT용 패널에서 저계조 Mura VOC가 증가했습니다. 출하검사 평균 휘도는 규격 안이지만 고객 사용조건에서 공간 불균일이 관찰됩니다.</p>
+<div class="grid g3"><div class="card"><b>1. Y 정의</b><br>저계조 Mura score, 고객 불량 여부, 위치별 ΔL/L을 결과변수로 고정</div><div class="card"><b>2. 데이터 결합</b><br>검사 map에 Panel–Glass–설비–Recipe–재료 Lot–시간 키를 연결하고 조인 손실 확인</div><div class="card"><b>3. 측정 검증</b><br>카메라·조명·검사자 반복 측정으로 MSA와 한도견본 정합 확인</div><div class="card"><b>4. 층별 분석</b><br>위치 heatmap, 설비·Chamber·교대별 boxplot, 시간 관리도, 원인별 Pareto 작성</div><div class="card"><b>5. 가설 검증</b><br>설비×재료 교호작용을 회귀/ANOVA로 확인하고 독립 Lot 또는 DOE로 재현</div><div class="card"><b>6. 조치·효과</b><br>유출방지와 근본대책을 분리하고 Mura tail·수율·다른 CTQ·VOC를 함께 추적</div></div>
+<h3>의사결정 예시</h3><div class="scroll"><table><thead><tr><th>관찰</th><th>잘못된 결론</th><th>다음 검증</th></tr></thead><tbody><tr><td>Chamber B의 평균 Mura가 높음</td><td>Chamber B가 원인이다</td><td>제품 mix·재료 Lot·시간을 보정한 효과크기와 CI 확인</td></tr><tr><td>Recipe 변경 후 불량률 하락</td><td>변경 효과가 확정됐다</td><td>동기간 대조군과 전후 추세, 표본수, 다른 CTQ 악화 확인</td></tr><tr><td>p-value &lt; 0.05</td><td>현업적으로 큰 차이다</td><td>절대 차이, 규격 대비 크기, 재현성과 경제적 효과 확인</td></tr></tbody></table></div>
+<div class="callout good"><b>결론:</b> “검사를 강화하자”에서 멈추지 않고 고객 사용조건, 측정 신뢰성, 데이터 추적성, 공정 변동, 원인 재현과 재발방지를 하나의 분석 체계로 연결해야 합니다.</div></section>
+
+<section id="summary"><span class="tag">TAKEAWAYS</span><h2>두 시간 실무 세미나의 핵심 메시지</h2><div class="grid g2"><div class="card"><b>품질은 고객 가치다.</b><br>규격 합격을 넘어 실제 사용에서의 만족과 신뢰를 봅니다.</div><div class="card"><b>측정은 품질의 언어다.</b><br>조건, 장비, 표본과 불확실성이 명확해야 비교할 수 있습니다.</div><div class="card"><b>데이터는 추적 가능해야 한다.</b><br>원천·정제·제외·모델·판정 이력을 남겨야 재현하고 감사할 수 있습니다.</div><div class="card"><b>원인은 검증해야 한다.</b><br>상관과 가설에서 멈추지 않고 대조군·DOE·독립 Lot로 재현합니다.</div></div>
+<h3>현업 적용 질문</h3><ol class="quiz"><li>우리 CTQ 데이터의 원천–공정–고객 추적키는 어디에서 끊기는가?</li><li>가속시험이 실제와 같은 고장 메커니즘을 유지한다는 증거는 무엇인가?</li><li>현재 대시보드는 규격 합격률뿐 아니라 관리도 이상·tail·불확실성을 보여주는가?</li><li>이번 달 가장 큰 품질손실 한 건을 재현 가능한 분석 흐름으로 다시 설명할 수 있는가?</li></ol></section>
+
+
+<section id="audio">
+<span class="label">NotebookLM Audio · Review</span>
+<h2>세미나 후 복습 — OLED 수명모델 심화 오디오</h2>
+<p class="lead">세미나 <b>전</b> 예습은 상단 <a href="#prelisten">오디오 오버뷰·PDF</a>를 사용합니다. 이 오디오는 세미나를 듣고 난 뒤 수명모델 부분만 다시 정리하는 <b>복습·심화용</b>이며, 아래 부록의 수식 내용과 짝을 이룹니다.</p>
+<div class="grid g2">
+<div class="card">
+<h3>활용 방법</h3>
+<p>세미나 다음 날 출퇴근길에 듣고, “왜 overshoot/cutoff/model selection이 중요한가”를 부록 수식과 대조해 확인한다.</p>
+</div>
+<div class="card">
+<h3>링크</h3>
+<h3>링크</h3>
+</div>
+</div>
+<div class="callout warn">
+<b>주의</b><br/>
+    NotebookLM 오디오는 이해를 돕는 보조자료다. 실제 품질판정은 평가 원본 데이터, 적합 결과, QC와 하한수명 검증 결과를 기준으로 한다.
+  </div>
+</section>
+
+<section id="deep-dive"><span class="tag">APPENDIX · PHYSICS × STATISTICS</span><h2>부록: 수명평가의 물리·통계 심화</h2><p class="lead">여기서부터는 <b>세미나 본편(120분) 이후의 참고 부록</b>입니다. 발표 시간에는 다루지 않고, 현업에서 수식·연구 배경을 확인할 때 사용합니다. OLED와 TFT 열화를 수식, 물리모델과 신뢰성 통계로 연결합니다.</p><div class="callout good"><b>부록 읽는 순서:</b> 물리적 배경 → 최소 수식 → Weibull → 가속수명 → 오버슈팅 → 모델 비교</div></section>
 <section id="tft-oled-bridge"><span class="label">Physics × Statistics Core</span><h2>OLED 수명과 TFT Vth 열화 — 같은 수학, 다른 물리, 하나의 패널 품질</h2><p class="lead">패널의 휘도 변화는 발광소자만의 문제가 아니다. TFT가 공급하는 화소 전류와 OLED의 발광효율이 함께 시간에 따라 변하므로, 두 열화를 분리해 이해하고 다시 시스템 수준에서 결합해야 한다.</p>
 <div class="grid g2"><div class="card"><h3>TFT 임계전압 열화</h3><p>게이트 바이어스와 온도 스트레스 아래에서 전하 트래핑, 계면상태 변화 등이 누적되면 임계전압 <i>V</i><sub>th</sub>가 이동할 수 있다. 그 결과 같은 구동신호에서도 화소 전류가 달라진다.</p><div class="formula">\[\Delta V_{th}(t)=\Delta V_{th,\infty}\left\{1-\exp\left[-\left(\frac{t}{\tau_{TFT}}\right)^{\beta_{TFT}}\right]\right\}\]</div></div>
 <div class="card"><h3>OLED 휘도 열화</h3><p>유기재료와 계면에서는 여기자–폴라론 상호작용, 결함 생성, 전하 균형 변화 등이 발광효율을 낮출 수 있다. 정규화 휘도는 흔히 stretched exponential로 표현한다.</p><div class="formula">\[\frac{L(t)}{L_0}=\exp\left[-\left(\frac{t}{\tau_{OLED}}\right)^{\beta_{OLED}}\right]\]</div></div></div>
@@ -460,91 +594,6 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 </table>
 </section>
 <section id="lifetime-data"><span class="label">Measurement</span><h2>수명평가 데이터: 시간열화와 초기 광특성</h2><div class="flow"><div>시험 조건</div><div>시간열화</div><div>초기 광특성</div><div>정규화·QC</div><div>모델 해석</div></div><div class="grid g2" style="margin-top:18px"><div class="card"><h3>시간열화 데이터</h3><p>시간에 따른 휘도, 전압과 전류 변화를 이용해 휘도·전류·효율 유지율을 계산한다.</p></div><div class="card"><h3>초기 광특성</h3><p>초기 xyY, 색좌표와 휘도 기준값을 확보하고 시간열화 데이터와 결합해 색별 변화를 추적한다.</p></div></div><div class="callout"><b>데이터 해석의 핵심</b><br>동일한 시험조건에서 시간열화와 초기 광특성을 연결하고, 정규화와 품질확인 후 수명모델을 비교한다.</div></section>
-<section id="data-practice">
-<span class="tag">DATA PRACTICE</span><span class="time">25분</span>
-<h2>실제 품질 데이터 분석법 — 원천 데이터에서 판정까지</h2>
-<p class="lead">분석의 목적은 예쁜 그래프를 만드는 것이 아니라 <b>어떤 데이터가 믿을 만하고, 무엇이 변했으며, 어떤 조치가 효과가 있었는지</b> 재현 가능한 근거로 답하는 것입니다. 아래 절차는 사내 원천 데이터에 그대로 적용할 수 있도록 설계한 표준 분석 흐름입니다.</p>
-<div class="callout warn"><b>공개자료 원칙:</b> 아래 숫자와 식별자는 분석법 설명을 위한 익명 합성 예시입니다. 실제 적용 시 고객명·제품명·설비명·Lot·레시피는 승인된 저장소 안에서만 처리하고 외부 AI나 공개 페이지에 입력하지 않습니다.</div>
-
-<h3>1. 분석 질문을 데이터 컬럼으로 번역한다</h3>
-<div class="scroll"><table><thead><tr><th>질문</th><th>필수 키·컬럼</th><th>분석 단위</th><th>대표 출력</th></tr></thead><tbody>
-<tr><td>언제부터 불량이 늘었는가?</td><td>측정시각, 투입시각, Lot, 공정 Step</td><td>시간·교대·일</td><td>시계열, 관리도, change point</td></tr>
-<tr><td>어디에 집중되는가?</td><td>패널 좌표, Glass 위치, 설비·Chamber</td><td>좌표·설비·공정</td><td>Wafer/Panel map, heatmap, 층별 Pareto</td></tr>
-<tr><td>무엇이 달라졌는가?</td><td>재료 Lot, Recipe, 조건값, 변경 이력</td><td>변경 전·후, 대조군</td><td>분포 비교, 효과크기, 회귀·ANOVA</td></tr>
-<tr><td>수명은 얼마나 되는가?</td><td>Sample, Color, Stress, Time, L/V/I</td><td>샘플×색×응력</td><td>L93, B10/P10, 신뢰구간, 외삽비</td></tr>
-<tr><td>조치가 효과가 있었는가?</td><td>조치일, 관리군, 결과 CTQ, 공변량</td><td>전·후+대조군</td><td>효과크기, CI, 재발률, 부작용 CTQ</td></tr>
-</tbody></table></div>
-
-<h3>2. 분석 전에 실행할 데이터 품질 게이트</h3>
-<div class="grid g3">
-<div class="card"><b>식별자·중복</b><br><code>sample_id + color + stress + time_h</code>가 유일한지 확인하고 중복은 원본 이력과 함께 분리합니다.</div>
-<div class="card"><b>단위·범위</b><br>시간 h, 휘도 cd/m², 전류 mA 등 단위를 고정하고 음수·불가능 범위·장비 포화값을 표시합니다.</div>
-<div class="card"><b>시간 순서</b><br>샘플별 시간이 단조 증가하는지, 초기값이 존재하는지, 측정 간격과 중단 구간이 타당한지 봅니다.</div>
-<div class="card"><b>결측·센서 상태</b><br>결측률과 패턴을 요약하고 교정·암전류·온습도 이탈 구간을 데이터와 결합합니다.</div>
-<div class="card"><b>공정 추적성</b><br>Lot–Glass–Panel–공정–설비–재료 키가 끊기지 않는지 확인합니다. 조인 손실률을 반드시 기록합니다.</div>
-<div class="card"><b>원본 보존</b><br>원천은 읽기 전용으로 보존하고 정제 규칙, 제외 사유, 코드 버전, 실행시각을 분석 산출물에 남깁니다.</div>
-</div>
-<div class="formula">분석 가능률 = 유효 분석 행 수 / 원천 행 수 &nbsp;&nbsp;·&nbsp;&nbsp; 조인 손실률 = 미매칭 행 수 / 기준 행 수</div>
-
-<h3>3. OLED 수명 데이터의 최소 스키마와 계산</h3>
-<pre class="code"><code>sample_id,color,temp_c,current_ma,time_h,luminance,voltage,status
-S01,B,60,8.0,0,1000.0,4.10,valid
-S01,B,60,8.0,24,982.0,4.14,valid
-S01,B,60,8.0,72,941.0,4.21,valid
-S02,B,60,8.0,0,1008.0,4.08,valid</code></pre>
-<div class="formula">(L_r(t)=L(t)/L_0,quad I_r(t)=I(t)/I_0,quad eta_r(t)={L(t)/I(t)}/{L_0/I_0})</div>
-<ul class="checklist"><li><b>휘도 유지율 (L_r):</b> 패널에서 관찰되는 최종 광출력 변화.</li><li><b>전류 Proxy (I_r):</b> TFT (V_{th}), 이동도, 구동회로 변화가 전류에 미친 영향의 단서.</li><li><b>효율 유지율 (eta_r):</b> 전류 변화와 분리해 OLED 발광 효율 저하를 보는 지표.</li><li><b>동시 해석:</b> (L_r)만 하락하면 광학·OLED 경로, (I_r)와 함께 하락하면 TFT·구동 경로를 우선 가설로 두되 단정하지 않고 추가 측정으로 검증합니다.</li></ul>
-
-<h3>4. Python으로 재현하는 정제·EDA·L93 산출</h3>
-<pre class="code"><code>import pandas as pd
-
-KEY = ["sample_id", "color", "temp_c", "current_ma", "time_h"]
-df = pd.read_csv("lifetime.csv")
-assert not df.duplicated(KEY).any(), "중복 측정키 확인 필요"
-assert (df["time_h"] &gt;= 0).all() and (df["luminance"] &gt; 0).all()
-
-df = df.sort_values(KEY)
-g = df.groupby(["sample_id", "color", "temp_c", "current_ma"], sort=False)
-df["l0"] = g["luminance"].transform("first")
-df["v0"] = g["voltage"].transform("first")
-df["l_ret"] = df["luminance"] / df["l0"]
-df["voltage_shift"] = df["voltage"] - df["v0"]
-
-# 실측 L93: 0.93 이하 첫 관측점. 미도달은 NaN으로 두고 외삽값과 섞지 않는다.
-l93_observed = (df[df["l_ret"] &lt;= 0.93]
-    .groupby(["sample_id", "color"])["time_h"].min()
-    .rename("l93_observed_h"))
-
-# 조건별 산포와 tail을 함께 본다.
-summary = (df.groupby(["color", "temp_c", "time_h"])["l_ret"]
-    .agg(n="size", mean="mean", median="median", sd="std",
-         p10=lambda x: x.quantile(.10), p90=lambda x: x.quantile(.90)))
-print(summary.reset_index())</code></pre>
-<div class="callout good"><b>판정 규칙:</b> 실측 crossing, 모델 외삽 L93, 샘플 분포 P10/B10을 서로 다른 열로 보존합니다. “평균 L93” 하나로 합치면 미도달 샘플과 조기열화 tail이 가려집니다.</div>
-
-<h3>5. 공정·불량 데이터 분석 도구 선택</h3>
-<div class="scroll"><table><thead><tr><th>상황</th><th>먼저 볼 것</th><th>통계·시각화</th><th>판정 시 주의</th></tr></thead><tbody>
-<tr><td>불량 종류가 많다</td><td>건수와 손실금액</td><td>Pareto, 누적기여율</td><td>검사기회·생산량으로 정규화</td></tr>
-<tr><td>시간에 따라 흔들린다</td><td>순서·교대·점검시점</td><td>I-MR, Xbar-R/S, run chart</td><td>관리한계와 규격한계를 혼동하지 않음</td></tr>
-<tr><td>설비·재료별 차이가 난다</td><td>층별 분포와 표본수</td><td>box/violin, 효과크기, ANOVA·회귀</td><td>p-value만 보지 말고 차이 크기와 CI 확인</td></tr>
-<tr><td>불량 여부를 예측한다</td><td>class imbalance, 누출 변수</td><td>로지스틱 회귀, tree, PR-AUC</td><td>시간 분할 검증과 false escape 비용 반영</td></tr>
-<tr><td>여러 조건을 최적화한다</td><td>주효과·교호작용</td><td>DOE, 반응표면, desirability</td><td>관측 상관관계를 인과로 단정하지 않음</td></tr>
-</tbody></table></div>
-
-<h3>6. MSA → 안정성 → 능력 → 원인검증 순서를 지킨다</h3>
-<div class="process"><div>MSA<small>측정 신뢰성</small></div><div>SPC<small>공정 안정성</small></div><div>Cp·Cpk<small>규격 대비 능력</small></div><div>가설·DOE<small>원인 검증</small></div><div>효과 추적<small>재발·부작용</small></div></div>
-<div class="formula">
-\[C_p=\frac{USL-LSL}{6\hat\sigma},\qquad C_{pk}=\min\left(\frac{USL-\bar{x}}{3\hat\sigma},\frac{\bar{x}-LSL}{3\hat\sigma}\right)\]
-</div>
-<ul class="checklist"><li>공정이 불안정하면 Cpk 한 숫자로 미래 능력을 선언하지 않습니다.</li><li>Gage R&amp;R 비율은 일반적으로 10% 이하 양호, 10~30% 조건부, 30% 초과 개선 필요로 보지만 최종 기준은 고객·사내 규격을 따릅니다.</li><li>전후 비교에는 평균뿐 아니라 산포·tail·불량률·효과크기·신뢰구간을 함께 표시합니다.</li><li>여러 설비·Lot를 동시에 검정하면 다중비교 보정과 표본수 불균형을 확인합니다.</li></ul>
-
-<h3>7. 모델을 믿기 전 검증할 항목</h3>
-<div class="grid g3"><div class="card"><b>Fit 품질</b><br>잔차 패턴, RMSE/MAE, AICc와 파라미터 경계·식별성을 확인합니다.</div><div class="card"><b>외삽 위험</b><br>예측 수명/실측 최대시간 비율을 표시하고 긴 외삽은 별도 경고합니다.</div><div class="card"><b>Holdout</b><br>초기 구간으로 적합한 뒤 숨겨둔 후반 구간을 예측해 실제 외삽 성능을 봅니다.</div><div class="card"><b>물리 정합</b><br>온도·전류가 변할 때 파라미터 방향이 물리 가정과 맞는지 확인합니다.</div><div class="card"><b>불확실성</b><br>bootstrap 또는 모델 기반 CI로 L93·B10의 범위를 함께 제시합니다.</div><div class="card"><b>재현성</b><br>데이터 버전, 제외 목록, 코드·모델 버전, 실행환경과 승인자를 남깁니다.</div></div>
-<div class="callout danger"><b>금지:</b> 이상점을 이유 없이 삭제하기, 최적 모델 하나만 남기기, 미도달 샘플을 0으로 처리하기, 상관관계를 원인으로 단정하기, 내부 원천 데이터를 공개 생성형 AI에 업로드하기.</div>
-
-<h3>8. 실무 보고서의 최소 출력</h3>
-<ol class="checklist"><li>의사결정 질문, 범위, 기준일과 데이터 원천</li><li>표본수, 제외·결측·조인 손실과 측정시스템 상태</li><li>전체 추세와 제품·설비·Lot·위치·시간 층별 분포</li><li>효과크기, 신뢰구간, 모델 가정과 잔차·외삽 위험</li><li>확인된 사실 / 추정 가설 / 추가 검증 필요사항의 분리</li><li>유출방지, 근본대책, 담당·기한, 효과확인 지표와 재발 모니터링</li></ol>
-</section>
 <section id="academic">
 <span class="label">Academic Background</span>
 <h2>OLED 수명평가법은 측정표준, 물리모델, 통계 신뢰성이 결합되며 발전해왔다</h2>
@@ -1060,25 +1109,6 @@ print(summary.reset_index())</code></pre>
 <details><summary>Q3. Red가 L93에 도달하지 않으면 어떻게 하나?</summary><p>외삽으로 계산하되 외삽비와 경고를 반드시 남긴다. 장수명 데이터는 결과보다 신뢰도 표시가 더 중요하다.</p></details>
 <details><summary>Q4. AI가 수명 판정하나?</summary><p>아니다. AI/Codex는 반복 분석과 보고서 생성을 돕는다. 모델 선택과 품질 판단은 데이터 근거를 보고 엔지니어가 결정한다.</p></details>
 </section>
-<section id="audio">
-<span class="label">NotebookLM Audio Review</span>
-<h2>출퇴근길에 듣는 OLED 수명모델 오디오 리뷰</h2>
-<p class="lead">NotebookLM으로 만든 오디오 리뷰를 세미나 사전 준비 자료로 연결합니다. 참석자는 세미나 전에 큰 흐름을 귀로 먼저 익히고, 세미나에서는 실무 사례·수식·모델 비교 결과를 확인합니다.</p>
-<div class="grid g2">
-<div class="card">
-<h3>활용 방법</h3>
-<p>세미나 전날 또는 출퇴근길에 듣게 하고, 세미나에서는 “왜 overshoot/cutoff/model selection이 중요한가”만 짧게 확인한다.</p>
-</div>
-<div class="card">
-<h3>링크</h3>
-<p><a href="https://notebooklm.google.com/notebook/e6415038-3c3d-4d9e-8d77-9a407eecfff8/artifact/c8aa391c-92d4-44b4-a025-40588af612d2?utm_source=nlm_web_share&amp;utm_medium=google_oo&amp;utm_campaign=art_share_1&amp;utm_content=&amp;utm_smc=nlm_web_share_google_oo_art_share_1_" rel="noopener" target="_blank">NotebookLM 오디오 리뷰 열기 →</a></p>
-</div>
-</div>
-<div class="callout warn">
-<b>주의</b><br/>
-    NotebookLM 오디오는 이해를 돕는 보조자료다. 실제 품질판정은 평가 원본 데이터, 적합 결과, QC와 하한수명 검증 결과를 기준으로 한다.
-  </div>
-</section>
 <section id="technical-refs">
 <span class="label">Standards &amp; References</span>
 <h2>참고문헌 및 표준</h2>
@@ -1166,31 +1196,6 @@ print(summary.reset_index())</code></pre>
     참고: IEC 62341 OLED display measurement standards, CIE photometry/colorimetry framework, OLED luminance decay stretched exponential literature, accelerated life Arrhenius/inverse power law reliability modeling, Weibull/B10 reliability analysis.
   </p>
 </section>
-<section id="process"><span class="tag">PART 5</span><span class="time">15분</span><h2>공정품질 관리: 검사에서 예방으로</h2><p class="lead">패널은 여러 공정의 결과가 누적되는 제품입니다. 완제품 검사만 강화해서는 재료 손실과 재작업을 줄일 수 없습니다.</p>
-<div class="process"><div>입고품질<small>원재료·부품</small></div><div>공정조건<small>설비·레시피</small></div><div>중간검사<small>조기 이상검출</small></div><div>출하검사<small>성능·외관</small></div><div>시장정보<small>VOC·반품</small></div></div>
-<div class="grid g3"><div class="card"><h3>MSA</h3><p>측정시스템의 반복성·재현성을 먼저 확인합니다. 나쁜 측정으로는 좋은 공정을 만들 수 없습니다.</p></div><div class="card"><h3>SPC·관리도</h3><p>규격 합격 여부뿐 아니라 시간에 따른 중심과 산포의 이상 신호를 탐지합니다.</p></div><div class="card"><h3>공정능력</h3><p>공정 분포가 규격 안에 안정적으로 들어오는지 평가하되, 안정성 확인이 먼저입니다.</p></div><div class="card"><h3>Pareto</h3><p>불량 종류와 손실 규모를 분류해 개선 우선순위를 정합니다.</p></div><div class="card"><h3>특성요인도·5 Why</h3><p>사람·설비·재료·방법·측정·환경을 탐색하고 근본원인을 검증합니다.</p></div><div class="card"><h3>FMEA·관리계획</h3><p>잠재 고장과 영향을 사전에 검토하고 예방·검출 관리항목을 표준화합니다.</p></div></div>
-<h3>현업 분석 실행표</h3><div class="scroll"><table><thead><tr><th>단계</th><th>실행</th><th>산출물</th><th>통과 조건</th></tr></thead><tbody><tr><td>측정 검증</td><td>부품 10개×측정자 3명×반복 2~3회 등 교차 MSA 설계</td><td>%GRR, ndc, 반복·재현 성분</td><td>CTQ 허용오차에 비해 측정오차가 충분히 작음</td></tr><tr><td>기준선</td><td>최근 안정 구간을 설비·제품별로 층별화</td><td>중심, 산포, 관리한계, 결측률</td><td>특별원인 제거 전후가 추적 가능</td></tr><tr><td>이상탐지</td><td>점 초과, 연속 편향, 추세, 산포 증가 룰 적용</td><td>관리도 경보와 원천 행 링크</td><td>경보마다 담당·확인결과·종결상태 존재</td></tr><tr><td>원인검증</td><td>재료·설비·Recipe·시간·위치 효과와 교호작용 분석</td><td>효과크기, CI, 잔차, 실험 결과</td><td>재현 실험 또는 독립 Lot에서 효과 확인</td></tr><tr><td>관리 전환</td><td>관리계획·FMEA·검사조건·반응계획 갱신</td><td>변경 전후 지표와 표준서</td><td>재발률과 부작용 CTQ 모니터링</td></tr></tbody></table></div>
-<div class="callout warn"><b>자동 경보 운영:</b> 관리도 신호는 원인 확정이 아니라 조사 시작 신호입니다. 알람만 늘리지 말고 동일 원인 중복 병합, 영향범위, 확인기한, 오탐률과 missed escape를 함께 관리합니다.</div>
-<h3>PDCA 개선 사이클</h3><div class="cycle"><div class="p">PLAN<br>문제·목표·가설</div><div class="d">DO<br>대책·실험 실행</div><div class="c">CHECK<br>효과·부작용 확인</div><div class="a">ACT<br>표준화·수평전개</div></div><div class="callout good"><b>관리도와 규격은 다릅니다.</b> 규격 안에 있어도 공정 추세가 비정상일 수 있고, 안정된 공정도 고객 규격을 만족하지 못할 수 있습니다.</div></section>
-
-<section id="customer"><span class="tag">PART 6</span><span class="time">10분</span><h2>고객 품질 요구사항: 목소리를 기준으로 바꾸기</h2><p class="lead">고객의 요구는 “더 밝게”, “얼룩 없이”, “오래 사용하게”처럼 시작합니다. 품질 엔지니어는 이를 시험 가능한 기준과 관리항목으로 번역합니다.</p>
-<div class="grid g2"><div class="card"><h3>요구사항 전개</h3><p>사용환경 → 고객 체감 → CTQ → 측정방법 → 허용기준 → 공정 관리항목으로 연결합니다.</p></div><div class="card"><h3>VOC와 시장품질</h3><p>불만 건수만 보지 않고 사용기간, 조건, 증상, 재현성과 심각도를 층별화합니다.</p></div><div class="card"><h3>변경관리</h3><p>재료·설비·공법·설계 변경이 다른 특성과 장기 신뢰성에 미치는 영향을 사전 검증합니다.</p></div><div class="card"><h3>문제해결 보고</h3><p>현상, 영향범위, 임시조치, 원인, 근본대책, 효과와 재발방지를 논리적으로 설명합니다.</p></div></div>
-<h3>좋은 고객 대응의 원칙</h3><ul><li>추정과 확인된 사실을 구분한다.</li><li>불량률뿐 아니라 고객 영향과 안전·기능 위험을 함께 본다.</li><li>임시 유출방지와 근본 재발방지를 혼동하지 않는다.</li><li>해결 후 유사 제품·공정에 교훈을 수평 전개한다.</li></ul><div class="callout question"><b>토론:</b> 고객 규격에는 합격하지만 VOC가 계속 증가한다면, 규격·측정법·사용환경 중 무엇을 다시 검토해야 할까요?</div></section>
-
-<section id="market"><span class="tag">PART 7</span><span class="time">5분</span><h2>디스플레이 시장동향과 새로운 품질 과제</h2><p class="lead">시장동향은 판매량 전망으로 끝나지 않습니다. 적용처가 달라지면 고객이 중요하게 보는 품질특성과 시험방법도 달라집니다.</p>
-<div class="grid g2"><div class="card trend"><h3>IT OLED 확대</h3><p>노트북·태블릿·모니터로 OLED 적용이 확대되며 장시간 정지화면, 소비전력, 번인, 대면적 균일도와 가격 경쟁력이 중요해집니다.</p></div><div class="card trend"><h3>차량용 디스플레이</h3><p>대형·곡면·다중 화면과 스마트 콕핏이 확대되면서 넓은 온도범위, 장기 공급, 진동·충격, 야외 시인성과 안전 관련 요구가 커집니다.</p></div><div class="card trend"><h3>폴더블·폼팩터 혁신</h3><p>반복 굽힘, 주름, 충격, 박막 봉지와 접합 신뢰성이 화질과 함께 핵심 CTQ가 됩니다.</p></div><div class="card trend"><h3>대형·고휘도·고주사율</h3><p>TV와 게이밍에서 밝기·색·응답성 경쟁이 심화되며 발열, 전력, 수명과 균일도 사이의 균형이 중요합니다.</p></div></div>
-<div class="callout"><b>2026 공개 전망:</b> Omdia는 2026년 대면적 OLED 출하량이 전년 대비 18.8% 증가해 3,880만 대에 이를 것으로 전망했습니다. 전망치는 확정 실적이 아니므로 방향성 자료로 해석해야 합니다.</div>
-<h3>시장 변화 → 품질 과제 연결</h3><div class="scroll"><table><thead><tr><th>변화</th><th>새로운 사용조건</th><th>강화되는 품질 질문</th></tr></thead><tbody><tr><td>모바일 → IT</td><td>장시간 업무·정지 UI</td><td>잔상, 수명, 소비전력, 대면적 균일도</td></tr><tr><td>평면 → 폴더블</td><td>반복 굽힘·휴대 충격</td><td>주름, 접합, 박막 손상, 반복 내구성</td></tr><tr><td>실내 → 차량</td><td>고온·저온·진동·강한 외광</td><td>온도 신뢰성, 시인성, 장기 안정성</td></tr><tr><td>단일제품 → 다품종</td><td>서로 다른 고객·용도</td><td>공통 표준과 제품별 CTQ의 균형</td></tr></tbody></table></div>
-<p class="lecture-note">전망 숫자보다 ‘응용처 변화가 어떤 시험과 품질특성을 새로 요구하는가’를 담당 업무와 연결합니다.</p></section>
-
-<section id="case"><span class="tag">PART 8</span><span class="time">5분</span><h2>통합 분석 사례: 저계조 Mura 증가</h2><div class="callout"><b>익명 합성 사례:</b> 분석 순서를 보여주기 위한 데이터이며 특정 회사의 실제 공정조건·규격·생산실적이 아닙니다.</div><p><b>상황:</b> 신규 IT용 패널에서 저계조 Mura VOC가 증가했습니다. 출하검사 평균 휘도는 규격 안이지만 고객 사용조건에서 공간 불균일이 관찰됩니다.</p>
-<div class="grid g3"><div class="card"><b>1. Y 정의</b><br>저계조 Mura score, 고객 불량 여부, 위치별 ΔL/L을 결과변수로 고정</div><div class="card"><b>2. 데이터 결합</b><br>검사 map에 Panel–Glass–설비–Recipe–재료 Lot–시간 키를 연결하고 조인 손실 확인</div><div class="card"><b>3. 측정 검증</b><br>카메라·조명·검사자 반복 측정으로 MSA와 한도견본 정합 확인</div><div class="card"><b>4. 층별 분석</b><br>위치 heatmap, 설비·Chamber·교대별 boxplot, 시간 관리도, 원인별 Pareto 작성</div><div class="card"><b>5. 가설 검증</b><br>설비×재료 교호작용을 회귀/ANOVA로 확인하고 독립 Lot 또는 DOE로 재현</div><div class="card"><b>6. 조치·효과</b><br>유출방지와 근본대책을 분리하고 Mura tail·수율·다른 CTQ·VOC를 함께 추적</div></div>
-<h3>의사결정 예시</h3><div class="scroll"><table><thead><tr><th>관찰</th><th>잘못된 결론</th><th>다음 검증</th></tr></thead><tbody><tr><td>Chamber B의 평균 Mura가 높음</td><td>Chamber B가 원인이다</td><td>제품 mix·재료 Lot·시간을 보정한 효과크기와 CI 확인</td></tr><tr><td>Recipe 변경 후 불량률 하락</td><td>변경 효과가 확정됐다</td><td>동기간 대조군과 전후 추세, 표본수, 다른 CTQ 악화 확인</td></tr><tr><td>p-value &lt; 0.05</td><td>현업적으로 큰 차이다</td><td>절대 차이, 규격 대비 크기, 재현성과 경제적 효과 확인</td></tr></tbody></table></div>
-<div class="callout good"><b>결론:</b> “검사를 강화하자”에서 멈추지 않고 고객 사용조건, 측정 신뢰성, 데이터 추적성, 공정 변동, 원인 재현과 재발방지를 하나의 분석 체계로 연결해야 합니다.</div></section>
-
-<section id="summary"><span class="tag">TAKEAWAYS</span><h2>두 시간 실무 세미나의 핵심 메시지</h2><div class="grid g2"><div class="card"><b>품질은 고객 가치다.</b><br>규격 합격을 넘어 실제 사용에서의 만족과 신뢰를 봅니다.</div><div class="card"><b>측정은 품질의 언어다.</b><br>조건, 장비, 표본과 불확실성이 명확해야 비교할 수 있습니다.</div><div class="card"><b>데이터는 추적 가능해야 한다.</b><br>원천·정제·제외·모델·판정 이력을 남겨야 재현하고 감사할 수 있습니다.</div><div class="card"><b>원인은 검증해야 한다.</b><br>상관과 가설에서 멈추지 않고 대조군·DOE·독립 Lot로 재현합니다.</div></div>
-<h3>현업 적용 질문</h3><ol class="quiz"><li>우리 CTQ 데이터의 원천–공정–고객 추적키는 어디에서 끊기는가?</li><li>가속시험이 실제와 같은 고장 메커니즘을 유지한다는 증거는 무엇인가?</li><li>현재 대시보드는 규격 합격률뿐 아니라 관리도 이상·tail·불확실성을 보여주는가?</li><li>이번 달 가장 큰 품질손실 한 건을 재현 가능한 분석 흐름으로 다시 설명할 수 있는가?</li></ol></section>
-
 <section id="refs"><span class="tag">REFERENCES</span><h2>공개 참고자료</h2><ul><li><a href="https://www.iso.org/standard/62085.html" target="_blank" rel="noopener">ISO 9001:2015 — Quality management systems</a></li><li><a href="https://asq.org/quality-resources/seven-basic-quality-tools" target="_blank" rel="noopener">ASQ — Seven Basic Quality Tools</a></li><li><a href="https://webstore.iec.ch/en/publication/67919" target="_blank" rel="noopener">IEC 62341-6-1:2022 — OLED optical and electro-optical measurement methods</a></li><li><a href="https://omdia.tech.informa.com/pr/2026/july/large-area-oled-shipments-to-increase-18point8percent-yoy-in-2026-despite-economic-uncertainty-and-component-price-hike" target="_blank" rel="noopener">Omdia — 2026 large-area OLED shipment outlook</a></li><li><a href="https://global.samsungdisplay.com/31401" target="_blank" rel="noopener">Samsung Display — IT OLED vision and market outlook</a></li><li><a href="https://www.sec.gov/Archives/edgar/data/1290109/000119312526183413/lpl-20251231.htm" target="_blank" rel="noopener">LG Display 2025 Form 20-F — product and market overview</a></li></ul><p class="muted">본 페이지는 품질 구성원 실무 세미나를 위한 공개 방법론 자료입니다. 특정 기업의 내부 규격, 공정조건, 고객정보 또는 실제 생산데이터는 포함하지 않으며, 예시 값은 익명 합성 데이터입니다. 내부 적용 시 조직의 정보보안·데이터 거버넌스·고객 요구사항을 우선합니다.</p></section>
 <p class="footer">디스플레이 품질관리와 OLED 수명 데이터 분석 · 120-minute Quality Practitioner Seminar</p>
 </main>
