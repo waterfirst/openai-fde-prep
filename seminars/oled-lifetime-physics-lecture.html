@@ -40,11 +40,11 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 </head>
 <body>
 <header><div class="wrap"><div class="eyebrow">UNIVERSITY LECTURE · PHYSICS × STATISTICS</div><h1>OLED·TFT 수명 열화의<br>물리와 통계</h1><p>Stretched exponential(KWW), Arrhenius 온도 가속, 멱법칙 응력 의존성과 Weibull 신뢰성 통계를 하나의 수학 구조로 연결하는 심화 강의 자료입니다. 소자 물리와 통계 신뢰성을 함께 다룹니다.</p><div class="badges"><span class="badge">SE · KWW</span><span class="badge">Arrhenius · 멱법칙</span><span class="badge">Weibull 신뢰성</span><span class="badge">TFT V<sub>th</sub> · OLED 휘도</span><span class="badge">모델 검증</span></div><div class="hero-flow"><div>미시 열화 기전</div><div>속도 분포</div><div>SE 열화곡선</div><div>가속 모델</div><div>Weibull 수명통계</div></div></div></header>
-<nav><div><a href="#deep-dive">개요</a><a href="#stage1">① 일반론 SE</a><a href="#physics-foundation">제1원리</a><a href="#acceleration">가속수명</a><a href="#weibull">Weibull</a><a href="#stage2">② 시뮬레이션 실습</a><a href="#statphys-lab">통계물리 그래프</a><a href="#stage3">③ 소자·재료</a><a href="#tft-degradation-research">TFT 열화</a><a href="#oled-degradation-research">OLED 수명</a><a href="#emitter-production-lifetime">양산재료</a><a href="#stage4">④ 연구 이력</a><a href="#weibull-genealogy">고장분포 계보</a><a href="#technical-refs">참고문헌</a><a href="#stage5">⑤ 실무 연결</a><a href="#models">모델 비교</a><a href="#internal-tools">사내 분석 사이트</a></div></nav>
+<nav><div><a href="#deep-dive">개요</a><a href="#stage1">① 일반론 SE</a><a href="#physics-foundation">제1원리</a><a href="#acceleration">가속수명</a><a href="#lifetime-app-bridge">자동 분석 사이트</a><a href="#weibull">Weibull</a><a href="#stage2">② 시뮬레이션 실습</a><a href="#statphys-lab">통계물리 그래프</a><a href="#stage3">③ 소자·재료</a><a href="#tft-degradation-research">TFT 열화</a><a href="#oled-degradation-research">OLED 수명</a><a href="#emitter-production-lifetime">양산재료</a><a href="#stage4">④ 연구 이력</a><a href="#weibull-genealogy">고장분포 계보</a><a href="#technical-refs">참고문헌</a><a href="#stage5">⑤ 실무 연결</a><a href="#models">모델 비교</a><a href="#internal-tools">사내 분석 사이트</a></div></nav>
 <main>
 <section id="deep-dive"><span class="tag">LECTURE OVERVIEW · PHYSICS × STATISTICS</span><h2>수명 열화를 하나의 수학 구조로 읽기</h2><p class="lead">TFT의 \(\Delta V_{th}\) 이동과 OLED의 휘도 감쇠는 물리적 원인이 다르지만 같은 stretched exponential 형태로 나타납니다. 이 강의는 <b>왜 그 형태가 나오는지</b>를 일반론에서 먼저 세우고, 시뮬레이션으로 직접 확인한 뒤, 실제 소자·재료로 내려가 학계 연구 이력을 짚고, 마지막에 사내 수명 분석 도구로 연결합니다.</p><div class="callout good"><b>강의 흐름:</b> ① <a href="#stage1">일반론 — SE 식의 유도</a> → ② <a href="#stage2">통계물리 시뮬레이션 실습</a> → ③ <a href="#stage3">소자 수명과 OLED 재료 수명</a> → ④ <a href="#stage4">학계 연구 이력</a> → ⑤ <a href="#stage5">실제 수명 분석과 사내 도구</a></div></section>
 
-<section class="stage" id="stage1"><span class="tag">STAGE 1</span><span class="time">일반론</span><h2>SE 식은 어디서 오는가 — 모양·온도·응력의 분리</h2><p class="lead">특정 소자를 보기 전에 수식부터 세웁니다. 여러 속도의 통계적 중첩이 stretched exponential을 만들고, 온도(Arrhenius)와 응력(멱법칙)이 시간척도 \(\tau\) 안으로 흡수되며, 한 소자의 열화곡선과 여러 소자의 수명 산포가 Weibull로 연결됩니다.</p></section>
+<section class="stage" id="stage1"><span class="tag">STAGE 1</span><span class="time">일반론</span><h2>SE 식은 어디서 오는가 — 모양·온도·응력의 분리</h2><p class="lead">특정 소자를 보기 전에 수식부터 세웁니다. 여러 속도의 통계적 중첩이 stretched exponential을 만들고, 온도(Arrhenius)와 응력(멱법칙)이 시간척도 \(\tau\) 안으로 흡수되며, 한 소자의 열화곡선과 여러 소자의 수명 산포가 Weibull로 연결됩니다. 중간에 사내 <a href="#lifetime-app-bridge">OLED 자동 수명 분석 사이트</a>가 이 계산을 어디까지 대신하는지 확인합니다.</p></section>
 
 <section id="physics-foundation">
 <span class="label">First Principles</span>
@@ -163,6 +163,19 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 <b>강의 포인트</b><br/>
     챔버 온도는 실제 소자 온도가 아니다. 고전류 구동에서는 픽셀 접합부 온도 상승을 보정하지 않으면 수명 가속계수가 왜곡된다.
   </div>
+</section>
+
+<section id="lifetime-app-bridge"><span class="tag">HANDS-ON BRIDGE · 사내 자동 분석</span>
+<h2>여기서부터는 사이트가 대신 계산한다 — OLED 자동 수명 분석</h2>
+<p class="lead">앞의 SE 적합과 가속 환산은 실제로 손으로 풀지 않습니다. 사내 <b>OLED 자동 수명 분석 사이트</b>가 측정 원본에서 정규화·cutoff·SED 적합까지 자동으로 수행하고, 그 결과를 <b>\(\beta\)와 수명 산포</b>로 내놓습니다. 다음 절의 Weibull은 <b>바로 그 출력을 읽는 언어</b>입니다.</p>
+<div class="simulator-actions">
+<a class="simulator-link internal" href="http://11.99.91.72:8502/lifetime/#/" rel="noopener noreferrer" target="_blank" aria-label="사내 OLED 자동 수명 분석 사이트를 새 탭에서 열기">OLED 자동 수명 분석 사이트 열기 ↗</a>
+</div>
+<div class="grid g2">
+<div class="card"><h3>사이트가 자동으로 내는 값</h3><ul><li>휘도·전류 proxy·효율 유지율</li><li>overshoot 구간과 cutoff 시점</li><li>SED 적합 파라미터 \(\beta,\ \theta\)</li><li>L93과 샘플별 수명 산포</li></ul></div>
+<div class="card"><h3>그래서 Weibull이 필요하다</h3><p>사이트는 샘플마다 수명을 하나씩 내놓습니다. 그런데 품질 판정에 쓰는 값은 평균이 아니라 <b>하위 tail</b>입니다. 여러 샘플의 수명이 어떻게 흩어져 있는지, 몇 %가 먼저 떨어지는지를 읽으려면 Weibull 분포와 \(\beta\)·B10 개념이 필요합니다.</p></div>
+</div>
+<p class="mini">사내망에서만 접속됩니다. 전체 실습 절차와 강의 단계별 대응은 마지막 <a href="#internal-tools">사내 분석 환경</a> 절에서 정리합니다.</p>
 </section>
 
 <section id="weibull">
