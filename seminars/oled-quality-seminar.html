@@ -45,7 +45,7 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
   </div><div class="intro-line" aria-hidden="true"></div></div>
 </div>
 <header><div class="wrap"><div class="eyebrow">QUALITY PRACTITIONER SEMINAR · 120 MINUTES</div><h1>디스플레이 품질관리와<br>OLED 수명 데이터 분석</h1><p>품질·신뢰성·공정·재료·분석 구성원이 패널 CTQ를 정의하고, 측정 원천 데이터를 정제·시각화·모델링해 고객과 공정의 의사결정으로 연결하는 2시간 실무 세미나입니다.</p><div class="badges"><span class="badge">패널 CTQ</span><span class="badge">화질·신뢰성</span><span class="badge">실제 데이터 분석법</span><span class="badge">공정·고객 품질</span><span class="badge">OLED·TFT 열화</span><button class="badge replay" onclick="replayIntro()">인트로 다시 보기</button></div><div class="hero-flow"><div>고객의 기대</div><div>측정 가능한 CTQ</div><div>신뢰할 수 있는 데이터</div><div>검증된 원인·모델</div><div>표준화된 조치</div></div></div></header>
-<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
+<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
 <main>
 
 <section id="prelisten">
@@ -99,6 +99,53 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 <h3>패널 수준에서는 두 경로가 결합된다</h3><div class="formula">\[L_{panel}(t)\ \propto\ I_{pixel}\!\left(V_{th}(t),\mu(t)\right)\times\eta_{EL}(t)\times\eta_{out}(t)\]</div><div class="grid g3"><div class="card"><b>TFT 경로</b><br><i>V</i><sub>th</sub>, 이동도와 화소전류 변화</div><div class="card"><b>OLED 경로</b><br>내부 발광효율과 재료·계면 열화</div><div class="card"><b>광학 경로</b><br>광추출·micro-cavity·봉지구조 변화</div></div>
 <div class="callout good"><b>물리학과 통계학의 만남:</b> SED/KWW는 한 소자의 열화곡선을, Weibull은 여러 소자의 생존확률을 설명한다. 두 식은 <code>exp[-(t/τ)<sup>β</sup>]</code>라는 동일한 형태에서 만나며, β는 물리에서는 시간상수·장벽 분포의 폭, 통계에서는 hazard 형태와 조기고장 위험을 해석하는 연결변수가 된다.</div>
 <div class="callout danger"><b>해석 주의:</b> TFT (V_{th})와 OLED 휘도가 같은 SED 형태를 보인다고 열화 메커니즘까지 같다고 결론내릴 수는 없다. 온도·전류·재료·구조에 따른 β와 τ의 변화, 전기·광학 측정과 고장분석을 함께 사용해야 한다.</div></section>
+<section id="tft-degradation-research">
+<span class="tag">TFT DEGRADATION RESEARCH</span>
+<h2>LTPS·a-IGZO TFT 열화 연구 — 수식, 연구 흐름과 적용 경계</h2>
+<p class="lead">TFT 열화는 하나의 식으로 정의되지 않습니다. 소자 구조, 전압·전류·광·온도와 구동 이력에 따라 전하 포획, 결함 생성, 산소공공 이온화, hot-carrier와 자기발열이 서로 다른 비중으로 결합됩니다.</p>
+<div class="callout warn"><b>용어 주의:</b> 아래 식은 IEC가 지정한 단일 “국제 표준 수식”이 아니라, 국제 학술문헌과 산업 신뢰성 해석에서 널리 사용하는 대표 모델입니다. 표준은 주로 측정조건과 평가절차를 정하고, 모델의 채택 여부는 데이터·잔차·재현성·물리 정합성으로 검증해야 합니다.</div>
+
+<h3>1. 메커니즘별 주요 수식 비교</h3>
+<div class="scroll"><table>
+<thead><tr><th>모델·메커니즘</th><th>대표 수식</th><th>주요 적용</th><th>해석과 한계</th></tr></thead>
+<tbody>
+<tr><td><b>단일 포획·완화</b></td><td>\(\Delta V_{TH}=\Delta V_\infty[1-e^{-t/\tau}]\)</td><td>하나의 특성시간이 지배하는 기준모델</td><td>복수 트랩과 긴 tail을 충분히 표현하지 못한다.</td></tr>
+<tr><td><b>Stretched exponential</b></td><td>\(\Delta V_{TH}=\Delta V_\infty[1-e^{-(t/\tau)^\beta}]\)</td><td>a-Si:H·a-IGZO·LTPS의 분산된 trapping/relaxation</td><td>\(\beta&lt;1\)은 넓은 시간상수·장벽 분포와 연결되지만 메커니즘을 단독으로 확정하지는 못한다.<sup><a href="#ref-tft-libsch">[22]</a></sup><sup><a href="#ref-tft-lee">[23]</a></sup></td></tr>
+<tr><td><b>Multiple SE</b></td><td>\(\Delta V_{TH}=\sum_i A_i[1-e^{-(t/\tau_i)^{\beta_i}}]\)</td><td>source·drain 부근의 서로 다른 국부 열화과정</td><td>기전 분리에 유리하지만 파라미터 수 증가에 따른 식별성과 과적합을 검증해야 한다.<sup><a href="#ref-tft-yang-cap">[27]</a></sup></td></tr>
+<tr><td><b>단기 a-IGZO 모델</b></td><td>\(\Delta V_{TH}=a\ln[b(V_{st}-V_{TH0})^c][1-e^{-(t/\tau)^\beta}]\)</td><td>게이트 스트레스 전압별 초기 \(V_{TH}\) 이동</td><td>100초 이하 측정 데이터에서 \(R^2&gt;0.99\). 실제 ms 영역은 직접 측정하지 않은 외삽 구간이다.<sup><a href="#ref-tft-park">[26]</a></sup></td></tr>
+<tr><td><b>Arrhenius 가속</b></td><td>\(\tau(T)=\tau_0\exp(E_a/k_BT)\)</td><td>온도에 따른 포획·반응 시간척도 변화</td><td>온도별 실험으로 동일 고장기전과 \(E_a\)를 확인해야 한다.</td></tr>
+<tr><td><b>Power law·hot carrier</b></td><td>\(\Delta P/P_0=A(V,T)t^n\)</td><td>LTPS의 고전계·고전류 열화와 BTI/HCI 경험모델</td><td>지수 \(n\)은 보편상수가 아니며 소자·바이어스·관측특성별로 달라진다.</td></tr>
+<tr><td><b>자기발열 결합</b></td><td>\(T_{ch}=T_{amb}+R_{th}I_DV_{DS}\)</td><td>LTPS와 a-IGZO의 current-stress 열화</td><td>챔버온도가 아니라 실제 채널온도를 Arrhenius·결함모델과 연결한다.</td></tr>
+<tr><td><b>히스테리시스</b></td><td>\(\Delta V_{hys}=V_{TH,rev}-V_{TH,fwd}\)</td><td>sweep rate·AC stress·trapping/detrapping 평가</td><td>측정속도와 bias history를 고정하지 않으면 조건 간 비교가 어렵다.<sup><a href="#ref-tft-ac">[25]</a></sup></td></tr>
+</tbody></table></div>
+
+<h3>2. 연도별 주요 연구 논점</h3>
+<div class="scroll"><table>
+<thead><tr><th>연도</th><th>대표 연구</th><th>주요 논점</th><th>현재 연구로 이어진 질문</th></tr></thead>
+<tbody>
+<tr><td><b>1993</b></td><td>Libsch &amp; Kanicki</td><td>비정질 TFT의 전하 주입·포획이 SE 시간 의존성을 보인다는 기초 모델 정립.<sup><a href="#ref-tft-libsch">[22]</a></sup></td><td>SE 파라미터를 트랩·장벽 분포와 어떻게 연결할 것인가?</td></tr>
+<tr><td><b>2008</b></td><td>Lee et al.</td><td>InGaZnO TFT의 bias-stress 유도 \(\Delta V_{TH}\)에 SE를 적용.<sup><a href="#ref-tft-lee">[23]</a></sup></td><td>재료·절연막·전계에 따라 \(\tau,\beta\)가 왜 달라지는가?</td></tr>
+<tr><td><b>2012</b></td><td>Kim et al.</td><td>AC bias에서 trapping과 detrapping이 문턱전압 이동에 미치는 영향을 분석.<sup><a href="#ref-tft-ac">[25]</a></sup></td><td>DC 시험을 실제 프레임·duty-cycle 구동으로 어떻게 확장할 것인가?</td></tr>
+<tr><td><b>2019</b></td><td>Qin et al.</td><td>AMOLED short-term image sticking의 메커니즘과 개선을 디스플레이 현상과 연결.<sup><a href="#ref-tft-qin">[24]</a></sup></td><td>TFT·OLED·구동회로의 잔상 기여도를 어떻게 분리할 것인가?</td></tr>
+<tr><td><b>2022</b></td><td>Yang et al.</td><td>current stress에 의한 a-IGZO \(\Delta V_{TH}\)의 물리 기반 compact model 제안.<sup><a href="#ref-tft-yang-edl">[28]</a></sup></td><td>임의 파형과 과도상태를 반영하는 Verilog-A 모델을 어떻게 검증할 것인가?</td></tr>
+<tr><td><b>2023</b></td><td>Park et al.</td><td>초기 \(V_{TH0}\), 스트레스 전압과 전압별 \(\tau,\beta\)를 반영한 단기 피팅 모델 제안.<sup><a href="#ref-tft-park">[26]</a></sup></td><td>측정하지 않은 ms 영역의 외삽 정확도를 펄스 I–V로 검증할 수 있는가?</td></tr>
+<tr><td><b>2023~현재</b></td><td>Multiple-SE·공정/구조 결합</td><td>산소 함량, \(V_{GS}/V_{DS}\), 국부 전계, activation energy와 subgap DOS를 함께 해석.<sup><a href="#ref-tft-yang-cap">[27]</a></sup></td><td>소자–화소회로–패널 화질을 잇는 재현 가능한 digital twin을 만들 수 있는가?</td></tr>
+</tbody></table></div>
+
+<h3>3. LTPS와 a-IGZO 비교</h3>
+<div class="scroll"><table>
+<thead><tr><th>구분</th><th>LTPS TFT</th><th>a-IGZO TFT</th><th>공통 품질 해석</th></tr></thead>
+<tbody>
+<tr><td><b>재료·구조 특징</b></td><td>다결정 Si, 결정립계와 국부적 결함 분포</td><td>비정질 산화물, subgap state와 산소 관련 결함</td><td>공정·소자 위치에 따른 산포를 평균과 분리한다.</td></tr>
+<tr><td><b>상대적으로 중요한 열화</b></td><td>grain-boundary/interface trap, HCI, BTI, self-heating</td><td>전자 포획, 산소공공 이온화, PBIS/NBIS, 광·수소·수분 영향</td><td>어느 한 메커니즘만 지배한다고 단정하지 않는다.</td></tr>
+<tr><td><b>강한 스트레스 축</b></td><td>높은 횡전계, 전류, \(V_{DS}\), 채널온도</td><td>게이트 전계, 광, 분위기, \(V_{GS}/V_{DS}\), bias history</td><td>전압·전류·온도·광·duty cycle을 함께 기록한다.</td></tr>
+<tr><td><b>주요 관측량</b></td><td>\(\Delta V_{TH}\), 이동도, subthreshold slope, \(I_D\)</td><td>\(\Delta V_{TH}\), hysteresis, hump, 이동도, subgap DOS</td><td>전달특성 한 개가 아니라 전기·광학·화질 결과를 결합한다.</td></tr>
+<tr><td><b>화질 영향</b></td><td>화소전류 오차, 균일도·잔상, 구동 안정성 변화</td><td>화소전류 이동, flicker·short-term image sticking 가능성</td><td>OLED 효율열화와 분리한 뒤 패널 휘도 모델에서 다시 결합한다.</td></tr>
+<tr><td><b>권장 시험</b></td><td>DC/AC HCI·BTI, 온도별 current stress, 구조·위치별 반복</td><td>펄스/AC bias, PBIS/NBIS, recovery, 온도·광·분위기 조합</td><td>복수 소자, holdout 조건, 잔차·CI와 외삽비를 보고한다.</td></tr>
+</tbody></table></div>
+
+<div class="callout good"><b>품질팀의 실무 결론:</b> 모델 이름보다 먼저 실제 구동 파형과 동일한 고장기전을 재현해야 합니다. 실측 구간과 외삽 구간을 분리하고, \(R^2\)뿐 아니라 RMSE·MAE·잔차·파라미터 신뢰구간·미사용 조건 예측을 함께 검토합니다.</div>
+</section>
 <section id="lifetime-sequence">
 <span class="label">Learning Order</span>
 <h2>OLED·TFT 수명평가의 이해 순서</h2>
@@ -765,6 +812,13 @@ print(summary.reset_index())</code></pre>
 <tr><td>[19]</td><td><a href="https://m.blog.naver.com/ahn_ss75/222165307768" rel="noopener" target="_blank">사용자 제공 참고자료: 와이블 분포 설명 블로그</a></td><td>세미나 청중에게 와이블 분포를 직관적으로 설명하기 위한 추가 읽기 링크.</td></tr>
 <tr id="ref-weibull-minitab"><td>[20]</td><td><a href="https://support.minitab.com/ko-kr/minitab/help-and-how-to/statistical-modeling/reliability/supporting-topics/distribution-models/weibull-distribution/" rel="noopener" target="_blank">Minitab Support — 신뢰도 분석의 Weibull 분포</a></td><td>β에 따른 hazard 해석, 초기고장/랜덤고장/wear-out 구분, weakest-link 모델, 실무 신뢰성 분석 관점.</td></tr>
 <tr id="ref-weibull-wikipedia"><td>[21]</td><td><a href="https://ko.wikipedia.org/wiki/%EB%B2%A0%EC%9D%B4%EB%B6%88_%EB%B6%84%ED%8F%AC" rel="noopener noreferrer" target="_blank">한국어 위키백과 — 베이불(와이블) 분포</a></td><td>확률밀도·누적분포 수식과 부품 수명 추정 및 신뢰성공학 활용을 한국어로 확인하는 보조자료.</td></tr>
+<tr id="ref-tft-libsch"><td>[22]</td><td><a href="https://doi.org/10.1063/1.108709" rel="noopener" target="_blank">Libsch &amp; Kanicki (1993) — Bias-stress-induced stretched-exponential time dependence</a></td><td>비정질 TFT 전하 주입·포획의 stretched-exponential 시간 의존성에 대한 기초 문헌.</td></tr>
+<tr id="ref-tft-lee"><td>[23]</td><td><a href="https://doi.org/10.1063/1.2977865" rel="noopener" target="_blank">Lee et al. (2008) — Threshold-voltage shift in InGaZnO TFTs</a></td><td>a-IGZO TFT의 bias-stress 유도 문턱전압 이동에 SE 모델을 적용한 대표 선행연구.</td></tr>
+<tr id="ref-tft-qin"><td>[24]</td><td><a href="https://doi.org/10.1002/sdtp.13334" rel="noopener" target="_blank">Qin et al. (2019) — AMOLED short-term image sticking</a></td><td>단기 잔상 메커니즘과 디스플레이 개선 방향을 연결한 SID 연구.</td></tr>
+<tr id="ref-tft-ac"><td>[25]</td><td><a href="https://doi.org/10.1149/2.026204esl" rel="noopener" target="_blank">Kim et al. (2012) — IGZO TFTs under AC bias stress</a></td><td>AC 바이어스에서 charge trapping/detrapping과 문턱전압 이동을 다룬 연구.</td></tr>
+<tr id="ref-tft-park"><td>[26]</td><td><a href="https://doi.org/10.5370/KIEE.2023.72.3.402" rel="noopener" target="_blank">Park et al. (2023) — a-IGZO TFT 단기 열화 예측식</a></td><td>초기 문턱전압과 스트레스 전압 의존성을 반영한 단기 열화 모델. ms 영역은 직접 측정하지 않은 외삽임을 구분.</td></tr>
+<tr id="ref-tft-yang-cap"><td>[27]</td><td><a href="https://doi.org/10.1016/j.cap.2022.11.011" rel="noopener" target="_blank">Yang et al. (2023) — Local threshold-voltage shift under current stress</a></td><td>multiple SE, 국부 전계, activation energy와 subgap DOS를 연결한 물리 모델.</td></tr>
+<tr id="ref-tft-yang-edl"><td>[28]</td><td><a href="https://doi.org/10.1109/LED.2022.3202992" rel="noopener" target="_blank">Yang et al. (2022) — Physics-based compact model of a-IGZO degradation</a></td><td>top-gate self-aligned a-IGZO의 current-stress 문턱전압 이동 compact model.</td></tr>
 </tbody>
 </table>
 <div class="callout good">
