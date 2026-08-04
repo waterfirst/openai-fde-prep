@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">TFT와 OLED 열화의 공통 stretched exponential 통계물리 지도</title>
+  <desc id="desc">n형과 p형 TFT, 형광과 인광 OLED에서 서로 다른 미시 열화가 에너지 장벽과 반응속도 분포를 만들고, 공통 SE 커널을 거쳐 TFT 손상분율과 OLED 생존분율로 관측되는 과정을 나타낸다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071326"/><stop offset="1" stop-color="#12355b"/></linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e7490"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#020617" flood-opacity=".35"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#7dd3fc"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;fill:#eaf5ff}.h{font-size:27px;font-weight:800}.k{font-size:22px;font-weight:800}.b{font-size:17px}.s{font-size:14px;fill:#cbd5e1}.eq{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:20px;font-weight:700}.line{stroke:#7dd3fc;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" rx="26" fill="url(#bg)"/>
+  <text x="600" y="48" text-anchor="middle" class="h">서로 다른 소자·재료, 하나의 통계물리 커널</text>
+  <text x="600" y="76" text-anchor="middle" class="s">같은 SE 곡선은 같은 원인이 아니라 ‘분포된 반응속도의 집단 응답’을 뜻한다</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="105" width="245" height="145" rx="18" fill="#123d73" stroke="#60a5fa"/>
+    <text x="78" y="140" class="k">n형 TFT</text><text x="78" y="172" class="b">전자 포획 · 결함 생성</text><text x="78" y="200" class="s">PBTS, HCI, 계면/절연막 trap</text><text x="78" y="226" class="s">대표 관측: ΔVTH, μ, IDS</text>
+    <rect x="55" y="285" width="245" height="145" rx="18" fill="#4c1d67" stroke="#c084fc"/>
+    <text x="78" y="320" class="k">p형 TFT</text><text x="78" y="352" class="b">정공 · NBTI · 자기발열</text><text x="78" y="380" class="s">계면/입계 trap, H 탈착</text><text x="78" y="406" class="s">부호·2단계 변화는 원인 의존</text>
+    <rect x="900" y="105" width="245" height="145" rx="18" fill="#075f55" stroke="#5eead4"/>
+    <text x="923" y="140" class="k">형광 OLED</text><text x="923" y="172" class="b">주로 singlet 발광</text><text x="923" y="200" class="s">prompt(ns), 화학 quencher/trap</text><text x="923" y="226" class="s">대표 관측: L/L₀, V, EQE</text>
+    <rect x="900" y="285" width="245" height="145" rx="18" fill="#7c2d12" stroke="#fb923c"/>
+    <text x="923" y="320" class="k">인광 OLED</text><text x="923" y="352" class="b">singlet + triplet 수확</text><text x="923" y="380" class="s">긴 triplet(μs), TTA·TPA</text><text x="923" y="406" class="s">특히 blue: 고에너지 결합 절단</text>
+  </g>
+
+  <path d="M300 178 C385 178 388 280 435 302" class="line"/><path d="M300 358 C375 358 390 338 435 329" class="line"/>
+  <path d="M900 178 C815 178 812 280 765 302" class="line"/><path d="M900 358 C825 358 810 338 765 329" class="line"/>
+  <g filter="url(#shadow)"><rect x="430" y="210" width="340" height="230" rx="30" fill="url(#core)" stroke="#bae6fd" stroke-width="2"/>
+    <text x="600" y="250" text-anchor="middle" class="k">분포된 미시 과정</text>
+    <text x="600" y="286" text-anchor="middle" class="eq">g(E) → k(E)=ν exp(−E/kBT)</text>
+    <text x="600" y="331" text-anchor="middle" class="eq">Φ(t)=∫g(k)e^(−kt)dk</text>
+    <text x="600" y="376" text-anchor="middle" class="eq">≈ exp[−(t/τ)^β]</text>
+    <text x="600" y="414" text-anchor="middle" class="s">β: 분포의 폭·이질성 / τ: 조건부 시간척도</text>
+  </g>
+
+  <path d="M520 440 C500 470 430 485 350 505" class="line"/><path d="M680 440 C700 470 770 485 850 505" class="line"/>
+  <g filter="url(#shadow)">
+    <rect x="125" y="500" width="390" height="105" rx="18" fill="#172554" stroke="#60a5fa"/>
+    <text x="320" y="537" text-anchor="middle" class="k">TFT는 ‘누적 손상’을 본다</text><text x="320" y="576" text-anchor="middle" class="eq">D_TFT(t)=ΔVTH/ΔV∞ = 1−Φ(t)</text>
+    <rect x="685" y="500" width="390" height="105" rx="18" fill="#064e3b" stroke="#34d399"/>
+    <text x="880" y="537" text-anchor="middle" class="k">OLED는 ‘발광 생존’을 본다</text><text x="880" y="576" text-anchor="middle" class="eq">S_OLED(t)=L/L₀ = Φ(t)</text>
+  </g>
+  <path d="M320 605 C370 640 455 645 520 655" class="line"/><path d="M880 605 C830 640 745 645 680 655" class="line"/>
+  <g filter="url(#shadow)"><rect x="285" y="642" width="630" height="86" rx="20" fill="#0f172a" stroke="#f8fafc"/>
+    <text x="600" y="676" text-anchor="middle" class="k">패널에서 두 경로가 다시 결합한다</text>
+    <text x="600" y="708" text-anchor="middle" class="eq">Lpanel/L₀ ≈ (Ipixel/I₀) × (ηEL/η₀) × (ηout/ηout,0)</text>
+  </g>
+</svg>

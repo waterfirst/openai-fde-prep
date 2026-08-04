@@ -45,7 +45,7 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
   </div><div class="intro-line" aria-hidden="true"></div></div>
 </div>
 <header><div class="wrap"><div class="eyebrow">QUALITY PRACTITIONER SEMINAR · 120 MINUTES</div><h1>디스플레이 품질관리와<br>OLED 수명 데이터 분석</h1><p>품질·신뢰성·공정·재료·분석 구성원이 패널 CTQ를 정의하고, 측정 원천 데이터를 정제·시각화·모델링해 고객과 공정의 의사결정으로 연결하는 2시간 실무 세미나입니다.</p><div class="badges"><span class="badge">패널 CTQ</span><span class="badge">화질·신뢰성</span><span class="badge">실제 데이터 분석법</span><span class="badge">공정·고객 품질</span><span class="badge">OLED·TFT 열화</span><button class="badge replay" onclick="replayIntro()">인트로 다시 보기</button></div><div class="hero-flow"><div>고객의 기대</div><div>측정 가능한 CTQ</div><div>신뢰할 수 있는 데이터</div><div>검증된 원인·모델</div><div>표준화된 조치</div></div></div></header>
-<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
+<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#cross-domain-insight">통합 인사이트</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
 <main>
 
 <section id="prelisten">
@@ -230,6 +230,55 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 <li>최종 판정에는 휘도뿐 아니라 전압상승, 효율, 색좌표, dark spot와 소자군 하한수명을 포함합니다.</li>
 </ul>
 <div class="callout good"><b>연구 주제 한 문장:</b> “왜 TFT \(\Delta V_{TH}\)와 OLED \(L/L_0\)가 같은 SE 커널을 공유하며, 패널에서 관측되는 휘도 열화를 두 경로로 어떻게 식별·분해할 것인가?”</div>
+</section>
+<section id="cross-domain-insight">
+<span class="tag">CROSS-DOMAIN INSIGHT · TFT × OLED</span>
+<h2>n/p‑TFT와 형광/인광 OLED를 아우르는 SE 통계물리</h2>
+<p class="lead">TFT는 전자의 n형과 정공의 p형으로, OLED 발광은 형광과 인광으로 크게 나눌 수 있습니다. 네 범주의 열화 원인은 서로 다르지만, <b>장벽 에너지·공간·국소환경이 균일하지 않아 반응속도가 넓게 분포한다</b>는 점에서 같은 stretched exponential(SE) 집단응답이 나타날 수 있습니다.</p>
+
+<figure class="visual-card">
+<img src="assets/se-cross-domain-map.svg" alt="n형·p형 TFT와 형광·인광 OLED의 서로 다른 열화 원인이 분포된 미시 반응속도를 거쳐 공통 SE 커널과 패널 휘도 열화로 연결되는 통계물리 지도" width="1200" height="760" loading="lazy">
+<figcaption><span class="visual-note">그림 읽는 법:</span> 위의 네 범주는 물리적 입력이고, 가운데 SE는 분포를 압축한 통계적 커널입니다. 아래에서 TFT는 누적 손상 (1-\Phi), OLED는 발광 생존 (\Phi)로 관측되며, 실제 패널에서는 두 경로가 곱으로 결합합니다.</figcaption>
+</figure>
+
+<div class="callout warn"><b>범주 교정:</b> n/p는 TFT의 <b>다수 캐리어 극성</b>, 형광/인광은 OLED의 <b>여기자 방출 경로</b>입니다. 서로 같은 분류축이 아닙니다. 또한 실제 제품에는 a‑Si·LTPS·oxide, TADF·hyperfluorescence 등 중간·확장 범주가 있으므로 2×2 표는 사고를 위한 기준선이지 완전한 분류표가 아닙니다.</div>
+
+<h3>1. 네 범주의 미시 원인과 SE가 나타나는 조건</h3>
+<div class="scroll"><table><thead><tr><th>범주</th><th>주된 운반자·여기상태</th><th>대표 열화 원인</th><th>SE로 보이는 이유</th><th>SE만으로 부족한 경우</th></tr></thead><tbody>
+<tr><td><b>n형 TFT</b></td><td>전자</td><td>절연막·계면 전자 포획, 약한 결합의 defect creation, PBTS·HCI</td><td>trap 깊이·거리·국소 전계가 분포해 포획/탈포획 시간상수가 넓어짐.<sup><a href="#ref-tft-libsch">[22]</a></sup><sup><a href="#ref-tft-lee">[23]</a></sup></td><td>국부 current stress, 두 단계 열화, 이동도·subthreshold swing까지 변하면 multiple-SE나 compact model 필요.</td></tr>
+<tr><td><b>p형 TFT</b></td><td>정공</td><td>NBTI, 계면·입계 trap 생성, 수소 탈착, hot carrier·자기발열</td><td>입계 크기·결함 밀도·열경로가 불균일해 반응 장벽과 위치별 속도가 분산됨.<sup><a href="#ref-tft-p-selfheat">[43]</a></sup><sup><a href="#ref-tft-p-nbti">[44]</a></sup></td><td>서로 반대 부호의 trapping이 겹치거나 hump·2단계 (V_{TH}) 이동이 나타나면 단일 SE의 물리해석이 깨짐.</td></tr>
+<tr><td><b>형광 OLED</b></td><td>주로 singlet의 prompt fluorescence; 전기생성 exciton 중 triplet은 직접 발광에 제한</td><td>재결합영역의 화학변환, radical·deep trap·quencher, 전하불균형</td><td>분자 배향·국소 전계·불순물·재결합 위치가 분포해 발광 가능한 분자군의 생존시간이 넓어짐.<sup><a href="#ref-oled-aziz">[29]</a></sup><sup><a href="#ref-oled-chem-products">[45]</a></sup></td><td>초기 positive aging, 계면 주입 변화와 emitter bleaching이 겹치면 휘도 하나로 원인을 분리할 수 없음.</td></tr>
+<tr><td><b>인광 OLED</b></td><td>singlet과 triplet을 수확; triplet lifetime은 대체로 더 김</td><td>TTA·TPA/TPQ, polaron·exciton 유도 결합절단, quencher와 trap 생성</td><td>host–dopant 주변의 여기자·polaron 밀도와 취약 결합 에너지가 분포해 결함생성 속도가 넓어짐.<sup><a href="#ref-oled-giebink">[31]</a></sup><sup><a href="#ref-oled-sim">[34]</a></sup></td><td>고밀도에서 (n_T^2), (n_Tn_P) 같은 비선형 상호작용이 지배하면 rate equation이 SE 피팅보다 원인성이 높음.</td></tr>
+</tbody></table></div>
+
+<h3>2. 같은 커널, 반대 방향의 관측량</h3>
+<div class="formula">\[\Phi(t)=\int_0^\infty g(k)e^{-kt}\,dk\approx e^{-(t/\tau)^\beta}\]</div>
+<div class="grid g2">
+<div class="card"><h3>TFT: 손상의 누적</h3><div class="formula">\[D_{TFT}(t)=\frac{\Delta V_{TH}(t)}{\Delta V_{TH,\infty}}=1-\Phi(t)\]</div><p>시간이 지나며 포획·결함 상태가 <b>채워지는 양</b>을 봅니다. 단, ΔVTH의 부호는 n/p 이름만으로 정할 수 없고 stress와 지배 trap을 함께 봐야 합니다.</p></div>
+<div class="card"><h3>OLED: 발광의 생존</h3><div class="formula">\[S_{OLED}(t)=\frac{L(t)}{L_0}=\Phi(t)\]</div><p>시간이 지나도 발광에 기여하는 분자·경로가 <b>남아 있는 양</b>을 봅니다. 동일한 Φ를 ‘채워진 손상’과 ‘남은 기능’이라는 상보적 관측으로 읽는 것입니다.</p></div>
+</div>
+
+<h3>3. 패널 열화의 새로운 분해식</h3>
+<div class="formula">\[\frac{L_{panel}(t)}{L_0}\approx\frac{I_{pixel}(t)}{I_0}\frac{\eta_{EL}(t)}{\eta_{EL,0}}\frac{\eta_{out}(t)}{\eta_{out,0}}\]</div>
+<p>작은 변화 구간에서는 곱을 합으로 근사해 원인 기여도를 분리할 수 있습니다.</p>
+<div class="formula">\[1-\frac{L_{panel}}{L_0}\approx D_{TFT}+D_{OLED}+D_{opt},\qquad D_j=A_j\left[1-e^{-(t/\tau_j)^{\beta_j}}\right]\]</div>
+<div class="grid g3">
+<div class="card"><b>인사이트 ① β는 지문이 아니다</b><br>두 영역에서 같은 β가 나와도 같은 trap·결합절단을 뜻하지 않습니다. β는 우선 <b>이질성의 요약값</b>으로 해석해야 합니다.</div>
+<div class="card"><b>인사이트 ② τ는 재료상수가 아니다</b><br>τ는 온도·전계·전류·duty·초기상태에 조건부인 시간척도입니다. 조건이 바뀌면 동일 재료도 다른 τ를 가집니다.</div>
+<div class="card"><b>인사이트 ③ 한 곡선은 비식별적이다</b><br>ΔVTH, 전류, 휘도, 전압, EQE를 동시 측정해야 (D_{TFT})와 (D_{OLED})의 역문제를 풀 수 있습니다.</div>
+<div class="card"><b>인사이트 ④ 인광은 효율–수명 trade-off가 크다</b><br>triplet 수확은 효율을 높이지만 긴 여기자 수명은 밀도를 높여 TTA·TPA 위험을 키웁니다.<sup><a href="#ref-oled-baldo">[42]</a></sup></div>
+<div class="card"><b>인사이트 ⑤ 극성보다 구조가 중요할 수 있다</b><br>n/p 구분 뒤에도 gate stack, 입계, passivation, 열경로가 (g(E))를 바꾸므로 공정별 β 분포를 비교해야 합니다.</div>
+<div class="card"><b>인사이트 ⑥ 개선의 공통 목표</b><br>평균 장벽을 높이는 것뿐 아니라 취약한 low‑barrier tail을 제거해 (g(E))를 좁히는 것이 두 영역의 공통 신뢰성 전략입니다.</div>
+</div>
+
+<h3>4. 이 가설을 검증하는 최소 실험</h3>
+<div class="scroll"><table><thead><tr><th>비교축</th><th>필수 조건</th><th>동시 측정</th><th>검증 질문</th></tr></thead><tbody>
+<tr><td>n‑TFT vs p‑TFT</td><td>동일 온도, 대응 overdrive, DC/AC duty, recovery</td><td>ΔVTH·μ·SS·IDS·소자온도</td><td>β 차이가 carrier 극성인가, trap/입계/열구조 차이인가?</td></tr>
+<tr><td>형광 vs 인광 OLED</td><td>동일 색·광자 flux 또는 전류밀도 기준을 각각 명시</td><td>L·V·J·EQE·spectrum·transient lifetime</td><td>긴 triplet과 bimolecular interaction이 β·가속지수에 어떤 변화를 주는가?</td></tr>
+<tr><td>패널 결합</td><td>TFT-only, OLED diode, pixel/패널의 3단계 coupon</td><td>화소전류와 (L/I) 효율을 분리</td><td>패널 (L(t))가 두 독립 SE의 곱인가, 결합항이 필요한가?</td></tr>
+<tr><td>원인 확인</td><td>온도·전계·duty holdout과 재료/공정 split</td><td>전기·광학 + spectroscopy/chemical analysis</td><td>피팅 파라미터 변화가 실제 trap·quencher 변화와 동행하는가?</td></tr>
+</tbody></table></div>
+<div class="callout good"><b>두 영역을 잇는 연구가설:</b> “TFT와 OLED의 열화는 서로 다른 미시 반응이지만, 공정·재료가 만든 에너지 장벽 분포 (g(E))가 공통 SE 커널을 형성한다. 패널 동시계측으로 TFT 손상분율과 OLED 발광생존분율을 분해하면, β를 단순 피팅값이 아닌 구조적 이질성 지표로 검증할 수 있다.”</div>
 </section>
 <section id="lifetime-sequence">
 <span class="label">Learning Order</span>
@@ -916,6 +965,11 @@ print(summary.reset_index())</code></pre>
 <tr id="ref-oled-prx"><td>[38]</td><td><a href="https://doi.org/10.1103/PhysRevX.14.041044" rel="noopener" target="_blank">Zhao et al. (2024) — Nonradiative defects in blue triplet emitters</a></td><td>Marcus theory와 Purcell factor를 이용해 결함생성·여기자에너지·blue PHOLED 수명을 연결.</td></tr>
 <tr id="ref-oled-uv"><td>[39]</td><td><a href="https://doi.org/10.1039/D5CP00664C" rel="noopener" target="_blank">Zhou et al. (2025) — OLED UV photoaging and SED model</a></td><td>전기·열 열화에 사용된 SE와 power-law 가속관계를 UV 광열화로 확장.</td></tr>
 <tr id="ref-oled-operando"><td>[40]</td><td><a href="https://www.nature.com/articles/s41377-026-02373-8" rel="noopener" target="_blank">Lee et al. (2026) — Operando electrically pumped spectroscopy</a></td><td>전기·광학 동시 측정으로 EML 및 계면의 target/parasite exciton 열화경로를 국소화.</td></tr>
+<tr id="ref-oled-tang"><td>[41]</td><td><a href="https://doi.org/10.1063/1.98799" rel="noopener" target="_blank">Tang &amp; VanSlyke (1987) — Organic electroluminescent diodes</a></td><td>이중 유기박막에서 전자·정공 재결합과 형광 발광을 구현한 현대 OLED의 기초 연구.</td></tr>
+<tr id="ref-oled-baldo"><td>[42]</td><td><a href="https://doi.org/10.1038/25954" rel="noopener" target="_blank">Baldo et al. (1998) — Highly efficient phosphorescent emission</a></td><td>형광의 singlet 제한과 달리 인광 도펀트가 singlet·triplet 에너지를 함께 수확할 수 있음을 보인 기초 연구.</td></tr>
+<tr id="ref-tft-p-selfheat"><td>[43]</td><td><a href="https://doi.org/10.1109/TED.2011.2155068" rel="noopener" target="_blank">Mativenga et al. (2011) — Self-heating degradation in p-channel Si-on-glass TFTs</a></td><td>p형 TFT 자기발열, back-channel 전자포획과 hump 이동의 SE 시간의존성을 연결.</td></tr>
+<tr id="ref-tft-p-nbti"><td>[44]</td><td><a href="https://doi.org/10.1109/LED.2019.2942102" rel="noopener" target="_blank">Tu et al. (2019) — NBTI in p-type LTPS TFTs of different grain sizes</a></td><td>입계 크기에 따른 수소 탈착·입계/계면 trap 생성과 p형 LTPS NBTI 열화 차이를 분석.</td></tr>
+<tr id="ref-oled-chem-products"><td>[45]</td><td><a href="https://doi.org/10.1063/1.2430922" rel="noopener" target="_blank">Kondakov et al. (2007) — Chemical products in fluorescent and phosphorescent OLED degradation</a></td><td>형광·인광 OLED의 구동 열화에서 결합절단, radical, 비복사 재결합 중심과 quencher 생성을 화학적으로 비교.</td></tr>
 </tbody>
 </table>
 <div class="callout good">
