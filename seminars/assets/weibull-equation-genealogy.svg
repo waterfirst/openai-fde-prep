@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">거듭제곱 지수함수의 학문 간 계보</title>
+  <desc id="desc">1854년 Kohlrausch 완화함수에서 Rosin-Rammler 입도분포, Weibull 강도와 고장분포, Avrami 상변태, KWW 유전완화, TFT와 OLED 열화로 이어진 동일 함수족의 역사와 서로 다른 해석을 보여준다.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071326"/><stop offset="1" stop-color="#173d66"/></linearGradient>
+    <linearGradient id="eq" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0369a1"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#020617" flood-opacity=".38"/></filter>
+    <style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;fill:#eff6ff}.title{font-size:29px;font-weight:850}.sub{font-size:15px;fill:#bfdbfe}.year{font-size:20px;font-weight:900;fill:#7dd3fc}.name{font-size:19px;font-weight:850}.body{font-size:14px;fill:#dbeafe}.eq{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:21px;font-weight:750}.small{font-size:13px;fill:#cbd5e1}.axis{stroke:#38bdf8;stroke-width:4}.stem{stroke:#7dd3fc;stroke-width:2}</style>
+  </defs>
+  <rect width="1200" height="820" rx="26" fill="url(#bg)"/>
+  <text x="600" y="48" text-anchor="middle" class="title">이름은 달라도 같은 수식족: 완화·입도·상변태·강도·고장</text>
+  <text x="600" y="76" text-anchor="middle" class="sub">같은 함수형은 같은 원인이 아니라 ‘누적 또는 생존을 압축하는 공통 수학 문법’이다</text>
+
+  <g filter="url(#shadow)"><rect x="270" y="103" width="660" height="118" rx="24" fill="url(#eq)" stroke="#bae6fd" stroke-width="2"/>
+    <text x="600" y="145" text-anchor="middle" class="eq">S(x)=exp[−(x/a)^b]</text>
+    <text x="600" y="184" text-anchor="middle" class="eq">F(x)=1−S(x)</text>
+    <text x="600" y="208" text-anchor="middle" class="small">x·a·b의 물리적 의미와 표본 단위가 분야마다 달라진다</text>
+  </g>
+
+  <line x1="95" y1="365" x2="1105" y2="365" class="axis"/>
+  <g>
+    <line x1="120" y1="365" x2="120" y2="285" class="stem"/><circle cx="120" cy="365" r="9" fill="#38bdf8"/>
+    <text x="120" y="257" text-anchor="middle" class="year">1854</text><text x="120" y="282" text-anchor="middle" class="name">Kohlrausch</text><text x="120" y="402" text-anchor="middle" class="body">Leyden jar 완화</text><text x="120" y="425" text-anchor="middle" class="small">남은 전하·분극 Φ(t)</text>
+
+    <line x1="280" y1="365" x2="280" y2="285" class="stem"/><circle cx="280" cy="365" r="9" fill="#38bdf8"/>
+    <text x="280" y="257" text-anchor="middle" class="year">1932–33</text><text x="280" y="282" text-anchor="middle" class="name">Rosin–Rammler</text><text x="280" y="402" text-anchor="middle" class="body">분쇄 석탄 입도</text><text x="280" y="425" text-anchor="middle" class="small">체 잔류 질량 R(d)</text>
+
+    <line x1="440" y1="365" x2="440" y2="285" class="stem"/><circle cx="440" cy="365" r="9" fill="#38bdf8"/>
+    <text x="440" y="257" text-anchor="middle" class="year">1939</text><text x="440" y="282" text-anchor="middle" class="name">Weibull 강도</text><text x="440" y="402" text-anchor="middle" class="body">취성재료 weakest-link</text><text x="440" y="425" text-anchor="middle" class="small">응력 이하 파괴확률 F(σ)</text>
+
+    <line x1="600" y1="365" x2="600" y2="285" class="stem"/><circle cx="600" cy="365" r="9" fill="#38bdf8"/>
+    <text x="600" y="257" text-anchor="middle" class="year">1939–41</text><text x="600" y="282" text-anchor="middle" class="name">JMAK·Avrami</text><text x="600" y="402" text-anchor="middle" class="body">핵생성·성장 상변태</text><text x="600" y="425" text-anchor="middle" class="small">변환 체적분율 X(t)</text>
+
+    <line x1="760" y1="365" x2="760" y2="285" class="stem"/><circle cx="760" cy="365" r="9" fill="#38bdf8"/>
+    <text x="760" y="257" text-anchor="middle" class="year">1951</text><text x="760" y="282" text-anchor="middle" class="name">Weibull 일반화</text><text x="760" y="402" text-anchor="middle" class="body">수명·피로·강도 분포</text><text x="760" y="425" text-anchor="middle" class="small">고장시간 CDF F(t)</text>
+
+    <line x1="920" y1="365" x2="920" y2="285" class="stem"/><circle cx="920" cy="365" r="9" fill="#38bdf8"/>
+    <text x="920" y="257" text-anchor="middle" class="year">1970</text><text x="920" y="282" text-anchor="middle" class="name">Williams–Watts</text><text x="920" y="402" text-anchor="middle" class="body">고분자 유전완화</text><text x="920" y="425" text-anchor="middle" class="small">KWW 응답 Φ(t)</text>
+
+    <line x1="1080" y1="365" x2="1080" y2="285" class="stem"/><circle cx="1080" cy="365" r="9" fill="#38bdf8"/>
+    <text x="1080" y="257" text-anchor="middle" class="year">1993–현재</text><text x="1080" y="282" text-anchor="middle" class="name">전자소자</text><text x="1080" y="402" text-anchor="middle" class="body">TFT·OLED·TDDB</text><text x="1080" y="425" text-anchor="middle" class="small">열화곡선 + 고장분포</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="492" width="330" height="132" rx="18" fill="#0c4a6e" stroke="#38bdf8"/>
+    <text x="235" y="530" text-anchor="middle" class="name">연속 응답의 완화</text><text x="235" y="566" text-anchor="middle" class="eq">Φ(t)=exp[−(t/τ)^β]</text><text x="235" y="594" text-anchor="middle" class="small">KWW · OLED L/L₀ · TFT의 미완료분율</text>
+    <rect x="435" y="492" width="330" height="132" rx="18" fill="#4c1d67" stroke="#c084fc"/>
+    <text x="600" y="530" text-anchor="middle" class="name">누적 변환·분포</text><text x="600" y="566" text-anchor="middle" class="eq">F(x)=1−exp[−(x/a)^b]</text><text x="600" y="594" text-anchor="middle" class="small">입자 누적통과 · Avrami 변환 · Weibull CDF</text>
+    <rect x="800" y="492" width="330" height="132" rx="18" fill="#064e3b" stroke="#34d399"/>
+    <text x="965" y="530" text-anchor="middle" class="name">고장시간의 위험률</text><text x="965" y="566" text-anchor="middle" class="eq">h(t)=β/η·(t/η)^(β−1)</text><text x="965" y="594" text-anchor="middle" class="small">β&lt;1 감소 · β=1 일정 · β&gt;1 증가</text>
+  </g>
+
+  <g filter="url(#shadow)"><rect x="115" y="664" width="970" height="105" rx="20" fill="#0f172a" stroke="#f8fafc"/>
+    <text x="600" y="704" text-anchor="middle" class="name">통합 원칙: 함수형이 같아도 확률변수·표본 단위·생성 메커니즘은 다르다</text>
+    <text x="600" y="738" text-anchor="middle" class="body">한 소자의 평균 열화곡선 ≠ 여러 소자의 고장시간 분포 ≠ 핵생성·성장률 ≠ 입자크기 분포</text>
+  </g>
+</svg>

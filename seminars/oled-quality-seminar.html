@@ -45,7 +45,7 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
   </div><div class="intro-line" aria-hidden="true"></div></div>
 </div>
 <header><div class="wrap"><div class="eyebrow">QUALITY PRACTITIONER SEMINAR · 120 MINUTES</div><h1>디스플레이 품질관리와<br>OLED 수명 데이터 분석</h1><p>품질·신뢰성·공정·재료·분석 구성원이 패널 CTQ를 정의하고, 측정 원천 데이터를 정제·시각화·모델링해 고객과 공정의 의사결정으로 연결하는 2시간 실무 세미나입니다.</p><div class="badges"><span class="badge">패널 CTQ</span><span class="badge">화질·신뢰성</span><span class="badge">실제 데이터 분석법</span><span class="badge">공정·고객 품질</span><span class="badge">OLED·TFT 열화</span><button class="badge replay" onclick="replayIntro()">인트로 다시 보기</button></div><div class="hero-flow"><div>고객의 기대</div><div>측정 가능한 CTQ</div><div>신뢰할 수 있는 데이터</div><div>검증된 원인·모델</div><div>표준화된 조치</div></div></div></header>
-<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#cross-domain-insight">통합 인사이트</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
+<nav><div><a href="#prelisten">오디오·PDF</a><a href="#agenda">120분 구성</a><a href="#foundation">품질 중요성</a><a href="#evaluation">주요 평가</a><a href="#image">화질</a><a href="#reliability">신뢰성</a><a href="#data-practice">데이터 실무</a><a href="#process">공정품질</a><a href="#customer">고객 요구</a><a href="#market">시장동향</a><a href="#case">분석 사례</a><a href="#tft-oled-bridge">OLED·TFT 열화</a><a href="#tft-degradation-research">TFT 열화 연구</a><a href="#oled-degradation-research">OLED 수명 연구</a><a href="#cross-domain-insight">통합 인사이트</a><a href="#weibull-genealogy">고장분포 계보</a><a href="#deep-dive">수식 심화</a><a href="#statphys-lab">통계물리 그래프</a><a href="#audio">오디오 복습</a></div></nav>
 <main>
 
 <section id="prelisten">
@@ -279,6 +279,76 @@ nav div{padding:7px 10px}nav a{font-size:13px;min-height:38px}.cycle{grid-templa
 <tr><td>원인 확인</td><td>온도·전계·duty holdout과 재료/공정 split</td><td>전기·광학 + spectroscopy/chemical analysis</td><td>피팅 파라미터 변화가 실제 trap·quencher 변화와 동행하는가?</td></tr>
 </tbody></table></div>
 <div class="callout good"><b>두 영역을 잇는 연구가설:</b> “TFT와 OLED의 열화는 서로 다른 미시 반응이지만, 공정·재료가 만든 에너지 장벽 분포 (g(E))가 공통 SE 커널을 형성한다. 패널 동시계측으로 TFT 손상분율과 OLED 발광생존분율을 분해하면, β를 단순 피팅값이 아닌 구조적 이질성 지표로 검증할 수 있다.”</div>
+</section>
+<section id="weibull-genealogy">
+<span class="tag">QUALITY JOURNAL · EQUATION GENEALOGY</span>
+<h2>Weibull 고장분포의 선행연구와 ‘같은 수식, 다른 이름’의 역사</h2>
+<p class="lead">Weibull은 갑자기 등장한 품질도구가 아닙니다. 전기완화, 분쇄입도, 재료강도, 상변태와 고장시간 연구가 <b>거듭제곱 지수함수</b>라는 같은 수학 문법을 서로 다른 관측량에 적용하며 발전한 결과입니다. 중요한 것은 이름보다 (x)가 무엇이고, 한 점이 무엇을 대표하는지 확인하는 것입니다.</p>
+
+<figure class="visual-card">
+<img src="assets/weibull-equation-genealogy.svg" alt="Kohlrausch 완화, Rosin-Rammler 입도, Weibull 강도와 고장분포, Avrami 상변태, KWW 유전완화, 전자소자 열화가 같은 거듭제곱 지수함수로 연결된 연구 계보" width="1200" height="820" loading="lazy">
+<figcaption><span class="visual-note">품질 저널 관점:</span> (S(x)=e^{-(x/a)^b})와 (F(x)=1-S(x))는 상보적인 한 함수족입니다. 그러나 완화율, 체 잔류량, 변환분율과 고장확률은 같은 데이터가 아니므로 파라미터 의미를 그대로 옮겨서는 안 됩니다.</figcaption>
+</figure>
+
+<h3>1. 연도별 연구 계보</h3>
+<div class="scroll"><table><thead><tr><th>연도</th><th>분야·명칭</th><th>대표 수식</th><th>당시의 질문</th><th>품질·신뢰성으로 남긴 것</th></tr></thead><tbody>
+<tr><td><b>1854</b></td><td>Kohlrausch 완화함수</td><td>\(\Phi(t)=e^{-(t/\tau)^\beta}\)</td><td>Leyden jar의 잔류 전하가 왜 단일 지수보다 느리게 완화되는가?<sup><a href="#ref-kohlrausch">[46]</a></sup></td><td>분포된 시간척도를 거시적 두 파라미터로 압축하는 출발점.</td></tr>
+<tr><td><b>1932–1933</b></td><td>Rosin–Rammler–Sperling 입도분포</td><td>\(R(d)=e^{-(d/d_0)^m}\)</td><td>분쇄 석탄에서 크기 \(d\)보다 큰 체 잔류 질량은 얼마인가?<sup><a href="#ref-rosin-rammler">[47]</a></sup></td><td>시간이 아닌 <b>입자크기</b>에도 같은 생존형을 적용. \(m\)은 입도 균일도.</td></tr>
+<tr><td><b>1939</b></td><td>Weibull 재료강도</td><td>\(P_f(\sigma)=1-e^{-(\sigma/\sigma_0)^m}\)</td><td>취성재료에서 가장 약한 결함이 전체 파괴를 결정할 때 강도 산포를 어떻게 설명하는가?<sup><a href="#ref-weibull-1939">[48]</a></sup></td><td>weakest-link와 크기효과를 품질의 tail 위험으로 연결.</td></tr>
+<tr><td><b>1939–1941</b></td><td>JMAK·Avrami 상변태</td><td>\(X(t)=1-e^{-(Kt)^n}\)</td><td>핵생성과 결정성장이 진행될 때 변환 체적분율은 어떻게 증가하는가?<sup><a href="#ref-avrami">[49]</a></sup></td><td>같은 누적형이라도 \(n\)을 성장차원·핵생성과 연결하는 <b>기전 모델</b>의 사례.</td></tr>
+<tr><td><b>1951</b></td><td>Weibull 일반 분포</td><td>\(F(x)=1-e^{-((x-\gamma)/\eta)^\beta}\)</td><td>강도·피로수명·입도처럼 양의 비대칭 자료를 하나의 분포족으로 다룰 수 있는가?<sup><a href="#ref-weibull-1951">[50]</a></sup></td><td>형상·척도·위치모수를 가진 범용 수명분포로 확장.</td></tr>
+<tr><td><b>1970</b></td><td>Williams–Watts, KWW</td><td>\(\Phi(t)=e^{-(t/\tau)^\beta}\)</td><td>고분자 유전완화의 비대칭·비 Debye 응답을 어떻게 표현하는가?<sup><a href="#ref-williams-watts">[51]</a></sup></td><td>분자운동·유리질 완화에서 SE가 널리 쓰이며 KWW라는 이름이 정착.</td></tr>
+<tr><td><b>1993–현재</b></td><td>TFT·OLED·TDDB</td><td>열화 \(\Phi(t)\), 고장 \(F(t)\)</td><td>연속적인 성능저하와 소자군의 고장시간 산포를 어떻게 연결할 것인가?</td><td>한 소자의 SE 열화와 여러 소자의 Weibull 고장분포를 동시에 사용하는 계층형 신뢰성 문제.<sup><a href="#ref-tddb-weibull">[55]</a></sup></td></tr>
+</tbody></table></div>
+
+<h3>2. 같은 식에서 무엇이 달라지는가</h3>
+<div class="formula">\[S(x)=\exp\!\left[-\left(\frac{x}{a}\right)^b\right],\qquad F(x)=1-S(x)\]</div>
+<div class="scroll"><table><thead><tr><th>이름</th><th>\(x\)와 한 관측점의 의미</th><th>\(S\) 또는 \(F\)</th><th>형상모수 해석</th><th>직접 옮기면 안 되는 것</th></tr></thead><tbody>
+<tr><td><b>Kohlrausch/KWW</b></td><td>시간; 한 시료의 연속 완화응답</td><td>남은 분극·기능 \(\Phi(t)\)</td><td>통상 \(0&lt;\beta&lt;1\): 완화시간의 분산</td><td>\(\beta&lt;1\)을 곧바로 초기고장률로 부르면 안 됨.</td></tr>
+<tr><td><b>Rosin–Rammler</b></td><td>입자직경; 입자군의 질량/개수 분율</td><td>체 위 잔류분율 \(R(d)\)</td><td>\(m\): 입도분포의 폭</td><td>입자 하나의 시간수명이나 hazard가 아님.</td></tr>
+<tr><td><b>JMAK/Avrami</b></td><td>시간; 한 재료에서 변환된 체적분율</td><td>누적 변환분율 \(X(t)\)</td><td>\(n\): 이상조건에서 핵생성·성장차원</td><td>가정 밖의 \(n\)을 공간차원으로 단정하면 안 됨.</td></tr>
+<tr><td><b>Weibull 수명</b></td><td>각 개체의 고장시간·cycle·강도</td><td>고장 CDF \(F\), 생존 \(R\)</td><td>\(\beta\): hazard의 감소·일정·증가</td><td>평균 열화곡선의 점들을 독립 고장시간처럼 사용하면 안 됨.</td></tr>
+<tr><td><b>OLED/TFT SE</b></td><td>시간; 각 소자의 휘도·\(\Delta V_{TH}\) 연속곡선</td><td>기능 생존 또는 누적 손상</td><td>\(\beta\): 이질성 후보 지표</td><td>피팅만으로 trap·TPA·화학반응을 식별할 수 없음.</td></tr>
+</tbody></table></div>
+<div class="callout danger"><b>가장 중요한 구분:</b> KWW에서 \(0&lt;\beta&lt;1\)이면 ‘stretched exponential’이지만, Weibull은 \(\beta&gt;0\) 전체를 허용합니다. \(\beta&gt;1\)은 Weibull에서는 증가 hazard이고, 완화물리에서는 보통 compressed exponential로 구분합니다.</div>
+
+<h3>3. Weibull이 품질에서 강력한 이유: tail·hazard·크기효과</h3>
+<div class="grid g3">
+<div class="card"><h3>Bp 수명</h3><div class="formula">\[B_p=\eta[-\ln(1-p)]^{1/\beta}\]</div><p>평균이 아니라 누적 \(p\)%가 고장나는 하한수명입니다. B10은 보증·설계 여유와 직접 연결됩니다.</p></div>
+<div class="card"><h3>시간별 위험률</h3><div class="formula">\[h(t)=\frac{\beta}{\eta}\left(\frac{t}{\eta}\right)^{\beta-1}\]</div><p>\(\beta&lt;1\) 감소, \(\beta=1\) 일정, \(\beta&gt;1\) 증가 hazard입니다. 이 해석은 <b>고장시간 분포</b>에만 적용합니다.</p></div>
+<div class="card"><h3>Weakest-link 크기효과</h3><div class="formula">\[R_N(t)=R_1(t)^N=e^{-N(t/\eta)^\beta}\]</div><p>독립적인 취약 위치가 많을수록 시스템 척도수명은 \(\eta_N=\eta N^{-1/\beta}\)로 짧아집니다.</p></div>
+</div>
+
+<h3>4. 숫자로 보는 동일 \(\eta\), 다른 초기 tail</h3>
+<p>세 집단의 characteristic life가 모두 \(\eta=1000\) h여도 형상모수에 따라 B10은 크게 달라집니다.</p>
+<div class="scroll"><table><thead><tr><th>\(\beta\)</th><th>hazard</th><th>B10</th><th>품질 해석</th></tr></thead><tbody>
+<tr><td>0.7</td><td>감소</td><td>약 40 h</td><td>초기 취약군이 매우 긴 왼쪽 tail을 만듦. 선별·공정이력·혼합모집단 확인.</td></tr>
+<tr><td>1.0</td><td>일정</td><td>약 105 h</td><td>지수분포. 시간과 무관한 우발사건 모델에 가까움.</td></tr>
+<tr><td>3.0</td><td>증가</td><td>약 472 h</td><td>수명이 비교적 모이고 wear-out이 진행되는 집단.</td></tr>
+</tbody></table></div>
+<div class="callout warn"><b>해석:</b> \(\eta\)만 같다고 품질이 같은 것이 아닙니다. 고객 조기고장은 왼쪽 tail이 결정하므로 B10과 그 신뢰구간을 함께 봐야 합니다.</div>
+
+<h3>5. 품질 저널의 올바른 분석 절차</h3>
+<div class="process"><div>고장 정의<small>L93·open·short 등</small></div><div>개체별 시간<small>failure+censor</small></div><div>비모수 확인<small>Kaplan–Meier</small></div><div>분포 비교<small>Weibull·lognormal</small></div><div>검증·보고<small>B10+CI+원인</small></div></div>
+<div class="formula">\[\mathcal L(\theta)=\prod_{i\in failure}f(t_i\mid\theta)\prod_{j\in censored}R(c_j\mid\theta)\]</div>
+<ul class="checklist">
+<li>시험 전에 고장판정과 time origin을 고정하고, 미고장 샘플은 삭제하지 말고 right-censoring으로 보존합니다.</li>
+<li>Kaplan–Meier와 개별 점을 먼저 보고 Weibull MLE, lognormal, generalized gamma 또는 competing-risk 모델을 비교합니다.<sup><a href="#ref-nist-weibull-mle">[52]</a></sup></li>
+<li>\(\beta,\eta\), B10의 신뢰구간, 실패 수/총 표본 수, 최대 관측시간과 외삽비를 함께 보고합니다.</li>
+<li>재료·Lot·고장모드가 섞이면 단일 직선보다 층별·혼합·competing-risk 모델을 우선 검토합니다.</li>
+<li>가속조건에서 고장모드가 유지되는지 FA로 확인한 뒤 Arrhenius·power law와 결합합니다.</li>
+</ul>
+
+<h3>6. 연구 한계와 금지해야 할 단축</h3>
+<div class="grid g3">
+<div class="card"><b>작은 실패 수</b><br>실패가 5개 미만, 때로 10개 미만이면 MLE와 \(\beta\)가 크게 흔들릴 수 있습니다.<sup><a href="#ref-nist-weibull-mle">[52]</a></sup></div>
+<div class="card"><b>평균곡선 오용</b><br>평균 \(L(t)\)의 시간점에 Weibull을 적합해도 소자군의 고장분포가 되지 않습니다.</div>
+<div class="card"><b>혼합모드</b><br>open·short·dark spot·휘도저하를 합치면 굽은 Weibull plot이 생기고 가짜 \(\beta\)가 나옵니다.</div>
+<div class="card"><b>3-parameter 과적합</b><br>위치모수 \(\gamma\)는 적은 표본에서 B10 외삽을 불안정하게 만들 수 있습니다.</div>
+<div class="card"><b>weakest-link 위반</b><br>결함 상호작용·다봉 분포·R-curve가 있으면 취성재료도 단일 Weibull에서 벗어납니다.<sup><a href="#ref-weibull-fracture-limit">[53]</a></sup></div>
+<div class="card"><b>공통원인 의존성</b><br>같은 panel·glass·chamber의 subpixel은 독립이 아니므로 유효 표본수를 과대평가하면 안 됩니다.</div>
+</div>
+<div class="callout good"><b>통합 인사이트:</b> SE/KWW와 Weibull은 같은 함수족이지만 역할이 다릅니다. <b>미시 원인 모델 → 개별 소자의 연속 열화 → 임계값 도달시간 → 소자군 Weibull/비모수 생존분석</b>의 네 층으로 연결할 때 품질 저널이 물리와 통계를 동시에 보존할 수 있습니다.</div>
 </section>
 <section id="lifetime-sequence">
 <span class="label">Learning Order</span>
@@ -970,6 +1040,16 @@ print(summary.reset_index())</code></pre>
 <tr id="ref-tft-p-selfheat"><td>[43]</td><td><a href="https://doi.org/10.1109/TED.2011.2155068" rel="noopener" target="_blank">Mativenga et al. (2011) — Self-heating degradation in p-channel Si-on-glass TFTs</a></td><td>p형 TFT 자기발열, back-channel 전자포획과 hump 이동의 SE 시간의존성을 연결.</td></tr>
 <tr id="ref-tft-p-nbti"><td>[44]</td><td><a href="https://doi.org/10.1109/LED.2019.2942102" rel="noopener" target="_blank">Tu et al. (2019) — NBTI in p-type LTPS TFTs of different grain sizes</a></td><td>입계 크기에 따른 수소 탈착·입계/계면 trap 생성과 p형 LTPS NBTI 열화 차이를 분석.</td></tr>
 <tr id="ref-oled-chem-products"><td>[45]</td><td><a href="https://doi.org/10.1063/1.2430922" rel="noopener" target="_blank">Kondakov et al. (2007) — Chemical products in fluorescent and phosphorescent OLED degradation</a></td><td>형광·인광 OLED의 구동 열화에서 결합절단, radical, 비복사 재결합 중심과 quencher 생성을 화학적으로 비교.</td></tr>
+<tr id="ref-kohlrausch"><td>[46]</td><td><a href="https://doi.org/10.1002/andp.18541670203" rel="noopener" target="_blank">Kohlrausch (1854) — Theorie des elektrischen Rückstandes</a></td><td>Leyden jar의 비지수적 전하·분극 완화를 stretched exponential로 기술한 역사적 출발점.</td></tr>
+<tr id="ref-rosin-rammler"><td>[47]</td><td><a href="https://www.sptj.jp/powderpedia/words/12599/" rel="noopener" target="_blank">Rosin &amp; Rammler (1933) — The Laws Governing the Fineness of Powdered Coal</a></td><td>분쇄물의 체 잔류 누적질량을 \(R(d)=\exp[-(d/d_0)^m]\) 형태로 나타낸 입도분포 연구.</td></tr>
+<tr id="ref-weibull-1939"><td>[48]</td><td><a href="https://books.google.com/books/about/A_Statistical_Theory_of_the_Strength_of.html?id=otVRAQAAIAAJ" rel="noopener" target="_blank">Weibull (1939) — A Statistical Theory of the Strength of Materials</a></td><td>재료의 약한 위치와 파괴확률·크기효과를 통계적으로 연결한 Weibull 강도이론의 기초.</td></tr>
+<tr id="ref-avrami"><td>[49]</td><td><a href="https://doi.org/10.1063/1.1750380" rel="noopener" target="_blank">Avrami (1939) — Kinetics of Phase Change I</a></td><td>핵생성·성장으로 진행되는 상변태 체적분율을 거듭제곱 지수 누적함수로 정식화.</td></tr>
+<tr id="ref-weibull-1951"><td>[50]</td><td><a href="https://jhanley.biostat.mcgill.ca/bios601/CHchapters040506/Weibull-ASME-Paper-1951.pdf" rel="noopener" target="_blank">Weibull (1951) — A Statistical Distribution Function of Wide Applicability</a></td><td>강도·피로·입도 등에 적용 가능한 위치·척도·형상모수의 범용 분포함수 제시.</td></tr>
+<tr id="ref-williams-watts"><td>[51]</td><td><a href="https://doi.org/10.1039/TF9706600080" rel="noopener" target="_blank">Williams &amp; Watts (1970) — Non-symmetrical dielectric relaxation</a></td><td>고분자 유전완화의 비 Debye 응답에 SE를 적용해 KWW 함수의 현대적 사용을 확산.</td></tr>
+<tr id="ref-nist-weibull-mle"><td>[52]</td><td><a href="https://www.itl.nist.gov/div898/handbook/apr/section4/apr412.htm" rel="noopener" target="_blank">NIST/SEMATECH — MLE for censored reliability data</a></td><td>failure와 censoring을 함께 사용하는 likelihood, 소표본 MLE 편향과 신뢰구간의 실무 기준.</td></tr>
+<tr id="ref-weibull-fracture-limit"><td>[53]</td><td><a href="https://doi.org/10.1016/j.engfracmech.2006.05.028" rel="noopener" target="_blank">Danzer et al. (2007) — Fracture statistics of ceramics</a></td><td>weakest-link의 전제, 다봉 결함·R-curve·소표본에서 단일 Weibull이 벗어나는 조건을 검토.</td></tr>
+<tr id="ref-iec-weibull"><td>[54]</td><td><a href="https://webstore.iec.ch/en/publication/66370" rel="noopener" target="_blank">IEC 63287-1:2021 — Semiconductor IC reliability qualification guidelines</a></td><td>반도체 IC 신뢰성 자격평가에서 Weibull 기반 표본·시험조건 설계가 여러 방법 중 하나임을 규정.</td></tr>
+<tr id="ref-tddb-weibull"><td>[55]</td><td><a href="https://doi.org/10.1103/PhysRevApplied.19.024008" rel="noopener" target="_blank">Mechanistic modeling of TDDB in polycrystalline thin films (2023)</a></td><td>두께·전압·온도에 따른 dielectric breakdown 시간의 Weibull 분포를 결함·누설경로 모델과 연결.</td></tr>
 </tbody>
 </table>
 <div class="callout good">
