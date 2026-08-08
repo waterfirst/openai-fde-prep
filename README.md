@@ -23,6 +23,7 @@ measure adoption → hand off reusable assets.
 - **OLED 수명 분석 웹앱** — 물리 기반 도메인 워크플로우 자동화.
 - **Telegram + Codex 오케스트레이션** — human-in-the-loop 다중 에이전트 조율.
 - **연구개발 AI 세미나** — 현장 엔지니어 역량이식(enablement).
+- **역사학 연구 AI enablement** — 공공 기록 탐색·사료카드·독립 반론검토를 연결하고, 학생이 다음 연구 사이클을 스스로 수행하도록 인계.
 
 ## Case studies
 
