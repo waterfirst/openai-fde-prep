@@ -33,3 +33,5 @@ measure adoption → hand off reusable assets.
 
 - [비전문가용 로컬 AI 워크플로우 셋업 (Windows·PowerShell)](guides/SETUP_GUIDE_WINDOWS.md)
   — SW 비전문가가 복붙만으로 환경설치부터 실무 실행까지.
+- [AI 에이전트를 활용한 역사학 논문 연구 가이드](guides/AI_AGENT_HISTORY_THESIS_GUIDE.md)
+  — 주장 원자화·사료카드·경쟁가설·독립 검토를 거쳐 학생에게 연구 주도권을 인계하는 워크플로우.
