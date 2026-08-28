@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>에이전트 수보다 지휘 체계를 먼저 배포하라 — FDE Field Journal</title>
+<meta name="description" content="AI 노동 등가량이 폭증하는 시대에 멀티에이전트를 안전하게 운영하기 위한 작업 분해, 소유권, 승인, 검증, 복구 패턴." />
+<meta name="theme-color" content="#0b1020" />
+<style>
+:root{--bg:#0b1020;--panel:#121a2c;--text:#eef3ff;--muted:#aeb8d4;--accent:#67e8f9;--green:#7dd3a7;--amber:#f3c778;--line:rgba(255,255,255,.13);--shadow:0 24px 80px rgba(0,0,0,.35)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;background:radial-gradient(circle at 12% 0,rgba(103,232,249,.15),transparent 31rem),radial-gradient(circle at 88% 8%,rgba(125,211,167,.10),transparent 27rem),var(--bg);color:var(--text);line-height:1.72}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.topbar,.wrap{max-width:880px;margin:auto}.topbar{padding:18px 20px;font-size:14px}.wrap{padding:34px 20px 84px}.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12px}h1{font-size:clamp(30px,5vw,48px);line-height:1.1;letter-spacing:-.035em;margin:12px 0 10px}h2{font-size:clamp(21px,3vw,29px);letter-spacing:-.02em;margin:42px 0 14px;padding-top:24px;border-top:1px solid var(--line)}h3{margin:0 0 8px}p{margin:0 0 14px;color:#dfe6f7}.lead{font-size:18px;color:var(--muted);max-width:760px}.claim{margin:24px 0;padding:16px 18px;border-left:4px solid var(--green);background:rgba(125,211,167,.07);font-size:18px}.map{margin:28px 0;padding:22px;border:1px solid var(--line);background:rgba(255,255,255,.045);box-shadow:var(--shadow)}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:18px}.flow div{min-height:92px;padding:12px 10px;border:1px solid var(--line);background:var(--panel);font-size:12px}.flow strong{display:block;color:var(--accent);font-size:14px;margin-bottom:5px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{padding:18px 20px;border:1px solid var(--line);background:rgba(255,255,255,.045)}.card strong{color:#fff}.gate{border-color:rgba(243,199,120,.48);background:rgba(243,199,120,.06)}.checklist{padding-left:22px}.checklist li{margin:9px 0;color:#dfe6f7}.code{white-space:pre-wrap;padding:16px 18px;border:1px solid var(--line);background:#080d18;color:#d9f9ff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;overflow:auto}.muted{color:var(--muted)}.tag{display:inline-block;margin:3px 3px 0 0;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px}.footer{text-align:center;color:var(--muted);padding:30px 18px 56px;font-size:13px}@media(max-width:720px){.flow{grid-template-columns:1fr}.flow div{min-height:0}.grid2{grid-template-columns:1fr}.wrap{padding:26px 16px 64px}}
+</style>
+</head>
+<body>
+<div class="topbar"><a href="index.html">← FDE Field Journal</a> · <a href="../index.html">Portfolio</a></div>
+<main class="wrap">
+  <span class="eyebrow">Field Journal · 05</span>
+  <h1>에이전트 수보다 지휘 체계를 먼저 배포하라</h1>
+  <p class="lead">AI 노동 등가량이 매년 열 배 늘어도, 작업 분해·소유권·승인·검증·복구가 없다면 팀이 아니라 오류 복제 공장이 된다.</p>
+
+  <p class="claim"><strong>핵심 주장:</strong> 멀티에이전트 시스템의 생산성은 모델 수가 아니라, 사람이 결과를 믿을 수 있게 만드는 지휘 프로토콜의 품질로 결정된다.</p>
+
+  <h2>문제: 10억 AI 노동자는 10억 명의 동료가 아니다</h2>
+  <p>SemiAnalysis의 Dylan Patel과 Dwarkesh Patel의 대담은 프런티어 연산량 증가와 알고리즘 효율 개선이 결합되면 동일 능력 기준 AI 노동 등가량이 연간 약 10배 커질 수 있다는 시나리오를 제시한다. 숫자는 강렬하지만 실제 직원 수가 아니다. 특정 수준의 모델 인스턴스를 얼마나 많이 가동할 수 있는지에 가까운 환산값이다.</p>
+  <p>현장에서 필요한 것은 인스턴스가 아니라 완료된 업무다. 다섯 에이전트가 같은 문서를 고치고, 서로의 기준을 덮어쓰고, 버튼을 눌렀다는 이유로 등록에 성공했다고 보고하면 연산량은 늘어도 성공 건수는 늘지 않는다. FDE가 먼저 배포해야 하는 것은 더 많은 모델이 아니라 <strong>누가 무엇을 쓰고, 무엇을 증거로 완료를 선언하며, 실패 시 어디로 돌아갈지 정한 운영 체계</strong>다.</p>
+
+  <div class="map" role="img" aria-label="멀티에이전트 지휘 흐름: 분해, 선점, 실행, 검증, 인계">
+    <strong>Agent Command Loop</strong>
+    <div class="flow">
+      <div><strong>1 · 분해</strong>산출물과 중단 조건이 분명한 작은 작업으로 나눈다.</div>
+      <div><strong>2 · 선점</strong>쓰기 전에 파일·장·레코드 소유권을 공개한다.</div>
+      <div><strong>3 · 실행</strong>필요한 도구와 최소 권한만 부여해 작업한다.</div>
+      <div><strong>4 · 검증</strong>자기보고가 아니라 산출물·테스트·재조회로 확인한다.</div>
+      <div><strong>5 · 인계</strong>결정, 증거, 남은 위험만 다음 세션에 넘긴다.</div>
+    </div>
+  </div>
+
+  <h2>실패 패턴 네 가지</h2>
+  <div class="grid2">
+    <div class="card"><h3>중복 실행</h3><p>선점 전에 집필하거나 배포해 같은 결과를 여러 번 만든다.</p><strong>대응:</strong> 작업 시작 상태를 먼저 커밋하고 실패한 선점은 즉시 포기한다.</div>
+    <div class="card"><h3>상태 덮어쓰기</h3><p>여러 에이전트가 하나의 진행 문서를 고치며 중요한 사실을 잃는다.</p><strong>대응:</strong> 단일 소유 상태 파일과 이름이 다른 보고 파일을 분리한다.</div>
+    <div class="card"><h3>거짓 완료</h3><p>버튼 클릭, 파일 생성, 명령 종료를 업무 성공으로 오해한다.</p><strong>대응:</strong> 등록 후 재조회, 렌더 결과, 테스트와 공개 URL을 다시 읽는다.</div>
+    <div class="card"><h3>권한 확산</h3><p>모든 에이전트가 자격증명과 쓰기 권한을 가져 사고 범위가 커진다.</p><strong>대응:</strong> 자격증명은 런타임에서 분리하고 쓰기 도구에는 승인 게이트를 둔다.</div>
+  </div>
+
+  <h2>승인 게이트는 자연어가 아니라 상태 기계다</h2>
+  <div class="card gate">
+    <p><strong>읽기 → 초안 → 승인대기 → 실행 → 재조회 → 완료</strong></p>
+    <p>“좋다”, “확인”, “계속” 같은 말은 쓰기 승인으로 해석하지 않는다. 등록 대상, 점수, 코멘트나 배포 파일이 바뀌면 기존 승인은 무효가 된다. 실행 전에는 현재 상태를 다시 읽어 중복 등록을 막고, 실행 후에는 동일 식별자를 재조회한다.</p>
+  </div>
+  <p>이 구조는 느려 보이지만 재작업을 줄인다. 빠른 에이전트가 잘못된 일을 백 번 수행하는 비용보다 한 번의 명시적 확인이 싸다.</p>
+
+  <h2>바로 적용하는 작업 주문서</h2>
+  <pre class="code">목표: [완료 후 사람이 확인할 한 문장]
+담당 범위: [파일·장·레코드 식별자]
+읽기 전용 근거: [URL·문서·데이터]
+수정 금지: [다른 담당자의 영역]
+완료 증거: [테스트·렌더·재조회 결과]
+쓰기 승인: [허용되는 정확한 승인 문자열]
+중단 조건: [모순·개인정보·기준 변경]
+인계 내용: [결정·증거·남은 위험]</pre>
+  <p>작업 주문서는 긴 프롬프트가 아니다. 에이전트가 스스로 판단해도 되는 영역과 사람에게 돌려줘야 하는 영역을 짧게 고정하는 계약이다.</p>
+
+  <h2>자율성은 넓게, 영향 반경은 작게</h2>
+  <p>좋은 멀티에이전트 운영은 모든 단계를 사람이 지시하는 방식이 아니다. 조사 방법, 초안 구성, 테스트 선택에는 넓은 자율성을 줄 수 있다. 대신 결제, 등록, 삭제, 공개, 고객 데이터 처리처럼 되돌리기 어려운 행동은 좁은 권한과 명시적 승인 아래 둔다.</p>
+  <ul class="checklist">
+    <li><strong>넓게 맡길 것:</strong> 검색어 확장, 자료 비교, 초안, 코드 실험, 읽기 전용 감사</li>
+    <li><strong>조건부로 맡길 것:</strong> 브랜치 커밋, 테스트 환경 배포, 비식별 데이터 처리</li>
+    <li><strong>사람이 결정할 것:</strong> 최종 공개, 금전 거래, 평가 등록, 법적 판단, 안전 중단 해제</li>
+  </ul>
+
+  <h2>측정: 에이전트 수 대신 성공 1건당 비용</h2>
+  <p>운영 지표는 “몇 개 모델을 썼는가”가 아니라 다음이어야 한다.</p>
+  <ul class="checklist">
+    <li>검증을 통과한 산출물 수와 첫 통과율</li>
+    <li>중복 작업 시간과 충돌 복구 시간</li>
+    <li>사람이 개입한 이유와 개입 후 성공률</li>
+    <li>성공 1건당 토큰·시간·외부 API 비용</li>
+    <li>같은 실패가 규칙·테스트·Skill로 전환된 비율</li>
+  </ul>
+  <p>이 측정이 쌓이면 단발성 프롬프트가 조직의 운영 자산으로 바뀐다. 베테랑의 판단은 설명문이 아니라 사례, 중단 조건, 승인과 검증을 포함한 Skill이 된다.</p>
+
+  <h2>결론: 지휘 능력이 희소해진다</h2>
+  <p>AI 연구소는 더 많은 연산력으로 더 많은 에이전트를 만들 수 있다. 그러나 현장의 목표와 책임까지 자동으로 생성할 수는 없다. 오히려 실행 능력이 싸질수록 무엇을 실행하지 않을지 정하는 판단이 비싸진다.</p>
+  <p>한 사람이 AI 팀을 이끄는 시대의 경쟁력은 프롬프트를 화려하게 쓰는 능력이 아니다. 일을 작게 나누고, 소유권을 보이게 하고, 증거로 완료를 확인하며, 사고가 나면 권한을 회수하는 능력이다. <strong>에이전트는 확장하고, 책임은 사람이 붙잡는다.</strong></p>
+
+  <h2>출처</h2>
+  <ul class="checklist">
+    <li><a href="https://www.dwarkesh.com/p/dylan-patel-3" target="_blank" rel="noopener">Dwarkesh Podcast — Dylan Patel 대담 전문</a></li>
+    <li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Anthropic — Building effective agents</a></li>
+    <li><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" target="_blank" rel="noopener">NIST AI RMF Core — 역할·책임·감독</a></li>
+  </ul>
+  <p class="muted">AI 노동력 수치는 조건부 연산 등가량 시나리오이며 실제 고용 인원 전망이 아니다.</p>
+  <div><span class="tag">multi-agent</span><span class="tag">orchestration</span><span class="tag">approval-gate</span><span class="tag">verification</span><span class="tag">handoff</span></div>
+</main>
+<div class="footer">waterfirst · FDE Field Journal · 2026-08-28</div>
+</body>
+</html>

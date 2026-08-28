@@ -36,3 +36,8 @@ measure adoption → hand off reusable assets.
   — SW 비전문가가 복붙만으로 환경설치부터 실무 실행까지.
 - [AI 에이전트를 활용한 역사학 논문 연구 가이드](guides/AI_AGENT_HISTORY_THESIS_GUIDE.md)
   — 주장 원자화·사료카드·경쟁가설·독립 검토를 거쳐 학생에게 연구 주도권을 인계하는 워크플로우.
+
+## Field Journal
+
+- [에이전트 수보다 지휘 체계를 먼저 배포하라](journal/05-commanding-ai-workforce.html)
+  — 멀티에이전트의 작업 분해·소유권·승인·검증·복구를 하나의 Agent Command Loop로 정리한 운영 패턴.
