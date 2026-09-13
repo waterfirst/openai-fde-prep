@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>모델을 바꾸기 전에 토큰이 어디서 새는지 보라 — FDE Field Journal</title>
 <meta name="description" content="AI 비용 최적화는 짧은 프롬프트가 아니라 성공 1건당 비용을 측정하는 운영 문제다. 토큰 소비원 7개와 One-shot Token Source Profiler." />
+<meta property="og:image" content="https://waterfirst.github.io/openai-fde-prep/journal/assets/journal-02-token-diagnosis.webp" />
+<meta name="twitter:card" content="summary_large_image" />
 <style>
 :root{--bg:#0b1020;--text:#eef3ff;--muted:#aeb8d4;--accent:#67e8f9;--green:#7dd3a7;--line:rgba(255,255,255,.12);--shadow:0 24px 80px rgba(0,0,0,.35)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -18,6 +20,7 @@ h2{font-size:clamp(20px,3vw,28px);letter-spacing:-.02em;margin:38px 0 12px;borde
 h3{margin:22px 0 8px}
 p,li{color:#dfe6f7}p{margin:0 0 12px}
 .lead{color:var(--muted);font-size:18px}
+.hero-image{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line);border-radius:20px;margin:22px 0;box-shadow:var(--shadow);background:#10182c}
 .card{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:20px;padding:18px 22px;box-shadow:var(--shadow);margin:18px 0}
 .abstract{border-left:4px solid var(--accent);padding:6px 0 6px 16px;color:#dff8ff}
 .claim{border-left:4px solid var(--green);padding:8px 0 8px 16px;font-size:18px;color:#eafff3;margin:16px 0}
@@ -37,6 +40,7 @@ code{color:var(--accent);font-size:.92em}
   <span class="eyebrow">Field Journal · 02</span>
   <h1>모델을 바꾸기 전에 토큰이 어디서 새는지 보라</h1>
   <p class="lead">Diagnose Token Spend Before Optimizing the Model</p>
+  <img class="hero-image" src="assets/journal-02-token-diagnosis.webp" alt="AI 파이프라인의 여러 토큰 누수 지점을 한 번에 진단하는 장면" width="1279" height="720" />
 
   <div class="card">
     <span class="eyebrow">Abstract (EN)</span>
